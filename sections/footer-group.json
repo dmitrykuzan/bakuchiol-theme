@@ -20,10 +20,18 @@
             "heading": "SITEMAP",
             "menu": "sitemap"
           }
+        },
+        "link_list_yXW64b": {
+          "type": "link_list",
+          "settings": {
+            "heading": "COMPANY",
+            "menu": "company"
+          }
         }
       },
       "block_order": [
-        "link_list_6NFc8j"
+        "link_list_6NFc8j",
+        "link_list_yXW64b"
       ],
       "settings": {
         "color_scheme": "scheme-1",
