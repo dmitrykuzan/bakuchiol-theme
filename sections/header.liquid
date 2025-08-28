@@ -60,7 +60,7 @@
     display: flex;
     font-size: 1.6rem;
     align-items: center;
-    color: #000;
+    color: #fff;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
   }
 
@@ -312,7 +312,7 @@
     {% comment %} print link product {% endcomment %}
     {% assign product = all_products.volufiline-100 %}
     {% if product %}
-      <a class="header__link-cta" href="{{ product.url }}">Buy Now</a>
+      <a class="header__link-cta" href="{{ product.url }}">Try Now</a>
     {% else %}
       <p>Product not found</p>
     {% endif %}

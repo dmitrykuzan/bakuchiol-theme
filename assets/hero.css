@@ -1,9 +1,10 @@
 .hero {
   margin-top: -8.5rem;
+  position: relative;
 }
 
 .hero__wrapper {
- position: relative;
+
  display: flex;
  flex-direction: column-reverse;
  justify-content: flex-end;
@@ -41,13 +42,14 @@
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 5rem;
   margin-top: 10rem;
 }
 
 .hero__title {
   font-size: 3.2rem;
-  line-height: 100%;
+  max-width: 25rem;
+  line-height: 108%;
   font-weight: 700;
   color: #fff;
   margin: initial;
@@ -64,6 +66,7 @@
   font-size: 1.6rem;
   line-height: 133%;
   font-weight: 500;
+  max-width: 24rem;
   color: #fff;
   margin: initial;
 }
@@ -78,7 +81,7 @@
   text-decoration: none;
   min-height: 4rem;
   width: 100%;
-  max-width: 21rem;
+  max-width: 30rem;
   text-transform: uppercase;
   font-size: 1.4rem;
   line-height: 100%;
@@ -129,12 +132,13 @@
   }
 
   .hero__info {
-    max-width: 33rem;
+    max-width: 48rem;
   }
 
   .hero__subtitle {
     font-size: 2.4rem;
     margin-top: auto;
+    max-width: 37rem;
   }
 
   .hero__product-link {
@@ -156,7 +160,7 @@
 @media screen and (min-width: 1280px) {
   .hero__title {
     font-size: 8rem;
-    max-width: 40rem;
+    max-width: 48rem;
   }
 }
 
@@ -170,7 +174,7 @@
 
   .hero__title {
     font-size: 10rem;
-    max-width: 49rem;
+    max-width: 57rem;
   }
 
   .hero__subtitle {
