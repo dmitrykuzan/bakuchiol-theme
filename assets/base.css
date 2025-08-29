@@ -152,35 +152,37 @@ html {
 
 /* ui */
 
-.button-dark {
+.button-custom {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 145%;
-  color: #404040;
-  border: 0.2rem solid #404040;
-  border-radius: 10rem;
+  line-height: 133%;
   text-decoration: none;
-  min-height: 4rem;
   width: 100%;
+  font-weight: 500;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-height: 4rem;
   max-width: 24rem;
   text-transform: uppercase;
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-family: "SF Pro Display";
+  font-size: 1.6rem;
+  font-family: "Inter";
+}
+
+.button-custom__white {
+  color: #000;
+  background-color: #fff;
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
-.button-dark:hover {
+.button-white:hover {
   background-color: #000;
   color: #fff;
 }
 
 @media screen and (min-width: 1023px) {
-  .button-dark {
+  .button-white {
     font-size: 1.8rem;
     min-height: 4.5rem;
   }

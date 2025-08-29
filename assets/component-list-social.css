@@ -1,13 +1,18 @@
 .list-social {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  flex-direction: column;
+  /* justify-content: flex-end; */
 }
 
-@media only screen and (max-width: 749px) {
-  .list-social {
-    justify-content: center;
+@media only screen and (max-width: 1280px) {
+  .list-social__link {
+    font-size: 2rem;
   }
+}
+
+.list-social__item:not(:last-child) {
+  padding-bottom: 1.5rem;
 }
 
 .list-social__item .icon {
@@ -15,11 +20,42 @@
   width: 2.2rem;
 }
 
+.list-social__custom-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 17rem;
+  width: 100%;
+  order: 3;
+
+  h2 {
+    font-weight: 500;
+    margin-top: initial;
+    margin-bottom: 1.5rem;
+    color: #959595;
+    font-size: calc(var(--font-heading-scale) * 2.2rem);
+  }
+}
+
 .list-social__link {
   align-items: center;
   display: flex;
-  padding: 1.1rem;
-  color: rgb(var(--color-foreground));
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 133%;
+  font-weight: 500;
+  /* padding: 1.1rem; */
+  color: #fff;
+}
+
+.list-social__link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1023px) { 
+  .list-social__link {
+    font-size: 1.8rem;
+  }
 }
 
 .utility-bar .list-social__link {
