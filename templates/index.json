@@ -40,10 +40,27 @@
       ],
       "name": "Bakuchiol Price",
       "settings": {}
+    },
+    "before_after_slider_kTqFFT": {
+      "type": "before-after-slider",
+      "blocks": {
+        "product_ynWwCR": {
+          "type": "product",
+          "settings": {
+            "product": "bakuchiol-age-delay-serum"
+          }
+        }
+      },
+      "block_order": [
+        "product_ynWwCR"
+      ],
+      "name": "Before After Slider",
+      "settings": {}
     }
   },
   "order": [
     "hero_PkEHtA",
-    "bakuchiol_price_QR3p7A"
+    "bakuchiol_price_QR3p7A",
+    "before_after_slider_kTqFFT"
   ]
 }
