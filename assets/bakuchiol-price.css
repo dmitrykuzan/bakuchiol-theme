@@ -1,17 +1,15 @@
-.bakuchiol-price {
-  margin-top: 5rem;
-}
-
 .bakuchiol-price__wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 3rem;
 }
 
 .bakuchiol-price__image {
   display: flex;
-  max-width: 40rem;
-  margin-left: auto;
+  flex-shrink: 0;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  
   margin-right: auto;
 
   img {
@@ -45,7 +43,6 @@
 .bakuchiol-price__content-titles {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 
   h2, h3 {
     margin: initial;
@@ -53,14 +50,14 @@
 
   h2 {
     text-transform: uppercase;
-    font-size: 3.4rem;
-    line-height: 133%;
+    font-size: 4.4rem;
+    line-height: 100%;
     font-weight: 600;
   }
 
   h3 {
     text-transform: uppercase;
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     line-height: 133%;
     font-weight: 600;
   }
@@ -84,8 +81,9 @@
 
 .bakuchiol-price__section-lable {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 5rem;
   gap: 2rem;
+  max-width: 28rem;
 
   span {
     margin-top: 0.4rem;
@@ -100,5 +98,111 @@
     margin: initial;
     text-transform: uppercase;
     line-height: 133%;
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .bakuchiol-price__image {
+    max-width: 40rem;
+    width: initial;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media screen and (min-width: 1023px) {
+  .bakuchiol-price__wrapper {
+    flex-direction: row;
+  }
+
+  .bakuchiol-price__content {
+    justify-content: space-between;
+  }
+
+  .bakuchiol-price__content-title {
+    font-size: 1.8rem;
+    line-height: 122%;
+  }
+
+  .bakuchiol-price__image {
+    max-width: 50rem;
+  }
+
+  .bakuchiol-price-link {
+    max-width: 41rem;
+  }
+
+  .bakuchiol-price__content-titles {
+    h2 {
+      font-size: 6.4rem;
+    }
+    h3 {
+      font-size: 3.8rem;
+    }
+  }
+
+  .bakuchiol-price__section-lable  {
+    max-width: 32rem;
+
+    p {
+       font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px)  {
+  .bakuchiol-price__image {
+    max-width: 60rem;
+  }
+
+  .bakuchiol-price__wrapper {
+    gap: 5rem;
+  }
+
+  .bakuchiol-price__content-title {
+    font-size: 2rem;
+  }
+
+  .bakuchiol-price__content-description {
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  .bakuchiol-price__content-titles {
+    h2 {
+      font-size: 8rem;
+    }
+    h3 {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px)  {
+  .bakuchiol-price__image {
+    max-width: 70rem;
+  }
+
+  .bakuchiol-price__content-description {
+    p {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1680px)  {
+  .bakuchiol-price__image {
+    max-width: 90rem;
+  }
+
+  .bakuchiol-price__content-titles {
+    h2 {
+      font-size: 10rem;
+    }
+    h3 {
+      font-size: 6rem;
+    }
   }
 }

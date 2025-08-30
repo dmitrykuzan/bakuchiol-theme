@@ -1,7 +1,7 @@
  {{ 'bakuchiol-price.css' | asset_url | stylesheet_tag }}
 
 <section class="bakuchiol-price page-width">
-  <div class="bakuchiol-price__wrapper">
+  <div class="bakuchiol-price__wrapper section-top">
     <div class="bakuchiol-price__image">
       <img src="{{ 'bakuchiol-price.jpg' | asset_url }}" width="925" height="925" loading="lazy"> 
     </div>
@@ -14,8 +14,27 @@
           <h3>Age delay serum</h3>
         </div>
 
-        <div class="bakuchiol-price__content-price">price here</div>
+      <div class="bakuchiol-price__content-price">
+        {% for block in section.blocks %}
+          {% if block.settings.product != blank %}
+            {% assign product = all_products[block.settings.product] %}
+
+            <div class="product-prices" {{ block.shopify_attributes }}>
+              <span class="product-price">
+                {{ product.price | money }}
+              </span>
+
+              {% if product.compare_at_price_max > product.price %}
+                <span class="product-compare-price">
+                  {{ product.compare_at_price_max | money }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
+
+    </div>
 
       <div class="bakuchiol-price__content-bottom">
         <div class="bakuchiol-price__content-description">
@@ -29,9 +48,6 @@
           {% endif %}
         {% endfor %}
       </div>
-     
-
-
     </div>
   </div>
   
@@ -44,6 +60,7 @@
 {% schema %}
 {
   "name": "Bakuchiol Price",
+  "max_blocks": 4,
   "blocks": [
     {
       "type": "product",
@@ -52,7 +69,8 @@
         {
           "type": "product",
           "id": "product",
-          "label": "Select a product"
+          "label": "Select a product",
+          "info": "Choose a product to display its price and compare-at price"
         }
       ]
     }
@@ -60,6 +78,7 @@
   "presets": [
     {
       "name": "Bakuchiol Price",
+      "category": "Product",
       "blocks": [
         {
           "type": "product"
@@ -69,4 +88,6 @@
   ]
 }
 {% endschema %}
+
+
 
