@@ -44,7 +44,7 @@
         {% for block in section.blocks %}
           {% if block.type == 'product' and block.settings.product %}
             {% assign product = block.settings.product %}
-            <a class="bakuchiol-price-link button" href="{{ product.url }}">buy now</a>
+            <a class="bakuchiol-price-link button-custom button-custom__black" href="{{ product.url }}">buy now</a>
           {% endif %}
         {% endfor %}
       </div>

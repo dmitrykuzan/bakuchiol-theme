@@ -112,12 +112,24 @@
   max-width: 28rem;
 
   span {
+    position: relative;
     margin-top: 0.4rem;
     display: flex;
     flex-shrink: 0;
     width: 1.5rem;
     height: 1.5rem;
     background-color: #000;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -0.5rem;
+      z-index: -1;
+      left: -0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fff;
+    }
   }
 
   p {
