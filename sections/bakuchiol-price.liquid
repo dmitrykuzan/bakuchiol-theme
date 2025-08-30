@@ -19,17 +19,17 @@
           {% if block.settings.product != blank %}
             {% assign product = all_products[block.settings.product] %}
 
-            <div class="product-prices" {{ block.shopify_attributes }}>
-              <span class="product-price">
-                {{ product.price | money }}
-              </span>
+            <span class="product-price">
+              {{ product.price | money }}
+            </span>
 
-              {% if product.compare_at_price_max > product.price %}
-                <span class="product-compare-price">
-                  {{ product.compare_at_price_max | money }}
-                </span>
-              {% endif %}
-            </div>
+            {% if product.compare_at_price_max > product.price %}
+              <span class="product-compare-price">
+                {{ product.compare_at_price_max | money }}
+              </span>
+            {% endif %}
+
+            <span class="bakuchiol-price__label">25% OFF</span>
           {% endif %}
         {% endfor %}
       </div>

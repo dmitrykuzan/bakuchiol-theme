@@ -8,7 +8,38 @@
   "market": [],
   "order": [],
   "page": [],
-  "product": [],
+  "product": [
+    {
+      "key": "product-form",
+      "namespace": "shopify",
+      "name": "Product form",
+      "description": "Defines the format or presentation of a product, typically for health and beauty; e.g. lotion, serum",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "suitable-for-skin-type",
+      "namespace": "shopify",
+      "name": "Suitable for skin type",
+      "description": "Specifies products for specific skin conditions, such as dry, aging, or sensitive",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "skin-care-effect",
+      "namespace": "shopify",
+      "name": "Skin care effect",
+      "description": "Defines the intended benefits of skin care products, e.g. anti-aging, plumping",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "variant": [],
   "shop": []
 }

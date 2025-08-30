@@ -63,6 +63,32 @@
   }
 }
 
+.bakuchiol-price__content-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .product-price {
+    color: #000;
+  }
+
+  .product-compare-price {
+    color: #858585;
+    text-decoration: line-through;
+  }
+
+  .bakuchiol-price__label {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+  }
+
+  .product-price, .product-compare-price {
+    font-size: 2rem; 
+  }
+}
+
 .bakuchiol-price__content-bottom {
   display: flex;
   flex-direction: column;
@@ -139,6 +165,13 @@
     }
     h3 {
       font-size: 3.8rem;
+    }
+  }
+
+  .bakuchiol-price__content-price {
+    gap: 2rem;
+    .product-price, .product-compare-price {
+      font-size: 3.2rem; 
     }
   }
 
