@@ -220,7 +220,7 @@ html {
 
 .button-custom__border {
   color: #000;
-  background-color: #fff;
+  background-color: transparent;
   border: 0.2rem solid #000;
   transition: background-color 0.3s linear, color 0.3s linear, border 0.3s linear;
 }
@@ -249,24 +249,49 @@ html {
   }
 }
 
-.section-title-volufiline {
-   font-weight: 700;
-   line-height: 120%;
-   font-size: 2.2rem;
+.bakuchiol__section-lable {
+  display: flex;
+  margin-top: 5rem;
+  gap: 2rem;
+  max-width: 28rem;
+
+  span {
+    position: relative;
+    margin-top: 0.4rem;
+    display: flex;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #000;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -0.5rem;
+      z-index: -1;
+      left: -0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fff;
+    }
+  }
+
+  p {
+    margin: initial;
+    text-transform: uppercase;
+    line-height: 133%;
+  }
 }
 
 @media screen and (min-width: 1023px) {
-  .section-title-volufiline {
-   font-size: 3.4rem;
+  .bakuchiol__section-lable  {
+    max-width: 32rem;
+
+    p {
+       font-size: 2rem;
+    }
   }
 }
-
-@media screen and (min-width: 1440px) {
-  .section-title-volufiline {
-   font-size: 5.4rem;
-  }
-}
-
 /* marquee */
 
 .marquee {

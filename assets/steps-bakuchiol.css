@@ -1,0 +1,135 @@
+
+.steps-bakuchiol-image {
+    position: relative;
+}
+
+.steps-bakuchiol-image__image {
+  display: none; 
+}
+
+.steps-bakuchiol-image__wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.steps-bakuchiol-image__image, .steps-bakuchiol-image__image--mobile {
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.steps-bakuchiol-image__image--mobile {
+  display: flex;
+  height: 100%;
+}
+
+.steps-bakuchiol__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    gap: 15rem;
+    height: 100%;
+}
+
+.steps-bakuchiol__title {
+  color: #fff;
+  margin: initial;
+  font-size: 4.2rem;
+  max-width: 40rem;
+}
+
+.steps-bakuchiol__steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 60rem;
+}
+
+.steps-bakuchiol__steps-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid #fff;
+
+    .number__step {
+        color: #fff;
+        font-size: 2.6rem;
+        line-height: 100%;
+    }
+
+    .number__text {
+        color: #fff;
+        font-size: 1.8rem;
+        line-height: 144%;
+    }
+}
+
+.steps-bakuchiol__steps-item:first-child {
+  border-top: 0.1rem solid #fff;
+}
+.steps-bakuchiol__steps-item:last-child {
+    border-bottom: initial;
+}
+
+@media screen and (min-width: 575px) {
+  .steps-bakuchiol-image__image--mobile {
+    display: none;
+  }
+
+  .steps-bakuchiol-image__image {
+    display: flex; 
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .steps-bakuchiol__title {
+    font-size: 6.2rem;
+    max-width: 45rem;
+  }
+
+  .steps-bakuchiol__body {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 20rem;
+  }
+
+  .steps-bakuchiol__steps-item {
+    gap: 7rem;
+
+    .number__text {
+        font-size: 2rem;
+    }
+
+    .number__step {
+        font-size: 3.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px)  {
+  .steps-bakuchiol__body {
+    gap: 25rem;
+  }
+}
+
+@media screen and (min-width: 1480px)  {
+  .steps-bakuchiol__body {
+    gap: 30rem;
+  }
+
+  .steps-bakuchiol__title {
+    font-size: 9rem;
+    max-width: 65rem;
+  }
+}

@@ -1,0 +1,59 @@
+{{ 'steps-bakuchiol.css' | asset_url | stylesheet_tag }}
+
+<section class="steps-bakuchiol-image section-top">
+  <div class="steps-bakuchiol-image__wrapper">
+    <div class="steps-bakuchiol-image__image">
+      <img
+        src="{{ 'bakuchiol-hero.jpg' | asset_url }}"
+        width="1820"
+        height="998" 
+        alt="Bakuchiol banner"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="steps-bakuchiol-image__image--mobile">
+      <img
+        src="{{ 'bakuchiol-hero-mobile.jpg' | asset_url }}"
+        width="828" 
+        height="1132"
+        alt="Bakuchiol banner"
+        loading="lazy"
+      >
+    </div>
+  </div>
+
+  <div class="steps-bakuchiol__body page-width">
+    <h2 class="steps-bakuchiol__title section-title-bakuchiol">How to use bakuchiol</h2>
+    <div class="steps-bakuchiol__steps">
+        <ul class="steps-bakuchiol__steps-list">
+          <li class="steps-bakuchiol__steps-item">
+            <span class="number__step">01</span>
+            <span class="number__text">Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </span>
+          </li>
+          <li class="steps-bakuchiol__steps-item">
+            <span class="number__step">02</span>
+            <span class="number__text">Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </span>
+          </li>
+          <li class="steps-bakuchiol__steps-item">
+            <span class="number__step">03</span>
+            <span class="number__text">Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </span>
+          </li>
+        </ul>
+    </div>
+  </div>
+
+</section>
+
+
+{% schema %}
+{
+  "name": "Steps Bakuchiol",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Steps Bakuchiol"
+    }
+  ]
+}
+{% endschema %}

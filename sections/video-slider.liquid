@@ -1,0 +1,205 @@
+{{ 'video-slider.css' | asset_url | stylesheet_tag }}
+
+<section class="video-slider page-width section-melatonin" id="VideoSlider{{ section.id }}">
+  <div class="video-slider__content-wrapper">
+    <div class="video-slider__titles">
+      <h2 class="video-slider__title section-title-bakuchiol">Unveil your glow with BAKUCHIOL FACE SERUM</h2>
+
+        <div class="video-slider__actions">
+          <div class="video-slider__section-lable bakuchiol__section-lable">
+            <span></span>
+            <p>We’ve helped 50,000+ customers achieve their skin goals.</p>
+        </div>
+        <div class="video-slider__btn-place">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="video-slider__wrapper">
+      <div class="swiper before-after-slider__wrapper video-slider__swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'video_slide' %}
+            <div class="swiper-slide">
+                <div class="video-slider__slide">
+                <video
+                    class="video-slider__video"
+                    playsinline
+                    preload="auto"
+                    poster="{{ block.settings.poster_url }}"
+                >
+                    <source src="{{ block.settings.video_url  }}" type="video/mp4">
+                </video>
+                <button class="video-slider__slide-button" aria-label="Play video">
+                    <img src="{{ 'play-button.png' | asset_url }}" width="80" height="80" alt="Play Button">
+                </button>
+                </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="before-after-slider__navigation video-slider__navigation">
+          <div class="before-after-slider__pagination video-slider__pagination"></div>
+
+          <div class="before-after-slider__btns">
+            <button class="before-after-slider__btn video-slider__btn--prev">
+              <svg
+                width="30px"
+                height="30px"
+                viewBox="-19.04 0 75.804 75.804"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#000000"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#525252"></path> </g> </g>
+              </svg>
+            </button>
+            <button class="before-after-slider__btn video-slider__btn--next">
+              <svg
+                width="30px"
+                height="30px"
+                viewBox="-19.04 0 75.804 75.804"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#000000"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#525252"></path> </g> </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="video-slider__btn-wrapper" data-da="video-slider__btn-place,last,1023">
+        {% for block in section.blocks %}
+            {% if block.type == 'product' and block.settings.product %}
+            <a class="before-after-slider__link button-custom button-custom__border" href="{{ block.settings.product.url }}">
+                buy now
+            </a>
+            {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const videoSlider = new Swiper('.video-slider__swiper', {
+      spaceBetween: 15,
+      slidesPerView: 1,
+      speed: 800,
+
+      pagination: {
+        el: '.video-slider__pagination',
+        clickable: true,
+        type: 'progressbar',
+      },
+
+      navigation: {
+        nextEl: '.video-slider__btn--next',
+        prevEl: '.video-slider__btn--prev',
+      },
+
+      breakpoints: {
+        767: {
+          spaceBetween: 15,
+          slidesPerView: 2,
+        },
+
+        1023: {
+          slidesPerView: 3,
+        },
+
+        1140: {
+          spaceBetween: 15,
+          slidesPerView: 3,
+        },
+
+        1480: {
+          spaceBetween: 20,
+          slidesPerView: 4,
+        },
+      },
+    });
+
+   const wrappers = document.querySelectorAll('.video-slider__slide');
+    wrappers.forEach(function (wrapper) {
+      const video = wrapper.querySelector('video');
+      const button = wrapper.querySelector('.video-slider__slide-button');
+
+      button.addEventListener('click', function () {
+        if (video.paused || video.ended) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+
+      video.addEventListener('play', () => {
+        button.classList.add('playing');
+        wrapper.classList.add('blur-remove');
+      });
+
+      video.addEventListener('pause', () => {
+        button.classList.remove('playing');
+        wrapper.classList.remove('blur-remove');
+      });
+
+      video.addEventListener('ended', () => {
+        button.classList.remove('playing');
+        wrapper.classList.remove('blur-remove');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Video Review Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "video_slide",
+      "name": "Video Slide",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "url",
+          "id": "poster_url",
+          "label": "Poster Image URL"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "CTA Product Link",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select a product for CTA"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Review Slider",
+      "blocks": [
+        {
+          "type": "video_slide"
+        },
+        {
+          "type": "video_slide"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
