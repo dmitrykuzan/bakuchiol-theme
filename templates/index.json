@@ -57,6 +57,11 @@
       "name": "Before After Slider",
       "settings": {}
     },
+    "steps_bakuchiol_inyTdA": {
+      "type": "steps-bakuchiol",
+      "name": "Steps Bakuchiol",
+      "settings": {}
+    },
     "video_slider_b7q44F": {
       "type": "video-slider",
       "blocks": {
@@ -110,6 +115,7 @@
     "hero_PkEHtA",
     "bakuchiol_price_QR3p7A",
     "before_after_slider_kTqFFT",
+    "steps_bakuchiol_inyTdA",
     "video_slider_b7q44F"
   ]
 }
