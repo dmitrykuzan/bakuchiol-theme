@@ -56,11 +56,44 @@
       ],
       "name": "Before After Slider",
       "settings": {}
+    },
+    "video_slider_b7q44F": {
+      "type": "video-slider",
+      "blocks": {
+        "video_slide_wHG8qT": {
+          "type": "video_slide",
+          "settings": {
+            "video_url": "",
+            "poster_url": ""
+          }
+        },
+        "video_slide_TfE3fh": {
+          "type": "video_slide",
+          "settings": {
+            "video_url": "",
+            "poster_url": ""
+          }
+        },
+        "product_kTkk8f": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_slide_wHG8qT",
+        "video_slide_TfE3fh",
+        "product_kTkk8f"
+      ],
+      "name": "Video Review Slider",
+      "settings": {}
     }
   },
   "order": [
     "hero_PkEHtA",
     "bakuchiol_price_QR3p7A",
-    "before_after_slider_kTqFFT"
+    "before_after_slider_kTqFFT",
+    "video_slider_b7q44F"
   ]
 }
