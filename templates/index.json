@@ -81,10 +81,17 @@
             "poster_url": ""
           }
         },
+        "video_slide_hdUHBc": {
+          "type": "video_slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/281c85fb662545f2a03b801f3cb53abf.mp4",
+            "poster_url": ""
+          }
+        },
         "product_kTkk8f": {
           "type": "product",
           "settings": {
-            "product": ""
+            "product": "bakuchiol-age-delay-serum"
           }
         }
       },
@@ -92,6 +99,7 @@
         "video_slide_wHG8qT",
         "video_slide_TfE3fh",
         "video_slide_pNEzDA",
+        "video_slide_hdUHBc",
         "product_kTkk8f"
       ],
       "name": "Video Review Slider",
