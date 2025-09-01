@@ -109,6 +109,22 @@
       ],
       "name": "Video Review Slider",
       "settings": {}
+    },
+    "bakuchiol_footer_gnWLCR": {
+      "type": "bakuchiol-footer",
+      "blocks": {
+        "product_UXpKmQ": {
+          "type": "product",
+          "settings": {
+            "product": "bakuchiol-age-delay-serum"
+          }
+        }
+      },
+      "block_order": [
+        "product_UXpKmQ"
+      ],
+      "name": "Bakuchiol Footer",
+      "settings": {}
     }
   },
   "order": [
@@ -116,6 +132,7 @@
     "bakuchiol_price_QR3p7A",
     "before_after_slider_kTqFFT",
     "steps_bakuchiol_inyTdA",
-    "video_slider_b7q44F"
+    "video_slider_b7q44F",
+    "bakuchiol_footer_gnWLCR"
   ]
 }
