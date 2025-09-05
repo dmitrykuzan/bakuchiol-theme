@@ -125,6 +125,11 @@
       ],
       "name": "Bakuchiol Footer",
       "settings": {}
+    },
+    "review_slider_kpJKHq": {
+      "type": "review-slider",
+      "name": "Review Slider",
+      "settings": {}
     }
   },
   "order": [
@@ -133,6 +138,7 @@
     "before_after_slider_kTqFFT",
     "steps_bakuchiol_inyTdA",
     "video_slider_b7q44F",
+    "review_slider_kpJKHq",
     "bakuchiol_footer_gnWLCR"
   ]
 }
