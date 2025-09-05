@@ -293,6 +293,41 @@ html {
     }
   }
 }
+
+.bakuchiol-slider__btn {
+  width: 5rem;
+  height: 5rem;
+  background-color: #000;
+  border: initial;
+  cursor: pointer;
+  transition: background-color 0.3s linear, border 0.3s linear;
+
+  svg {
+    max-width: 2rem;
+  }
+}
+
+.bakuchiol-slider__btn.swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.bakuchiol-slider__btn.prev {
+  svg {
+    transform: rotate(180deg);
+    transition: path 0.3s linear;
+  }
+}
+
+.bakuchiol-slider__btn:hover {
+  background-color: #fff;
+  border: 0.1rem solid #000;
+
+  svg path {
+    fill: #000;
+  }
+}
+
 /* marquee */
 
 .marquee {

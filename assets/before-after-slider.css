@@ -239,7 +239,7 @@
   }
 
   .before-after-slider__btns {
-    gap: 2rem;
+    gap: 1rem;
 
     .before-after-slider__btn {
       width: 4.5rem;
