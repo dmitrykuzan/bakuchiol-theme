@@ -29,6 +29,7 @@
 
 	.review-slider__slide-image {
 		display: flex;
+		max-width: 13rem;
 
 		img {
 			width: 100%;
@@ -39,7 +40,7 @@
 
 	.review-slider__slide-top {
 		display: flex;
-		flex-direction: column-reverse;
+		flex-direction: row;
 		gap: 2rem;
 	}
 
@@ -143,6 +144,10 @@
 		.review-slider__slide-top {
 			flex-direction: row;
 			justify-content: space-between;
+		}
+
+		.review-slider__slide-image {
+			max-width: 30rem;
 		}
 
 		.review-slider__slide-name {
