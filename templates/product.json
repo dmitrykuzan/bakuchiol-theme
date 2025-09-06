@@ -115,11 +115,17 @@
       ],
       "name": "Bakuchiol Footer",
       "settings": {}
+    },
+    "steps_bakuchiol_NVne7U": {
+      "type": "steps-bakuchiol",
+      "name": "Steps Bakuchiol",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "related-products",
-    "bakuchiol_footer_UCc3h8"
+    "bakuchiol_footer_UCc3h8",
+    "steps_bakuchiol_NVne7U"
   ]
 }
