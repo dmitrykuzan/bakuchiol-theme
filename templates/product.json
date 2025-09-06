@@ -87,41 +87,6 @@
       "name": "Steps Bakuchiol",
       "settings": {}
     },
-    "bakuchiol_footer_UCc3h8": {
-      "type": "bakuchiol-footer",
-      "blocks": {
-        "product_8EEkWK": {
-          "type": "product",
-          "settings": {
-            "product": "bakuchiol-age-delay-serum"
-          }
-        }
-      },
-      "block_order": [
-        "product_8EEkWK"
-      ],
-      "name": "Bakuchiol Footer",
-      "settings": {}
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    },
     "video_slider_TTdVVL": {
       "type": "video-slider",
       "blocks": {
@@ -169,13 +134,48 @@
       ],
       "name": "Video Review Slider",
       "settings": {}
+    },
+    "bakuchiol_footer_UCc3h8": {
+      "type": "bakuchiol-footer",
+      "blocks": {
+        "product_8EEkWK": {
+          "type": "product",
+          "settings": {
+            "product": "bakuchiol-age-delay-serum"
+          }
+        }
+      },
+      "block_order": [
+        "product_8EEkWK"
+      ],
+      "name": "Bakuchiol Footer",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
     }
   },
   "order": [
     "main",
     "steps_bakuchiol_NVne7U",
+    "video_slider_TTdVVL",
     "bakuchiol_footer_UCc3h8",
-    "related-products",
-    "video_slider_TTdVVL"
+    "related-products"
   ]
 }
