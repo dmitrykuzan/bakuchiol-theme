@@ -146,6 +146,13 @@
             "poster_url": ""
           }
         },
+        "video_slide_PFJ79V": {
+          "type": "video_slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/281c85fb662545f2a03b801f3cb53abf.mp4",
+            "poster_url": ""
+          }
+        },
         "product_hgYzUi": {
           "type": "product",
           "settings": {
@@ -157,6 +164,7 @@
         "video_slide_CGaLEt",
         "video_slide_gkBwJP",
         "video_slide_TQgRpY",
+        "video_slide_PFJ79V",
         "product_hgYzUi"
       ],
       "name": "Video Review Slider",
