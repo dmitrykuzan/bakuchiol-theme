@@ -400,6 +400,11 @@ product-info {
 .button--primary-bakuchiol {
   max-width: initial;
   width: 100%;
+
+  .product-price-compare {
+    text-decoration: line-through;
+    color: #808080;
+  }
 }
 
 .bakuchiol__product__subtitle-content {
