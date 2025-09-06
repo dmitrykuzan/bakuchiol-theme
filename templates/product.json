@@ -82,23 +82,10 @@
         "padding_bottom": 12
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
+    "steps_bakuchiol_NVne7U": {
+      "type": "steps-bakuchiol",
+      "name": "Steps Bakuchiol",
+      "settings": {}
     },
     "bakuchiol_footer_UCc3h8": {
       "type": "bakuchiol-footer",
@@ -116,16 +103,63 @@
       "name": "Bakuchiol Footer",
       "settings": {}
     },
-    "steps_bakuchiol_NVne7U": {
-      "type": "steps-bakuchiol",
-      "name": "Steps Bakuchiol",
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "video_slider_TTdVVL": {
+      "type": "video-slider",
+      "blocks": {
+        "video_slide_CGaLEt": {
+          "type": "video_slide",
+          "settings": {
+            "video_url": "",
+            "poster_url": ""
+          }
+        },
+        "video_slide_gkBwJP": {
+          "type": "video_slide",
+          "settings": {
+            "video_url": "",
+            "poster_url": ""
+          }
+        },
+        "product_hgYzUi": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_slide_CGaLEt",
+        "video_slide_gkBwJP",
+        "product_hgYzUi"
+      ],
+      "name": "Video Review Slider",
       "settings": {}
     }
   },
   "order": [
     "main",
-    "related-products",
+    "steps_bakuchiol_NVne7U",
     "bakuchiol_footer_UCc3h8",
-    "steps_bakuchiol_NVne7U"
+    "related-products",
+    "video_slider_TTdVVL"
   ]
 }
