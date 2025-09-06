@@ -51,6 +51,15 @@
             "content": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. It’s the perfect blend of nature and science for glowing, youthful-looking skin.</p>",
             "page": ""
           }
+        },
+        "collapsible_tab_rwFgRq": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "KEY INGREDIENTS",
+            "icon": "none",
+            "content": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. It’s the perfect blend of nature and science for glowing, youthful-looking skin.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -59,7 +68,8 @@
         "buy_buttons",
         "description",
         "collapsible_tab_Un7wmp",
-        "collapsible_tab_3JRY8X"
+        "collapsible_tab_3JRY8X",
+        "collapsible_tab_rwFgRq"
       ],
       "settings": {
         "enable_sticky_info": true,
