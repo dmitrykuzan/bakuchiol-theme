@@ -145,6 +145,28 @@
       "name": "Video Review Slider",
       "settings": {}
     },
+    "faq_with_text_EmnjBk": {
+      "type": "faq-with-text",
+      "blocks": {
+        "faq_item_G6CQMc": {
+          "type": "faq_item",
+          "settings": {
+            "title": "WHAT IS BAKUCHIOL?",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_G6CQMc"
+      ],
+      "name": "FAQ Section (with text)",
+      "settings": {}
+    },
+    "custom_review_LGr7nf": {
+      "type": "custom-review",
+      "name": "Custom Review List",
+      "settings": {}
+    },
     "bakuchiol_footer_UCc3h8": {
       "type": "bakuchiol-footer",
       "blocks": {
@@ -180,9 +202,9 @@
         "padding_bottom": 28
       }
     },
-    "custom_review_LGr7nf": {
-      "type": "custom-review",
-      "name": "Custom Review List",
+    "what_inside_BqJnn3": {
+      "type": "what-inside",
+      "name": "What Inside ?",
       "settings": {}
     }
   },
@@ -191,8 +213,10 @@
     "result_slider_NP3wa6",
     "steps_bakuchiol_NVne7U",
     "video_slider_TTdVVL",
+    "what_inside_BqJnn3",
+    "faq_with_text_EmnjBk",
+    "custom_review_LGr7nf",
     "bakuchiol_footer_UCc3h8",
-    "related-products",
-    "custom_review_LGr7nf"
+    "related-products"
   ]
 }
