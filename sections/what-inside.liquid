@@ -1,0 +1,49 @@
+{{ 'what-inside.css' | asset_url | stylesheet_tag }}
+
+<section class="what-inside page-width">
+  <div class="what-inside__wrapper section-top">
+			<div class="what-inside__image">
+				<img
+					src="{{ 'what-inside.jpg' | asset_url }}"
+					width="900"
+					height="830" 
+					alt="Bakuchiol banner"
+					loading="lazy"
+      	>
+			</div>
+
+			<div class="what-inside__content">
+				<h2 class="what-inside__title section-title-bakuchiol">WHAT INSIDE</h2>
+
+				<ul class="what-inside__list">
+					<li class="what-inside__item">
+						<h3>BAKUCHIOL</h3>
+						<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>
+					</li>
+
+					<li class="what-inside__item">
+						<h3>BAKUCHIOL</h3>
+						<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>
+					</li>
+
+					<li class="what-inside__item">
+						<h3>BAKUCHIOL</h3>
+						<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>
+					</li>
+				</ul>
+			</div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "What Inside ?",
+  "settings": [],
+  "presets": [
+    {
+      "name": "What Inside ?"
+    }
+  ]
+}
+{% endschema %}

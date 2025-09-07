@@ -1,0 +1,130 @@
+.faq-with-image__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media screen and (min-width: 1023px) {
+  .faq-with-image__wrapper {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+
+/* faq with text */
+.faq-with-image__text >* {
+  margin: initial;
+}
+
+.faq-with-image__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.faq-with-image__subtitle {
+  color: #808080;
+  line-height: 166%;
+}
+
+
+@media screen and (min-width: 1023px) {
+  .faq-with-image__text {
+    max-width: 50rem;
+    width: 100%;
+    gap: 2rem;
+  }
+
+
+  .faq-with-image__subtitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1580px) {
+  .faq-with-image__wrapper {
+    gap: 10rem;
+  }
+}
+
+/* faq */
+.faq {
+  list-style: none;
+  padding: initial;
+  margin: initial;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.1rem solid #000;
+}
+
+
+.faq__item-title {
+  position: relative;
+  margin: initial;
+  font-size: 1.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.faq__item-title::before, .faq__item-title::after {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: #000;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s linear;
+}
+
+.faq__item-title::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.faq__item-text-wrapper {
+  padding-top: 0rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.faq__item-text-wrapper >* {
+  margin: initial;
+}
+
+.faq__item-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq__item.active {
+  .faq__item-text {
+    transition: max-height 1s ease-in-out;
+    max-height: 300rem;
+  }
+
+  .faq__item-title::before {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@media screen and (min-width: 1580px) {
+  .faq__item-title {
+    font-size: 2.2rem;
+  }
+}

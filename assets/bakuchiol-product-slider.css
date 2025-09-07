@@ -52,6 +52,7 @@
 .bakuchiol-product-slider-bullets {
     color: #fff;
     transition: color 0.3s linear;
+    cursor: pointer;
 }
 
 .bakuchiol-product-slider__btns {
