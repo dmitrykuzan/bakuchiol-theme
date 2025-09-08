@@ -145,6 +145,11 @@
       "name": "Video Review Slider",
       "settings": {}
     },
+    "what_inside_BqJnn3": {
+      "type": "what-inside",
+      "name": "What Inside ?",
+      "settings": {}
+    },
     "faq_with_text_EmnjBk": {
       "type": "faq-with-text",
       "blocks": {
@@ -202,9 +207,9 @@
         "padding_bottom": 28
       }
     },
-    "what_inside_BqJnn3": {
-      "type": "what-inside",
-      "name": "What Inside ?",
+    "quantity_section_G437gg": {
+      "type": "quantity-section",
+      "name": "Quantity Section",
       "settings": {}
     }
   },
@@ -217,6 +222,7 @@
     "faq_with_text_EmnjBk",
     "custom_review_LGr7nf",
     "bakuchiol_footer_UCc3h8",
-    "related-products"
+    "related-products",
+    "quantity_section_G437gg"
   ]
 }
