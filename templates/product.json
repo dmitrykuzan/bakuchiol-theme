@@ -97,6 +97,11 @@
       "name": "Steps Bakuchiol",
       "settings": {}
     },
+    "quantity_section_G437gg": {
+      "type": "quantity-section",
+      "name": "Quantity Section",
+      "settings": {}
+    },
     "video_slider_TTdVVL": {
       "type": "video-slider",
       "blocks": {
@@ -206,23 +211,18 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "quantity_section_G437gg": {
-      "type": "quantity-section",
-      "name": "Quantity Section",
-      "settings": {}
     }
   },
   "order": [
     "main",
     "result_slider_NP3wa6",
     "steps_bakuchiol_NVne7U",
+    "quantity_section_G437gg",
     "video_slider_TTdVVL",
     "what_inside_BqJnn3",
     "faq_with_text_EmnjBk",
     "custom_review_LGr7nf",
     "bakuchiol_footer_UCc3h8",
-    "related-products",
-    "quantity_section_G437gg"
+    "related-products"
   ]
 }
