@@ -410,8 +410,52 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   max-width: 100%;
 }
 
+.header {
+   .header__heading-logo-wrapper-dark {
+      max-width: 26rem;
+      display: none;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+}
+
 .header.is-not-main {
-  background: rgba(0, 0, 0, 0.3);
+
+  .header__heading-link {
+    .header__heading-logo-wrapper {
+      display: none;
+    }
+
+    .header__heading-logo-wrapper-dark {
+      display: block;
+    }
+  }
+
+  .header__inline-menu {
+    .list-menu {
+      .header__menu-item {
+        color: #000;
+      }
+    }
+  }
+
+  .header__icon--cart {
+    background-color: #000;
+
+    .svg-wrapper {
+      svg path {
+        fill: #fff !important;
+      }
+    }
+  }
+
+  .header__link-cta {
+    background-color: #000;
+    color: #fff;
+  }
 }
 
 .page-width.drawer-menu {
