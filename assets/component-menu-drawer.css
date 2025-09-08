@@ -86,6 +86,14 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__navigation {
   padding: 3rem 0;
+
+  .menu-drawer__menu {
+    .list-menu__item {
+      color: #000;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+  }
 }
 
 .menu-drawer__inner-submenu {
@@ -171,7 +179,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__utility-links {
   padding: 0;
-  background-color: rgba(var(--color-foreground), 0.03);
+  /* background-color: rgba(var(--color-foreground), 0.03); */
+    background-color: #000;
   position: relative;
 }
 
