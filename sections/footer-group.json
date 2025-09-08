@@ -14,6 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "product_hkejtf": {
+          "type": "product",
+          "settings": {
+            "product": "bakuchiol-age-delay-serum"
+          }
+        },
         "link_list_6NFc8j": {
           "type": "link_list",
           "settings": {
@@ -30,6 +36,7 @@
         }
       },
       "block_order": [
+        "product_hkejtf",
         "link_list_6NFc8j",
         "link_list_yXW64b"
       ],
