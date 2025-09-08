@@ -162,12 +162,36 @@
           "type": "faq_item",
           "settings": {
             "title": "WHAT IS BAKUCHIOL?",
-            "text": ""
+            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
+          }
+        },
+        "faq_item_7MGm9Y": {
+          "type": "faq_item",
+          "settings": {
+            "title": "WHAT IS BAKUCHIOL?",
+            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
+          }
+        },
+        "faq_item_qcaVLT": {
+          "type": "faq_item",
+          "settings": {
+            "title": "WHAT IS BAKUCHIOL?",
+            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
+          }
+        },
+        "faq_item_FAe9Rj": {
+          "type": "faq_item",
+          "settings": {
+            "title": "WHAT IS BAKUCHIOL?",
+            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
           }
         }
       },
       "block_order": [
-        "faq_item_G6CQMc"
+        "faq_item_G6CQMc",
+        "faq_item_7MGm9Y",
+        "faq_item_qcaVLT",
+        "faq_item_FAe9Rj"
       ],
       "name": "FAQ Section (with text)",
       "settings": {}
