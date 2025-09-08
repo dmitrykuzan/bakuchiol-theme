@@ -68,7 +68,14 @@
             </a>
           </div>
 
-          <a href="/" class="footer__content-product-link button-custom  button-custom__white ">Try Now</a>
+          {% for block in section.blocks %}
+            {% if block.type == 'product' and block.settings.product %}
+              {% assign product = block.settings.product %}
+              <a class="footer__content-product-link button-custom  button-custom__white" href="{{ product.url }}">Try Now</a>
+            {% endif %}
+          {% endfor %}
+
+          {% comment %} <a href="/" class="footer__content-product-link button-custom  button-custom__white ">Try Now</a> {% endcomment %}
         </div>
         <div class="footer-custom__wrapper">
           <div class="footer-custom__content">
@@ -291,6 +298,17 @@
     {
       "type": "@app"
     },
+      {
+      "type": "product",
+      "name": "Product link",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select a product"
+        }
+      ]
+    },
     {
       "type": "link_list",
       "name": "t:sections.footer.blocks.link_list.name",
@@ -501,7 +519,10 @@
       },
       {
         "type": "text"
-      }
+      },
+       {
+          "type": "product"
+        }
     ]
   }
 }

@@ -167,8 +167,8 @@
 
 .custom-review__item-info {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  align-items: center;
   width: 100%;
   /* justify-content: space-between; */
 
