@@ -456,6 +456,12 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
     background-color: #000;
     color: #fff;
   }
+
+  .header__link-cta:hover {
+    background-color: #fff;
+    border: 0.1rem solid #000;
+    color: #000;
+  }
 }
 
 .page-width.drawer-menu {
