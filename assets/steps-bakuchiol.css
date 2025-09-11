@@ -21,6 +21,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    object-position: left bottom;
   }
 }
 
@@ -35,7 +36,7 @@
     justify-content: space-between;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    gap: 15rem;
+    gap: 10rem;
     height: 100%;
 }
 
@@ -101,7 +102,6 @@
   .steps-bakuchiol__body {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    gap: 20rem;
   }
 
   .steps-bakuchiol__steps-item {
@@ -119,15 +119,11 @@
 
 @media screen and (min-width: 1280px)  {
   .steps-bakuchiol__body {
-    gap: 25rem;
+    gap: 15rem;
   }
 }
 
 @media screen and (min-width: 1480px)  {
-  .steps-bakuchiol__body {
-    gap: 30rem;
-  }
-
   .steps-bakuchiol__title {
     font-size: 9rem;
     max-width: 65rem;
