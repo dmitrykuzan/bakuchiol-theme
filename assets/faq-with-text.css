@@ -2,14 +2,17 @@
    Compact FAQ Layout
    ========================= */
 
+
 .faq-with-text {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  padding-top: 4rem;   /* ← added 20px of padding on top */
 }
+
 
 .faq-with-text__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;     /* reduced space */
+  gap: 1.5rem;
   padding: 0 !important;
 }
 
