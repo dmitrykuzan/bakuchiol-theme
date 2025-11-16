@@ -47,7 +47,7 @@
           {% if block.type == 'product' and block.settings.product %}
             {% assign product = block.settings.product %}
             <a class="bakuchiol-price-link button-custom button-custom__black desktop-button" href="{{ product.url }}">
-              buy bakuchiol serum now
+              buy bakuchiol serum
             </a>
           {% endif %}
         {% endfor %}
@@ -59,7 +59,7 @@
     Mobile CTA – uses the last assigned `product` from the loop above
   {% endcomment %}
   <a class="bakuchiol-price-link button-custom button-custom__black mobile-button" href="{{ product.url }}">
-    buy bakuchiol serum now
+    buy bakuchiol serum
   </a>
   
   <div class="bakuchiol__section-lable">
