@@ -102,54 +102,54 @@
       "name": "Quantity Section",
       "settings": {}
     },
-    "video_slider_TTdVVL": {
-      "type": "video-slider",
-      "blocks": {
-        "video_slide_CGaLEt": {
-          "type": "video_slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/5ed3502086af42a8b4d5be12333fea43.mov",
-            "poster_url": ""
-          }
-        },
-        "video_slide_gkBwJP": {
-          "type": "video_slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/6035cd5915d04d85a963732c8c67d533.mp4",
-            "poster_url": ""
-          }
-        },
-        "video_slide_TQgRpY": {
-          "type": "video_slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/81905975eff140ae80eadccde63f741e.mp4",
-            "poster_url": ""
-          }
-        },
-        "video_slide_PFJ79V": {
-          "type": "video_slide",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/281c85fb662545f2a03b801f3cb53abf.mp4",
-            "poster_url": ""
-          }
-        },
-        "product_hgYzUi": {
-          "type": "product",
-          "settings": {
-            "product": "bakuchiol-age-delay-serum"
-          }
-        }
-      },
-      "block_order": [
-        "video_slide_CGaLEt",
-        "video_slide_gkBwJP",
-        "video_slide_TQgRpY",
-        "video_slide_PFJ79V",
-        "product_hgYzUi"
-      ],
-      "name": "Video Review Slider",
-      "settings": {}
-    },
+    // "video_slider_TTdVVL": {
+    //   "type": "video-slider",
+    //   "blocks": {
+    //     "video_slide_CGaLEt": {
+    //       "type": "video_slide",
+    //       "settings": {
+    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/5ed3502086af42a8b4d5be12333fea43.mov",
+    //         "poster_url": ""
+    //       }
+    //     },
+    //     "video_slide_gkBwJP": {
+    //       "type": "video_slide",
+    //       "settings": {
+    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/6035cd5915d04d85a963732c8c67d533.mp4",
+    //         "poster_url": ""
+    //       }
+    //     },
+    //     "video_slide_TQgRpY": {
+    //       "type": "video_slide",
+    //       "settings": {
+    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/81905975eff140ae80eadccde63f741e.mp4",
+    //         "poster_url": ""
+    //       }
+    //     },
+    //     "video_slide_PFJ79V": {
+    //       "type": "video_slide",
+    //       "settings": {
+    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/281c85fb662545f2a03b801f3cb53abf.mp4",
+    //         "poster_url": ""
+    //       }
+    //     },
+    //     "product_hgYzUi": {
+    //       "type": "product",
+    //       "settings": {
+    //         "product": "bakuchiol-age-delay-serum"
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "video_slide_CGaLEt",
+    //     "video_slide_gkBwJP",
+    //     "video_slide_TQgRpY",
+    //     "video_slide_PFJ79V",
+    //     "product_hgYzUi"
+    //   ],
+    //   "name": "Video Review Slider",
+    //   "settings": {}
+    // },
     "what_inside_BqJnn3": {
       "type": "what-inside",
       "name": "What Inside ?",
@@ -316,7 +316,7 @@
     "result_slider_NP3wa6",
     "steps_bakuchiol_NVne7U",
     "quantity_section_G437gg",
-    "video_slider_TTdVVL",
+    // "video_slider_TTdVVL",
     "what_inside_BqJnn3",
     "faq_with_text_EmnjBk",
     "custom_review_LGr7nf",
