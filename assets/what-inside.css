@@ -1,80 +1,86 @@
-/* WRAPPER */
 .what-inside__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 @media screen and (min-width: 1023px) {
   .what-inside__wrapper {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 6rem;
+    gap: 5rem;
   }
 }
 
-/* CONTENT */
+.what-inside__image {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+        display: flex;
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
 .what-inside__content {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  width: 100%;
-}
-
-@media screen and (min-width: 1023px) {
-  .what-inside__content {
-    max-width: 70%;
+    display: flex;
+    flex-direction: column;
     gap: 4rem;
-  }
 }
 
-/* LIST */
 .what-inside__list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    list-style: none;
+    padding: initial;
+    margin: initial;
 }
 
-/* EACH INGREDIENT */
 .what-inside__item {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #000;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid #000;
 
-/* TITLE */
-.what-inside__item h3 {
-  margin: 0;
-  font-weight: 600;
-  line-height: 130%;
-  color: #000;
-  font-size: 2rem;
-  letter-spacing: 0.02em;
-}
+    h3 {
+        margin: initial;
+        font-weight: 500;
+        line-height: 133%;
+        color: #000;
+        font-size: 2rem;
+    }
 
-/* DESCRIPTION */
-.what-inside__item p {
-  margin: 0;
-  font-weight: 500;
-  line-height: 135%;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  opacity: 0.75;
+    p {
+        font-weight: 500;
+        margin: initial;
+        line-height: 123%;
+        text-transform: uppercase;
+    }
 }
 
 @media screen and (min-width: 1023px) {
-  .what-inside__item h3 {
-    font-size: 3rem;
+  .what-inside__item {
+   h3 {
+    font-size: 3.2rem;
+   }
+
+    p {
+        font-size: 1.8rem;
+    }
   }
 
-  .what-inside__item p {
-    font-size: 1.6rem;
+  .what-inside__content {
+    gap: 5rem;
+    justify-content: space-between;
   }
+}
+
+@media screen and (min-width: 1360px) {
+    .what-inside__image {
+        max-width: 60rem;
+    }
 }
