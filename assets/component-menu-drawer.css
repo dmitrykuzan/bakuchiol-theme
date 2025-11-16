@@ -1,7 +1,3 @@
-/* ------------------------------------
-   BASE DAWN DRAWER STYLES (YOUR ORIGINAL)
------------------------------------- */
-
 .header__icon--menu {
   position: initial;
 }
@@ -90,6 +86,14 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__navigation {
   padding: 3rem 0;
+
+  .menu-drawer__menu {
+    .list-menu__item {
+      color: #000;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+  }
 }
 
 .menu-drawer__inner-submenu {
@@ -175,7 +179,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__utility-links {
   padding: 0;
-  background-color: #000;
+  /* background-color: rgba(var(--color-foreground), 0.03); */
+    background-color: #000;
   position: relative;
 }
 
@@ -243,165 +248,5 @@ details[open].menu-opening > .menu-drawer__submenu {
     transform: none !important;
     filter: none !important;
     transition: none !important;
-  }
-}
-
-/* ------------------------------------
-   PREMIUM OVERRIDES / ENHANCEMENTS
------------------------------------- */
-
-/* Toggle button – icon only, no weird circle */
-.premium-menu-toggle {
-  padding: 0;
-  border: 0;
-  background: transparent;
-}
-
-.premium-menu-toggle__inner {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Use the two SVGs: first = hamburger, second = close */
-.premium-menu-toggle__icon svg:nth-child(1) {
-  display: inline-block;
-}
-
-.premium-menu-toggle__icon svg:nth-child(2) {
-  display: none;
-}
-
-/* When drawer is open, swap icons */
-.menu-drawer-container[open] .premium-menu-toggle__icon svg:nth-child(1) {
-  display: none;
-}
-
-.menu-drawer-container[open] .premium-menu-toggle__icon svg:nth-child(2) {
-  display: inline-block;
-}
-
-/* Drawer visuals */
-.premium-menu-drawer {
-  background-color: #000;
-  color: #fff;
-}
-
-.premium-menu-drawer__inner {
-  background: #000;
-  color: #fff;
-}
-
-/* Brand / header */
-.premium-menu-drawer__header {
-  padding: 2.4rem 3rem 1.6rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.premium-menu-drawer__brand {
-  font-size: 1.4rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-/* Nav layout */
-.premium-menu-drawer__nav-container {
-  padding: 0;
-}
-
-.premium-menu-drawer__nav {
-  padding: 2.2rem 0 1.6rem;
-}
-
-.premium-menu-drawer__menu {
-  margin: 0;
-  padding: 0;
-}
-
-/* Top-level links */
-.premium-menu-drawer__item + .premium-menu-drawer__item {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.premium-menu-drawer__link,
-.premium-menu-drawer__link--child,
-.premium-menu-drawer__link--grandchild {
-  color: #f5f5f5;
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 1.2rem 3rem;
-  position: relative;
-}
-
-.premium-menu-drawer__link:hover,
-.premium-menu-drawer__link:focus-visible,
-.premium-menu-drawer__link--child:hover,
-.premium-menu-drawer__link--child:focus-visible,
-.premium-menu-drawer__link--grandchild:hover,
-.premium-menu-drawer__link--grandchild:focus-visible {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: #ffffff;
-}
-
-/* Chevron positioning */
-.premium-menu-drawer__chevron svg {
-  width: 14px;
-  height: 14px;
-}
-
-/* Submenus */
-.premium-menu-drawer__submenu {
-  background-color: #000;
-}
-
-.premium-menu-drawer__back {
-  color: #f5f5f5;
-}
-
-.premium-menu-drawer__back-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
-/* Utility / footer */
-.premium-menu-drawer__utility {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.premium-menu-drawer__account {
-  color: #f5f5f5;
-}
-
-.premium-menu-drawer__account-icon svg {
-  width: 18px;
-  height: 18px;
-}
-
-.premium-menu-drawer__social-link svg {
-  width: 18px;
-  height: 18px;
-  color: #f5f5f5;
-}
-
-/* Make sure submenu text is white on black */
-.premium-menu-drawer__submenu-list .menu-drawer__menu-item {
-  color: #f5f5f5;
-}
-
-/* Slightly smaller on mobile */
-@media screen and (max-width: 749px) {
-  .premium-menu-drawer__link,
-  .premium-menu-drawer__link--child,
-  .premium-menu-drawer__link--grandchild {
-    font-size: 1.3rem;
-    padding-inline: 2.2rem;
-  }
-
-  .premium-menu-drawer__header {
-    padding-inline: 2.2rem;
   }
 }
