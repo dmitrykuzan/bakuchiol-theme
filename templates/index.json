@@ -41,22 +41,22 @@
       "name": "Bakuchiol Price",
       "settings": {}
     },
-    "before_after_slider_kTqFFT": {
-      "type": "before-after-slider",
-      "blocks": {
-        "collection_84UJkz": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        }
-      },
-      "block_order": [
-        "collection_84UJkz"
-      ],
-      "name": "Before After Slider",
-      "settings": {}
-    },
+    // "before_after_slider_kTqFFT": {
+    //   "type": "before-after-slider",
+    //   "blocks": {
+    //     "collection_84UJkz": {
+    //       "type": "collection",
+    //       "settings": {
+    //         "collection": "frontpage"
+    //       }
+    //     }
+    //   },
+    //   "block_order": [
+    //     "collection_84UJkz"
+    //   ],
+    //   "name": "Before After Slider",
+    //   "settings": {}
+    // },
     // "steps_bakuchiol_inyTdA": {
     //   "type": "steps-bakuchiol",
     //   "name": "Steps Bakuchiol",
@@ -87,7 +87,7 @@
   "order": [
     "hero_PkEHtA",
     "bakuchiol_price_QR3p7A",
-    "before_after_slider_kTqFFT",
+    // "before_after_slider_kTqFFT",
     // "steps_bakuchiol_inyTdA",
     // "review_slider_kpJKHq",
     "bakuchiol_footer_gnWLCR"
