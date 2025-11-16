@@ -20,25 +20,25 @@
             "product": "bakuchiol-age-delay-serum"
           }
         },
-        "link_list_6NFc8j": {
-          "type": "link_list",
-          "settings": {
-            "heading": "SITEMAP",
-            "menu": "sitemap"
-          }
-        },
         "link_list_yXW64b": {
           "type": "link_list",
           "settings": {
             "heading": "COMPANY",
             "menu": "company"
           }
+        },
+        "link_list_TdeFbE": {
+          "type": "link_list",
+          "settings": {
+            "heading": "MAIN MENU",
+            "menu": "main-menu"
+          }
         }
       },
       "block_order": [
         "product_hkejtf",
-        "link_list_6NFc8j",
-        "link_list_yXW64b"
+        "link_list_yXW64b",
+        "link_list_TdeFbE"
       ],
       "settings": {
         "color_scheme": "scheme-1",
