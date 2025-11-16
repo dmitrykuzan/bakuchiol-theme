@@ -1,38 +1,10 @@
 .bakuchiol-price__wrapper {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 3rem;
 }
 
-.bakuchiol-price__image {
-  display: flex;
-  flex-shrink: 0;
-  width: calc(100% + 3rem);
-  margin-left: -1.5rem;
-  
-  margin-right: auto;
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-}
-
-.bakuchiol-price__content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.bakuchiol-price__content h2 {
-  font-weight: 300 !important;
-}
-
-.bakuchiol-price__content h3 {
-  font-weight: 300 !important;
-}
-
+/* 1. TITLE + PRICE BLOCK */
 .bakuchiol-price__content-top {
   display: flex;
   flex-direction: column;
@@ -40,7 +12,7 @@
 }
 
 .bakuchiol-price__content-title {
-  margin: initial;
+  margin: 0;
   padding-bottom: 1rem;
   font-size: 1.4rem;
   line-height: 133%;
@@ -51,115 +23,160 @@
 .bakuchiol-price__content-titles {
   display: flex;
   flex-direction: column;
+}
 
-  h2, h3 {
-    margin: initial;
-  }
+.bakuchiol-price__content-titles h2,
+.bakuchiol-price__content-titles h3 {
+  margin: 0;
+}
 
-  h2 {
-    text-transform: uppercase;
-    font-size: 3.8rem;
-    line-height: 100%;
-    font-weight: 600;
-  }
+.bakuchiol-price__content-titles h2 {
+  text-transform: uppercase;
+  font-size: 4.4rem;
+  line-height: 100%;
+  font-weight: 600;
+}
 
-  h3 {
-    text-transform: uppercase;
-    font-size: 2.2rem;
-    line-height: 133%;
-    font-weight: 600;
-  }
+.bakuchiol-price__content-titles h3 {
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  line-height: 133%;
+  font-weight: 600;
 }
 
 .bakuchiol-price__content-price {
   display: flex;
   align-items: center;
   gap: 1rem;
-
-  .product-price {
-    color: #000;
-  }
-
-  .product-compare-price {
-    color: #858585;
-    text-decoration: line-through;
-  }
-
-  .bakuchiol-price__label {
-    background-color: #000;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 1rem 1.5rem;
-  }
-
-  .product-price, .product-compare-price {
-    font-size: 2rem; 
-  }
 }
 
-.bakuchiol-price__content-bottom {
+.bakuchiol-price__content-price .product-price {
+  color: #000;
+}
+
+.bakuchiol-price__content-price .product-compare-price {
+  color: #858585;
+  text-decoration: line-through;
+}
+
+.bakuchiol-price__content-price .bakuchiol-price__label {
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+}
+
+.bakuchiol-price__content-price .product-price,
+.bakuchiol-price__content-price .product-compare-price {
+  font-size: 2rem;
+}
+
+/* 2. IMAGE (third in DOM, second visually on mobile) */
+.bakuchiol-price__image {
+  display: flex;
+  flex-shrink: 0;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: auto;
+}
+
+.bakuchiol-price__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 3. CTA (BUY BUTTON + DESCRIPTION) */
+.bakuchiol-price__cta {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
+/* Hide description on mobile */
 .bakuchiol-price__content-description {
-  p {
-    margin: initial;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    line-height: 166%;
-  }
+  display: none;
 }
 
+.bakuchiol-price__content-description p {
+  margin: 0;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  line-height: 166%;
+}
 
-.bakuchiol-price__section-lable {
+/* SECTION LABEL */
+.bakuchiol__section-lable {
   display: flex;
   margin-top: 5rem;
   gap: 2rem;
   max-width: 28rem;
-
-  span {
-    position: relative;
-    margin-top: 0.4rem;
-    display: flex;
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #000;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -0.5rem;
-      z-index: -1;
-      left: -0.5rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: #fff;
-    }
-  }
-
-  p {
-    margin: initial;
-    text-transform: uppercase;
-    line-height: 133%;
-  }
 }
+
+.bakuchiol__section-lable span {
+  position: relative;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #000;
+}
+
+.bakuchiol__section-lable span::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  z-index: -1;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fff;
+}
+
+.bakuchiol__section-lable p {
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 133%;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
 
 @media screen and (min-width: 575px) {
   .bakuchiol-price__image {
     max-width: 40rem;
-    width: initial;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
   }
-
 }
 
 @media screen and (min-width: 1023px) {
+  /* Switch to grid on desktop: content + image + cta nicely aligned */
   .bakuchiol-price__wrapper {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "content image"
+      "cta     image";
+    column-gap: 5rem;
+    align-items: stretch;
+  }
+
+  .bakuchiol-price__content-top {
+    grid-area: content;
+  }
+
+  .bakuchiol-price__image {
+    grid-area: image;
+    max-width: 50rem;
+    margin: 0;
+    align-self: center;
+  }
+
+  .bakuchiol-price__cta {
+    grid-area: cta;
+    max-width: 41rem;
   }
 
   .bakuchiol-price__content-title {
@@ -167,109 +184,55 @@
     line-height: 122%;
   }
 
-  .bakuchiol-price__image {
-    max-width: 50rem;
+  .bakuchiol-price__content-titles h2 {
+    font-size: 6.4rem;
   }
 
-  .bakuchiol-price-link {
-    max-width: 41rem;
-  }
-
-  .bakuchiol-price__content-titles {
-    h2 {
-      font-size: 5.4rem;
-    }
-    h3 {
-      font-size: 3.1rem;
-    }
+  .bakuchiol-price__content-titles h3 {
+    font-size: 3.8rem;
   }
 
   .bakuchiol-price__content-price {
     gap: 2rem;
-    .product-price, .product-compare-price {
-      font-size: 3.2rem; 
-    }
   }
 
-  .bakuchiol-price__section-lable  {
-    max-width: 32rem;
+  .bakuchiol-price__content-price .product-price,
+  .bakuchiol-price__content-price .product-compare-price {
+    font-size: 3.2rem;
+  }
 
-    p {
-       font-size: 2rem;
-    }
+  /* Show description only on desktop */
+  .bakuchiol-price__content-description {
+    display: block;
+  }
+
+  .bakuchiol-price__section-lable {
+    max-width: 32rem;
+  }
+
+  .bakuchiol-price__section-lable p {
+    font-size: 2rem;
   }
 }
 
-@media screen and (min-width: 1280px)  {
+@media screen and (min-width: 1280px) {
   .bakuchiol-price__image {
     max-width: 60rem;
-  }
-
-  .bakuchiol-price__wrapper {
-    gap: 5rem;
   }
 
   .bakuchiol-price__content-title {
     font-size: 2rem;
   }
 
-  .bakuchiol-price__content-description {
-    p {
-      font-size: 2rem;
-    }
+  .bakuchiol-price__content-description p {
+    font-size: 2rem;
   }
 
-  .bakuchiol-price__content-titles {
-    h2 {
-      font-size: 6rem;
-    }
-    h3 {
-      font-size: 3rem;
-    }
-  }
-}
-
-@media screen and (min-width: 1440px)  {
-  .bakuchiol-price__image {
-    max-width: 70rem;
+  .bakuchiol-price__content-titles h2 {
+    font-size: 8rem;
   }
 
+  .bakuchiol-price__content-titles h3 {
+    font-size: 4.5rem;
   }
-}
-
-@media screen and (min-width: 1680px)  {
-  .bakuchiol-price__image {
-    max-width: 90rem;
-  }
-
-  .bakuchiol-price__content-titles {
-    h2 {
-      font-size: 10rem;
-    }
-    h3 {
-      font-size: 6rem;
-    }
-  }
-}
-
-
-
-  @media (min-width: 767px) {
-     .mobile-button {
-     display: none !important;
-  }
-  }
-
-
-@media (max-width: 767px) {
-  .bakuchiol-price__content-description {
-    display: none !important;
-  }
-
-  .desktop-button {
-    display: none !important;
-  }
-
-
- 
 }
