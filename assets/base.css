@@ -426,7 +426,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .icon-hamburger svg path {
-  fill: #000;         
+  fill: #000 !important;         
 }
 }
 
