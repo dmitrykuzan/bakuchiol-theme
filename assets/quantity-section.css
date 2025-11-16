@@ -133,6 +133,13 @@
   }
 }
 
+/* Hide on mobile */
+@media (max-width: 749px) {
+  .quantity-section__description {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1230px) {
   .quantity-section__title {
     font-size: 3.2rem;
