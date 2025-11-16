@@ -9,8 +9,7 @@
 #reviewModal * ,
 #rv-lightbox,
 #rv-lightbox * {
-  font-family: "Inter", "Sans-Serif",
-    system-ui, sans-serif !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 /* Wrapper & section spacing */
