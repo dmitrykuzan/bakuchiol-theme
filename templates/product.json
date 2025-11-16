@@ -52,11 +52,11 @@
             "page": ""
           }
         },
-        "collapsible_tab_U8kYeK": {
+        "collapsible_tab_AtGN8x": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "APPLICATION",
-            "icon": "check_mark",
+            "icon": "none",
             "content": "<p>Dispense a few drops onto freshly cleansed skin.</p><p>Press into the face, focusing on areas of volume loss and fine lines.</p><p>Allow the formula to settle before applying your cream. Optionally finish with SPF.</p>",
             "page": ""
           }
@@ -69,7 +69,7 @@
         "buy_buttons",
         "collapsible_tab_Un7wmp",
         "collapsible_tab_rwFgRq",
-        "collapsible_tab_U8kYeK"
+        "collapsible_tab_AtGN8x"
       ],
       "settings": {
         "enable_sticky_info": true,
