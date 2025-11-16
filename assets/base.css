@@ -431,6 +431,13 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 .icon-hamburger path {
   fill: #000 !important;   /* forcibly overrides fill="#ffffff" */
 }
+
+.icon-close {
+  fill: #000 !important;   /* override inline fill */
+}
+.icon-close path {
+  fill: #000 !important;   /* forcibly overrides fill="#ffffff" */
+}
 }
 
 
