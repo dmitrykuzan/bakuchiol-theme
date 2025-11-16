@@ -51,17 +51,17 @@
 }
 
 /* Stars (keep horizontal) */
-.custom-review .volufiline-rating-stars{
+.custom-review .bakuchiol-rating-stars{
   display: inline-flex !important;
   flex-direction: row !important;
   align-items: center;
   gap: 8px;
 }
-.custom-review .volufiline-rating-star{ display: inline-flex; line-height: 0; }
-.custom-review .volufiline-rating-star svg{ width: 22px; height: 22px; display:block; }
+.custom-review .bakuchiol-rating-star{ display: inline-flex; line-height: 0; }
+.custom-review .bakuchiol-rating-star svg{ width: 22px; height: 22px; display:block; }
 
 /* Title: AVERAGE RATING */
-.custom-review__top-stars .section-title-volufiline{
+.custom-review__top-stars .section-title-bakuchiol{
   margin: .25rem 0 0 0;
   line-height: 1.1;
   font-weight: 800;
