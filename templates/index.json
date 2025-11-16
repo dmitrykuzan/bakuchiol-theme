@@ -70,15 +70,15 @@
     "bakuchiol_footer_gnWLCR": {
       "type": "bakuchiol-footer",
       "blocks": {
-        "product_UXpKmQ": {
-          "type": "product",
+        "collection_VYFGYb": {
+          "type": "collection",
           "settings": {
-            "product": "bakuchiol-age-delay-serum"
+            "collection": "frontpage"
           }
         }
       },
       "block_order": [
-        "product_UXpKmQ"
+        "collection_VYFGYb"
       ],
       "name": "Bakuchiol Footer",
       "settings": {}
