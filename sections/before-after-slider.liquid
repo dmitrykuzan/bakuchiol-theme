@@ -178,12 +178,16 @@
           </div>
         </div>
         <div class="before-after-slider__link-wrapper" data-da="before-after-slider__titles,last,1023">
-          {% for block in section.blocks %}
-            {% if block.type == 'product' and block.settings.product %}
-              {% assign product = block.settings.product %}
-              <a class="before-after-slider__link button-custom button-custom__border" href="{{ product.url }}">BUY NOW</a>
-            {% endif %}
-          {% endfor %}
+        {% for block in section.blocks %}
+  {% if block.type == 'collection' and block.settings.collection %}
+    <a
+      class="before-after-slider__link button-custom button-custom__border"
+      href="{{ block.settings.collection.url }}"
+    >
+      SHOP NOW
+    </a>
+  {% endif %}
+{% endfor %}
         </div>
       </div>
     </div>
