@@ -82,11 +82,11 @@
       "name": "Result Slider",
       "settings": {}
     },
-    "steps_bakuchiol_NVne7U": {
-      "type": "steps-bakuchiol",
-      "name": "Steps Bakuchiol",
-      "settings": {}
-    },
+    // "steps_bakuchiol_NVne7U": {
+    //   "type": "steps-bakuchiol",
+    //   "name": "Steps Bakuchiol",
+    //   "settings": {}
+    // },
     "quantity_section_G437gg": {
       "type": "quantity-section",
       "name": "Quantity Section",
@@ -245,7 +245,7 @@
   "order": [
     "main",
     "result_slider_NP3wa6",
-    "steps_bakuchiol_NVne7U",
+    // "steps_bakuchiol_NVne7U",
     "quantity_section_G437gg",
     "what_inside_BqJnn3",
     "faq_with_text_EmnjBk",
