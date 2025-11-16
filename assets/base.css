@@ -425,8 +425,11 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   background-color: white;
 }
 
-.icon-hamburger svg path {
-  fill: #000 !important;         
+.icon-hamburger {
+  fill: #000 !important;   /* override inline fill */
+}
+.icon-hamburger path {
+  fill: #000 !important;   /* forcibly overrides fill="#ffffff" */
 }
 }
 
