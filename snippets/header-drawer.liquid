@@ -16,9 +16,6 @@
           {{- 'icon-hamburger.svg' | inline_asset_content -}}
           {{- 'icon-close.svg' | inline_asset_content -}}
         </span>
-        <span class="premium-menu-toggle__label">
-          {{ 'sections.header.menu' | t | upcase }}
-        </span>
       </span>
     </summary>
 
@@ -292,23 +289,3 @@
     </div>
   </details>
 </header-drawer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Close button (X)
-    document.querySelectorAll('.menu-drawer__close-icon').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var details = btn.closest('.menu-drawer-container');
-        if (details) details.removeAttribute('open');
-      });
-    });
-
-    // "Back" buttons inside submenus (go one level up)
-    document.querySelectorAll('.menu-drawer__back').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var group = btn.closest('details.menu-drawer__group');
-        if (group) group.removeAttribute('open');
-      });
-    });
-  });
-</script>
