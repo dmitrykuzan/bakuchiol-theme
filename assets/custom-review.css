@@ -2,6 +2,17 @@
    Reviews – consolidated CSS
    ========================= */
 
+   /* ===== Force Inter Sans Serif font for all review UI ===== */
+.custom-review,
+.custom-review * ,
+#reviewModal,
+#reviewModal * ,
+#rv-lightbox,
+#rv-lightbox * {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif !important;
+}
+
 /* Wrapper & section spacing */
 .custom-review { margin-top: 2rem; }
 @media (min-width:1024px){ .custom-review { margin-top: 6rem; } }
