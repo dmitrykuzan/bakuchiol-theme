@@ -412,7 +412,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 .header {
    .header__heading-logo-wrapper-dark {
-      max-width: 20rem;
+      max-width: 260px;
       display: none;
 
       svg {
