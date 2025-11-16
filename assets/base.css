@@ -2918,7 +2918,7 @@ input[type='checkbox'] {
 @media screen and (max-width: 767px) {
   .header__heading-logo-wrapper {
   
-    max-width: 10rem;
+    max-width: 260px;
   }
 }
 
