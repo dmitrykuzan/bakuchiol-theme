@@ -8,7 +8,16 @@
       {%- for media in product.media -%}
         {%- if media.media_type == 'image' -%}
           <div class="swiper-slide">
-           {{ media | image_url | image_tag: loading: 'lazy', alt: media.alt | escape }}
+          {{ media | image_url: width: media.width | image_tag: loading: 'lazy', alt: media.alt | escape }}
+
+          <style>
+
+            .bakuchiol-product-slider__image-big img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* or cover */
+}
+          </style>
           </div>
           {%- assign media_counter = media_counter | plus: 1 -%}
         {%- endif -%}
