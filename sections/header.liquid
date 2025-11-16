@@ -23,11 +23,6 @@
     order: 3;
   }
 
-  {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
-    .scrolled-past-header .header__heading-logo-wrapper {
-      width: 75%;
-    }
-  {%- endif -%}
 
   {%- if section.settings.menu_type_desktop != "drawer" -%}
     @media screen and (min-width: 990px) {
@@ -318,7 +313,7 @@
     {% comment %} print link product {% endcomment %}
     {% assign product = all_products.volufiline-100 %}
 <a class="header__link-cta" href="/collections/frontpage">
-  Try Now
+  Shop Now
 </a>
     {% comment %} print link product {% endcomment %}
   </header>
