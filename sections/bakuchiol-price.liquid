@@ -2,57 +2,60 @@
 
 <section class="bakuchiol-price page-width">
   <div class="bakuchiol-price__wrapper section-top">
-    <div class="bakuchiol-price__image">
-      <img src="{{ 'bakuchiol-price.png' | asset_url }}" width="925" height="925" loading="lazy"> 
-    </div>
 
-    <div class="bakuchiol-price__content">
-      <div class="bakuchiol-price__content-top"> 
-        <p class="bakuchiol-price__content-title">FOR ALL SKIN TYPES</p>
+    <!-- 1. TITLE + PRICE (always first on mobile) -->
+    <div class="bakuchiol-price__content-top">
+      <p class="bakuchiol-price__content-title">FOR ALL SKIN TYPES</p>
 
-        <div class="bakuchiol-price__content-titles">
-          <h2>Bakuchiol</h2>
-          <h3>Age Delay Serum</h3>
-        </div>
-
-        <div class="bakuchiol-price__content-price">
-          {% for block in section.blocks %}
-            {% if block.settings.product != blank %}
-              {% assign product = all_products[block.settings.product] %}
-
-              <span class="product-price">
-                {{ product.price | money }}
-              </span>
-
-              {% if product.compare_at_price_max > product.price %}
-                <span class="product-compare-price">
-                  {{ product.compare_at_price_max | money }}
-                </span>
-              {% endif %}
-
-              <span class="bakuchiol-price__label">25% OFF</span>
-            {% endif %}
-          {% endfor %}
-        </div>
+      <div class="bakuchiol-price__content-titles">
+        <h2>Bakuchiol</h2>
+        <h3>Age Delay Serum</h3>
       </div>
 
-      <div class="bakuchiol-price__content-bottom">
-        <div class="bakuchiol-price__content-description">
-          <p>
-            This clinically inspired bakuchiol serum is powered by 1.0% pure bakuchiol to help soften fine lines, refine texture, and brighten dull, uneven tone—without the harsh dryness of traditional retinoids. The lightweight, cushiony formula layers beautifully under moisturizer or bakuchiol cream, delivering bakuchiol RX–level results with a gentle, skin-loving finish.
-          </p>
-        </div>
-
+      <div class="bakuchiol-price__content-price">
         {% for block in section.blocks %}
-          {% if block.type == 'product' and block.settings.product %}
-            {% assign product = block.settings.product %}
-            <a class="bakuchiol-price-link button-custom button-custom__black" href="{{ product.url }}">
-              buy bakuchiol serum now
-            </a>
+          {% if block.settings.product != blank %}
+            {% assign product = all_products[block.settings.product] %}
+
+            <span class="product-price">
+              {{ product.price | money }}
+            </span>
+
+            {% if product.compare_at_price_max > product.price %}
+              <span class="product-compare-price">
+                {{ product.compare_at_price_max | money }}
+              </span>
+            {% endif %}
+
+            <span class="bakuchiol-price__label">25% OFF</span>
           {% endif %}
         {% endfor %}
       </div>
     </div>
+
+    <!-- 2. IMAGE (second on mobile) -->
+    <div class="bakuchiol-price__image">
+      <img src="{{ 'bakuchiol-price.png' | asset_url }}" width="925" height="925" loading="lazy">
+    </div>
+
+    <!-- 3. CTA (buy button + description – description hidden on mobile) -->
+    <div class="bakuchiol-price__cta">
+      <div class="bakuchiol-price__content-description">
+        <p>
+          This clinically inspired bakuchiol serum is powered by 1.0% pure bakuchiol to help soften fine lines, refine texture, and brighten dull, uneven tone—without the harsh dryness of traditional retinoids. The lightweight, cushiony formula layers beautifully under moisturizer or bakuchiol cream, delivering bakuchiol RX–level results with a gentle, skin-loving finish.
+        </p>
+      </div>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'product' and block.settings.product %}
+          {% assign product = block.settings.product %}
+          <a class="bakuchiol-price-link button-custom button-custom__black" href="{{ product.url }}">
+            buy bakuchiol serum now
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
   </div>
   
   <div class="bakuchiol__section-lable">
@@ -61,6 +64,7 @@
   </div>
 </section>
 
+<!-- HIDDEN SEO Q&A SECTION -->
 <section style="display:none !important; visibility:hidden !important; height:0 !important; overflow:hidden !important;">
   
   <h2>How Often Should I Use Bakuchiol Serum in My Routine?</h2>
