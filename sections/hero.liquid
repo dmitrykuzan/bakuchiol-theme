@@ -1,25 +1,30 @@
- {{ 'hero.css' | asset_url | stylesheet_tag }}
+{{ 'hero.css' | asset_url | stylesheet_tag }}
 
 <section class="hero">
   <div class="hero__image">
     <img src="{{ 'bakuchiol-hero.png' | asset_url }}" width="1820" height="998" loading="eager"> 
   </div>
+
   <div class="hero__image hero__image--mobile">
     <img src="{{ 'bakuchiol-hero-mobile.png' | asset_url }}" width="828" height="1132" loading="eager"> 
   </div>
+
   <div class="hero__wrapper">
     <div class="hero__content">
-      <h1 class="hero__title">NATURE’S SECRET TO better aging</h1>
-      
-      <div class="hero__info">
-        <p class="hero__subtitle">TRANSFORM YOUR SKIN IN 30 DAYS: YOUR STORY, YOUR GLOW.</p>
 
-        {% for block in section.blocks %}
-          {% if block.type == 'product' and block.settings.product %}
-            {% assign product = block.settings.product %}
-            <a class="hero__product-link" href="{{ product.url }}">Try BAKUCHIOL FACE SERUM Now</a>
-          {% endif %}
-        {% endfor %}
+      <h1 class="hero__title">
+        NATURE’S SECRET TO BETTER AGING — POWERED BY PURE BAKUCHIOL
+      </h1>
+
+      <div class="hero__info">
+        <p class="hero__subtitle">
+          Discover the gentle strength of bakuchiol — the plant-based alternative to retinol that helps smooth, brighten, and renew your skin without irritation. Experience a visibly healthier, more radiant complexion in just 30 days.
+        </p>
+
+        <a class="hero__product-link" href="/products/bakuchiol-age-delay-serum">
+          Try BAKUCHIOL FACE SERUM Now
+        </a>
+
       </div>
     </div>
   </div>
