@@ -67,13 +67,9 @@
               {%- endif -%}
             </a>
           </div>
-
-          {% for block in section.blocks %}
-            {% if block.type == 'product' and block.settings.product %}
-              {% assign product = block.settings.product %}
-              <a class="footer__content-product-link button-custom  button-custom__white" href="{{ product.url }}">Try Now</a>
-            {% endif %}
-          {% endfor %}
+<a class="footer__content-product-link button-custom button-custom__white" href="/collections/frontpage">
+  SHOP NOW
+</a>
 
           {% comment %} <a href="/" class="footer__content-product-link button-custom  button-custom__white ">Try Now</a> {% endcomment %}
         </div>
