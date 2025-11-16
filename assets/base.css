@@ -422,6 +422,10 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
     }
 }
 
+.header__icon--menu {
+  background-color: white;
+}
+
 .header.is-not-main {
 
   .header__heading-link {
