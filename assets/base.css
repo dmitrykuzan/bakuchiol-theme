@@ -363,7 +363,7 @@ html {
   svg {
     width: 100%;
     height: 100%;
-    fill: #979797;
+    fill: #404040;
   }
 }
 
@@ -412,7 +412,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 .header {
    .header__heading-logo-wrapper-dark {
-      max-width: 26rem;
+      max-width: 20rem;
       display: none;
 
       svg {
@@ -441,6 +441,20 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
       }
     }
   }
+
+  .header__icon--menu {
+    background-color: black;
+  }
+
+  .icon-close path {
+  fill: #ffffff !important; /* black */
+  
+}
+
+  .icon-hamburger path {
+  fill: #ffffff !important; /* black */
+  
+}
 
   .header__icon--cart {
     background-color: #000;
@@ -2872,7 +2886,7 @@ input[type='checkbox'] {
 
 .header__heading-logo {
   height: auto;
-  max-width: 100%;
+  max-width: 200px;
 }
 
 .header__heading-logo-wrapper {
@@ -3034,6 +3048,11 @@ input[type='checkbox'] {
   display: block;
   position: absolute;
   background: rgba(var(--color-foreground), 0.5);
+}
+
+.font-chanel {
+  font-family: 'ABChanel Corpo Regular', sans-serif;
+  font-weight: 400;
 }
 
 .header__icon--account shop-user-avatar {
@@ -3385,7 +3404,7 @@ details[open] > .header__menu-item .icon-caret {
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   /* color: rgb(var(--color-foreground)); */
-  color: #fff;
+  color: #000;
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
