@@ -51,6 +51,15 @@
             "content": "<p><strong>Bakuchiol (1.0%)</strong> — plant-based retinol alternative that smooths fine lines, boosts firmness, and improves overall radiance without irritation.<br/><strong>Niacinamide (5.0%)</strong> — brightens uneven tone, minimizes the look of pores, and strengthens the skin barrier.<br/><strong>Melatonin (Liposomal, 0.3%)</strong> — nighttime skin repair booster that supports antioxidant protection and recovery.<br/><strong>EGF (Biotech, 0.05%)</strong> — helps improve the appearance of texture and supports a firmer, more youthful-looking complexion.<br/><strong>Carnosine (0.5%)</strong> — anti-glycation peptide that helps protect skin from dullness and loss of elasticity.<br/><strong>Resveratrol (Encapsulated, 0.5%)</strong> — powerful antioxidant that shields against environmental stressors and enhances radiance.<br/><strong>Glutathione (Encapsulated, 0.3%)</strong> — brightening antioxidant that helps promote a more even, clarified skin tone.</p><p><br/><strong>Peptide Complex (5%)</strong></p><ul><li><strong>Matrixyl 3000</strong> — targets the appearance of wrinkles and supports smoother-looking skin.</li><li><strong>Copper Tripeptide-1</strong> — helps improve firmness and repair signs of aging.</li><li><strong>Argirelox™ (2%)</strong> — softens expression lines and helps smooth dynamic wrinkles.</li><li><strong>Hexapeptide-9</strong> — supports visible skin renewal and improved texture.<br/></li></ul><p><strong>Hydration & Barrier Support</strong></p><ul><li><strong>Tamarind Seed Polysaccharide</strong> — plant-based hyaluronic acid alternative for deep hydration.</li><li><strong>Snow Mushroom (Tremella)</strong> — delivers long-lasting moisture and plumps the skin.</li><li><strong>Beta-Glucan</strong> — soothing, barrier-strengthening hydrator.</li><li><strong>Panthenol (2%)</strong> — calms, softens, and reduces dryness.</li><li><strong>Ceramides + Cholesterol</strong> — replenishes the skin barrier for lasting smoothness.</li><li><strong>Squalane (3%)</strong> — lightweight moisture and barrier support.</li><li><strong>Betaine</strong> — balances hydration and improves skin comfort.<br/></li></ul><p><strong>Functional + Support Ingredients</strong></p><ul><li><strong>Lecithin (Liposomal delivery)</strong> — enhances penetration of actives for deeper performance.</li><li><strong>Radish Root Ferment</strong> — natural light-pink colorant and microbiome-supportive ingredient.<br/></li></ul>",
             "page": ""
           }
+        },
+        "collapsible_tab_U8kYeK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "APPLICATION",
+            "icon": "check_mark",
+            "content": "<p>Dispense a few drops onto freshly cleansed skin.</p><p>Press into the face, focusing on areas of volume loss and fine lines.</p><p>Allow the formula to settle before applying your cream. Optionally finish with SPF.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -59,7 +68,8 @@
         "description",
         "buy_buttons",
         "collapsible_tab_Un7wmp",
-        "collapsible_tab_rwFgRq"
+        "collapsible_tab_rwFgRq",
+        "collapsible_tab_U8kYeK"
       ],
       "settings": {
         "enable_sticky_info": true,
