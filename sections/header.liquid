@@ -317,10 +317,10 @@
 
     {% comment %} print link product {% endcomment %}
     {% assign product = all_products.volufiline-100 %}
-   {% if collection %}
-  <a class="header__link-cta" href="{{ collection.url }}">Try Now</a>
-{% else %}
-  <p>Collection not found</p>
+ {% if section.settings.collection %}
+  <a class="header__link-cta" href="{{ section.settings.collection.url }}">
+    Try Now
+  </a>
 {% endif %}
     {% comment %} print link product {% endcomment %}
   </header>
