@@ -82,11 +82,6 @@
       "name": "Result Slider",
       "settings": {}
     },
-    // "steps_bakuchiol_NVne7U": {
-    //   "type": "steps-bakuchiol",
-    //   "name": "Steps Bakuchiol",
-    //   "settings": {}
-    // },
     "quantity_section_G437gg": {
       "type": "quantity-section",
       "name": "Quantity Section",
@@ -104,28 +99,63 @@
           "type": "faq_item",
           "settings": {
             "title": "WHAT IS BAKUCHIOL?",
-            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
+            "text": "<p>Bakuchiol is a plant-derived compound shown to deliver retinol-like smoothing and brightening benefits - without the irritation, peeling, or sensitivity that traditional retinoids can cause.</p>"
           }
         },
         "faq_item_7MGm9Y": {
           "type": "faq_item",
           "settings": {
-            "title": "WHAT IS BAKUCHIOL?",
-            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
+            "title": "IS IT SAFE FOR SENSITIVE SKIN?",
+            "text": "<p>Yes. Bakuchiol is known for being gentle and non-irritating, making it suitable for sensitive, reactive, and retinoid-intolerant skin types.</p>"
           }
         },
         "faq_item_qcaVLT": {
           "type": "faq_item",
           "settings": {
-            "title": "WHAT IS BAKUCHIOL?",
-            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
+            "title": "CAN I USE IT WITH RETINOL OR TRETINOIN?",
+            "text": "<p>Yes. Bakuchiol pairs well with vitamin C, retinoids, and exfoliants. It can help buffer irritation and support smoother, more even-looking skin alongside stronger actives.</p>"
           }
         },
         "faq_item_FAe9Rj": {
           "type": "faq_item",
           "settings": {
-            "title": "WHAT IS BAKUCHIOL?",
-            "text": "<p>a naturally occurring molecule that helps regulate SKIN and reduce shedding over time</p>"
+            "title": "WHEN WILL I SEE RESULTS?",
+            "text": "<p>Most users notice improved smoothness and brightness within <strong>2–4 weeks</strong>, with firmer, more refined skin appearing over consistent use.</p>"
+          }
+        },
+        "faq_item_ywDkpM": {
+          "type": "faq_item",
+          "settings": {
+            "title": "CAN I USE IT DURING THE DAY?",
+            "text": "<p>Absolutely. Bakuchiol is <strong>photo-stable</strong>, meaning it won’t break down in sunlight. It can be used AM and PM - just follow with SPF in the morning.</p>"
+          }
+        },
+        "faq_item_HFeidP": {
+          "type": "faq_item",
+          "settings": {
+            "title": "IS IT SAFE FOR PREGNANCY & BREASTFEEDING?",
+            "text": "<p>Bakuchiol is often used as a pregnancy-friendly alternative to retinol, but always consult your doctor to confirm what’s best for you.</p>"
+          }
+        },
+        "faq_item_FRbpDW": {
+          "type": "faq_item",
+          "settings": {
+            "title": "CAN IT HELP WITH FINE LINES AND WRINKLES?",
+            "text": "<p>Yes. Bakuchiol supports collagen, elasticity, and overall skin firmness—helping visibly soften fine lines and improve texture over time.</p>"
+          }
+        },
+        "faq_item_38KJ73": {
+          "type": "faq_item",
+          "settings": {
+            "title": "WILL IT CLOG MY PORES?",
+            "text": "<p>No. Bakuchiol is non-comedogenic and suitable for blemish-prone skin. It can help calm redness and improve post-acne marks.</p>"
+          }
+        },
+        "faq_item_z4QKTU": {
+          "type": "faq_item",
+          "settings": {
+            "title": "HOW SHOULD I APPLY IT?",
+            "text": "<p>Use 1–2 pumps on clean, dry skin. Follow with moisturizer. Can be used daily, twice a day, or alongside your existing routine.</p>"
           }
         }
       },
@@ -133,87 +163,18 @@
         "faq_item_G6CQMc",
         "faq_item_7MGm9Y",
         "faq_item_qcaVLT",
-        "faq_item_FAe9Rj"
+        "faq_item_FAe9Rj",
+        "faq_item_ywDkpM",
+        "faq_item_HFeidP",
+        "faq_item_FRbpDW",
+        "faq_item_38KJ73",
+        "faq_item_z4QKTU"
       ],
       "name": "FAQ Section (with text)",
       "settings": {}
     },
     "custom_review_LGr7nf": {
       "type": "custom-review",
-      "blocks": {
-        "list_item_tFgMMc": {
-          "type": "list_item",
-          "settings": {
-            "name_customer": "Christopher",
-            "review_date": "3 days ago",
-            "review_rating": 5,
-            "review_text": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </p>"
-          }
-        },
-        "list_item_jxY4Br": {
-          "type": "list_item",
-          "settings": {
-            "name_customer": "Christopher",
-            "review_date": "3 days ago",
-            "review_rating": 5,
-            "review_text": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </p>"
-          }
-        },
-        "list_item_cHpHLm": {
-          "type": "list_item",
-          "settings": {
-            "name_customer": "Christopher",
-            "review_date": "3 days ago",
-            "review_rating": 5,
-            "review_text": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </p>"
-          }
-        },
-        "list_item_7Ybjgw": {
-          "type": "list_item",
-          "settings": {
-            "name_customer": "Christopher",
-            "review_date": "3 days ago",
-            "review_rating": 5,
-            "review_text": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </p>"
-          }
-        },
-        "list_item_NHHie9": {
-          "type": "list_item",
-          "settings": {
-            "name_customer": "Christopher",
-            "review_date": "3 days ago",
-            "review_rating": 5,
-            "review_text": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </p>"
-          }
-        },
-        "list_item_RwT89x": {
-          "type": "list_item",
-          "settings": {
-            "name_customer": "Christopher",
-            "review_date": "3 days ago",
-            "review_rating": 5,
-            "review_text": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </p>"
-          }
-        },
-        "list_item_7fJXLT": {
-          "type": "list_item",
-          "settings": {
-            "name_customer": "Christopher",
-            "review_date": "3 days ago",
-            "review_rating": 5,
-            "review_text": "<p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. </p>"
-          }
-        }
-      },
-      "block_order": [
-        "list_item_tFgMMc",
-        "list_item_jxY4Br",
-        "list_item_cHpHLm",
-        "list_item_7Ybjgw",
-        "list_item_NHHie9",
-        "list_item_RwT89x",
-        "list_item_7fJXLT"
-      ],
       "name": "Custom Review List",
       "settings": {}
     },
@@ -245,7 +206,6 @@
   "order": [
     "main",
     "result_slider_NP3wa6",
-    // "steps_bakuchiol_NVne7U",
     "quantity_section_G437gg",
     "what_inside_BqJnn3",
     "faq_with_text_EmnjBk",
