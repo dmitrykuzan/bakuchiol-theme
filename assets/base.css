@@ -425,10 +425,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   background-color: white;
 }
 
-/* If your hamburger SVG has a class like .icon-hamburger */
-.icon-hamburger,
-.icon-hamburger svg {
-  fill: #000;           /* black */
+.icon-hamburger svg path {
+  fill: #000;         
 }
 }
 
