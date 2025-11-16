@@ -5,36 +5,18 @@
     <h2 class="section-title-bakuchiol">reviews</h2>
 
     <div class="custom-review__page-wrapper">
-      <!-- SUMMARY BLOCK (unchanged) -->
+      <!-- SUMMARY BLOCK -->
       <div class="volufiline-review-rating__statistic">
         <div class="volufiline-review-rating__summary">
           <span class="volufiline-review-rating__total">4.6</span>
           <div class="volufiline-rating-stars">
-            <span class="volufiline-rating-star">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-                <path fill="#FFC107" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-              </svg>
-            </span>
-            <span class="volufiline-rating-star">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-                <path fill="#FFC107" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-              </svg>
-            </span>
-            <span class="volufiline-rating-star">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-                <path fill="#FFC107" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-              </svg>
-            </span>
-            <span class="volufiline-rating-star">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-                <path fill="#FFC107" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-              </svg>
-            </span>
-            <span class="volufiline-rating-star">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-                <path fill="#FFC107" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-              </svg>
-            </span>
+            {% for i in (1..5) %}
+              <span class="volufiline-rating-star">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
+                  <path fill="#FFC107" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+                </svg>
+              </span>
+            {% endfor %}
           </div>
           <p class="volufiline-review-rating__summary-text">Based on 1,899 reviews</p>
         </div>
@@ -107,7 +89,7 @@
         </ul>
       </div>
 
-      <!-- DYNAMIC REVIEW FEED (OLD SITE LOGIC, NEW PAGE STYLING) -->
+      <!-- DYNAMIC REVIEW FEED (same logic as Volufiline, different header) -->
       <div class="custom-review">
         <div class="custom-review__header-row">
           <span class="custom-review__total" id="reviews-count">Loading reviews…</span>
@@ -205,7 +187,7 @@
 
 <script>
 /* ================================================================
-   Dynamic feed + lightbox (3 thumbs max, same styling)
+   Dynamic feed + lightbox (3 thumbs max, same behavior as Volufiline)
 ================================================================ */
 (function () {
   const CHAR_LIMIT_FOR_READMORE = 650;
@@ -282,17 +264,19 @@
 
     return `
       <article class="custom-review__item" data-review-index="${idx}">
-        <div class="custom-review__item-block-left">
-          <div class="custom-review__item-info">
-            <p class="custom-review__item-name">${review.Name || ''}</p>
-            <p class="custom-review__item-date">${review.Date || ''}</p>
-            <div class="custom-review__item-stars">${renderStars(review.Stars)}</div>
-          </div>
+        <div class="crv-head">
+          <div class="crv-name">${review.Name || ''}</div>
+          <div class="crv-verify">Verified Buyer</div>
+          <div class="custom-review__item-date">${review.Date || ''}</div>
         </div>
 
         <div class="custom-review__item-block-right">
           ${thumbs}
           ${clampHTML(review.Description || '')}
+          <div class="custom-review__item-title-wrap">
+            <h3 class="custom-review__item-title">${review.Title || ''}</h3>
+            <div class="custom-review__item-stars">${renderStars(review.Stars)}</div>
+          </div>
         </div>
       </article>`;
   }
@@ -387,7 +371,7 @@
     lbImg.src = imgs[currentIndex];
   });
 
-  // Render feed from reviews.json
+  // Render feed
   fetch('{{ "reviews.json" | asset_url }}')
     .then(r => r.json())
     .then(reviews => {
@@ -428,7 +412,7 @@
 
 <script>
 /* --------------------------------------------------------------
-   Review modal: open/close, rating stars, validation
+   Review modal: open/close, rating stars, validation (same as Volufiline)
 -------------------------------------------------------------- */
 (function(){
   const modal   = document.getElementById('reviewModal');
@@ -466,4 +450,86 @@
 
   let starsValue = 0;
   function starSVG(){
-    return '<svg viewBox="0 0 122.88 117.1" aria-hidden="true" focusable="false"><path d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62L91.64,74.18l8.9,39a3.19,3.19,0,0,1-4.42,3.64L61.41,96.1,27.07,116.64a3.18,3.18,0,
+    return '<svg viewBox="0 0 122.88 117.1" aria-hidden="true" focusable="false"><path d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62L91.64,74.18l8.9,39a3.19,3.19,0,0,1-4.42,3.64L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38l8.91-39L1.09,47.88A3.2,3.2,0,0,1,2.98,42.34l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/></svg>';
+  }
+
+  function buildStars(){
+    if (!el.starsBox) return;
+    if (el.starsBox.children.length) return;
+    el.starsBox.setAttribute('role','radiogroup');
+    for (let i=1;i<=5;i++){
+      const b=document.createElement('button');
+      b.type='button'; b.className='rv-star'; b.innerHTML=starSVG();
+      b.setAttribute('role','radio');
+      b.setAttribute('aria-label', `${i} star${i>1?'s':''}`);
+      b.setAttribute('aria-checked','false');
+      b.addEventListener('click', ()=> setStars(i));
+      b.addEventListener('keydown', (e)=>{
+        if (e.key==='ArrowRight'||e.key==='ArrowUp'){ setStars(Math.min(5, starsValue+1)); e.preventDefault(); }
+        if (e.key==='ArrowLeft' ||e.key==='ArrowDown'){ setStars(Math.max(1, starsValue-1)); e.preventDefault(); }
+      });
+      el.starsBox.appendChild(b);
+    }
+  }
+
+  function setStars(val){
+    starsValue = Number(val)||0;
+    [...(el.starsBox?.children||[])].forEach((btn,idx)=>{
+      btn.setAttribute('aria-checked', String(idx < starsValue));
+      btn.tabIndex = (idx+1===Math.max(1,starsValue)) ? 0 : -1;
+    });
+  }
+  buildStars();
+
+  function qError(forKey){ return form.querySelector(`.rv-error[data-error-for="${forKey}"]`); }
+  function showError(forKey, msg, fieldEl){
+    const n = qError(forKey); if (n) n.textContent = msg || '';
+    if (fieldEl) fieldEl.classList.add('rv-invalid');
+  }
+  function clearError(forKey){
+    const n = qError(forKey); if (n) n.textContent = '';
+  }
+  function clearErrors(){
+    ['name','title','comment','stars'].forEach(clearError);
+    [el.name, el.title, el.text].forEach(x=>x && x.classList.remove('rv-invalid'));
+    form.classList.remove('rv-submit-error');
+  }
+
+  function validate(){
+    clearErrors();
+    let ok = true, firstBad = null;
+
+    const name = (el.name?.value||'').trim();
+    const title = (el.title?.value||'').trim();
+    const text = (el.text?.value||'').trim();
+
+    if (!name){ ok=false; showError('name','Please enter your name.', el.name); firstBad = firstBad || el.name; }
+    if (!title){ ok=false; showError('title','Please add a headline.', el.title); firstBad = firstBad || el.title; }
+    if (!text || text.length < 12){ ok=false; showError('comment','Please write at least 12 characters.', el.text); firstBad = firstBad || el.text; }
+    if (!starsValue){ ok=false; showError('stars','Please select a rating.'); firstBad = firstBad || (el.starsBox?.querySelector('.rv-star')||null); }
+
+    if (!ok){
+      form.classList.add('rv-submit-error');
+      firstBad?.focus?.({preventScroll:true});
+    }
+    return ok;
+  }
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    if (!validate()) return;
+
+    const payload = {
+      name:  el.name.value.trim(),
+      title: el.title.value.trim(),
+      comment: el.text.value.trim(),
+      stars: starsValue,
+      submittedAt: new Date().toISOString()
+    };
+
+    /* TODO: POST this payload to your endpoint if you wire up real storage */
+
+    close();
+  });
+})();
+</script>
