@@ -3070,10 +3070,6 @@ input[type='checkbox'] {
   background: rgba(var(--color-foreground), 0.5);
 }
 
-.font-chanel {
-  font-family: 'ABChanel Corpo Regular', sans-serif;
-  font-weight: 400;
-}
 
 .header__icon--account shop-user-avatar {
   --shop-avatar-size: 2.8rem;
