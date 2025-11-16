@@ -420,11 +420,13 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
         height: 100%;
       }
     }
+
+    .header__icon--menu {
+  background-color: white !important;
+}
 }
 
-.header__icon--menu {
-  background-color: white;
-}
+
 
 .header.is-not-main {
 
