@@ -165,12 +165,6 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .hero__title {
-    font-size: 8rem;
-    max-width: 48rem;
-  }
-}
 
 @media screen and (min-width: 1380px) {
   .hero__wrapper {
@@ -178,11 +172,6 @@
     padding-left: 5rem;
     padding-top: 10rem;
     padding-right: 5rem;
-  }
-
-  .hero__title {
-    font-size: 10rem;
-    max-width: 57rem;
   }
 
   .hero__subtitle {
