@@ -1,143 +1,154 @@
-
 .quantity-section__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 65rem;
 }
 
+/* CONTENT BLOCK */
 .quantity-section__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border: 0.1rem solid #000;
-}
-
-.quantity-section__quantity {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    
-    .product-form__input {
-        flex: initial;
-    }
-
-    .button--primary-bakuchiol {
-        margin-bottom: initial;
-        min-height: 4.7rem;
-    }
-
-    .product-form__input {
-        margin: initial;
-    }
-
-    .product-form__buttons {
-        max-width: initial;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 0.1rem solid #000;
 }
 
 .quantity-section__text  {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-    h2, p {
-        margin: initial;
-    }
+.quantity-section__text h2,
+.quantity-section__text p {
+  margin: initial;
 }
 
 .quantity-section__title {
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #000;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #000;
 }
 
 .quantity-section__description {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    color: #494949;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #494949;
+}
 
-    p {
-        margin: initial;
-    }
+.quantity-section__description p {
+  margin: initial;
+}
+
+/* QUANTITY + BUY BUTTON */
+.quantity-section__quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.quantity-section__quantity .product-form__input {
+  flex: initial;
+  margin: initial;
+}
+
+.quantity-section__quantity .button--primary-bakuchiol {
+  margin-bottom: initial;
+  min-height: 4.7rem;
+}
+
+.quantity-section__quantity .product-form__buttons {
+  max-width: initial;
 }
 
 .buy-btns__wrapper {
-    width: 100%;
+  width: 100%;
 }
 
+/* IMAGES */
+/* Mobile: image INSIDE text, desktop image hidden */
 .quantity-section__image {
-    display: flex;
-
-    img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
+  display: flex;
 }
 
+.quantity-section__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* mobile-specific visibility */
+.quantity-section__image--mobile {
+  margin-top: 1.5rem;
+}
+
+.quantity-section__image--desktop {
+  display: none;
+}
+
+/* DESKTOP LAYOUT */
 @media screen and (min-width: 1023px) {
-   .quantity-section__wrapper {
-        max-width: initial;
-        flex-direction: row;
-        gap: 2rem;
-    }
+  .quantity-section__wrapper {
+    max-width: initial;
+    flex-direction: row;
+    gap: 2rem;
+  }
 
-    .quantity-section__content {
-        max-width: 50%;
-        width: 100%;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 5rem;
-        padding-top: 5rem;
-    }
+  .quantity-section__content {
+    max-width: 50%;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
 
-    .quantity-section__quantity {
-        flex-direction: row;
-        align-items: center;
-    }
+  .quantity-section__quantity {
+    flex-direction: row;
+    align-items: center;
+  }
 
-    .quantity-section__title {
-        font-size: 3rem;
-    }
+  .quantity-section__title {
+    font-size: 3rem;
+  }
 
-    .quantity-section__image {
-        max-width: 50%;
-        width: 100%;
-    }
+  /* Desktop: show right-side image, hide mobile-inside image */
+  .quantity-section__image--desktop {
+    display: flex;
+    max-width: 50%;
+    width: 100%;
+  }
+
+  .quantity-section__image--mobile {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1230px) {
+  .quantity-section__title {
+    font-size: 3.2rem;
+  }
 
-     .quantity-section__title {
-        font-size: 3.2rem;
-    }
-
-    .quantity-section__description {
-        p {
-            font-size: 1.8rem;
-        }
-    }
+  .quantity-section__description p {
+    font-size: 1.8rem;
+  }
 }
 
 @media screen and (min-width: 1620px) {
+  .quantity-section__title {
+    font-size: 4.6rem;
+  }
 
-    .quantity-section__title {
-        font-size: 4.6rem;
-    }
-
-    .quantity-section__description {
-        p {
-            font-size: 2.2rem;
-        }
-    }
+  .quantity-section__description p {
+    font-size: 2.2rem;
+  }
 }
