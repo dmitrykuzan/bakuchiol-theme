@@ -62,54 +62,11 @@
       "name": "Steps Bakuchiol",
       "settings": {}
     },
-    // "video_slider_b7q44F": {
-    //   "type": "video-slider",
-    //   "blocks": {
-    //     "video_slide_wHG8qT": {
-    //       "type": "video_slide",
-    //       "settings": {
-    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/5ed3502086af42a8b4d5be12333fea43.mov",
-    //         "poster_url": ""
-    //       }
-    //     },
-    //     "video_slide_TfE3fh": {
-    //       "type": "video_slide",
-    //       "settings": {
-    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/6035cd5915d04d85a963732c8c67d533.mp4",
-    //         "poster_url": ""
-    //       }
-    //     },
-    //     "video_slide_pNEzDA": {
-    //       "type": "video_slide",
-    //       "settings": {
-    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/81905975eff140ae80eadccde63f741e.mp4",
-    //         "poster_url": ""
-    //       }
-    //     },
-    //     "video_slide_hdUHBc": {
-    //       "type": "video_slide",
-    //       "settings": {
-    //         "video_url": "https://cdn.shopify.com/videos/c/o/v/281c85fb662545f2a03b801f3cb53abf.mp4",
-    //         "poster_url": ""
-    //       }
-    //     },
-    //     "product_kTkk8f": {
-    //       "type": "product",
-    //       "settings": {
-    //         "product": "bakuchiol-age-delay-serum"
-    //       }
-    //     }
-    //   },
-    //   "block_order": [
-    //     "video_slide_wHG8qT",
-    //     "video_slide_TfE3fh",
-    //     "video_slide_pNEzDA",
-    //     "video_slide_hdUHBc",
-    //     "product_kTkk8f"
-    //   ],
-    //   "name": "Video Review Slider",
-    //   "settings": {}
-    // },
+    "review_slider_kpJKHq": {
+      "type": "review-slider",
+      "name": "Review Slider",
+      "settings": {}
+    },
     "bakuchiol_footer_gnWLCR": {
       "type": "bakuchiol-footer",
       "blocks": {
@@ -125,11 +82,6 @@
       ],
       "name": "Bakuchiol Footer",
       "settings": {}
-    },
-    "review_slider_kpJKHq": {
-      "type": "review-slider",
-      "name": "Review Slider",
-      "settings": {}
     }
   },
   "order": [
@@ -137,7 +89,6 @@
     "bakuchiol_price_QR3p7A",
     "before_after_slider_kTqFFT",
     "steps_bakuchiol_inyTdA",
-    // "video_slider_b7q44F",
     "review_slider_kpJKHq",
     "bakuchiol_footer_gnWLCR"
   ]
