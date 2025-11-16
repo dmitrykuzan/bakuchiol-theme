@@ -57,11 +57,11 @@
       "name": "Before After Slider",
       "settings": {}
     },
-    "steps_bakuchiol_inyTdA": {
-      "type": "steps-bakuchiol",
-      "name": "Steps Bakuchiol",
-      "settings": {}
-    },
+    // "steps_bakuchiol_inyTdA": {
+    //   "type": "steps-bakuchiol",
+    //   "name": "Steps Bakuchiol",
+    //   "settings": {}
+    // },
     "review_slider_kpJKHq": {
       "type": "review-slider",
       "name": "Review Slider",
@@ -88,7 +88,7 @@
     "hero_PkEHtA",
     "bakuchiol_price_QR3p7A",
     "before_after_slider_kTqFFT",
-    "steps_bakuchiol_inyTdA",
+    // "steps_bakuchiol_inyTdA",
     "review_slider_kpJKHq",
     "bakuchiol_footer_gnWLCR"
   ]
