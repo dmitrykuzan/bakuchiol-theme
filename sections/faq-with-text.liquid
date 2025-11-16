@@ -1,11 +1,12 @@
 {{ 'faq-with-text.css' | asset_url | stylesheet_tag }}
 
 <div class="faq-with-text page-width">
-  <div class="faq-with-text__wrapper section-top">
-    <div class="faq-with-text__text">
-      <h2 class="faq-with-text__title section-title-bakuchiol">any questions?</h2>
+  <div class="faq-with-text__wrapper">
+
+    <div class="faq-with-text__header-inline">
+      <h2 class="faq-with-text__title">ANY QUESTIONS?</h2>
       <p class="faq-with-text__subtitle">
-        Your most common questions about Bakuchiol — answered simply and clearly.
+        Your most common questions about our age delay serum — answered simply and clearly.
       </p>
     </div>
 
@@ -21,21 +22,16 @@
         </li>
       {% endfor %}
     </ul>
+
   </div>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const faqItems = document.querySelectorAll(".faq .faq__item");
-
-    faqItems.forEach(function (item) {
-      const title = item.querySelector(".faq__item-title");
-
-      if (title) {
-        title.addEventListener("click", function () {
-          item.classList.toggle("active");
-        });
-      }
+    document.querySelectorAll(".faq__item-title").forEach((title) => {
+      title.addEventListener("click", () => {
+        title.parentElement.classList.toggle("active");
+      });
     });
   });
 </script>
