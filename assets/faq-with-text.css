@@ -1,142 +1,113 @@
 /* =========================
-   FAQ – stacked layout
+   Compact FAQ Layout
    ========================= */
 
-/* Wrapper & section spacing */
 .faq-with-text {
-  margin-top: 2rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .faq-with-text {
-    margin-top: 6rem;
-  }
+  margin-top: 1rem;
 }
 
 .faq-with-text__wrapper {
   display: flex;
-  flex-direction: column;           /* always stacked */
-  gap: 3rem;
-  max-width: 90rem;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 1440px) {
-  .faq-with-text__wrapper {
-    gap: 4rem;
-    max-width: 100rem;
-  }
-}
-
-/* Intro text */
-.faq-with-text__text > * {
-  margin: 0;
-}
-
-.faq-with-text__text {
-  display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;     /* reduced space */
+  padding: 0 !important;
+}
+
+/* SINGLE-LINE HEADER */
+.faq-with-text__header-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+  padding: 0 !important;
 }
 
 .faq-with-text__title {
+  margin: 0;
+  padding: 0;
+  font-size: 2.4rem;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .faq-with-text__subtitle {
-  color: #808080;
-  line-height: 1.66;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 1.4;
 }
 
-@media screen and (min-width: 1023px) {
-  .faq-with-text__text {
-    max-width: 52rem;
-    width: 100%;
-    gap: 1.5rem;
-  }
-
-  .faq-with-text__subtitle {
-    font-size: 1.8rem;
-  }
-}
-
-/* =========================
-   FAQ accordion
-   ========================= */
-
+/* FAQ LIST */
 .faq {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .5rem;
 }
 
+/* FAQ ITEM (minimal padding) */
 .faq__item {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 0.1rem solid #000;
+  border-bottom: 1px solid #000;
+  padding: .25rem 0;          /* compact */
 }
 
-/* Question row */
+/* QUESTION (reduced padding) */
 .faq__item-title {
   position: relative;
+  font-size: 1.6rem;
+  padding: .75rem 2.5rem .75rem 0; /* tighter */
   margin: 0;
-  font-size: 1.8rem;
-  padding: 1.5rem 4rem 1.5rem 0;
-  color: #000;
   cursor: pointer;
   text-transform: uppercase;
 }
 
-/* Plus / minus icon */
+/* PLUS / MINUS ICON */
 .faq__item-title::before,
 .faq__item-title::after {
   content: '';
   position: absolute;
-  width: 1.5rem;
-  height: 0.2rem;
-  background-color: #000;
+  width: 1.2rem;
+  height: 0.18rem;
+  background: #000;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  transition: transform 0.3s linear;
 }
 
 .faq__item-title::before {
-  transform: translateY(-50%) rotate(90deg);  /* vertical bar for + */
+  transform: translateY(-50%) rotate(90deg);
 }
 
-/* Answer wrapper */
+.faq__item.active .faq__item-title::before {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* ANSWER TEXT */
+.faq__item-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  padding-right: 2rem;
+}
+
+.faq__item.active .faq__item-text {
+  max-height: 300rem;
+}
+
 .faq__item-text-wrapper {
-  padding: 0 0 1rem 0;
+  padding: .5rem 0 1rem 0;   /* tight answer spacing */
+  margin: 0;
 }
 
 .faq__item-text-wrapper > * {
   margin: 0;
 }
 
-.faq__item-text {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-  padding-right: 4rem;
-}
-
-/* Active state */
-.faq__item.active .faq__item-text {
-  transition: max-height 1s ease-in-out;
-  max-height: 300rem;
-}
-
-.faq__item.active .faq__item-title::before {
-  transform: translateY(-50%) rotate(0deg);   /* becomes minus */
-}
-
-@media screen and (min-width: 1580px) {
-  .faq__item-title {
-    font-size: 2.2rem;
-  }
+/* Larger screens = keep everything minimal */
+@media (min-width: 1024px) {
+  .faq-with-text__title { font-size: 2.6rem; }
+  .faq-with-text__subtitle { font-size: 1.5rem; }
 }
