@@ -2,36 +2,45 @@
 
 <section class="bakuchiol-footer section-top">
   <div class="bakuchiol-footer__wrapper page-width">
-    <h2 class="bakuchiol-footer__title section-title-bakuchiol">Let’s build together the future of <span>healthy skin.</span> </h2>
+    <h2 class="bakuchiol-footer__title section-title-bakuchiol">
+      Let’s build together the future of <span>healthy skin.</span>
+    </h2>
 
     <div class="bakuchiol-footer__body">
-        <div class="bakuchiol-footer__text">
-            <p>Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean, vegan, and cruelty-free ingredients. It’s the perfect blend of nature and science for glowing, youthful-looking skin.</p>
-        </div>
+      <div class="bakuchiol-footer__text">
+        <p>
+          Formulated for all skin types, including sensitive skin, this serum delivers powerful results using clean,
+          vegan, and cruelty-free ingredients. It’s the perfect blend of nature and science for glowing, youthful-looking
+          skin.
+        </p>
+      </div>
 
-         {% for block in section.blocks %}
-          {% if block.type == 'product' and block.settings.product %}
-            {% assign product = block.settings.product %}
-            <a class="bakuchiol-footer__link button-custom button-custom__black" href="{{ product.url }}">Try Bakuchiol Now</a>
-          {% endif %}
-        {% endfor %}
+      {% for block in section.blocks %}
+        {% if block.type == 'collection' and block.settings.collection != blank %}
+          <a
+            class="bakuchiol-footer__link button-custom button-custom__black"
+            href="{{ block.settings.collection.url }}"
+          >
+            Shop Bakuchiol Collection
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </section>
-
 
 {% schema %}
 {
   "name": "Bakuchiol Footer",
   "blocks": [
     {
-      "type": "product",
-      "name": "Product link",
+      "type": "collection",
+      "name": "Collection link",
       "settings": [
         {
-          "type": "product",
-          "id": "product",
-          "label": "Select a product"
+          "type": "collection",
+          "id": "collection",
+          "label": "Select a collection"
         }
       ]
     }
@@ -41,7 +50,7 @@
       "name": "Bakuchiol Footer",
       "blocks": [
         {
-          "type": "product"
+          "type": "collection"
         }
       ]
     }
