@@ -236,23 +236,3 @@
     font-size: 4.5rem;
   }
 }
-
-@media screen and (min-width: 1440px) {
-  .bakuchiol-price__image {
-    max-width: 70rem;
-  }
-
-  .bakuchiol-price__content-description p {
-    font-size: 2.4rem;
-  }
-}
-
-@media screen and (min-width: 1680px) {
-  .bakuchiol-price__content-titles h2 {
-    font-size: 10rem;
-  }
-
-  .bakuchiol-price__content-titles h3 {
-    font-size: 6rem;
-  }
-}
