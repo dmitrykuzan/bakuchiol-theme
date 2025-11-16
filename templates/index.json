@@ -44,15 +44,15 @@
     "before_after_slider_kTqFFT": {
       "type": "before-after-slider",
       "blocks": {
-        "product_ynWwCR": {
-          "type": "product",
+        "collection_84UJkz": {
+          "type": "collection",
           "settings": {
-            "product": "bakuchiol-age-delay-serum"
+            "collection": "frontpage"
           }
         }
       },
       "block_order": [
-        "product_ynWwCR"
+        "collection_84UJkz"
       ],
       "name": "Before After Slider",
       "settings": {}
