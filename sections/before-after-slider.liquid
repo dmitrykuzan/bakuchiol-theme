@@ -246,26 +246,30 @@
     });
   });
 </script>
-
 {% schema %}
 {
   "name": "Before After Slider",
   "blocks": [
     {
-      "type": "product",
-      "name": "Product link",
+      "type": "collection",
+      "name": "Collection link",
       "settings": [
         {
-          "type": "product",
-          "id": "product",
-          "label": "Select a product"
+          "type": "collection",
+          "id": "collection",
+          "label": "Select a collection"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Before After Slider"
+      "name": "Before After Slider",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ]
     }
   ]
 }
