@@ -146,7 +146,7 @@
   margin-bottom:12px;
 }
 .custom-review .crv-name{
-  font-weight:800;
+  font-weight:600;
   color:#000000;
   letter-spacing:.2px;
   font-size:clamp(22px, 2.4vw, 34px);
@@ -160,7 +160,7 @@
   border-radius:999px;
   background:#f4f4f4;
   color:#333;
-  font-weight:700;
+  font-weight:500;
   font-size:clamp(13px, 1.2vw, 16px);
   line-height:1;
 }
@@ -175,11 +175,11 @@
   background:#111;
   color:#fff;
   font-size:12px;
-  font-weight:800;
+  font-weight:600;
 }
 .custom-review .custom-review__item-date{
   color:#8b8b8b;
-  font-weight:600;
+  font-weight:400;
   letter-spacing:.2px;
   font-size:clamp(13px, 1.2vw, 18px);
   line-height:1.2;
@@ -285,7 +285,7 @@
   padding: 0 0 0 10px;
   white-space: nowrap;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: #000 !important;
   text-decoration: none !important;
   cursor: pointer;
@@ -317,7 +317,7 @@
   text-align:right;
 }
 @media (min-width:1024px){ .custom-review__item-title-wrap{ align-items:flex-end; } }
-.custom-review__item-title{ margin:0; font-weight:800; font-size:1.7rem; }
+.custom-review__item-title{ margin:0; font-weight:600; font-size:1.7rem; }
 @media (min-width:1024px){ .custom-review__item-title{ font-size:1.9rem; } }
 .custom-review__item-stars{
   display:inline-flex;
@@ -381,7 +381,7 @@ html.rv-no-scroll{ overflow:hidden; }
   background:none; border:0; font-size:24px; line-height:1; cursor:pointer;
 }
 
-#rv-form label{ display:block; margin:.6rem 0 .3rem; font-weight:600; }
+#rv-form label{ display:block; margin:.6rem 0 .3rem; font-weight:400; }
 #rv-form input, #rv-form textarea{
   width:100%; border:1px solid #ddd; background:#faf9f9;
   border-radius:10px; padding:.75rem 1rem; font-size:1rem;
@@ -412,7 +412,7 @@ html.rv-no-scroll{ overflow:hidden; }
 
 #rv-form button[type="submit"]{
   margin-top:1rem; width:100%; padding:.9rem 1rem;
-  background:#000; color:#fff; font-weight:700; border:0; border-radius:10px;
+  background:#000; color:#fff; font-weight:500; border:0; border-radius:10px;
   cursor:pointer; transition:background .2s ease;
 }
 #rv-form button[type="submit"]:hover{ background:#333; }
@@ -445,7 +445,7 @@ html.rv-no-scroll{ overflow:hidden; }
   position:absolute; top:50%; transform:translateY(-50%);
   width:42px; height:42px; border-radius:50%; border:0; background:#fff;
   box-shadow:0 4px 16px rgba(0,0,0,.15); display:flex; align-items:center; justify-content:center;
-  cursor:pointer; font-size:22px; font-weight:700;
+  cursor:pointer; font-size:22px; font-weight:500;
 }
 .rv-lb__nav--prev{ left:12px; }
 .rv-lb__nav--next{ right:12px; }
@@ -453,11 +453,11 @@ html.rv-no-scroll{ overflow:hidden; }
 /* Right panel */
 .rv-lb__right{ overflow:auto; padding-right:6px; }
 .rv-lb__row1{ display:flex; align-items:center; gap:10px; }
-.rv-lb__avatar{ width:36px; height:36px; flex:0 0 36px; border-radius:50%; background:#e9e9e9; display:flex; align-items:center; justify-content:center; font-weight:700; color:#666; }
-.rv-lb__name{ font-weight:700; }
-.rv-lb__verified{ color:#fec108; font-weight:700; }
+.rv-lb__avatar{ width:36px; height:36px; flex:0 0 36px; border-radius:50%; background:#e9e9e9; display:flex; align-items:center; justify-content:center; font-weight:500; color:#666; }
+.rv-lb__name{ font-weight:500; }
+.rv-lb__verified{ color:#fec108; font-weight:500; }
 .rv-lb__title-line{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin:10px 0 6px; }
-.rv-lb__title{ font-size:22px; font-weight:800; margin:0; }
+.rv-lb__title{ font-size:22px; font-weight:600; margin:0; }
 .rv-lb__text{ line-height:1.65; color:#333; }
 .rv-lb__thumbs{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
 .rv-lb__thumb{ width:86px; height:86px; border-radius:10px; overflow:hidden; border:1px solid rgba(0,0,0,.08); cursor:pointer; }
@@ -476,7 +476,7 @@ html.rv-no-scroll{ overflow:hidden; }
   display:flex; align-items:center; justify-content:center;
   cursor:pointer;
   box-shadow: 0 2px 12px rgba(0,0,0,.25);
-  font-size: 22px; font-weight: 800;
+  font-size: 22px; font-weight: 600;
 }
 @media (max-width:768px){
   #rv-lightbox .rv-lb__close{
