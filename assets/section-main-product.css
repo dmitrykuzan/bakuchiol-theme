@@ -99,6 +99,29 @@ product-info {
   font-weight: 500;
 }
 
+/* AGE-DELAY POWER TRIO styling */
+.product__upgrade-name {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2E2926; /* soft black used in your theme */
+  margin-top: 0.6rem;
+  text-align: left;
+  white-space: normal;
+}
+
+/* Mobile refinement */
+@media screen and (max-width: 749px) {
+  .product__upgrade-name {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.4rem;
+  }
+}
+
 /* Right side: price + button column */
 .product__upgrade-cta {
   display: flex;
