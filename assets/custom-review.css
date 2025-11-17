@@ -19,8 +19,6 @@
 .custom-review__inner{
   overflow: hidden;
   padding: 1.5rem 0 2.5rem;
-  border-radius: 1.5rem;
-  background: #F7F7F7;
 }
 @media (min-width:1023px){
   .custom-review__inner{ padding: 3rem 0; border-radius: 2rem; }
