@@ -92,84 +92,18 @@
                   data-cascade
                 {% endif %}
               >
-                <div
-                  class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                  {% if settings.animations_reveal_on_scroll %}
-                    data-cascade
-                  {% endif %}
-                >
-                  {%- if section.settings.newsletter_enable -%}
-                    <div class="footer-block__newsletter">
-                      <div class="footer-newsletter-text">
-                        <h2>newsletter</h2>
-                        <h3>You read this far, might as well sign up.</h3>
-                      </div>
-
-                      {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
-                        <input type="hidden" name="contact[tags]" value="newsletter">
-                        <div class="newsletter-form__field-wrapper">
-                          <div class="field">
-                            <input
-                              id="NewsletterForm--{{ section.id }}"
-                              type="email"
-                              name="contact[email]"
-                              class="field__input"
-                              value="{{ form.email }}"
-                              aria-required="true"
-                              autocorrect="off"
-                              autocapitalize="off"
-                              autocomplete="email"
-                              {% if form.errors %}
-                                autofocus
-                                aria-invalid="true"
-                                aria-describedby="ContactFooter-error"
-                              {% elsif form.posted_successfully? %}
-                                aria-describedby="ContactFooter-success"
-                              {% endif %}
-                               placeholder="john.doe@example.com"
-                              {% comment %} placeholder="{{ 'newsletter.label' | t }}" {% endcomment %}
-                              required
-                            >
-                            <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                              john.doe@example.com
-                              {% comment %} {{ 'newsletter.label' | t }} {% endcomment %}
-                            </label>
-                            <button
-                              type="submit"
-                              class="newsletter-form__button field__button"
-                              name="commit"
-                              id="Subscribe"
-                              aria-label="{{ 'newsletter.button_label' | t }}"
-                            >
-                             sign up
-                            </button>
-                          </div>
-                          {%- if form.errors -%}
-                            <small class="newsletter-form__message form__message" id="ContactFooter-error">
-                              <span class="svg-wrapper">
-                                {{- 'icon-error.svg' | inline_asset_content -}}
-                              </span>
-                              {{- form.errors.translated_fields.email | capitalize }}
-                              {{ form.errors.messages.email -}}
-                            </small>
-                          {%- endif -%}
-                        </div>
-                        {%- if form.posted_successfully? -%}
-                          <h3
-                            class="newsletter-form__message newsletter-form__message--success form__message"
-                            id="ContactFooter-success"
-                            tabindex="-1"
-                            autofocus
-                          >
-                            <span class="svg-wrapper">
-                              {{- 'icon-success.svg' | inline_asset_content -}}
-                            </span>
-                            {{- 'newsletter.success' | t }}
-                          </h3>
-                        {%- endif -%}
-                      {%- endform -%}
-                    </div>
-                  {%- endif -%}
+                <div class="footer-flower footer-flower--footer">
+    <div class="footer-flower__clip">
+      <img
+        src="{{ 'bakuchiol-flower.png' | asset_url }}"
+        width="700"
+        height="2100"
+        loading="lazy"
+        alt="Bakuchiol flower used as a gentle plant-derived skincare active"
+        class="footer-flower__img"
+      >
+    </div>
+  </div>
 
                   {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
                     <div class="footer__follow-on-shop">
