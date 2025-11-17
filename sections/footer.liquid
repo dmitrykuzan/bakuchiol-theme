@@ -28,6 +28,16 @@
 {%- endstyle -%}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+
+   <div class="footer__flower">
+    <img
+      src="{{ 'bakuchiol-flower.png' | asset_url }}"
+      alt="Bakuchiol flower"
+      loading="lazy"
+      class="footer__flower-img"
+    >
+  </div>
+ 
  
   {%- liquid
     assign has_social_icons = true

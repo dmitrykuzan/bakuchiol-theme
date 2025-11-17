@@ -1,6 +1,34 @@
 .footer {
-  background-color: #000;
+  background-color: #ffffff;
+  color: #000000;
   /* border-top: 0.1rem solid rgba(var(--color-foreground), 0.08); */
+  position: relative; /* needed for the flower positioning */
+}
+
+/* Decorative flower on right side */
+.footer__flower {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 260px;          /* how wide the flower area is */
+  max-width: 25vw;
+  height: 260px;         /* visible height inside footer */
+  overflow: hidden;      /* hides part of the stem */
+  pointer-events: none;  /* avoids blocking clicks */
+}
+
+.footer__flower-img {
+  display: block;
+  height: 360px;         /* a bit taller than wrapper so stem is cropped */
+  width: auto;
+  transform: translateY(40px); /* push image down so just the top/stem base shows */
+}
+
+/* hide the flower on smaller screens if it feels cramped */
+@media screen and (max-width: 990px) {
+  .footer__flower {
+    display: none;
+  }
 }
 
 .footer__content-top-actions {
@@ -13,9 +41,9 @@
 }
 
 .footer__content-product-link:hover {
-  border: 0.1rem solid #fff;
-  color: #fff;
-  background-color: #000;
+  border: 0.1rem solid #000;
+  color: #000;
+  background-color: #fff;
 }
 
 @media screen and (min-width: 1023px) {
@@ -35,22 +63,19 @@
 
 .footer-custom__text {
   margin-top: 5rem;
-  svg {
-    width: 100%;
-    height: 100%;
-  }
+}
+.footer-custom__text svg {
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 460px) {
-  .footer-custom__text {
-    p {
-      font-size: 6rem;
-
-      .icon {
-        height: 6rem;
-        max-width: 4rem;
-      }
-    }
+  .footer-custom__text p {
+    font-size: 6rem;
+  }
+  .footer-custom__text p .icon {
+    height: 6rem;
+    max-width: 4rem;
   }
 }
 
@@ -92,12 +117,9 @@
   }
 }
 
-
-
-
 @media screen and (min-width: 990px) {
   .footer__item-custom {
-   max-width: 20rem;
+    max-width: 20rem;
   }
 }
 
@@ -105,9 +127,7 @@
   order: 2;
 }
 
-/* .footer__item-custom:nth-child(2) {
-  order: 1;
-} */
+/* .footer__item-custom:nth-child(2) { order: 1; } */
 
 .footer__item-custom:nth-child(3) {
   order: 2;
@@ -139,11 +159,6 @@
   .footer-block.grid__item:first-child {
     margin-top: 0;
   }
-
-  .footer__content-top {
-    /* padding-left: calc(4rem / var(--font-body-scale));
-    padding-right: calc(4rem / var(--font-body-scale)); */
-  }
 }
 
 @media screen and (min-width: 750px) {
@@ -154,7 +169,7 @@
 }
 
 .footer__content-bottom {
-  border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
+  border-top: solid 0.1rem rgba(0, 0, 0, 0.08);
   padding-top: 3rem;
 }
 
@@ -238,7 +253,6 @@
   display: none;
 }
 
-
 .footer-block--newsletter {
   display: flex;
   align-items: flex-start;
@@ -285,7 +299,7 @@
   margin-bottom: 1.5rem;
   margin-top: 0;
   font-size: calc(var(--font-heading-scale) * 2.2rem);
-   color: #959595;
+  color: #959595;
 }
 
 @media screen and (min-width: 990px) {
@@ -313,68 +327,72 @@
   flex-grow: 1;
   gap: 2rem;
   width: 100%;
-
-  .footer-newsletter-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    h2,h3, p {
-      margin: initial;
-    }
-
-    h2 {
-      color: #959595;
-      text-transform: uppercase;
-      text-align: start;
-      font-weight: 500;
-      font-size: calc(var(--font-heading-scale) * 2.2rem);
-    }
-
-    h3 {
-      text-align: start;
-      line-height: 133%;
-      font-weight: 500;
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 1.6rem;
-    }
-  }
 }
 
-@media screen and (min-width: 520px) { 
+.footer-block__newsletter .footer-newsletter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-block__newsletter .footer-newsletter-text h2,
+.footer-block__newsletter .footer-newsletter-text h3,
+.footer-block__newsletter .footer-newsletter-text p {
+  margin: initial;
+}
+
+.footer-block__newsletter .footer-newsletter-text h2 {
+  color: #959595;
+  text-transform: uppercase;
+  text-align: start;
+  font-weight: 500;
+  font-size: calc(var(--font-heading-scale) * 2.2rem);
+}
+
+.footer-block__newsletter .footer-newsletter-text h3 {
+  text-align: start;
+  line-height: 133%;
+  font-weight: 500;
+  color: #000;           /* was white */
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 520px) {
   .footer-block__newsletter {
     display: flex;
     flex-direction: column;
   }
 }
 
-@media screen and (min-width: 1023px) { 
+@media screen and (min-width: 1023px) {
   .footer-block__newsletter {
     padding-bottom: initial;
+  }
 
-  .footer-newsletter-text {
+  .footer-block__newsletter .footer-newsletter-text {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-   
-    h2,h3, p {
-      text-align: start;
-      margin: initial;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1.8rem;
-    }
   }
+
+  .footer-block__newsletter .footer-newsletter-text h2,
+  .footer-block__newsletter .footer-newsletter-text h3,
+  .footer-block__newsletter .footer-newsletter-text p {
+    text-align: start;
+    margin: initial;
+  }
+
+  .footer-block__newsletter .footer-newsletter-text h2 {
+    font-size: 2rem;
+  }
+
+  .footer-block__newsletter .footer-newsletter-text h3 {
+    font-size: 1.8rem;
   }
 }
 
-@media screen and (min-width: 1200px) { 
+@media screen and (min-width: 1200px) {
   .footer-block__newsletter {
     margin-bottom: auto;
     gap: 2rem;
@@ -386,7 +404,6 @@
 }
 
 @media screen and (min-width: 750px) {
-  /* Pushes other components to the right of the flexbox */
   .footer-block__newsletter:not(:only-child) {
     text-align: left;
     margin-right: auto;
@@ -404,17 +421,13 @@
   .footer__follow-on-shop {
     margin-bottom: 0.4rem;
   }
-  /* Follow on shop is the first button but it has siblings*/
+
   .footer__follow-on-shop:first-child:not(:last-child) {
     justify-content: flex-start;
     margin-right: auto;
     text-align: left;
   }
 
-  /*
-    All three components are present, email, Follow on Shop, and social icons.
-    Moves the FoS button next to the social icons so they appear grouped together
-  */
   .footer__follow-on-shop:not(:first-child):not(:last-child) {
     justify-content: flex-end;
     text-align: right;
@@ -422,10 +435,6 @@
 }
 
 @media screen and (max-width: 749px) {
-  /*
-    On a small screen we want all the items to be centered
-    because they will be stacked.
-   */
   .footer-block--newsletter {
     display: flex;
     flex-direction: column;
@@ -467,7 +476,7 @@
 
 .footer__localization h2 {
   margin: 1rem 1rem 0.5rem;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 @media screen and (min-width: 750px) {
@@ -513,21 +522,15 @@
   }
 }
 
-.footer-block__details-content.rte {
-  /* margin-bottom: 4rem; */
-
-  p {
-    font-weight: 500;
-    color: #66645E;
-  }
+.footer-block__details-content.rte p {
+  font-weight: 500;
+  color: #66645e;
 }
 
 @media screen and (min-width: 1023px) {
-.footer-block__details-content.rte {
-  p {
-   font-size: 1.8rem;
+  .footer-block__details-content.rte p {
+    font-size: 1.8rem;
   }
-}
 }
 
 @media screen and (min-width: 750px) {
@@ -551,9 +554,8 @@
 
 .footer-block__details-content .list-menu__item--link,
 .copyright__content a {
-  color: rgba(var(--color-foreground), 0.75);
   font-weight: 500;
-  color: #fff;
+  color: #000000; /* black text on white */
 }
 
 .footer-block__details-content .list-menu__item--link {
@@ -562,13 +564,12 @@
 
 .footer-block__details-content .list-menu__item--active {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  color: #000000;
 }
 
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link:hover,
   .copyright__content a:hover {
-    /* color: rgb(var(--color-foreground)); */
     text-decoration: underline;
     text-underline-offset: 0.3rem;
   }
@@ -702,6 +703,7 @@
     padding: 0;
   }
 }
+
 @keyframes animateLocalization {
   0% {
     opacity: 0;
@@ -732,5 +734,3 @@
     }
   }
 }
-
-
