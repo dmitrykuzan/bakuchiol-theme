@@ -23,16 +23,16 @@
             "swatch_shape": "circle"
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
         },
         "collapsible_tab_Un7wmp": {
           "type": "collapsible_tab",
@@ -65,8 +65,8 @@
       "block_order": [
         "title",
         "variant_picker",
-        "description",
         "buy_buttons",
+        "description",
         "collapsible_tab_Un7wmp",
         "collapsible_tab_rwFgRq",
         "collapsible_tab_AtGN8x"
