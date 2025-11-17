@@ -139,13 +139,15 @@ product-info {
   color: #2e2926;
 }
 
-/* MAIN ROW: always horizontal (desktop + mobile) */
+/* MAIN ROW */
 .product__upgrade-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
   gap: 1.6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* LEFT: copy + image */
@@ -165,7 +167,7 @@ product-info {
   color: #4b4743;
 }
 
-/* MIDDLE: name – stays in place, not pushed by button */
+/* MIDDLE: product name – flexes between left & CTA */
 .product__upgrade-name {
   font-size: 1.3rem;
   font-weight: 600;
@@ -173,23 +175,27 @@ product-info {
   text-transform: uppercase;
   color: #2e2926;
   text-align: left;
-  flex: 0 0 auto;
+  flex: 1 1 auto;  /* take remaining space, shrink before CTA overflows */
+  white-space: normal;
 }
 
-/* RIGHT: price + button – pinned to the right */
+/* RIGHT: price + button – fixed max width so it never pushes outside */
 .product__upgrade-cta {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.6rem;
-  margin-left: auto; /* pushes CTA to the far right */
-  flex: 0 0 auto;
+  margin-left: auto;
+  flex: 0 1 220px;    /* can shrink, but max ~220px */
+  max-width: 220px;
 }
 
 .upgrade-price-block {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .upgrade-price {
@@ -204,10 +210,10 @@ product-info {
   opacity: 0.55;
 }
 
-/* keep button width stable so text block doesn't move */
+/* keep button width stable but inside CTA block */
 .product__upgrade-cta .product-form__submit {
-  min-width: 180px;
-  text-align: center;
+  width: 100%;
+  min-width: 0;          /* allow shrinking with container */
   white-space: nowrap;
 }
 
@@ -221,7 +227,7 @@ product-info {
   text-decoration: line-through;
 }
 
-/* MOBILE TWEAKS – still horizontal but slightly tighter */
+/* MOBILE – still horizontal, just a bit tighter */
 @media screen and (max-width: 749px) {
   .product__upgrade-wrapper {
     gap: 1.2rem;
@@ -237,8 +243,9 @@ product-info {
     letter-spacing: 0.16em;
   }
 
-  .product__upgrade-cta .product-form__submit {
-    min-width: 150px;
+  .product__upgrade-cta {
+    flex: 0 1 190px;
+    max-width: 190px;
   }
 }
 
