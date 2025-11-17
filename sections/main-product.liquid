@@ -2584,29 +2584,26 @@
 
         <span class="product__upgrade-name">AGE-DELAY<br>POWER TRIO</span>
 
-        <!-- RIGHT: price + Add to Cart -->
+        <!-- RIGHT: price + AJAX button -->
         <div class="product__upgrade-cta">
           <div class="upgrade-price-block">
             <span class="upgrade-price">$96</span>
             <span class="upgrade-compare">$144</span>
           </div>
 
-          <form method="post" action="/cart/add" class="product__upgrade-form">
-            <!-- Trio variant ID -->
-            <input type="hidden" name="id" value="51358068965689">
-            <input type="hidden" name="quantity" value="1">
-
-            <button
-              type="submit"
-              class="product-form__submit button--primary-bakuchiol button-custom button-custom__black"
-            >
-              <span>Add To Cart</span>
-            </button>
-          </form>
+          <button
+            type="button"
+            class="product-form__submit button--primary-bakuchiol button-custom button-custom__black js-upgrade-add"
+            data-variant-id="51358068965689"
+            data-quantity="1"
+          >
+            <span>Add To Cart</span>
+          </button>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
+  
 {% endif %}
 
               {%- when 'collapsible_tab' -%}
