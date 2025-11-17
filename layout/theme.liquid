@@ -395,8 +395,10 @@
 
       if (!variantId) return;
 
+      const originalText = button.innerHTML;
       button.disabled = true;
       button.classList.add('is-loading');
+      button.innerHTML = '<span>Adding…</span>';
 
       fetch('/cart/add.js', {
         method: 'POST',
@@ -414,22 +416,26 @@
           return res.json();
         })
         .then(function () {
-          // Try to open Dawn cart drawer / cart notification
+          // Small delay so Shopify finishes updating cart before drawer opens
           const drawerToggle =
             document.querySelector('[data-cart-toggle]') ||
             document.querySelector('.header__icon--cart') ||
             document.querySelector('a[href="/cart"]');
 
           if (drawerToggle) {
-            drawerToggle.click();
+            setTimeout(function () {
+              drawerToggle.click();
+            }, 250);
           }
         })
         .catch(function (err) {
           console.error(err);
+          // Optionally show an error state here
         })
         .finally(function () {
           button.disabled = false;
           button.classList.remove('is-loading');
+          button.innerHTML = originalText;
         });
     });
   });
