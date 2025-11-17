@@ -413,3 +413,34 @@ details[open].menu-opening > .menu-drawer__submenu {
     padding-inline: 2.2rem;
   }
 }
+
+/* FORCE ALL MENU TEXT INSIDE THE DRAWER TO BE BLACK */
+.premium-menu-drawer,
+.premium-menu-drawer * {
+  color: #000 !important;
+}
+
+/* Also force submenu links */
+.premium-menu-drawer .menu-drawer__menu-item,
+.premium-menu-drawer__submenu .menu-drawer__menu-item,
+.premium-menu-drawer__link,
+.premium-menu-drawer__link--child,
+.premium-menu-drawer__link--grandchild {
+  color: #000 !important;
+}
+
+/* Hover states */
+.premium-menu-drawer .menu-drawer__menu-item:hover,
+.premium-menu-drawer__link:hover,
+.premium-menu-drawer__link--child:hover,
+.premium-menu-drawer__link--grandchild:hover {
+  background-color: rgba(0,0,0,0.05) !important;
+  color: #000 !important;
+}
+
+/* Chevron coloring */
+.premium-menu-drawer .premium-menu-drawer__chevron svg,
+.premium-menu-drawer__back-icon svg {
+  stroke: #000 !important;
+  fill: #000 !important;
+  color: #000 !important;
