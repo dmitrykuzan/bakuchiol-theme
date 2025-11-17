@@ -2557,57 +2557,44 @@
                   {{- product.selected_or_first_available_variant.sku -}}
                 </p>
               {%- when 'custom_liquid' -%}
-                  {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
-                      <div class="product__upgrade">
-                        <div class="product__upgrade-top">
-                          <p></p>
-                        </div>
+                  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const upgradeBtn = document.querySelector('.js-upgrade-add');
+    if (!upgradeBtn) return;
 
-                        <div class="product__upgrade-bottom">
-                          <p class="product__upgrade-title">RESULTS THAT LAST</p>
+    upgradeBtn.addEventListener('click', function () {
+      const variantId = this.dataset.variantId;
+      const quantity  = parseInt(this.dataset.quantity || '1', 10);
 
-                          <div class="product__upgrade-wrapper">
-                            <!-- LEFT: copy + image -->
-                            <div class="product__upgrade-content">
-                              <span class="product__upgrade-text">
-                                BUY TWO <br>
-                                + <br>
-                                ONE FREE
-                              </span>
-                              <img
-                                src="{{ 'age-delay-set.png' | asset_url }}"
-                                height="117"
-                                alt="Bakuchiol Age-Delay Power Trio"
-                                loading="lazy"
-                              >
-                            </div>
-                            <span class="product__upgrade-name">AGE-DELAY <BR> POWER TRIO</span>
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          id: variantId,
+          quantity: quantity
+        })
+      })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Network error');
+        return res.json();
+      })
+      .then(function (item) {
+        // OPTION A: open / refresh cart drawer if your theme uses one
+        document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { item: item } }));
 
-                            <!-- RIGHT: price + button -->
-                            <div class="product__upgrade-cta">
-                              <div class="upgrade-price-block">
-                                <span class="upgrade-price">$96</span>
-                                <span class="upgrade-compare">$144</span>
-                              </div>
-
-                              <form method="post" action="/cart/add">
-                                <input type="hidden" name="id" value="51358068965689">
-                                <input type="hidden" name="quantity" value="1">
-
-                                <button
-                                  type="submit"
-                                  class="product-form__submit button--primary-bakuchiol button-custom button-custom__black"
-                                  style="cursor: pointer !important;"
-                                >
-                                  <span>Add To Cart</span>
-                                  {%- render 'loading-spinner' -%}
-                                </button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    {% endif %}
+        // OPTION B: simple redirect to cart page instead (uncomment if you prefer)
+        // window.location.href = '/cart';
+      })
+      .catch(function (err) {
+        console.error('Upgrade add-to-cart failed', err);
+        alert('Something went wrong adding this set to your cart. Please try again.');
+      });
+    });
+  });
+</script>
 
               {%- when 'collapsible_tab' -%}
                 
