@@ -2877,52 +2877,50 @@
                     }
                   </style>
 
-                   {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
-                      <div class="product__upgrade">
-                        <div class="product__upgrade-top">
-                          <p></p>
-                        </div>
+               {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+  <div class="product__upgrade">
+    <div class="product__upgrade-top">
+      <p></p>
+    </div>
 
-                        <div class="product__upgrade-bottom">
-                          <p class="product__upgrade-title">RESULTS THAT LAST</p>
-                          <div class="product__upgrade-wrapper">
-                            <div class="product__upgrade-content">
-                              <span class="product__upgrade-text"
-                                >BUY TWO <br>
-                                + <br>
-                                ONE FREE</span
-                              >
-                              <img
-                                src="{{ 'age-delay-set.png' | asset_url }}"
-                                height="117"
-                                alt="Volufiline product"
-                                loading="lazy"
-                              >
-                              <span class="product__upgrade-name">AGE-DELAY <BR>POWER TRIO</span>
-                            </div>
+    <div class="product__upgrade-bottom">
+      <p class="product__upgrade-title">RESULTS THAT LAST</p>
+      <div class="product__upgrade-wrapper">
+        <div class="product__upgrade-content">
+          <span class="product__upgrade-text">
+            BUY TWO <br>
+            + <br>
+            ONE FREE
+          </span>
+          <img
+            src="{{ 'age-delay-set.png' | asset_url }}"
+            height="117"
+            alt="Bakuchiol Age-Delay Power Trio"
+            loading="lazy"
+          >
+          <span class="product__upgrade-name">AGE-DELAY <br>POWER TRIO</span>
+        </div>
 
-                            <form method="post" action="/cart/add">
-                              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                              <input type="hidden" name="quantity" value="3">
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <input type="hidden" name="quantity" value="3">
 
-                              <button
-                                type="submit"
-                                class="product-form__submit  button--primary-bakuchiol button-custom button-custom__black"
-                                style="cursor: pointer !important;"
-                              >
-                                <span>
-                                  Buy Now - $96
-                                  <span class="product-price-compare">$144</span>
-                                </span>
-                                {%- render 'loading-spinner' -%}
-                              </button>
-                            </form>
-                          </div>
-                        </div>
-                        
-                      
-                      </div>
-                    {% endif %}
+          <button
+            type="submit"
+            class="product-form__submit button--primary-bakuchiol button-custom button-custom__black"
+            style="cursor: pointer !important;"
+          >
+            <span>
+              Buy Now – $96
+              <span class="product-price-compare">$144</span>
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endif %}
 
 
               {%- when 'popup' -%}
