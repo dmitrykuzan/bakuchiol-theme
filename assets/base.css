@@ -440,12 +440,6 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 }
 
-.drawer__close .svg-wrapper svg,
-.drawer__close .svg-wrapper svg path {
-  fill: #000 !important;
-  stroke: #000 !important;
-}
-
 
 
 .header.is-not-main {
