@@ -384,59 +384,72 @@
 
   <script>
   document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('click', function (event) {
-      const button = event.target.closest('.js-upgrade-add');
-      if (!button) return;
+    const upgradeButtons = document.querySelectorAll('.js-upgrade-add');
+    if (!upgradeButtons.length) return;
 
-      event.preventDefault();
+    upgradeButtons.forEach(function (button) {
+      button.addEventListener('click', async function (event) {
+        event.preventDefault();
 
-      const variantId = button.dataset.variantId;
-      const quantity = parseInt(button.dataset.quantity || '1', 10);
+        const variantId = button.dataset.variantId;
+        const quantity = parseInt(button.dataset.quantity || '1', 10);
 
-      if (!variantId) return;
+        if (!variantId) return;
 
-      const originalText = button.innerHTML;
-      button.disabled = true;
-      button.classList.add('is-loading');
-      button.innerHTML = '<span>Adding…</span>';
+        const originalHTML = button.innerHTML;
+        button.disabled = true;
+        button.classList.add('is-loading');
+        button.innerHTML = '<span>Adding…</span>';
 
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          id: variantId,
-          quantity: quantity
-        })
-      })
-        .then(function (res) {
-          if (!res.ok) throw new Error('Add to cart failed');
-          return res.json();
-        })
-        .then(function () {
-          // Small delay so Shopify finishes updating cart before drawer opens
+        try {
+          // 1) Add to cart
+          const addRes = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              id: variantId,
+              quantity: quantity
+            })
+          });
+
+          if (!addRes.ok) {
+            throw new Error('Add to cart failed');
+          }
+
+          await addRes.json();
+
+          // 2) Force a fresh cart fetch to avoid race conditions
+          await fetch('/cart.js?ts=' + Date.now(), {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          // 3) Now open the drawer AFTER we know cart is updated
           const drawerToggle =
             document.querySelector('[data-cart-toggle]') ||
             document.querySelector('.header__icon--cart') ||
             document.querySelector('a[href="/cart"]');
 
           if (drawerToggle) {
+            // Tiny delay so theme JS that listens to cart changes has time to react
             setTimeout(function () {
               drawerToggle.click();
-            }, 250);
+            }, 150);
           }
-        })
-        .catch(function (err) {
+        } catch (err) {
           console.error(err);
-          // Optionally show an error state here
-        })
-        .finally(function () {
+          // You can show an error message here if you want
+        } finally {
           button.disabled = false;
           button.classList.remove('is-loading');
-          button.innerHTML = originalText;
-        });
+          button.innerHTML = originalHTML;
+        }
+      });
     });
   });
 </script>
