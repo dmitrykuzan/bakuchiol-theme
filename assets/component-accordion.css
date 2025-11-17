@@ -37,7 +37,7 @@
 
 
 .product__accordion .accordion__content ul li p {
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 1.5;
 }
 
