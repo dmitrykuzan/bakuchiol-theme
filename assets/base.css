@@ -440,25 +440,10 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 }
 
-.drawer__close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-.drawer__close:hover {
-  background-color: rgba(0,0,0,0.05);
-}
-
-.drawer__close svg {
-  width: 18px;
-  height: 18px;
-  fill: #000; /* hardcoded black */
+.drawer__close .svg-wrapper svg,
+.drawer__close .svg-wrapper svg path {
+  fill: #000 !important;
+  stroke: #000 !important;
 }
 
 
