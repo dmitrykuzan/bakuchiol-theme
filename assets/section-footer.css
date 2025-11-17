@@ -807,3 +807,44 @@
 .footer__content-bottom {
   border-top: 0.1rem solid rgba(0, 0, 0, 0.12) !important;
 }
+
+/* Decorative bakuchiol flower in footer */
+.footer {
+  position: relative; /* allow absolute positioning inside */
+}
+
+/* container that sits on the top edge of the footer */
+.footer-flower--footer {
+  position: absolute;
+  top: -140px;          /* how far it sticks up above the footer */
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none; /* decorative only */
+}
+
+/* crop so we don’t show the whole stem */
+.footer-flower__clip {
+  width: 220px;         /* flower width */
+  height: 220px;        /* how much of the top is visible */
+  overflow: hidden;
+}
+
+/* actual image */
+.footer-flower__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: translateY(35%); /* slide image so we see mainly the top */
+}
+
+/* smaller on mobile */
+@media screen and (max-width: 749px) {
+  .footer-flower--footer {
+    top: -110px;
+  }
+
+  .footer-flower__clip {
+    width: 160px;
+    height: 170px;
+  }
+}
