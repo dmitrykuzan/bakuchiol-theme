@@ -114,13 +114,6 @@ product-info {
 
 .product__upgrade-top {
   padding-bottom: 0.8rem;
-  border-bottom: none;
-}
-
-.product__upgrade-top p {
-  margin: 0;
-  line-height: 1.22;
-  font-weight: 500;
 }
 
 .product__upgrade-bottom {
@@ -135,7 +128,6 @@ product-info {
   font-size: 1.2rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  line-height: 1.3;
   color: #2e2926;
 }
 
@@ -144,25 +136,23 @@ product-info {
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;
   gap: 1rem;
   width: 100%;
-  box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
-/* LEFT: copy + image */
+/* LEFT SECTION */
 .product__upgrade-content {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  flex: 0 0 34%;       /* fixed share of row on mobile */
+  flex: 0 0 34%;
   min-width: 0;
 }
 
 .product__upgrade-text {
   text-align: center;
   max-width: 7rem;
-  line-height: 1.22;
   font-size: 1.1rem;
   font-weight: 500;
   color: #4b4743;
@@ -170,45 +160,43 @@ product-info {
 
 .product__upgrade-content img {
   max-width: 80px;
-  height: auto;
 }
 
-/* MIDDLE: product name */
+/* MIDDLE SECTION */
 .product__upgrade-name {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #2e2926;
-  text-align: left;
-  flex: 1 1 0;        /* flexy middle that can shrink */
+  flex: 1 1 auto;
   min-width: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* RIGHT: price + button */
+/* RIGHT SECTION */
 .product__upgrade-cta {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.6rem;
-  margin-left: auto;
-  flex: 0 0 30%;       /* share of row on mobile */
+  flex: 0 0 30%;
   min-width: 0;
 }
 
+/* PRICE BLOCK — updated sizes */
 .upgrade-price-block {
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
-  width: 100%;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .upgrade-price {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2e2926;
+  font-size: 1.6rem;   /* bigger */
+  font-weight: 700;
+  color: #000;
 }
 
 .upgrade-compare {
@@ -217,118 +205,51 @@ product-info {
   opacity: 0.55;
 }
 
-/* Button inside CTA – keep width stable */
+/* BUTTON — base */
 .product__upgrade-cta .product-form__submit {
   width: 100%;
-  min-width: 0;          /* allow shrinking with column */
   white-space: nowrap;
-  padding-inline: 1.2rem;
+  min-width: 0;
+  padding: 10px 14px;
 }
 
-/* legacy link style preserved */
-.product__upgrade-link {
-  max-width: 17rem;
-  gap: 0.5rem;
+/* MOBILE BUTTON FIX — smaller text ONLY inside upgrade */
+@media screen and (max-width: 749px) {
+  .product__upgrade-cta .product-form__submit span {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.05em;
+  }
 }
 
-.product__upgrade-link span {
-  text-decoration: line-through;
-}
-
-/* VERY NARROW phones: hide compare price to save space */
+/* ULTRA SMALL PHONES FIX */
 @media screen and (max-width: 360px) {
-  .upgrade-compare {
-    display: none;
-  }
-
-  .product__upgrade-text {
-    display: none; /* optional: comment this out if you want to keep the copy */
-  }
-
-  .product__upgrade-content {
-    flex: 0 0 28%;
-  }
+  .upgrade-compare { display: none; }
 }
 
-/* TABLET / DESKTOP REFINEMENTS */
+/* TABLET / DESKTOP */
 @media screen and (min-width: 750px) {
-  .product__upgrade-content {
-    flex: 0 0 auto;
-    gap: 0.8rem;
-  }
-
   .product__upgrade-content img {
     max-width: 120px;
   }
-
   .product__upgrade-name {
     font-size: 1.3rem;
   }
-
   .product__upgrade-cta {
-    flex: 0 0 auto;
     max-width: 220px;
   }
 }
 
+/* DESKTOP refinements */
 @media screen and (min-width: 1023px) {
-  .product {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .product .grid__item {
-    width: 60%;
-  }
-
-  .product .grid__item-melatonic {
-    padding-right: 1rem;
-    margin-left: -5rem;
-  }
-
   .product__upgrade-wrapper {
     gap: 2rem;
   }
 }
 
 @media screen and (min-width: 1380px) {
-  .product .grid__item-melatonic {
-    padding-right: 0;
-  }
-
-  .product .grid__item {
-    width: 60%;
-  }
-
   .product__upgrade-name {
     font-size: 1.6rem;
   }
-
-  .product__upgrade-content {
-    gap: 1rem;
-  }
-}
-
-@media screen and (min-width: 1480px) {
-  .product__upgrade-link {
-    max-width: 18rem;
-  }
-}
-
-/* existing product grid spacing */
-.product.grid {
-  gap: 2rem;
-}
-
-@media screen and (min-width: 1023px) {
-  .product.grid {
-    gap: 0;
-  }
-}
-
-.product--no-media {
-  max-width: 57rem;
-  margin: 0 auto;
 }
 
 .product__media-wrapper {
@@ -606,7 +527,6 @@ product-info {
 .product__info-container .product__description,
 .product__info-container .icon-with-text {
   margin: 2.5rem 0;
-  text-transform: uppercase;
 }
 
 .product__text {
