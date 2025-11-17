@@ -137,3 +137,52 @@
     {%- endif -%}
   </div>
 {% endunless %}
+
+<style>
+/* Cleaner, more elegant product price styling */
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.price__container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+/* Current price */
+.price__regular .price-item--regular,
+.price__sale .price-item--sale {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Slight bump for sale price */
+.price__sale .price-item--sale {
+  font-size: 1.7rem;
+}
+
+/* Crossed-out compare-at price */
+.price__sale s.price-item--regular,
+.price__regular s.price-item--regular {
+  font-size: 1.3rem;
+  opacity: 0.4;
+  text-decoration-thickness: 1px;
+}
+
+/* When product is on sale, hide the non-sale regular block */
+.price--on-sale .price__regular {
+  display: none;
+}
+
+/* Unit price small + subtle */
+.price .unit-price {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  margin-top: 0.25rem;
+}
+</style>
