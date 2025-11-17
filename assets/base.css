@@ -2534,6 +2534,7 @@ input[type='checkbox'] {
 .utility-bar {
   height: 100%;
   background-color: #b19cd6 !important;
+  color: white !important;
 }
 
 .utility-bar--bottom-border {
