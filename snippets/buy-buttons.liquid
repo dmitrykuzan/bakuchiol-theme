@@ -96,11 +96,9 @@
             <span>
               {% assign variant = product.selected_or_first_available_variant %}
 
-              buy now
+              Add to Cart
 
-              <span class="product-price-current">
-                {{ variant.price | money }}
-              </span>
+              
 
               {% if variant.compare_at_price > variant.price %}
                 <span class="product-price-compare">
