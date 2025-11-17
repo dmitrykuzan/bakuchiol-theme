@@ -450,6 +450,11 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   font-size: 13px !important;
 }
 
+accordion__content.rte ul li {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 
 
 .header.is-not-main {
