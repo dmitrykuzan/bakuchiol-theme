@@ -431,6 +431,13 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 .icon-hamburger path {
   fill: #000 !important;   /* forcibly overrides fill="#ffffff" */
 }
+
+.icon-close {
+  fill: black !important;   /* override inline fill */
+}
+.icon-close path {
+  fill: black !important;   /* forcibly overrides fill="#ffffff" */
+}
 }
 
 
@@ -460,12 +467,12 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 
   .icon-close path {
-  fill:rgb(0, 0, 0) !important; /* black */
+  fill: #ffffff !important; /* black */
   
 }
 
   .icon-hamburger path {
-  fill:rgb(0, 0, 0) !important; /* black */
+  fill: #ffffff !important; /* black */
   
 }
 
