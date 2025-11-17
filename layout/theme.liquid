@@ -381,4 +381,57 @@
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'dynamic-adaptive.js' | asset_url }}" defer="defer"></script>
   </body>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (event) {
+      const button = event.target.closest('.js-upgrade-add');
+      if (!button) return;
+
+      event.preventDefault();
+
+      const variantId = button.dataset.variantId;
+      const quantity = parseInt(button.dataset.quantity || '1', 10);
+
+      if (!variantId) return;
+
+      button.disabled = true;
+      button.classList.add('is-loading');
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          id: variantId,
+          quantity: quantity
+        })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Add to cart failed');
+          return res.json();
+        })
+        .then(function () {
+          // Try to open Dawn cart drawer / cart notification
+          const drawerToggle =
+            document.querySelector('[data-cart-toggle]') ||
+            document.querySelector('.header__icon--cart') ||
+            document.querySelector('a[href="/cart"]');
+
+          if (drawerToggle) {
+            drawerToggle.click();
+          }
+        })
+        .catch(function (err) {
+          console.error(err);
+        })
+        .finally(function () {
+          button.disabled = false;
+          button.classList.remove('is-loading');
+        });
+    });
+  });
+</script>
 </html>
