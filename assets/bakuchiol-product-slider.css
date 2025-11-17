@@ -1,115 +1,87 @@
-/* =========================
-   Bakuchiol product slider
-   ========================= */
-
-/* The left media column – stretch to match the product info column height */
 .bakuchiol-product-slider__wrapper {
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 100%;          /* let the parent flex row define the total height */
-  align-self: stretch;   /* match the right column's height */
 }
 
-/* Remove sticky on desktop so it doesn't create its own giant height */
 @media screen and (min-width: 1023px) {
   .bakuchiol-product-slider__wrapper {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: 3rem;
     gap: 2rem;
   }
 }
 
+
 @media screen and (min-width: 1480px) {
   .bakuchiol-product-slider__wrapper {
-    flex-direction: column;
-    margin: 0;
-    max-width: none;
+    flex-direction: row-reverse;
+    margin-bottom: initial;
+    max-width: initial;
+    margin-left: initial;
+    margin-right: initial;
   }
 }
 
-/* Big swiper takes all the height of the wrapper */
 .bakuchiol-product-slider__big {
   position: relative;
   width: 100%;
-  height: 100%;
+  
 }
 
-.bakuchiol-product-slider__big .swiper-wrapper {
-  height: 100%;
-}
-
-.bakuchiol-product-slider__big .swiper-slide {
-  height: 100%;
-  display: flex;
-}
-
-/* Big image wrapper – center and constrain inside the shared height */
-.bakuchiol-product-slider__image-big {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-/* Big image – scales with the info section height, not bigger */
-.bakuchiol-product-slider__image-big img {
-  display: block;
-  max-height: 100%;  /* key line: no taller than the wrapper (and thus the right side) */
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Navigation overlay */
 .bakuchiol-product-slider-navigation {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
 }
 
 .bakuchiol-product__pagination {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  bottom: 1rem;
-  width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    bottom: 1rem;
+    width: 100%;
 }
 
 .bakuchiol-product-slider-bullets {
-  color: #fff;
-  transition: color 0.3s linear;
-  cursor: pointer;
-}
-
-.bakuchiol-product-slider-bullets-active {
-  color: #000;
+    color: #fff;
+    transition: color 0.3s linear;
+    cursor: pointer;
 }
 
 .bakuchiol-product-slider__btns {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 100%;
 }
 
-/* Thumbs – keep existing styles if you ever re-enable them */
+.bakuchiol-product-slider-bullets-active {
+    color: #000;
+}
 
-.bakuchiol-product-slider__thumbs {
-  display: none;
+@media screen and (min-width: 550px) {
+  .bakuchiol-product-slider__big {
+    width: 100%;
+    margin-left: initial;
+  }
+
+  .bakuchiol-product-slider__thumbs {
+    margin-left: initial;
+    padding-left: initial;
+    padding-right: initial;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -117,10 +89,12 @@
     display: block;
     flex-shrink: 0;
     padding-bottom: 0.2rem;
-  }
 
-  .bakuchiol-product-slider__thumbs .swiper-wrapper .swiper-slide:last-child {
-    margin-right: 0 !important;
+    .swiper-wrapper {
+      .swiper-slide:last-child {
+        margin-right: initial !important;
+      }
+    }
   }
 }
 
@@ -131,7 +105,7 @@
     left: 2rem;
     bottom: 2rem;
     height: 70%;
-    transform: none;
+    transform: initial;
   }
 }
 
@@ -154,8 +128,26 @@
 }
 
 .bakuchiol-product-slider__image-thumbs {
+  img {
+    border-radius: 0rem;
+  }
+}
+
+
+.bakuchiol-product-slider__image-thumbs,
+.bakuchiol-product-slider__image-big {
+  img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
+.bakuchiol-product-slider__image-thumbs {
   display: flex;
-  max-width: none;
+  max-width: initial;
   height: 100%;
   border-radius: 1rem;
   overflow: hidden;
@@ -164,9 +156,13 @@
   transition: border 0.3s linear;
 }
 
-.bakuchiol-product-slider__image-thumbs img {
-  height: auto;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 0;
+@media screen and (min-width: 1480px) {
+  .bakuchiol-product-slider__image-thumbs {
+    max-width: 16rem;
+  }
+}
+
+.bakuchiol-product-slider__image-big {
+  display: flex;
+  height: 100%;
 }
