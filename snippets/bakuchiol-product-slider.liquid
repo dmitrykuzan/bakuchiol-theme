@@ -8,21 +8,21 @@
       {%- for media in product.media -%}
         {%- if media.media_type == 'image' -%}
           <div class="swiper-slide">
-            <div class="bakuchiol-product-slider__image-big">
-            <img
-  src="{{ media | image_url: width: 1600 }}"
-  srcset="
-    {{ media | image_url: width: 600 }} 600w,
-    {{ media | image_url: width: 900 }} 900w,
-    {{ media | image_url: width: 1200 }} 1200w,
-    {{ media | image_url: width: 1600 }} 1600w,
-    {{ media | image_url: width: 2000 }} 2000w
-  "
-  sizes="(min-width: 1200px) 550px, 100vw"
-  loading="lazy"
-  alt="{{ media.alt | escape }}"
-  class="bakuchiol-product-slider__img"
-/>
+            <div class="bakuchiol-product-slider__image-big js-zoom-container">
+              <img
+                src="{{ media | image_url: width: 1600 }}"
+                srcset="
+                  {{ media | image_url: width: 600 }} 600w,
+                  {{ media | image_url: width: 900 }} 900w,
+                  {{ media | image_url: width: 1200 }} 1200w,
+                  {{ media | image_url: width: 1600 }} 1600w,
+                  {{ media | image_url: width: 2000 }} 2000w
+                "
+                sizes="(min-width: 1200px) 550px, 100vw"
+                loading="lazy"
+                alt="{{ media.alt | escape }}"
+                class="bakuchiol-product-slider__img js-zoom-img"
+              />
             </div>
           </div>
           {%- assign media_counter = media_counter | plus: 1 -%}
@@ -32,35 +32,48 @@
 
     <div class="bakuchiol-product-slider-navigation">
       <div class="bakuchiol-product__pagination"></div>
-        <div class="bakuchiol-product-slider__btns">
-          <button class="bakuchiol-slider__btn prev bakuchiol-product-slider__btn--prev">
-            <svg
-              width="30px"
-              height="30px"
-              viewBox="-19.04 0 75.804 75.804"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#ffffff"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#ffffff"></path> </g> </g>
-            </svg>
-          </button>
-          <button class="bakuchiol-slider__btn bakuchiol-product-slider__btn--next">
-            <svg
-              width="30px"
-              height="30px"
-              viewBox="-19.04 0 75.804 75.804"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#ffffff"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#ffffff"></path> </g> </g>
-            </svg>
-          </button>
-        </div>
+      <div class="bakuchiol-product-slider__btns">
+        <button class="bakuchiol-slider__btn prev bakuchiol-product-slider__btn--prev">
+          <svg
+            width="30px"
+            height="30px"
+            viewBox="-19.04 0 75.804 75.804"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#ffffff"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)">
+                <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#ffffff"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <button class="bakuchiol-slider__btn bakuchiol-product-slider__btn--next">
+          <svg
+            width="30px"
+            height="30px"
+            viewBox="-19.04 0 75.804 75.804"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#ffffff"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)">
+                <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#ffffff"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
       </div>
+    </div>
   </div>
 
   <!-- (thumbs) -->
-  {% comment %} <div thumbsSlider="" class="swiper bakuchiol-product-slider__thumbs">
+  {% comment %}
+  <div thumbsSlider="" class="swiper bakuchiol-product-slider__thumbs">
     <div class="swiper-wrapper">
       {%- assign media_counter = 0 -%}
       {%- for media in product.media -%}
@@ -74,55 +87,82 @@
         {%- endif -%}
       {%- endfor -%}
     </div>
-  </div> {% endcomment %}
+  </div>
+  {% endcomment %}
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    {% comment %} var swiper = new Swiper('.bakuchiol-product-slider__thumbs', {
-      spaceBetween: 10,
-      slidesPerView: 4,
-      watchSlidesProgress: true,
-
-      breakpoints: {
-        1023: {
-          direction: 'vertical',
-        },
-      },
-    }); {% endcomment %}
-
+    // Swiper
     var swiper2 = new Swiper('.bakuchiol-product-slider__big', {
       spaceBetween: 5,
       speed: 800,
-
       pagination: {
         el: '.bakuchiol-product__pagination',
         clickable: true,
-        type: "bullets",
-        bulletClass: "bakuchiol-product-slider-bullets",
-        bulletActiveClass: "bakuchiol-product-slider-bullets-active",
-
+        type: 'bullets',
+        bulletClass: 'bakuchiol-product-slider-bullets',
+        bulletActiveClass: 'bakuchiol-product-slider-bullets-active',
         renderBullet: function (index, className) {
-          let number = index + 1;
-          let formatted = number < 10 ? "0" + number : number;
+          var number = index + 1;
+          var formatted = number < 10 ? '0' + number : number;
           return '<span class="' + className + '">' + formatted + '</span>';
         }
       },
-
       navigation: {
         nextEl: '.bakuchiol-product-slider__btn--next',
-        prevEl: '.bakuchiol-product-slider__btn--prev',
+        prevEl: '.bakuchiol-product-slider__btn--prev'
       },
-
-      {% comment %} thumbs: {
-        swiper: swiper,
-      }, {% endcomment %}
-
       breakpoints: {
         1023: {
-          spaceBetween: 10,
-        },
-      },
+          spaceBetween: 10
+        }
+      }
+    });
+
+    // Simple zoom behavior
+    function initZoom() {
+      var isDesktop = window.matchMedia('(min-width: 1023px)').matches;
+      var containers = document.querySelectorAll('.js-zoom-container');
+
+      containers.forEach(function (container) {
+        var img = container.querySelector('.js-zoom-img');
+        if (!img) return;
+
+        // Desktop: hover / mousemove zoom
+        if (isDesktop) {
+          container.addEventListener('mouseenter', function () {
+            container.classList.add('is-zoomed');
+          });
+
+          container.addEventListener('mouseleave', function () {
+            container.classList.remove('is-zoomed');
+            img.style.transformOrigin = '';
+          });
+
+          container.addEventListener('mousemove', function (e) {
+            if (!container.classList.contains('is-zoomed')) return;
+            var rect = container.getBoundingClientRect();
+            var x = ((e.clientX - rect.left) / rect.width) * 100;
+            var y = ((e.clientY - rect.top) / rect.height) * 100;
+            img.style.transformOrigin = x + '% ' + y + '%';
+          });
+        } else {
+          // Mobile: tap to toggle zoom
+          container.addEventListener('click', function () {
+            container.classList.toggle('is-zoomed');
+          });
+        }
+      });
+    }
+
+    initZoom();
+
+    // Re-init zoom on resize breakpoint changes
+    window.addEventListener('resize', function () {
+      // small debounce
+      clearTimeout(window.__bakuchiolZoomTimer);
+      window.__bakuchiolZoomTimer = setTimeout(initZoom, 200);
     });
   });
 </script>
