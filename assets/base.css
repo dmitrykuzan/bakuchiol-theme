@@ -2537,6 +2537,10 @@ input[type='checkbox'] {
   color: white !important;
 }
 
+.icon-arrow {
+  color: white;
+}
+
 .utility-bar--bottom-border {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
