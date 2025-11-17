@@ -107,7 +107,6 @@ product-info {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  /* REMOVED background + border */
   background: none;
   border: none;
   padding: 0;
@@ -115,7 +114,7 @@ product-info {
 
 .product__upgrade-top {
   padding-bottom: 0.8rem;
-  border-bottom: none; /* removed subtle divider */
+  border-bottom: none;
 }
 
 .product__upgrade-top p {
@@ -140,17 +139,21 @@ product-info {
   color: #2e2926;
 }
 
+/* MAIN ROW: always horizontal (desktop + mobile) */
 .product__upgrade-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.2rem;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
 }
 
+/* LEFT: copy + image */
 .product__upgrade-content {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  flex: 0 0 auto;
 }
 
 .product__upgrade-text {
@@ -162,20 +165,25 @@ product-info {
   color: #4b4743;
 }
 
+/* MIDDLE: name – stays in place, not pushed by button */
 .product__upgrade-name {
   font-size: 1.3rem;
   font-weight: 600;
-  text-align: left;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #2e2926;
+  text-align: left;
+  flex: 0 0 auto;
 }
 
+/* RIGHT: price + button – pinned to the right */
 .product__upgrade-cta {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 0.6rem;
+  margin-left: auto; /* pushes CTA to the far right */
+  flex: 0 0 auto;
 }
 
 .upgrade-price-block {
@@ -196,6 +204,13 @@ product-info {
   opacity: 0.55;
 }
 
+/* keep button width stable so text block doesn't move */
+.product__upgrade-cta .product-form__submit {
+  min-width: 180px;
+  text-align: center;
+  white-space: nowrap;
+}
+
 /* legacy link style preserved */
 .product__upgrade-link {
   max-width: 17rem;
@@ -206,7 +221,28 @@ product-info {
   text-decoration: line-through;
 }
 
-/* responsive layout */
+/* MOBILE TWEAKS – still horizontal but slightly tighter */
+@media screen and (max-width: 749px) {
+  .product__upgrade-wrapper {
+    gap: 1.2rem;
+  }
+
+  .product__upgrade-content img {
+    max-width: 110px;
+    height: auto;
+  }
+
+  .product__upgrade-name {
+    font-size: 1.1rem;
+    letter-spacing: 0.16em;
+  }
+
+  .product__upgrade-cta .product-form__submit {
+    min-width: 150px;
+  }
+}
+
+/* DESKTOP REFINEMENTS */
 @media screen and (min-width: 1023px) {
   .product {
     display: flex;
@@ -223,24 +259,13 @@ product-info {
   }
 
   .product__upgrade-wrapper {
-    gap: 1.2rem;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .product__upgrade-content {
-    flex: 1 1 auto;
-  }
-
-  .product__upgrade-cta {
-    flex: 0 0 auto;
-    align-items: flex-end;
+    gap: 2rem;
   }
 }
 
 @media screen and (min-width: 1380px) {
   .product .grid__item-melatonic {
-    padding-right: 0rem;
+    padding-right: 0;
   }
 
   .product .grid__item {
@@ -269,7 +294,7 @@ product-info {
 
 @media screen and (min-width: 1023px) {
   .product.grid {
-    gap: 0rem;
+    gap: 0;
   }
 }
 
