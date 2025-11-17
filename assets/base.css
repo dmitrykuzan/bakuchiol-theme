@@ -460,12 +460,12 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 
   .icon-close path {
-  fill: #ffffff !important; /* black */
+  fill:rgb(0, 0, 0) !important; /* black */
   
 }
 
   .icon-hamburger path {
-  fill: #ffffff !important; /* black */
+  fill:rgb(0, 0, 0) !important; /* black */
   
 }
 
