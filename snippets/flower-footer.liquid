@@ -1,23 +1,24 @@
 {% comment %}
-  Footer Flower Section
+  Footer Flower Section  
   Shows a tall bakuchiol flower centered above the footer.
 {% endcomment %}
 
 <section class="footer-flower">
   <div class="footer-flower__inner page-width">
     <div class="footer-flower__image-wrapper">
-     <img
-  src="{{ 'bakuchiol-flower.png' | asset_url }}"
-  loading="lazy"
-  alt="Bakuchiol flower stem used as a gentle plant-derived skincare active"
-  class="footer-flower__image"
-/>
+      <img
+        src="{{ 'bakuchiol-flower.png' | asset_url }}"
+        width="800"
+        height="2400"
+        loading="lazy"
+        alt="Bakuchiol flower stem used as a gentle plant-derived skincare active"
+        class="footer-flower__image"
+      >
     </div>
   </div>
 </section>
 
 <style>
-
 .footer-flower {
   width: 100%;
   background-color: #ffffff;
@@ -44,6 +45,7 @@
   object-fit: contain;
 }
 
+/* Desktop adjustments */
 @media (min-width: 992px) {
   .footer-flower {
     padding-top: 4rem;
@@ -56,6 +58,7 @@
   }
 }
 
+/* Mobile adjustments */
 @media (max-width: 767px) {
   .footer-flower {
     padding-top: 2rem;
