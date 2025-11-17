@@ -70,3 +70,44 @@
 }
 
 /* existing styles above ... */
+/* --- SIMPLE ZOOM STYLES --- */
+
+.bakuchiol-product-slider__image-big {
+  position: relative;
+  overflow: hidden;
+}
+
+/* base image */
+.bakuchiol-product-slider__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.25s ease, transform-origin 0.15s ease;
+  transform: scale(1);
+}
+
+/* DESKTOP / LAPTOP: hover zoom */
+@media (hover: hover) and (pointer: fine) {
+  .bakuchiol-product-slider__image-big {
+    cursor: zoom-in;
+  }
+
+  .bakuchiol-product-slider__image-big:hover .bakuchiol-product-slider__img {
+    transform: scale(1.8);
+    transform-origin: center center;
+    cursor: zoom-out;
+  }
+}
+
+/* MOBILE / TOUCH: tap to zoom using `.is-zoomed` class */
+@media (hover: none) {
+  .bakuchiol-product-slider__image-big {
+    cursor: zoom-in;
+  }
+
+  .bakuchiol-product-slider__image-big.is-zoomed .bakuchiol-product-slider__img {
+    transform: scale(1.8);
+    transform-origin: center center;
+    cursor: zoom-out;
+  }
+}
