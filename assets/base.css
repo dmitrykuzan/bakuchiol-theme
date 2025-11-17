@@ -433,7 +433,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .icon-close {
-  fill: #000 !important;   /* override inline fill */
+  fill: black !important;   /* override inline fill */
 }
 .icon-close path {
   fill: #000 !important;   /* forcibly overrides fill="#ffffff" */
