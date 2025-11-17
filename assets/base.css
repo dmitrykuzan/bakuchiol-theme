@@ -2537,6 +2537,18 @@ input[type='checkbox'] {
   color: white !important;
 }
 
+.utility-bar a.active,
+.utility-bar a[aria-current="page"] {
+  border-bottom-color: #fff !important;
+  color: #fff !important; /* optional, if you want the text white too */
+}
+
+/* Some themes use box-shadow instead of border */
+.utility-bar a.active::after,
+.utility-bar a[aria-current="page"]::after {
+  background-color: #fff !important;
+}
+
 .icon-arrow {
   color: white;
 }
