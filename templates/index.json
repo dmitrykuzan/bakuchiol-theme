@@ -68,10 +68,10 @@
       "settings": {}
     },
 
-    "flower_footer_234": {
-  "type": "footer-flower",
-  "settings": {}
-  },
+  //   "flower_footer_234": {
+  // "type": "footer-flower",
+  // "settings": {}
+  // },
 
     "bakuchiol_footer_gnWLCR": {
       "type": "bakuchiol-footer",
@@ -98,6 +98,6 @@
     // "steps_bakuchiol_inyTdA",
     "review_slider_kpJKHq",
     "bakuchiol_footer_gnWLCR",
-     "flower_footer_234"
+    //  "flower_footer_234"
   ]
 }
