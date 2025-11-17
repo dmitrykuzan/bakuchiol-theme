@@ -2880,55 +2880,56 @@
                   }
                 </style>
 
-                {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
-                  <div class="product__upgrade">
-                    <div class="product__upgrade-top">
-                      <p></p>
-                    </div>
+            {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+  <div class="product__upgrade">
+    <div class="product__upgrade-top">
+      <p></p>
+    </div>
 
-                    <div class="product__upgrade-bottom">
-                      <p class="product__upgrade-title">RESULTS THAT LAST</p>
-                      <div class="product__upgrade-wrapper">
-                        <div class="product__upgrade-content">
-                          <span class="product__upgrade-text">
-                            BUY TWO <br>
-                            + <br>
-                            ONE FREE
-                          </span>
-                          <img
-                            src="{{ 'age-delay-set.png' | asset_url }}"
-                            height="117"
-                            alt="Bakuchiol Age-Delay Power Trio"
-                            loading="lazy"
-                          >
-                        
-                        </div>
+    <div class="product__upgrade-bottom">
+      <p class="product__upgrade-title">RESULTS THAT LAST</p>
 
-                       <div class="upgrade-price-block">
-  <span class="upgrade-price">$96</span>
-  <span class="upgrade-compare">$144</span>
-</div>
-                       
+      <div class="product__upgrade-wrapper">
+        <!-- LEFT: copy + image -->
+        <div class="product__upgrade-content">
+          <span class="product__upgrade-text">
+            BUY TWO <br>
+            + <br>
+            ONE FREE
+          </span>
+          <img
+            src="{{ 'age-delay-set.png' | asset_url }}"
+            height="117"
+            alt="Bakuchiol Age-Delay Power Trio"
+            loading="lazy"
+          >
+        </div>
 
-                        <form method="post" action="/cart/add">
-                          <input type="hidden" name="id" value="51358068965689">
-                          <input type="hidden" name="quantity" value="1">
+        <!-- RIGHT: price + button -->
+        <div class="product__upgrade-cta">
+          <div class="upgrade-price-block">
+            <span class="upgrade-price">$96</span>
+            <span class="upgrade-compare">$144</span>
+          </div>
 
-                          <button
-                            type="submit"
-                            class="product-form__submit button--primary-bakuchiol button-custom button-custom__black"
-                            style="cursor: pointer !important;"
-                          >
-                            <span>
-                              Add To Cart
-                            </span>
-                            {%- render 'loading-spinner' -%}
-                          </button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="51358068965689">
+            <input type="hidden" name="quantity" value="1">
+
+            <button
+              type="submit"
+              class="product-form__submit button--primary-bakuchiol button-custom button-custom__black"
+              style="cursor: pointer !important;"
+            >
+              <span>Add To Cart</span>
+              {%- render 'loading-spinner' -%}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
 
               {%- when 'popup' -%}
                 <modal-opener
