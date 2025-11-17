@@ -107,15 +107,15 @@ product-info {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  padding: 1.6rem 1.4rem;
-  border-radius: 10px;
-  border: 1px solid #e2ded7;
-  background: #f7f5f2;
+  /* REMOVED background + border */
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .product__upgrade-top {
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid #e2ded7;
+  border-bottom: none; /* removed subtle divider */
 }
 
 .product__upgrade-top p {
@@ -196,7 +196,7 @@ product-info {
   opacity: 0.55;
 }
 
-/* keep legacy link style in case it's used anywhere else */
+/* legacy link style preserved */
 .product__upgrade-link {
   max-width: 17rem;
   gap: 0.5rem;
@@ -206,8 +206,7 @@ product-info {
   text-decoration: line-through;
 }
 
-/* product upgrade responsive layout */
-
+/* responsive layout */
 @media screen and (min-width: 1023px) {
   .product {
     display: flex;
@@ -263,8 +262,7 @@ product-info {
   }
 }
 
-/* existing product grid spacing – preserved */
-
+/* existing product grid spacing */
 .product.grid {
   gap: 2rem;
 }
