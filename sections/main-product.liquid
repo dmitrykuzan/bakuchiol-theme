@@ -2557,44 +2557,53 @@
                   {{- product.selected_or_first_available_variant.sku -}}
                 </p>
               {%- when 'custom_liquid' -%}
-                  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const upgradeBtn = document.querySelector('.js-upgrade-add');
-    if (!upgradeBtn) return;
+                  {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+  <div class="product__upgrade">
+    <div class="product__upgrade-top">
+      <p></p>
+    </div>
 
-    upgradeBtn.addEventListener('click', function () {
-      const variantId = this.dataset.variantId;
-      const quantity  = parseInt(this.dataset.quantity || '1', 10);
+    <div class="product__upgrade-bottom">
+      <p class="product__upgrade-title">RESULTS THAT LAST</p>
 
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          id: variantId,
-          quantity: quantity
-        })
-      })
-      .then(function (res) {
-        if (!res.ok) throw new Error('Network error');
-        return res.json();
-      })
-      .then(function (item) {
-        // OPTION A: open / refresh cart drawer if your theme uses one
-        document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { item: item } }));
+      <div class="product__upgrade-wrapper">
+        <!-- LEFT: copy + image -->
+        <div class="product__upgrade-content">
+          <span class="product__upgrade-text">
+            BUY TWO <br>
+            + <br>
+            ONE FREE
+          </span>
+          <img
+            src="{{ 'age-delay-set.png' | asset_url }}"
+            height="117"
+            alt="Bakuchiol Age-Delay Power Trio"
+            loading="lazy"
+          >
+        </div>
 
-        // OPTION B: simple redirect to cart page instead (uncomment if you prefer)
-        // window.location.href = '/cart';
-      })
-      .catch(function (err) {
-        console.error('Upgrade add-to-cart failed', err);
-        alert('Something went wrong adding this set to your cart. Please try again.');
-      });
-    });
-  });
-</script>
+        <span class="product__upgrade-name">AGE-DELAY<br>POWER TRIO</span>
+
+        <!-- RIGHT: price + AJAX button -->
+        <div class="product__upgrade-cta">
+          <div class="upgrade-price-block">
+            <span class="upgrade-price">$96</span>
+            <span class="upgrade-compare">$144</span>
+          </div>
+
+          <button
+            type="button"
+            class="product-form__submit button--primary-bakuchiol button-custom button-custom__black js-upgrade-add"
+            data-variant-id="51358068965689"
+            data-quantity="1"
+          >
+            <span>Add To Cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
 
               {%- when 'collapsible_tab' -%}
                 
