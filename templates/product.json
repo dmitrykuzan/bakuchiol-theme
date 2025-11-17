@@ -49,7 +49,25 @@
           "settings": {
             "heading": "BENEFITS",
             "icon": "none",
-            "content": "<ul><li>Smooths the appearance of fine lines and wrinkles</li><li>Brightens dull, uneven skin tone</li><li>Supports firmer, more lifted-looking skin</li><li>Improves overall texture and radiance<br/>Delivers retinol-like results without irritation<br/></li></ul><p></p>",
+            "content": "<ul><li>Visibly smooths fine lines and wrinkles</li><li>Helps minimize and clear pores</li><li>Smooths skin texture & refines skin</li><li>Safe to use while pregnant or breastfeeding (free of Vitamin A)</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_FhycYV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "HOW TO USE",
+            "icon": "none",
+            "content": "<p>Apply 1-2 drops on clean, dry skin right after cleansing as part of your nighttime routine. Use it alone or with the moisturizer of your choice.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_yTzTy4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "KEY INGREDIENTS",
+            "icon": "none",
+            "content": "<p><strong>Bakuchiol (1.0%)</strong>— plant-based retinol alternative that smooths fine lines, boosts firmness, and improves overall radiance without irritation.<br/><strong>Niacinamide (5.0%)</strong>— brightens uneven tone, minimizes the look of pores, and strengthens the skin barrier.<br/><strong>Melatonin (Liposomal, 0.3%)</strong>— nighttime skin repair booster that supports antioxidant protection and recovery.</p>",
             "page": ""
           }
         },
@@ -59,15 +77,6 @@
             "heading": "FULL INGREDIENTS",
             "icon": "none",
             "content": "<p>Glycerin, Propanediol, Niacinamide, Squalane, Panthenol, Betaine, Tamarindus Indica Seed Polysaccharide, Tremella Fuciformis Extract, Beta-Glucan, Sodium PCA, Lecithin, Polyglyceryl-6 Stearate, Hydroxyethylcellulose, Bakuchiol, Acetyl Hexapeptide-8, Pentapeptide-18, Palmitoyl Tripeptide-1, Palmitoyl Tetrapeptide-7, Hexapeptide-9, Copper Tripeptide-1, Melatonin, Carnosine, Resveratrol, Glutathione, Hydrolyzed Sericin, Ceramide NP, Ceramide AP, Ceramide EOP, Cholesterol, Allantoin, Raphanus Sativus (Radish) Root Ferment Filtrate, Sodium Levulinate, Sodium Anisate, Sodium Gluconate, Citric Acid.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_AtGN8x": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "APPLICATION",
-            "icon": "none",
-            "content": "<p>Dispense a few drops onto freshly cleansed skin.</p><p>Press into the face, focusing on areas of volume loss and fine lines.</p><p>Allow the formula to settle before applying your cream. Optionally finish with SPF.</p>",
             "page": ""
           }
         }
@@ -80,8 +89,9 @@
         "description",
         "custom_liquid_nYAtt7",
         "collapsible_tab_Un7wmp",
-        "collapsible_tab_rwFgRq",
-        "collapsible_tab_AtGN8x"
+        "collapsible_tab_FhycYV",
+        "collapsible_tab_yTzTy4",
+        "collapsible_tab_rwFgRq"
       ],
       "settings": {
         "enable_sticky_info": true,
