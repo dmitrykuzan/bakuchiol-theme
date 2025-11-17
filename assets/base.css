@@ -2530,9 +2530,18 @@ input[type='checkbox'] {
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
+.vx-price-subtext {
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #6c6c6c; 
+  letter-spacing: 0.03em;
+  font-weight: 300;
+  font-style: italic;
+}
+
 /* utility-bar */
 .utility-bar {
-  height: 75px;
+  height: 100%;
   background-color: rgba(177, 156, 214, 0.6) !important;
   color: white !important;
 }
