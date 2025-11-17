@@ -2536,6 +2536,7 @@ input[type='checkbox'] {
   letter-spacing: 0.03em;
   font-weight: 300;
   font-style: italic;
+  padding-bottom: 10px;
 }
 
 /* utility-bar */
