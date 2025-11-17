@@ -1,10 +1,8 @@
 .footer {
   background-color: #ffffff;
   color: #000000;
-  /* border-top: 0.1rem solid rgba(var(--color-foreground), 0.08); */
-  position: relative; /* needed for the flower positioning */
+  position: relative; /* required for absolute flower */
 }
-
 /* Decorative flower */
 
 /* Mobile / default: centered under the last column (CONTACT / Instagram) */
