@@ -17,13 +17,21 @@
         "announcement_9UxFTY": {
           "type": "announcement",
           "settings": {
-            "text": "Free Shipping on All Orders",
+            "text": "FREE Shipping on All Orders",
             "link": "shopify://products/bakuchiol-age-delay-serum"
+          }
+        },
+        "announcement_deQzYY": {
+          "type": "announcement",
+          "settings": {
+            "text": "Age-Delay Serum: Buy 2, Get 1 FREE — Limited Time",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "announcement_9UxFTY"
+        "announcement_9UxFTY",
+        "announcement_deQzYY"
       ],
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
