@@ -216,7 +216,7 @@ product-info {
 /* MOBILE BUTTON FIX — smaller text ONLY inside upgrade */
 @media screen and (max-width: 749px) {
   .product__upgrade-cta .product-form__submit span {
-    font-size: 1.2rem !important;
+    font-size: 0.9rem !important;
     letter-spacing: 0.05em;
   }
 }
@@ -527,6 +527,7 @@ product-info {
 .product__info-container .product__description,
 .product__info-container .icon-with-text {
   margin: 2.5rem 0;
+  text-transform: uppercase;
 }
 
 .product__text {
