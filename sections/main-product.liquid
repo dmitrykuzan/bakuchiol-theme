@@ -2628,7 +2628,7 @@
                           assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.increment
                         endif
                       -%}
-                      {%- if product.quantity_price_breaks_configured? -%}
+                      {% comment %} {%- if product.quantity_price_breaks_configured? -%}
                         <price-per-item
                           id="Price-Per-Item-{{ section.id }}"
                           data-section-id="{{ section.id }}"
@@ -2707,9 +2707,9 @@
                             </div>
                           {%- endif -%}
                         </price-per-item>
-                      {%- endif -%}
+                      {%- endif -%} {% endcomment %}
                     </div>
-                    <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
+                    {% comment %} <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
                       {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
                         <span class="divider">
                           {{-
@@ -2777,7 +2777,7 @@
                           {%- endif -%}
                         {%- endif -%}
                       </volume-pricing>
-                    {%- endif -%}
+                    {%- endif -%} {% endcomment %}
                   </div>
 
               {%- when 'buy_buttons' -%}
