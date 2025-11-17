@@ -103,7 +103,7 @@ product-info {
 .product__upgrade-name {
   display: block;
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0.08em;
   text-transform: uppercase;
