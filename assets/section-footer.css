@@ -5,29 +5,41 @@
   position: relative; /* needed for the flower positioning */
 }
 
-/* Decorative flower on right side */
+/* Decorative flower */
+
+/* Mobile / default: centered under the last column (CONTACT / Instagram) */
 .footer__flower {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 260px;          /* how wide the flower area is */
-  max-width: 25vw;
-  height: 260px;         /* visible height inside footer */
-  overflow: hidden;      /* hides part of the stem */
-  pointer-events: none;  /* avoids blocking clicks */
+  left: 50%;
+  bottom: -40px;             /* pushes the stem down so only the top pokes up */
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .footer__flower-img {
   display: block;
-  height: 360px;         /* a bit taller than wrapper so stem is cropped */
   width: auto;
-  transform: translateY(40px); /* push image down so just the top/stem base shows */
+  height: 260px;             /* taller than wrapper so stem is cropped */
+  transform: translateY(40px);
 }
 
-/* hide the flower on smaller screens if it feels cramped */
-@media screen and (max-width: 990px) {
+/* Desktop: move it to the bottom-right like before */
+@media screen and (min-width: 990px) {
   .footer__flower {
-    display: none;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    width: 260px;
+    height: 260px;
+    transform: none;
+  }
+
+  .footer__flower-img {
+    height: 360px;
+    transform: translateY(40px);
   }
 }
 
