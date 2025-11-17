@@ -65,14 +65,7 @@
           <div class="footer__content-logo">
             <a href="{{ routes.root_url }}" class="footer__content-logo-link">
               {%- if settings.logo != blank -%}
-                <img
-                  width="400"
-                  height="55"
-                  src="{{ settings.logo | image_url: width: 200 }}"
-                  alt="{{ shop.name | escape }}"
-                  class="header__heading-logo"
-                  loading="lazy"
-                >
+              <img alt="BakuchiolRx Logo" src="assets/bakuchiolBlackLogo.svg" width="200">
               {%- else -%}
                 {{ shop.name }}
               {%- endif -%}
