@@ -440,14 +440,6 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 }
 
-.svg-wrapper--black {
-  color: #000; /* for SVGs using currentColor */
-}
-
-.svg-wrapper--black svg {
-  fill: #000 !important;
-  stroke: #000 !important;
-}
 
 
 
