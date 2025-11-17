@@ -216,7 +216,7 @@ product-info {
 /* MOBILE BUTTON FIX — smaller text ONLY inside upgrade */
 @media screen and (max-width: 749px) {
   .product__upgrade-cta .product-form__submit span {
-    font-size: 0.9rem !important;
+    font-size: 1.2rem !important;
     letter-spacing: 0.05em;
   }
 }
