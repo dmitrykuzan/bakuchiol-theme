@@ -41,6 +41,11 @@
   line-height: 1.5;
 }
 
+.product__accordion .accordion__content > p {
+  font-size: 12px !important;
+  line-height: 1.6;
+}
+
 .accordion .svg-wrapper {
   align-self: center;
   fill: rgb(var(--color-foreground));
