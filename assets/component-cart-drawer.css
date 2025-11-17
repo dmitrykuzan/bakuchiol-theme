@@ -19,7 +19,7 @@
 .drawer__inner {
   height: 100%;
   width: 100%;
-  max-width: 44rem; /* wider on desktop */
+  max-width: 40rem;
   box-sizing: border-box;
   padding: 0 1.5rem;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
@@ -31,14 +31,7 @@
   transition: transform var(--duration-default) ease;
 }
 
-/* Even wider on large desktops */
-@media screen and (min-width: 1200px) {
-  .drawer__inner {
-    max-width: 48rem;
-  }
-}
-
-/* Full-width on phones so it doesn’t look cut off */
+/* Full-width on phones so it doesn’t look “cut” */
 @media screen and (max-width: 749px) {
   .drawer__inner {
     max-width: 100vw;
