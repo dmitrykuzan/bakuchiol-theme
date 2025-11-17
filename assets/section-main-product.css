@@ -101,41 +101,40 @@ product-info {
     text-decoration: line-through;
   }
 }
-
-/* product upgrade */
+/* product upgrade / product layout */
 
 @media screen and (min-width: 1023px) {
   .product {
     display: flex;
     flex-direction: row;
-   
-    .grid__item {
-      width: 60%;
-    }
-
-    .grid__item-melatonic {
-      padding-right: 1rem;
-      margin-left: -5rem;
-    }
   }
 
+  /* main product grid columns */
+  .product .grid__item {
+    width: 60%;
+  }
+
+  .product .grid__item-melatonic {
+    padding-right: 1rem;
+    margin-left: -5rem;
+  }
+
+  /* keep upgrade section horizontal + aligned */
   .product__upgrade-wrapper {
-    gap: 1rem;
+    display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 1rem;
   }
-
 }
 
 @media screen and (min-width: 1380px) {
-  .product {
-    .grid__item-melatonic {
-      padding-right: 0rem;
-    }
+  .product .grid__item-melatonic {
+    padding-right: 0rem;
+  }
 
-    .grid__item {
-      width: 60%;
-    }
+  .product .grid__item {
+    width: 60%;
   }
 
   .product__upgrade-name {
@@ -153,7 +152,7 @@ product-info {
   }
 }
 
-
+/* existing product grid spacing */
 .product.grid {
   gap: 2rem;
 }
