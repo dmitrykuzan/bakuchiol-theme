@@ -93,7 +93,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Swiper init (unchanged)
+    // Swiper
     var swiper2 = new Swiper('.bakuchiol-product-slider__big', {
       spaceBetween: 5,
       speed: 800,
@@ -120,19 +120,49 @@
       }
     });
 
-    // SIMPLE TAP-TO-ZOOM FOR TOUCH DEVICES
-    var containers = document.querySelectorAll('.js-zoom-container');
+    // Simple zoom behavior
+    function initZoom() {
+      var isDesktop = window.matchMedia('(min-width: 1023px)').matches;
+      var containers = document.querySelectorAll('.js-zoom-container');
 
-    containers.forEach(function (container) {
-      var img = container.querySelector('.js-zoom-img');
-      if (!img) return;
+      containers.forEach(function (container) {
+        var img = container.querySelector('.js-zoom-img');
+        if (!img) return;
 
-      container.addEventListener('click', function () {
-        // Only use click-zoom on touch devices
-        if (window.matchMedia('(hover: none)').matches) {
-          container.classList.toggle('is-zoomed');
+        // Desktop: hover / mousemove zoom
+        if (isDesktop) {
+          container.addEventListener('mouseenter', function () {
+            container.classList.add('is-zoomed');
+          });
+
+          container.addEventListener('mouseleave', function () {
+            container.classList.remove('is-zoomed');
+            img.style.transformOrigin = '';
+          });
+
+          container.addEventListener('mousemove', function (e) {
+            if (!container.classList.contains('is-zoomed')) return;
+            var rect = container.getBoundingClientRect();
+            var x = ((e.clientX - rect.left) / rect.width) * 100;
+            var y = ((e.clientY - rect.top) / rect.height) * 100;
+            img.style.transformOrigin = x + '% ' + y + '%';
+          });
+        } else {
+          // Mobile: tap to toggle zoom
+          container.addEventListener('click', function () {
+            container.classList.toggle('is-zoomed');
+          });
         }
       });
+    }
+
+    initZoom();
+
+    // Re-init zoom on resize breakpoint changes
+    window.addEventListener('resize', function () {
+      // small debounce
+      clearTimeout(window.__bakuchiolZoomTimer);
+      window.__bakuchiolZoomTimer = setTimeout(initZoom, 200);
     });
   });
 </script>
