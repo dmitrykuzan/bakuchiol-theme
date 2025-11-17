@@ -2596,7 +2596,8 @@
                         </span>
                       </label>
 
-                    <div class="price-per-item__container">
+                        <div class="quantity-section__quantity">
+                            <div class="price-per-item__container">
                       <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                         <button class="quantity__button" name="minus" type="button">
                           <span class="visually-hidden">
@@ -2788,10 +2789,10 @@
                         {%- endif -%}
                       </volume-pricing>
                     {%- endif -%}
-                  </div>
+                        </div>
 
-              {%- when 'buy_buttons' -%}
-                <div class="button-sticky-melatonic">
+                          {%- when 'buy_buttons' -%}
+                <div>
                   {%- render 'buy-buttons',
                     block: block,
                     product: product,
@@ -2801,6 +2802,11 @@
                   -%}
                 </div>
 
+
+                  
+                  </div>
+
+            
                        <div class="custom-shipping-container">
                     <div class="custom-shipping-item">
                       <svg
