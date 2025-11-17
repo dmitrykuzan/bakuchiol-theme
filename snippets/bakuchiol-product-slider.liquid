@@ -9,7 +9,20 @@
         {%- if media.media_type == 'image' -%}
           <div class="swiper-slide">
             <div class="bakuchiol-product-slider__image-big">
-              {{ media | image_url: width: 800 | image_tag: loading: 'lazy', alt: media.alt | escape }}
+            <img
+  src="{{ media | image_url: width: 1600 }}"
+  srcset="
+    {{ media | image_url: width: 600 }} 600w,
+    {{ media | image_url: width: 900 }} 900w,
+    {{ media | image_url: width: 1200 }} 1200w,
+    {{ media | image_url: width: 1600 }} 1600w,
+    {{ media | image_url: width: 2000 }} 2000w
+  "
+  sizes="(min-width: 1200px) 550px, 100vw"
+  loading="lazy"
+  alt="{{ media.alt | escape }}"
+  class="bakuchiol-product-slider__img"
+/>
             </div>
           </div>
           {%- assign media_counter = media_counter | plus: 1 -%}
