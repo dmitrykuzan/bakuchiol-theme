@@ -2603,6 +2603,47 @@
       </div>
     </div>
   </div>
+
+  <script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const upgradeBtn = document.querySelector('.js-upgrade-add');
+    if (!upgradeBtn) return;
+
+    upgradeBtn.addEventListener('click', function () {
+      const variantId = this.dataset.variantId;
+      const quantity  = parseInt(this.dataset.quantity || '1', 10);
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          id: variantId,
+          quantity: quantity
+        })
+      })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Network error');
+        return res.json();
+      })
+      .then(function (item) {
+        // OPTION A: open / refresh cart drawer if your theme uses one
+        document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { item: item } }));
+
+        // OPTION B: simple redirect to cart page instead (uncomment if you prefer)
+        // window.location.href = '/cart';
+      })
+      .catch(function (err) {
+        console.error('Upgrade add-to-cart failed', err);
+        alert('Something went wrong adding this set to your cart. Please try again.');
+      });
+    });
+  });
+</script>
+  </script>
 {% endif %}
 
               {%- when 'collapsible_tab' -%}
