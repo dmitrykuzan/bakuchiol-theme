@@ -4,15 +4,14 @@
   position: relative; /* required for absolute flower */
 }
 /* Decorative flower */
-
-/* Mobile / default: centered under the last column (CONTACT / Instagram) */
+/* Mobile / default: centered under CONTACT */
 .footer__flower {
   position: absolute;
   left: 50%;
-  bottom: -40px;             /* pushes the stem down so only the top pokes up */
+  bottom: 0;            /* was -40px – bring it up to sit fully in footer */
   transform: translateX(-50%);
-  width: 180px;
-  height: 180px;
+  width: 190px;
+  height: 220px;        /* more vertical room so bottom isn’t cut */
   overflow: hidden;
   pointer-events: none;
 }
@@ -20,10 +19,9 @@
 .footer__flower-img {
   display: block;
   width: auto;
-  height: 260px;             /* taller than wrapper so stem is cropped */
-  transform: translateY(40px);
+  height: 280px;        /* slightly taller than wrapper */
+  transform: translateY(35px);  /* still hides most of the stem */
 }
-
 /* Desktop: move it to the bottom-right like before */
 @media screen and (min-width: 990px) {
   .footer__flower {
