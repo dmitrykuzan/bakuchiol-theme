@@ -2873,6 +2873,13 @@
                     }
                   </style>
 
+                    {%- when 'description' -%}
+                {%- if product.description != blank -%}
+                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                    {{ product.description }}
+                  </div>
+                {%- endif -%}
+
                 {% comment %} {% if product and product.handle == 'melatonic-60ml' %}
                   <div class="product__upgrade">
                     <div class="product__upgrade-top">
