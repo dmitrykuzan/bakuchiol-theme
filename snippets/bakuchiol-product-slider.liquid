@@ -1,12 +1,12 @@
 {{ 'bakuchiol-product-slider.css' | asset_url | stylesheet_tag }}
 
 <div class="bakuchiol-product-slider__wrapper" id="bakuchiol-product">
-  <!-- BIG SLIDER -->
+  <!-- Big slider -->
   <div class="swiper bakuchiol-product-slider__big">
     <div class="swiper-wrapper">
-      {% assign media_counter = 0 %}
-      {% for media in product.media %}
-        {% if media.media_type == 'image' %}
+      {%- assign media_counter = 0 -%}
+      {%- for media in product.media -%}
+        {%- if media.media_type == 'image' -%}
           <div class="swiper-slide">
             <div class="bakuchiol-product-slider__image-big js-zoom-container">
               <img
@@ -22,46 +22,47 @@
                 loading="lazy"
                 alt="{{ media.alt | escape }}"
                 class="bakuchiol-product-slider__img js-zoom-img"
-              >
+              />
             </div>
           </div>
-          {% assign media_counter = media_counter | plus: 1 %}
-        {% endif %}
-      {% endfor %}
+          {%- assign media_counter = media_counter | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
     </div>
 
-    <!-- NAV / BULLETS (sits on top but lets clicks reach image) -->
     <div class="bakuchiol-product-slider-navigation">
       <div class="bakuchiol-product__pagination"></div>
-
       <div class="bakuchiol-product-slider__btns">
-        <button class="bakuchiol-slider__btn prev bakuchiol-product-slider__btn--prev" type="button">
+        <button class="bakuchiol-slider__btn prev bakuchiol-product-slider__btn--prev">
           <svg
-            width="30"
-            height="30"
+            width="30px"
+            height="30px"
             viewBox="-19.04 0 75.804 75.804"
             xmlns="http://www.w3.org/2000/svg"
             fill="#ffffff"
           >
-            <g>
-              <g transform="translate(-831.568 -384.448)">
-                <path d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" />
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)">
+                <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#ffffff"></path>
               </g>
             </g>
           </svg>
         </button>
-
-        <button class="bakuchiol-slider__btn bakuchiol-product-slider__btn--next" type="button">
+        <button class="bakuchiol-slider__btn bakuchiol-product-slider__btn--next">
           <svg
-            width="30"
-            height="30"
+            width="30px"
+            height="30px"
             viewBox="-19.04 0 75.804 75.804"
             xmlns="http://www.w3.org/2000/svg"
             fill="#ffffff"
           >
-            <g>
-              <g transform="translate(-831.568 -384.448)">
-                <path d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" />
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)">
+                <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#ffffff"></path>
               </g>
             </g>
           </svg>
@@ -70,31 +71,29 @@
     </div>
   </div>
 
-  {%- comment -%}
-    THUMBS BLOCK (optional). Leave commented out if you don’t want thumbs.
-  {%- endcomment -%}
-  {%- comment -%}
-  <div thumbsSlider class="swiper bakuchiol-product-slider__thumbs">
+  <!-- (thumbs) -->
+  {% comment %}
+  <div thumbsSlider="" class="swiper bakuchiol-product-slider__thumbs">
     <div class="swiper-wrapper">
-      {% assign media_counter = 0 %}
-      {% for media in product.media %}
-        {% if media.media_type == 'image' %}
+      {%- assign media_counter = 0 -%}
+      {%- for media in product.media -%}
+        {%- if media.media_type == 'image' -%}
           <div class="swiper-slide">
             <div class="bakuchiol-product-slider__image-thumbs">
               {{ media | image_url: width: 165 | image_tag: loading: 'lazy', alt: media.alt | escape }}
             </div>
           </div>
-          {% assign media_counter = media_counter | plus: 1 %}
-        {% endif %}
-      {% endfor %}
+          {%- assign media_counter = media_counter | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
     </div>
   </div>
-  {%- endcomment -%}
+  {% endcomment %}
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    /* Swiper instance for big images */
+    // Swiper
     var swiper2 = new Swiper('.bakuchiol-product-slider__big', {
       spaceBetween: 5,
       speed: 800,
@@ -105,8 +104,8 @@
         bulletClass: 'bakuchiol-product-slider-bullets',
         bulletActiveClass: 'bakuchiol-product-slider-bullets-active',
         renderBullet: function (index, className) {
-          var n = index + 1;
-          var formatted = n < 10 ? '0' + n : n;
+          var number = index + 1;
+          var formatted = number < 10 ? '0' + number : number;
           return '<span class="' + className + '">' + formatted + '</span>';
         }
       },
@@ -121,7 +120,7 @@
       }
     });
 
-    /* AMAZON-STYLE ZOOM */
+    // Simple zoom behavior
     function initZoom() {
       var isDesktop = window.matchMedia('(min-width: 1023px)').matches;
       var containers = document.querySelectorAll('.js-zoom-container');
@@ -130,14 +129,8 @@
         var img = container.querySelector('.js-zoom-img');
         if (!img) return;
 
-        /* Clear previous listeners by cloning (simple reset) */
-        var newContainer = container.cloneNode(true);
-        container.parentNode.replaceChild(newContainer, container);
-        container = newContainer;
-        img = container.querySelector('.js-zoom-img');
-
+        // Desktop: hover / mousemove zoom
         if (isDesktop) {
-          /* Hover zoom on desktop */
           container.addEventListener('mouseenter', function () {
             container.classList.add('is-zoomed');
           });
@@ -155,10 +148,8 @@
             img.style.transformOrigin = x + '% ' + y + '%';
           });
         } else {
-          /* Tap to zoom on mobile */
-          container.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+          // Mobile: tap to toggle zoom
+          container.addEventListener('click', function () {
             container.classList.toggle('is-zoomed');
           });
         }
@@ -167,11 +158,11 @@
 
     initZoom();
 
-    /* Re-init zoom when viewport changes */
-    var resizeTimer;
+    // Re-init zoom on resize breakpoint changes
     window.addEventListener('resize', function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(initZoom, 200);
+      // small debounce
+      clearTimeout(window.__bakuchiolZoomTimer);
+      window.__bakuchiolZoomTimer = setTimeout(initZoom, 200);
     });
   });
 </script>
