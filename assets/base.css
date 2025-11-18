@@ -4369,7 +4369,6 @@ details-disclosure > details {
 .header__link-cta {
   background-color: #ffffff !important;
   color: #000000 !important;
-  border: 1px solid #000000 !important;
 }
 
 .header__link-cta:hover {
