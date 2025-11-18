@@ -11,50 +11,52 @@
     {% endif %}
 
     <div id="bakuchiol-sticky-atc" class="sticky-atc" aria-hidden="true">
-      <div class="sticky-atc__inner page-width">
-        <div class="sticky-atc__left">
-          <div class="sticky-atc__thumb">
-            {{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: product.title }}
-          </div>
+      <div class="page-width sticky-atc__outer">
+        <div class="sticky-atc__inner">
+          <div class="sticky-atc__left">
+            <div class="sticky-atc__thumb">
+              {{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: product.title }}
+            </div>
 
-          <div class="sticky-atc__info">
-            <p class="sticky-atc__title">
-              {{ product.title }}
-            </p>
+            <div class="sticky-atc__info">
+              <p class="sticky-atc__title">
+                {{ product.title }}
+              </p>
 
-            <div class="sticky-atc__meta">
-              <span class="sticky-atc__price">
-                {{ current_price | money }}
-              </span>
-
-              {% if compare_price > current_price %}
-                <span class="sticky-atc__price--compare">
-                  {{ compare_price | money }}
+              <div class="sticky-atc__meta">
+                <span class="sticky-atc__price">
+                  {{ current_price | money }}
                 </span>
 
-                {% if savings_pct > 0 %}
-                  <span class="sticky-atc__badge">
-                    SAVE {{ savings_pct }}%
+                {% if compare_price > current_price %}
+                  <span class="sticky-atc__price--compare">
+                    {{ compare_price | money }}
                   </span>
+
+                  {% if savings_pct > 0 %}
+                    <span class="sticky-atc__badge">
+                      SAVE {{ savings_pct }}%
+                    </span>
+                  {% endif %}
                 {% endif %}
-              {% endif %}
+              </div>
             </div>
           </div>
-        </div>
 
-        <button
-          type="button"
-          class="sticky-atc__button js-sticky-atc-add"
-        >
-          Add to cart
-        </button>
+          <button
+            type="button"
+            class="sticky-atc__button js-sticky-atc-add"
+          >
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
   {% endif %}
 {% endif %}
 
 <style>
-    /* Sticky ATC bar – Bakuchiol */
+/* ===== Sticky ATC – layout & container ===== */
 
 .sticky-atc {
   position: fixed;
@@ -64,32 +66,48 @@
   z-index: 999;
   transform: translateY(100%);
   transition: transform 0.25s ease-out;
-  background: linear-gradient(to top, #f3f1ee, #ffffff);
-  border-top: 1px solid #e2ddd7;
+  pointer-events: none; /* card inside handles clicks */
 }
 
 .sticky-atc--visible {
   transform: translateY(0);
 }
 
+.sticky-atc__outer {
+  padding: 0.65rem 0.75rem 0.9rem;
+}
+
 .sticky-atc__inner {
+  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 0.75rem 0;
+  gap: 1.75rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(to right, #ffffff, #faf6f2);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
 }
+
+/* ===== Left side (image + text) ===== */
 
 .sticky-atc__left {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.9rem;
   min-width: 0;
 }
 
 .sticky-atc__thumb {
   flex-shrink: 0;
-  width: 75px;
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f5f2ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sticky-atc__thumb img {
@@ -107,9 +125,9 @@
 
 .sticky-atc__title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -118,71 +136,109 @@
 .sticky-atc__meta {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
 .sticky-atc__price {
   font-weight: 700;
-  font-size: 1.425rem;
+  font-size: 1.2rem;
 }
 
 .sticky-atc__price--compare {
-  font-size: 1.425rem;
+  font-size: 1.1rem;
   text-decoration: line-through;
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .sticky-atc__badge {
-  font-size: 1.25rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0.2rem 0.55rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  background-color: #5b4836;
-  color: #fff;
-  letter-spacing: 0.08em;
+  background-color: #f3c9ad;
+  color: #4b3422;
+  letter-spacing: 0.12em;
 }
 
-/* Minimal black button like screenshot */
+/* ===== Button – styled like “CHOOSE YOUR BUNDLE” pill ===== */
+
 .sticky-atc__button {
   flex-shrink: 0;
-  background-color: #000000 !important;
-  color: #ffffff !important;
   border: none;
-  border-radius: 0; /* Square corners like screenshot */
-
-  padding: 1.1rem 2.8rem;   /* ↑ Bigger top/bottom + wider */
-  
-  font-size: 1.7rem;        /* ↑ Larger text */
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: 0.02em;
-
   cursor: pointer;
+
+  padding: 1rem 3.1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #f05289, #f3447b);
+  color: #ffffff;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+
   white-space: nowrap;
-  box-shadow: none !important;
-  transition: opacity 0.15s ease-in-out;
+  box-shadow: 0 10px 24px rgba(240, 82, 137, 0.5);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
 }
 
-/* Optional hover (matches premium minimal design) */
 .sticky-atc__button:hover {
-  opacity: 0.8;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(240, 82, 137, 0.6);
+  opacity: 0.96;
 }
 
-/* Mobile tweaks */
-@media (max-width: 749px) {
+.sticky-atc__button:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 16px rgba(240, 82, 137, 0.45);
+}
+
+/* ===== Responsive tweaks ===== */
+
+@media (max-width: 900px) {
   .sticky-atc__inner {
-    gap: 0.75rem;
+    padding: 0.8rem 1.1rem;
+    gap: 1.1rem;
+  }
+
+  .sticky-atc__thumb {
+    width: 60px;
+    height: 60px;
   }
 
   .sticky-atc__title {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .sticky-atc__price {
+    font-size: 1rem;
   }
 
   .sticky-atc__button {
-    padding: 0.6rem 1.4rem;
+    padding: 0.8rem 1.8rem;
     font-size: 0.9rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 600px) {
+  .sticky-atc__outer {
+    padding-inline: 0.5rem;
+  }
+
+  .sticky-atc__inner {
+    border-radius: 18px;
+  }
+
+  .sticky-atc__title {
+    max-width: 11rem;
+  }
+
+  .sticky-atc__button {
+    padding: 0.7rem 1.5rem;
   }
 }
 </style>
@@ -192,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var bar = document.getElementById('bakuchiol-sticky-atc');
   if (!bar) return;
 
-  // Try to find the main product add-to-cart button on the page
+  // Find main product ATC button
   var mainAtc =
     document.querySelector('form[action^="/cart/add"] .product-form__submit') ||
     document.querySelector('.product-form__submit');
@@ -201,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var button = bar.querySelector('.js-sticky-atc-add');
 
-  // Show bar only when main ATC is out of viewport
   function toggleBar() {
     var rect = mainAtc.getBoundingClientRect();
     var outOfView = rect.bottom < 0 || rect.top > window.innerHeight;
@@ -219,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', toggleBar);
   toggleBar();
 
-  // When sticky button clicked, just trigger the main ATC button
+  // Click sticky button -> trigger main ATC
   button.addEventListener('click', function () {
     mainAtc.click();
   });
