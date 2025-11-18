@@ -356,7 +356,6 @@
   }
 }
 </style>
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var bar = document.getElementById('bakuchiol-sticky-atc');
@@ -373,9 +372,14 @@ document.addEventListener('DOMContentLoaded', function () {
   function toggleBar() {
     var rect = mainAtc.getBoundingClientRect();
     var outOfView = rect.bottom < 0 || rect.top > window.innerHeight;
-    var scrolledEnough = window.scrollY > 200;  // wait until user scrolls a bit
+    var scrolledEnough = window.scrollY > 200;
 
-    if (outOfView && scrolledEnough) {
+    /* --- FOOTER CHECK --- */
+    var scrollBottom = window.innerHeight + window.scrollY;
+    var pageHeight = document.body.offsetHeight;
+    var nearFooter = scrollBottom >= pageHeight - 250; // hide 250px before bottom
+
+    if (outOfView && scrolledEnough && !nearFooter) {
       bar.classList.add('sticky-atc--visible');
       bar.setAttribute('aria-hidden', 'false');
     } else {
