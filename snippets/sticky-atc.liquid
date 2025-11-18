@@ -1,3 +1,68 @@
+{% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+  {% assign sticky_variant = product.selected_or_first_available_variant %}
+
+  {% if sticky_variant.available %}
+    {% assign compare_price = sticky_variant.compare_at_price %}
+    {% assign current_price = sticky_variant.price %}
+
+    {% if compare_price > current_price %}
+      {% assign savings = compare_price | minus: current_price %}
+      {% assign savings_pct = savings | times: 100 | divided_by: compare_price | floor %}
+    {% endif %}
+
+    <div id="bakuchiol-sticky-atc" class="sticky-atc" aria-hidden="true">
+      <div class="page-width sticky-atc__outer">
+        <div class="sticky-atc__inner">
+          <div class="sticky-atc__left">
+            <div class="sticky-atc__thumb">
+              {{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: product.title }}
+            </div>
+
+            <div class="sticky-atc__info">
+              <!-- Rating row -->
+              <div class="sticky-atc__rating">
+                <span class="sticky-atc__stars">★★★★★</span>
+                <span class="sticky-atc__rating-text">
+                  Excellent <strong>4.8</strong> | 1,482+ reviews
+                </span>
+              </div>
+
+              <p class="sticky-atc__title">
+                {{ product.title }}
+              </p>
+
+              <div class="sticky-atc__meta">
+                <span class="sticky-atc__price">
+                  {{ current_price | money }}
+                </span>
+
+                {% if compare_price > current_price %}
+                  <span class="sticky-atc__price--compare">
+                    {{ compare_price | money }}
+                  </span>
+
+                  {% if savings_pct > 0 %}
+                    <span class="sticky-atc__badge">
+                      SAVE {{ savings_pct }}%
+                    </span>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="sticky-atc__button js-sticky-atc-add"
+          >
+            ADD TO CART
+          </button>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+
 <style>
 /* ================================
    MAIN LUXURY GRADIENT BUTTON
