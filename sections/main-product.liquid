@@ -2382,43 +2382,45 @@
   .product-rating-inline {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 10px;
+    gap: 0.65rem; /* slightly bigger spacing */
+    margin-bottom: 12px;
   }
 
   .product-rating-inline__stars {
-    font-size: 1.2rem;
+    font-size: 1.35rem !important;  /* slightly bigger */
     line-height: 1;
     letter-spacing: 0.12em;
-    color: #ffc6df; /* soft pink */
+    color: #cbbfe2 !important; /* purple stars */
   }
 
   .product-rating-inline__text {
-    font-size: 0.95rem;
-    color: #252347; /* deep navy */
+    font-size: 1.05rem !important; /* slightly larger */
+    color: #252347;
     letter-spacing: 0.01em;
   }
 
   .product-rating-inline__text strong {
     font-weight: 700;
+    color: #252347; /* number stays bold navy */
   }
 
   .product-rating-inline__link {
-    color: #252347;
+    color: #cbbfe2 !important; /* purple accent link */
     text-decoration: underline;
+    font-weight: 600;
   }
 
   .product-rating-inline__link:hover {
-    text-decoration: none;
+    opacity: 0.75;
   }
 
   @media (max-width: 767px) {
     .product-rating-inline__stars {
-      font-size: 1rem;
+      font-size: 1.15rem !important;
     }
 
     .product-rating-inline__text {
-      font-size: 0.85rem;
+      font-size: 0.95rem !important;
     }
   }
 </style>
