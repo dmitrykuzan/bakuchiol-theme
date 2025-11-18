@@ -1,0 +1,308 @@
+<section class="baku-compare">
+  <div class="baku-compare__inner page-width">
+    <!-- LEFT: COPY + IMAGE -->
+    <div class="baku-compare__left">
+      <p class="baku-compare__eyebrow">BAKUCHIOL VS RETINOL</p>
+      <h2 class="baku-compare__heading">
+        Why Bakuchiol<br>
+        Outperforms Traditional Retinol
+      </h2>
+      <p class="baku-compare__intro">
+        A plant-derived retinol alternative that smooths fine lines, boosts
+        radiance, and respects even the most sensitive skin.
+      </p>
+
+      <div class="baku-compare__image">
+        {%- comment -%}
+          Swap this for your actual flower / ingredient image.
+        {%- endcomment -%}
+        <img
+          src="{{ 'bakuchiol-flower.png' | asset_url }}"
+          alt="Bakuchiol flower illustration"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <!-- RIGHT: COMPARISON TABLE -->
+    <div class="baku-compare__right">
+      <div class="baku-compare__table-head">
+        <span class="baku-compare__col baku-compare__col--label"></span>
+        <span class="baku-compare__col baku-compare__col--baku">
+          Bakuchiol Age Delay Serum
+        </span>
+        <span class="baku-compare__col baku-compare__col--retinol">
+          Traditional Retinol
+        </span>
+      </div>
+
+      <ul class="baku-compare__rows">
+        <li class="baku-compare__row">
+          <span class="baku-compare__feature">Fine-line smoothing</span>
+          <span class="baku-compare__cell baku-compare__cell--baku">
+            <span class="baku-compare__badge baku-compare__badge--yes">Smooth, refined</span>
+          </span>
+          <span class="baku-compare__cell baku-compare__cell--retinol">
+            <span class="baku-compare__badge baku-compare__badge--no">Effective but harsh</span>
+          </span>
+        </li>
+
+        <li class="baku-compare__row">
+          <span class="baku-compare__feature">Skin comfort</span>
+          <span class="baku-compare__cell baku-compare__cell--baku">
+            <span class="baku-compare__badge baku-compare__badge--yes">No peeling or flaking</span>
+          </span>
+          <span class="baku-compare__cell baku-compare__cell--retinol">
+            <span class="baku-compare__badge baku-compare__badge--no">Common dryness + sting</span>
+          </span>
+        </li>
+
+        <li class="baku-compare__row">
+          <span class="baku-compare__feature">Suitable for nightly use</span>
+          <span class="baku-compare__cell baku-compare__cell--baku">
+            <span class="baku-compare__badge baku-compare__badge--yes">Gentle enough for daily</span>
+          </span>
+          <span class="baku-compare__cell baku-compare__cell--retinol">
+            <span class="baku-compare__badge baku-compare__badge--no">Often needs “off” nights</span>
+          </span>
+        </li>
+
+        <li class="baku-compare__row">
+          <span class="baku-compare__feature">Suitable for sensitive skin</span>
+          <span class="baku-compare__cell baku-compare__cell--baku">
+            <span class="baku-compare__badge baku-compare__badge--yes">Designed for all skin types</span>
+          </span>
+          <span class="baku-compare__cell baku-compare__cell--retinol">
+            <span class="baku-compare__badge baku-compare__badge--no">Frequently too aggressive</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Base palette (matches your Bakuchiol styles) --------- */
+:root {
+  --baku-deep: #1a152f;
+  --baku-deep-soft: #474060;
+  --baku-lavender: #cbbfe2;
+  --baku-lilac: #f3ecff;
+  --baku-ink: #111111;
+  --baku-muted: #555555;
+  --baku-line: #ded8ef;
+  --baku-light: #ffffff;
+}
+
+/* ---------- Layout ---------- */
+
+.baku-compare {
+  border-top: 1px solid var(--baku-line);
+  border-bottom: 1px solid var(--baku-line);
+  background:
+    linear-gradient(120deg, #faf7ff 0%, #ffffff 40%, #f6f1ff 100%);
+  padding: 64px 0;
+  margin: 64px 0;
+}
+
+.baku-compare__inner {
+  display: flex;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+/* LEFT SIDE */
+
+.baku-compare__left {
+  flex: 1.05;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.baku-compare__eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--baku-deep-soft);
+}
+
+.baku-compare__heading {
+  margin: 0 0 16px;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--baku-deep);
+}
+
+.baku-compare__intro {
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--baku-muted);
+  max-width: 420px;
+}
+
+.baku-compare__image {
+  margin-top: auto;
+  border-top: 1px solid var(--baku-line);
+  padding-top: 20px;
+}
+
+.baku-compare__image img {
+  max-width: 260px;
+  height: auto;
+  display: block;
+}
+
+/* RIGHT SIDE – TABLE */
+
+.baku-compare__right {
+  flex: 1.25;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* headers */
+
+.baku-compare__table-head {
+  display: grid;
+  grid-template-columns: 1.2fr 1.1fr 1.1fr;
+  align-items: end;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--baku-deep-soft);
+  border-bottom: 1px solid var(--baku-line);
+  padding-bottom: 10px;
+}
+
+.baku-compare__col--baku {
+  text-align: left;
+}
+
+.baku-compare__col--retinol {
+  text-align: left;
+}
+
+/* rows */
+
+.baku-compare__rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.baku-compare__row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.1fr 1.1fr;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(222, 216, 239, 0.8);
+  column-gap: 1.75rem;
+}
+
+.baku-compare__feature {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--baku-deep);
+}
+
+.baku-compare__cell {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* badges – subtle but luxe */
+
+.baku-compare__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 4px 10px 4px 0;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+.baku-compare__badge::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 1px solid currentColor;
+  display: inline-block;
+}
+
+/* Bakuchiol “yes” column */
+.baku-compare__cell--baku {
+  color: var(--baku-deep);
+}
+
+.baku-compare__badge--yes::before {
+  background: radial-gradient(circle at 30% 30%, #f9f5ff 0%, #b39df2 90%);
+}
+
+/* Retinol “no / caveat” column */
+.baku-compare__cell--retinol {
+  color: #8a7a9c;
+}
+
+.baku-compare__badge--no::before {
+  border-color: #c6b9de;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 960px) {
+  .baku-compare {
+    padding: 48px 0;
+  }
+
+  .baku-compare__inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .baku-compare__image {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .baku-compare__heading {
+    font-size: 24px;
+  }
+
+  .baku-compare__intro {
+    font-size: 14px;
+  }
+
+  .baku-compare__table-head,
+  .baku-compare__row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .baku-compare__table-head .baku-compare__col--label {
+    display: none;
+  }
+
+  .baku-compare__row {
+    row-gap: 6px;
+  }
+
+  .baku-compare__feature {
+    grid-column: 1 / -1;
+    font-size: 13px;
+  }
+
+  .baku-compare__cell {
+    font-size: 12px;
+  }
+
+  .baku-compare__badge {
+    padding-right: 0;
+  }
+}
+</style>
