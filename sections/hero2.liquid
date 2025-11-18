@@ -1,0 +1,309 @@
+<section class="baku-hero">
+  <div class="baku-hero__inner page-width">
+    <!-- LEFT: COPY -->
+    <div class="baku-hero__content">
+      <!-- Rating row -->
+      <div class="baku-hero__rating">
+        <span class="baku-hero__rating-stars">★★★★★</span>
+        <span class="baku-hero__rating-text">
+          <strong>4.8/5</strong> based on <span>1,482+ reviews</span>
+        </span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="baku-hero__headline">
+        Clinically Studied
+        <span>Bakuchiol Age-Delay Serum</span>
+      </h1>
+
+      <!-- Subcopy -->
+      <p class="baku-hero__subcopy">
+        A science-backed bakuchiol serum that visibly softens fine lines, 
+        boosts radiance, and supports a calm, balanced complexion without 
+        the irritation of traditional retinol.
+      </p>
+
+      <!-- Benefit bullets -->
+      <ul class="baku-hero__benefits">
+        <li class="baku-hero__benefit">
+          <span class="baku-hero__benefit-icon">●</span>
+          <span>Softens fine lines + wrinkles</span>
+        </li>
+        <li class="baku-hero__benefit">
+          <span class="baku-hero__benefit-icon">●</span>
+          <span>Boosts luminosity + even tone</span>
+        </li>
+        <li class="baku-hero__benefit">
+          <span class="baku-hero__benefit-icon">●</span>
+          <span>Gentle enough for nightly use</span>
+        </li>
+      </ul>
+
+      <!-- CTA row -->
+      <div class="baku-hero__cta-row">
+        <a href="#add-to-cart" class="baku-hero__cta-button">
+          TRY IT RISK-FREE TODAY
+        </a>
+        <div class="baku-hero__guarantee">
+          <span class="baku-hero__guarantee-icon">✓</span>
+          90-Day Money-Back Guarantee
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: BOTTLE -->
+    <div class="baku-hero__media">
+      <div class="baku-hero__bottle-wrap">
+        <img
+          src="{{ 'bakuchiol-bottle.png' | asset_url }}"
+          alt="Bakuchiol Age Delay Serum bottle"
+          class="baku-hero__bottle"
+          loading="lazy"
+        >
+        <div class="baku-hero__shadow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+:root {
+  --baku-deep:      #1a152f;
+  --baku-mid:       #726a96;
+  --baku-accent:    #cbbfe2;
+  --baku-rose:      #f4c6f0;
+  --baku-cream:     #fff8ff;
+  --baku-star:      #c5b59a; /* Chanel-y champagne gold */
+}
+
+/* SECTION WRAPPER */
+.baku-hero {
+  background: radial-gradient(circle at top left, #f0e7ff 0, #fff 45%, #f5f1ff 100%);
+  padding: 4.5rem 0 4rem;
+}
+
+.baku-hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* LEFT COLUMN */
+.baku-hero__content {
+  max-width: 560px;
+}
+
+/* Rating row */
+.baku-hero__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.baku-hero__rating-stars {
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  color: var(--baku-star);
+}
+
+.baku-hero__rating-text {
+  font-size: 0.98rem;
+  color: var(--baku-deep);
+}
+
+.baku-hero__rating-text strong {
+  font-weight: 800;
+}
+
+.baku-hero__rating-text span {
+  opacity: 0.85;
+}
+
+/* Headline */
+.baku-hero__headline {
+  font-size: 2.8rem;
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  color: var(--baku-deep);
+  margin: 0 0 1.25rem;
+}
+
+.baku-hero__headline span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--baku-mid);
+}
+
+/* Subcopy */
+.baku-hero__subcopy {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #4b4b4b;
+  max-width: 520px;
+  margin-bottom: 1.75rem;
+}
+
+/* Benefits list */
+.baku-hero__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 2rem;
+}
+
+.baku-hero__benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.98rem;
+  color: var(--baku-deep);
+}
+
+.baku-hero__benefit-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--baku-mid), var(--baku-accent));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: #fff;
+}
+
+/* CTA row */
+.baku-hero__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+}
+
+/* CTA BUTTON */
+.baku-hero__cta-button {
+  background-image: linear-gradient(
+    90deg,
+    var(--baku-deep) 0%,
+    #221a3d 35%,
+    var(--baku-deep) 100%
+  );
+  color: #ffffff;
+  padding: 1.05rem 2.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 35px rgba(12, 3, 42, 0.25);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
+}
+
+.baku-hero__cta-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 18px 40px rgba(12, 3, 42, 0.3);
+}
+
+.baku-hero__cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(12, 3, 42, 0.25);
+}
+
+/* Guarantee text */
+.baku-hero__guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--baku-deep);
+}
+
+.baku-hero__guarantee-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background-color: #efe8ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* RIGHT COLUMN – PRODUCT */
+.baku-hero__media {
+  flex: 0 0 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.baku-hero__bottle-wrap {
+  position: relative;
+  padding: 2rem 1.5rem 2.5rem;
+  background: radial-gradient(circle at top, #ffffff 0, #f5f1ff 55%, #e5ddff 100%);
+  border-radius: 26px;
+}
+
+.baku-hero__bottle {
+  display: block;
+  max-width: 240px;
+  height: auto;
+}
+
+.baku-hero__shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  width: 70%;
+  height: 26px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35), transparent 70%);
+  opacity: 0.35;
+  filter: blur(4px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .baku-hero__inner {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .baku-hero {
+    padding: 3.2rem 0 3.4rem;
+  }
+
+  .baku-hero__inner {
+    flex-direction: column-reverse;
+    text-align: left;
+  }
+
+  .baku-hero__media {
+    flex: none;
+  }
+
+  .baku-hero__headline {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .baku-hero__cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .baku-hero__cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
