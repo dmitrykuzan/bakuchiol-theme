@@ -4308,3 +4308,52 @@ details-disclosure > details {
   color: var(--volu-light) !important;
 }
 
+/* ==========================================
+   FIX ARROW BUTTONS FOR BAKUCHIOL SLIDERS
+   (.bakuchiol-slider__btn + .volufiline-swiper-button-next)
+========================================== */
+
+.bakuchiol-slider__btn,
+.volufiline-swiper-button-next,
+.volufiline-swiper-button-prev {
+  background-color: var(--volu-primary) !important; /* deep purple */
+  border: none !important;
+  border-radius: 6px !important; /* optional: make circular with 50% */
+  width: 48px !important;
+  height: 48px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Keep the arrow icons white */
+.bakuchiol-slider__btn svg path,
+.volufiline-swiper-button-next svg path,
+.volufiline-swiper-button-prev svg path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Hover effect — slightly softer purple */
+.bakuchiol-slider__btn:hover,
+.volufiline-swiper-button-next:hover,
+.volufiline-swiper-button-prev:hover {
+  background-color: var(--volu-primary-soft) !important; /* lighter purple */
+}
+
+/* Hover icon stays white */
+.bakuchiol-slider__btn:hover svg path,
+.volufiline-swiper-button-next:hover svg path,
+.volufiline-swiper-button-prev:hover svg path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Remove default focus ring */
+.bakuchiol-slider__btn:focus-visible,
+.volufiline-swiper-button-next:focus-visible,
+.volufiline-swiper-button-prev:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--volu-primary-soft) !important;
+}
