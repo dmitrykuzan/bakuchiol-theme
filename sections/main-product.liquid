@@ -2457,36 +2457,57 @@ Rated <strong>4.8</strong>
 
   </ul>
 </section>
+
 <style>
+/* Container spacing */
 .baku-feature-bubbles {
-  margin: 20px 0 10px;
+  margin: 18px 0 8px;
 }
 
+/* Grid layout – like your reference (2x2) */
 .baku-feature-bubbles__list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px 26px;
+  gap: 14px 32px;
 }
 
-/* Compact row layout */
+/* Item layout */
 .baku-feature-bubbles__list li {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Smaller bubble icons to match reference */
+/* Scope icon styling so it only affects this block */
+.baku-feature-bubbles .baku-hero__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fceeff 0%, #a38bff 80%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.baku-feature-bubbles .baku-hero__icon::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid #f9f7ff;
+  box-shadow: 0 0 0 1px rgba(26, 21, 47, 0.06);
+}
+
+/* Ensure icon doesn’t shrink */
 .baku-feature-bubbles__icon {
-  width: 26px !important;
-  height: 26px !important;
-  border-radius: 50%;
   flex-shrink: 0;
 }
 
-/* Title-only benefit text */
+/* Title only (no subtext) */
 .baku-feature-bubbles__title {
   margin: 0;
   font-size: 15px;
@@ -2495,11 +2516,11 @@ Rated <strong>4.8</strong>
   line-height: 1.3;
 }
 
-/* Mobile: stack all 4 */
-@media (max-width: 600px) {
+/* Mobile responsive – stack all 4 */
+@media (max-width: 640px) {
   .baku-feature-bubbles__list {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
   }
 }
 </style>
