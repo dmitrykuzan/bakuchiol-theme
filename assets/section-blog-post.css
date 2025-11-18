@@ -1,377 +1,349 @@
-.article-template > *:first-child:not(.article-template__hero-container) {
-  margin-top: 5rem;
-}
+/* ============================
+   GLOBAL BLOG / ARTICLE LAYOUT
+   Scope: All blog articles
+   ============================ */
 
-@media screen and (min-width: 750px) {
-  .article-template > *:first-child:not(.article-template__hero-container) {
-    margin-top: calc(5rem + var(--page-width-margin));
-  }
-}
-
-.article-template__hero-container {
-  max-width: 130rem;
+/* Page container */
+.article-template {
+  max-width: 1120px;
   margin: 0 auto;
+  padding: 6rem 2rem 8rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+  color: rgb(var(--color-foreground));
 }
 
-.article-template__hero-small {
-  height: 11rem;
-}
-
-.article-template__hero-medium {
-  height: 22rem;
-}
-
-.article-template__hero-large {
-  height: 33rem;
-}
-
-@media screen and (min-width: 750px) and (max-width: 989px) {
-  .article-template__hero-small {
-    height: 22rem;
-  }
-
-  .article-template__hero-medium {
-    height: 44rem;
-  }
-
-  .article-template__hero-large {
-    height: 66rem;
-  }
-}
-
-@media screen and (min-width: 990px) {
-  .article-template__hero-small {
-    height: 27.5rem;
-  }
-
-  .article-template__hero-medium {
-    height: 55rem;
-  }
-
-  .article-template__hero-large {
-    height: 82.5rem;
-  }
-}
-
-.article-template header {
-  margin-top: 4.4rem;
-  margin-bottom: 2rem;
-  line-height: calc(0.8 / var(--font-body-scale));
-}
-
-@media screen and (min-width: 750px) {
-  .article-template header {
-    margin-top: 5rem;
-  }
-}
-
-.article-template__title {
-  margin: 0;
-}
-
-.article-template__title:not(:only-child) {
-  margin-bottom: 1rem;
-}
-
-.article-template__link {
-  font-size: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-.article-template__link .icon-wrap {
-  display: flex;
-  margin-right: 1rem;
-  transform: rotate(180deg);
-}
-
-.article-template__content {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.article-template__social-sharing {
-  margin-top: 3rem;
-}
-
-.article-template__social-sharing + header,
-.article-template__social-sharing + .article-template__content {
-  margin-top: 1.5rem;
-}
-
-.article-template__comment-wrapper {
-  margin-top: 5rem;
-  padding: 2.7rem 0;
-}
-
-@media screen and (min-width: 750px) {
-  .article-template__comment-wrapper {
-    margin-top: 6rem;
-    padding: 3.6rem 0;
-  }
-}
-
-.article-template__comment-wrapper h2 {
+/* Space from header bar / top of page */
+.article-template > *:first-child:not(.article-template__hero-container) {
   margin-top: 0;
 }
 
-.article-template__comments {
-  margin-bottom: 5rem;
+/* ----------------------------
+   HERO IMAGE
+   ---------------------------- */
+
+.article-template__hero-container {
+  max-width: 1120px;
+  margin: 0 auto 4rem;
+  overflow: hidden;
 }
 
-@media screen and (min-width: 750px) {
-  .article-template__comments {
-    margin-bottom: 7rem;
-  }
-}
-
-.article-template__comments-fields {
-  margin-bottom: 4rem;
-}
-
-.article-template__comments-comment {
-  color: rgba(var(--color-foreground), 0.75);
-  background-color: rgb(var(--color-background));
-  margin-bottom: 1.5rem;
-  padding: 2rem 2rem 1.5rem;
-}
-
-@media screen and (min-width: 750px) {
-  .article-template__comments-comment {
-    padding: 2rem 2.5rem;
-  }
-}
-
-.article-template__comments-comment p {
-  margin: 0 0 1rem;
-}
-
-.article-template__comment-fields > * {
-  margin-bottom: 3rem;
-}
-
-@media screen and (min-width: 750px) {
-  .article-template__comment-fields {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 4rem;
-  }
-}
-
-.article-template__comment-warning {
-  margin: 2rem 0 2.5rem;
-}
-
-@media screen and (min-width: 990px) {
-  .article-template__comments .pagination-wrapper {
-    margin: 5rem 0 8rem;
-  }
-}
-
-.article-template__back:last-child {
-  margin-bottom: 3.2rem;
-}
-
-
-/* ---- Bakuchiol Blog Layout ---- */
-
-.baku-blog {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 64px 20px 88px;
-  color: #111111;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-}
-
-/* HERO */
-
-.baku-blog__hero {
-  margin-bottom: 40px;
-}
-
-.baku-blog__hero-img {
+.article-template__hero {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.article-template__hero img {
+  width: 100%;
+  height: 100%;
   display: block;
-  border-radius: 0; /* keep editorial, not rounded */
   object-fit: cover;
 }
 
-/* ARTICLE TYPOGRAPHY */
-
-.blog-article.bakuchiol-101 {
-  max-width: 720px;
+/* Use Shopify’s size helpers but with cleaner heights */
+.article-template__hero-small {
+  height: 22rem;
+}
+.article-template__hero-medium {
+  height: 32rem;
+}
+.article-template__hero-large {
+  height: 44rem;
 }
 
-.blog-article.bakuchiol-101 h1 {
-  font-size: 32px;
-  line-height: 1.16;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin: 0 0 20px;
-  color: #1a152f; /* deep ink */
+@media screen and (min-width: 750px) {
+  .article-template__hero-small {
+    height: 26rem;
+  }
+  .article-template__hero-medium {
+    height: 38rem;
+  }
+  .article-template__hero-large {
+    height: 52rem;
+  }
 }
 
-.blog-article.bakuchiol-101 h2 {
-  font-size: 22px;
-  line-height: 1.3;
-  margin: 32px 0 12px;
+@media screen and (min-width: 990px) {
+  .article-template__hero-small {
+    height: 30rem;
+  }
+  .article-template__hero-medium {
+    height: 44rem;
+  }
+  .article-template__hero-large {
+    height: 58rem;
+  }
+}
+
+/* ----------------------------
+   ARTICLE HEADER (TITLE / META)
+   ---------------------------- */
+
+.article-template header {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  text-align: left;
+}
+
+.article-template h1 {
+  margin: 0 0 1.6rem;
+  font-size: 3.2rem;
+  line-height: 1.12;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #1a152f;
 }
 
-.blog-article.bakuchiol-101 h3 {
-  font-size: 18px;
-  margin: 22px 0 8px;
-  letter-spacing: 0.06em;
+@media screen and (min-width: 900px) {
+  .article-template h1 {
+    font-size: 3.6rem;
+  }
+}
+
+/* Back link / meta row */
+.article-template__link {
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
   text-transform: uppercase;
-  color: #1f1638;
+  letter-spacing: 0.16em;
+  color: rgba(var(--color-foreground), 0.7);
 }
 
-.blog-article.bakuchiol-101 p {
-  font-size: 15px;
+.article-template__link .icon-wrap {
+  transform: rotate(180deg);
+}
+
+/* ----------------------------
+   MAIN ARTICLE CONTENT
+   ---------------------------- */
+
+.article-template__content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Vertical rhythm: every element after another gets spacing */
+.article-template__content > * + * {
+  margin-top: 1.4rem;
+}
+
+/* Headings inside content */
+.article-template__content h2,
+.article-template__content h3,
+.article-template__content h4 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a152f;
+}
+
+.article-template__content h2 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+.article-template__content h3 {
+  font-size: 1.8rem;
+}
+
+.article-template__content h4 {
+  font-size: 1.5rem;
+}
+
+/* Paragraphs */
+.article-template__content p {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.75;
+  color: #444444;
+}
+
+/* Lists */
+.article-template__content ul,
+.article-template__content ol {
+  margin: 0 0 0.6rem 1.6rem;
+  padding: 0;
+}
+
+.article-template__content li {
+  font-size: 1.5rem;
   line-height: 1.7;
-  margin: 0 0 14px;
   color: #444444;
 }
 
-.blog-article.bakuchiol-101 ul,
-.blog-article.bakuchiol-101 ol {
-  padding-left: 1.4rem;
-  margin: 0 0 16px;
-}
-
-.blog-article.bakuchiol-101 li {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #444444;
-}
-
-.blog-article.bakuchiol-101 hr {
+/* Horizontal rule */
+.article-template__content hr {
   border: 0;
   border-top: 1px solid #e3dff4;
-  margin: 28px 0;
+  margin: 2.4rem 0;
 }
 
-/* Links inside article */
-.blog-article.bakuchiol-101 a {
+/* Links */
+.article-template__content a {
   color: #6b60b1;
   text-decoration: underline;
   text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
 }
 
-/* ---- CTA SECTION ---- */
+/* Images inside body */
+.article-template__content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+}
 
-.baku-blog__cta {
+/* Blockquotes for quotes / testimonials inside blogs */
+.article-template__content blockquote {
+  margin: 2.4rem 0;
+  padding: 1.8rem 2.4rem;
+  border-left: 3px solid #c7baf2;
+  background: #faf8ff;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #3a3454;
+}
+
+/* Tables (if you ever use them) */
+.article-template__content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.4rem 0;
+  font-size: 1.4rem;
+}
+
+.article-template__content th,
+.article-template__content td {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid #ebebf4;
+  text-align: left;
+}
+
+/* ----------------------------
+   GENERIC CTA BLOCK STYLES
+   (reuse for product plugs at end of posts)
+   ---------------------------- */
+
+.article-template__content .blog-cta {
   display: grid;
   grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-  gap: 32px;
+  gap: 3.2rem;
   align-items: center;
-  margin-top: 48px;
-  padding-top: 32px;
+  margin-top: 4.4rem;
+  padding-top: 3.2rem;
   border-top: 1px solid #e3dff4;
 }
 
-.baku-blog__cta-media {
-  max-width: 360px;
-}
-
-.baku-blog__cta-img {
+.article-template__content .blog-cta__media img {
   width: 100%;
   height: auto;
-  display: block;
   object-fit: contain;
+  display: block;
 }
 
-.baku-blog__cta-copy h2 {
-  font-size: 22px;
-  margin: 0 0 10px;
-  letter-spacing: 0.08em;
+.article-template__content .blog-cta__title {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #1a152f;
 }
 
-.baku-blog__cta-copy p {
-  font-size: 15px;
-  line-height: 1.7;
-  margin: 0 0 18px;
-  color: #444444;
+.article-template__content .blog-cta__text {
+  margin: 0 0 1.8rem;
 }
 
-.baku-blog__cta-btn {
+.article-template__content .blog-cta__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
-  border: 0;
-  cursor: pointer;
-  font-size: 14px;
+  padding: 1.4rem 3.2rem;
+  border-radius: 0;
+  border: none;
+  font-size: 1.3rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
   background-color: #1a152f;
   color: #ffffff;
-  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease,
+    background-color 150ms ease;
 }
 
-.baku-blog__cta-btn:hover {
+.article-template__content .blog-cta__button:hover {
   background-color: #2b2146;
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(26, 21, 47, 0.18);
 }
 
-/* ---- Mobile & Tablet ---- */
+/* ----------------------------
+   SOCIAL SHARING / COMMENTS
+   (kept simple but tidy)
+   ---------------------------- */
 
-@media (max-width: 900px) {
-  .baku-blog {
-    padding: 40px 16px 64px;
+.article-template__social-sharing {
+  max-width: 760px;
+  margin: 3rem auto 0;
+}
+
+.article-template__comment-wrapper {
+  max-width: 760px;
+  margin: 5rem auto 0;
+  padding: 2.4rem 0;
+}
+
+/* ----------------------------
+   RESPONSIVE TWEAKS
+   ---------------------------- */
+
+@media screen and (max-width: 900px) {
+  .article-template {
+    padding: 4rem 1.6rem 6rem;
   }
 
-  .blog-article.bakuchiol-101 h1 {
-    font-size: 26px;
+  .article-template header {
+    margin-bottom: 2.4rem;
   }
 
-  .baku-blog__cta {
+  .article-template h1 {
+    font-size: 2.4rem;
+  }
+
+  .article-template__content .blog-cta {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 2rem;
   }
 
-  .baku-blog__cta-media {
+  .article-template__content .blog-cta__media {
     max-width: 280px;
     margin: 0 auto;
   }
+}
 
-  .baku-blog__hero-img {
-    max-height: 420px;
-    object-fit: cover;
+@media screen and (max-width: 600px) {
+  .article-template__content p,
+  .article-template__content li {
+    font-size: 1.4rem;
   }
 }
 
-@media (max-width: 600px) {
-  .blog-article.bakuchiol-101 {
-    max-width: 100%;
-  }
-
-  .blog-article.bakuchiol-101 h1 {
-    font-size: 22px;
-  }
-
-  .blog-article.bakuchiol-101 p,
-  .blog-article.bakuchiol-101 li {
-    font-size: 14px;
-  }
-}
-
-/* Visually hidden helper */
+/* Visually hidden helper (reusable) */
+.visually-hidden,
 .what-inside__sr {
-  position: absolute;
-  left: -9999px;
-  top: auto;
+  position: absolute !important;
   width: 1px;
   height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
