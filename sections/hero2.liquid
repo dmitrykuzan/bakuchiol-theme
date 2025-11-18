@@ -62,9 +62,13 @@ Assumes `product` is the Bakuchiol serum.
     </div>
 
     <!-- RIGHT: PRODUCT IMAGE (NO BORDER BOX) -->
-    <div class="baku-hero__image">
-      {{ product.featured_image | image_url: width: 1400 | image_tag: alt: product.title, loading: 'eager' }}
-    </div>
+   <div class="baku-hero__image">
+  <img 
+    src="{{ 'bakuchiol-bottle.png' | asset_url }}" 
+    alt="Bakuchiol Age-Delay Serum Bottle"
+    loading="eager"
+  >
+</div>
   </div>
 </section>
 
