@@ -12,12 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_tBtkD3": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": ""
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -88,7 +82,6 @@
         }
       },
       "block_order": [
-        "custom_liquid_tBtkD3",
         "title",
         "variant_picker",
         "quantity_selector_hypYL6",
