@@ -4359,3 +4359,7 @@ details-disclosure > details {
   outline: none !important;
   box-shadow: none !important;
 }
+
+.review-slider__slide-star svg path {
+  fill: #C7A8FF !important; /* lilac gold */
+}
