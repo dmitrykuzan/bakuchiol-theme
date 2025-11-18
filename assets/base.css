@@ -4235,56 +4235,60 @@ details-disclosure > details {
   --volu-text-muted:    #555555;
   --volu-light:         #ffffff;
 }
-/* ------------------------------
-   1) PRIMARY CTA BUTTONS
-   (Add to cart, main CTAs)
---------------------------------*/
+/* ----------------------------------------------------
+   PRIMARY CTA BUTTONS (NO BORDERS, NO SHADOW LINES)
+-----------------------------------------------------*/
 .product-form__submit,
 .button-custom.button-custom__black,
 .button.button--primary,
 .baku-gradient-button,
 .shopify-payment-button__button--unbranded {
-  /* clean, edge-to-edge gradient */
   background-image: linear-gradient(
     90deg,
-    var(--volu-primary) 0%,
-    var(--volu-primary-soft) 50%,
-    var(--volu-accent-soft) 100%
+    var(--volu-primary),
+    var(--volu-primary-soft)
   ) !important;
+
+  color: var(--volu-light) !important;
+
+  border: none !important;          /* ← removed border */
+  outline: none !important;         /* ← no focus ring outlines */
+  box-shadow: none !important;      /* ← Dawn shadows removed */
+
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
 
-  color: var(--volu-light) !important;
+  transform: translateY(0);
+  transition: transform 0.15s ease, filter 0.2s ease;
 }
 
-/* Remove inner Dawn border/box-shadow that causes vertical lines */
+/* Remove Dawn's annoying ::after pseudo-element shadow */
 .product-form__submit::after,
 .button-custom.button-custom__black::after,
 .button.button--primary::after,
 .baku-gradient-button::after,
 .shopify-payment-button__button--unbranded::after {
-  box-shadow: none !important;
+  content: none !important; /* ← hard kill the source of the vertical lines */
 }
 
-/* Hover – slightly brighter + subtle lift */
+/* Hover */
 .product-form__submit:hover,
 .button-custom.button-custom__black:hover,
 .button.button--primary:hover,
 .baku-gradient-button:hover,
 .shopify-payment-button__button--unbranded:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.08);
   transform: translateY(-1px);
-  color: var(--volu-light) !important;
 }
 
-/* Active press state */
+/* Active */
 .product-form__submit:active,
 .button-custom.button-custom__black:active,
 .button.button--primary:active,
 .baku-gradient-button:active,
 .shopify-payment-button__button--unbranded:active {
+  filter: brightness(0.95);
   transform: translateY(0);
-  filter: brightness(0.97);
 }
 
 /* Disabled */
@@ -4293,121 +4297,13 @@ details-disclosure > details {
 .button.button--primary:disabled,
 .baku-gradient-button:disabled,
 .shopify-payment-button__button--unbranded:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  transform: none;
+  opacity: 0.55 !important;
+  cursor: not-allowed !important;
   filter: none;
+  transform: none;
 }
 
-/* Make sure text inside gradient button is white */
+/* Force button text white */
 .baku-gradient-button__text {
   color: var(--volu-light) !important;
-}
-
-/* ------------------------------
-   2) SECONDARY / LIGHT BUTTONS
---------------------------------*/
-.button-custom__white,
-.button.button--secondary {
-  background-color: var(--volu-light) !important;
-  color: var(--volu-primary) !important;
-}
-
-.button-custom__white:hover,
-.button.button--secondary:hover {
-  background-color: var(--volu-accent-soft) !important;
-  color: var(--volu-text-main) !important;
-}
-
-/* ------------------------------
-   3) ANNOUNCEMENT / UTILITY BARS
---------------------------------*/
-.utility-bar {
-  background-color: var(--volu-accent-soft) !important;
-  color: var(--volu-light) !important;
-}
-
-.announcement-bar__message,
-.announcement-bar__message span {
-  color: var(--volu-light) !important;
-}
-
-/* If you’re using the purple gradient announcement bar */
-.purple-announcement__bar {
-  color: var(--volu-light) !important;
-}
-
-/* ------------------------------
-   4) HEADER & NAV
---------------------------------*/
-
-/* Keep menu items black, no purple text */
-.header__menu-item {
-  color: #000000 !important;
-}
-
-.header__menu-item:hover {
-  color: #000000 !important;
-}
-
-/* "Shop Now" header CTA:
-   white background, black text */
-.header__link-cta {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
-
-.header__link-cta:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-}
-
-/* Cart bubble stays purple */
-.cart-count-bubble {
-  background-color: var(--volu-primary) !important;
-  color: var(--volu-light) !important;
-}
-
-/* ------------------------------
-   5) GLOBAL LINKS
-   (default: black text)
---------------------------------*/
-a,
-.link,
-.inline-richtext a,
-.rte a {
-  color: #000000 !important;
-}
-
-/* But keep links white in bars so they don’t vanish */
-.utility-bar a,
-.announcement-bar a {
-  color: #ffffff !important;
-}
-
-/* Slightly stronger underline on hover */
-a:hover,
-.link:hover,
-.inline-richtext a:hover,
-.rte a:hover {
-  color: #000000 !important;
-  text-decoration-thickness: 0.15rem;
-}
-
-/* ------------------------------
-   6) SLIDER ARROWS / SMALL UI
---------------------------------*/
-.bakuchiol-slider__btn {
-  background-color: var(--volu-primary) !important;
-  border-color: transparent !important;
-}
-
-.bakuchiol-slider__btn:hover {
-  background-color: var(--volu-primary-soft) !important;
-  border-color: var(--volu-primary-soft) !important;
-}
-
-/* Soft neutral subtext */
-.vx-price-subtext {
-  color: var(--volu-text-muted) !important;
 }
