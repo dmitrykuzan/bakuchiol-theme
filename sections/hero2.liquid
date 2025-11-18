@@ -22,8 +22,9 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 
       <!-- Subcopy -->
       <p class="baku-hero__subcopy">
-        A science-backed bakuchiol serum that visibly softens fine lines, boosts radiance, 
-        and supports a calm, balanced complexion without the irritation of traditional retinol.
+        A science-backed bakuchiol serum that visibly softens fine lines, boosts
+        radiance, and supports a calm, balanced complexion without the irritation
+        of traditional retinol.
       </p>
 
       <!-- Benefit bullets -->
@@ -59,7 +60,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
       </div>
     </div>
 
-    <!-- RIGHT: PRODUCT IMAGE (NO BOX) -->
+    <!-- RIGHT: PRODUCT IMAGE -->
     <div class="baku-hero__image">
       <img
         src="{{ 'bakuchiol-bottle.png' | asset_url }}"
@@ -71,9 +72,6 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 </section>
 
 <style>
-/* -----------------------------
-   COLOR TOKENS (matches site)
-------------------------------*/
 :root {
   --volu-primary:       #1a152f;
   --volu-primary-soft:  #726a96;
@@ -89,14 +87,14 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 ------------------------------*/
 .baku-hero {
   background: radial-gradient(circle at top left, #f3ecff 0%, #ffffff 55%, #f3ecff 100%);
-  padding: 64px 0 72px; /* desktop: trimmed bottom a bit */
+  padding: 52px 0 48px; /* less space top & bottom on desktop */
 }
 
 .baku-hero__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 3.5rem;
 }
 
 /* LEFT COLUMN */
@@ -110,7 +108,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 16px;
+  margin-bottom: 14px; /* slightly tighter */
   font-size: 15px;
 }
 
@@ -134,7 +132,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   font-size: 40px;
   line-height: 1.1;
   letter-spacing: 0.02em;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: var(--volu-primary);
 }
 
@@ -156,10 +154,10 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 .baku-hero__benefits {
   list-style: none;
   padding: 0;
-  margin: 0 0 26px;
+  margin: 0 0 24px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 9px;
 }
 
 .baku-hero__benefits li {
@@ -194,7 +192,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 .baku-hero__cta-row {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
   align-items: flex-start;
 }
 
@@ -203,7 +201,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   font-size: 15px;
 }
 
-/* Guarantee text */
+/* Guarantee */
 .baku-hero__guarantee {
   display: flex;
   align-items: center;
@@ -224,25 +222,16 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   color: var(--volu-primary);
 }
 
-/* RIGHT COLUMN – PRODUCT IMAGE (NO BOX) */
+/* RIGHT COLUMN – PRODUCT IMAGE */
 .baku-hero__image {
   flex: 0 0 auto;
-  min-height: 580px;
   display: flex;
-  align-items: flex-end;      /* bottle sits a bit higher */
+  align-items: flex-start;  /* bottle sits higher */
   justify-content: center;
-
-  background: none !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
 }
 
-/* DESKTOP: make bottle larger */
 .baku-hero__image img {
-  max-height: 720px;          /* bigger on desktop */
+  max-height: 720px;   /* bigger bottle desktop */
   width: auto;
   height: auto;
   display: block;
@@ -253,15 +242,15 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 ------------------------------*/
 @media (max-width: 1024px) {
   .baku-hero {
-    padding: 40px 0 44px;
+    padding: 40px 0 40px; /* less vertical space tablet/mobile */
   }
 
   .baku-hero__inner {
-    flex-direction: column;   /* stack vertically */
-    gap: 20px;
+    flex-direction: column; /* stack */
+    gap: 28px;
   }
 
-  /* MOBILE: content FIRST, image AFTER */
+  /* content first, image second on mobile */
   .baku-hero__content {
     order: 1;
     max-width: 100%;
@@ -269,37 +258,25 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 
   .baku-hero__image {
     order: 2;
-    min-height: 340px;
-    align-items: flex-start;
-    margin-top: 8px;
+    align-items: center;
   }
 
   .baku-hero__image img {
-    max-height: 420px;
-    margin: 0 auto;
+    max-height: 440px;  /* smaller so less bottom blank space */
   }
 }
 
 @media (max-width: 720px) {
   .baku-hero {
-    padding: 32px 0 40px;
+    padding: 32px 0 32px; /* trim even more on small screens */
   }
 
   .baku-hero__headline {
     font-size: 30px;
   }
 
-  .baku-hero__rating {
-    margin-bottom: 12px;
-  }
-
-  .baku-hero__subcopy {
-    margin-bottom: 18px;
-  }
-
   .baku-hero__benefits {
     gap: 8px;
-    margin-bottom: 22px;
   }
 
   .baku-hero__cta-row {
@@ -310,6 +287,10 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   .baku-hero__cta {
     width: 100%;
     justify-content: center;
+  }
+
+  .baku-hero__image img {
+    max-height: 400px;
   }
 }
 </style>
