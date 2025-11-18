@@ -1,0 +1,54 @@
+{% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+  {% assign sticky_variant = product.selected_or_first_available_variant %}
+
+  {% if sticky_variant.available %}
+    {% assign compare_price = sticky_variant.compare_at_price %}
+    {% assign current_price = sticky_variant.price %}
+
+    {% if compare_price > current_price %}
+      {% assign savings = compare_price | minus: current_price %}
+      {% assign savings_pct = savings | times: 100 | divided_by: compare_price | floor %}
+    {% endif %}
+
+    <div id="bakuchiol-sticky-atc" class="sticky-atc" aria-hidden="true">
+      <div class="sticky-atc__inner page-width">
+        <div class="sticky-atc__left">
+          <div class="sticky-atc__thumb">
+            {{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}
+          </div>
+
+          <div class="sticky-atc__info">
+            <p class="sticky-atc__title">
+              {{ product.title }}
+            </p>
+
+            <div class="sticky-atc__meta">
+              <span class="sticky-atc__price">
+                {{ current_price | money }}
+              </span>
+
+              {% if compare_price > current_price %}
+                <span class="sticky-atc__price--compare">
+                  {{ compare_price | money }}
+                </span>
+
+                {% if savings_pct > 0 %}
+                  <span class="sticky-atc__badge">
+                    SAVE {{ savings_pct }}%
+                  </span>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="sticky-atc__button js-sticky-atc-add"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
