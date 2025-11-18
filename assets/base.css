@@ -4319,17 +4319,6 @@ details-disclosure > details {
   color: var(--volu-text-main) !important;
 }
 
-/* Outline style */
-.button-custom__border {
-  background-color: transparent !important;
-  color: var(--volu-primary) !important;
-}
-
-.button-custom__border:hover {
-  background-color: var(--volu-primary) !important;
-  color: var(--volu-light) !important;
-}
-
 /* ------------------------------
    3) ANNOUNCEMENT / UTILITY BARS
 --------------------------------*/
