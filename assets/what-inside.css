@@ -1,80 +1,50 @@
-/* ---------- Section shell ---------- */
-
+/* Shell */
 .what-inside {
   padding: 64px 0;
-  background: #ffffff; /* no extra purple panel */
+  background-color: #ffffff; /* no purple background */
 }
 
+/* Default: mobile – stacked */
 .what-inside__layout {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
 }
 
-/* Force desktop split layout: image left, text right */
-@media screen and (min-width: 1024px) {
-  .what-inside__layout {
-    flex-direction: row !important;
-    align-items: flex-start;
-    gap: 5rem;
-  }
-}
-
-/* ---------- Left column (title + visual) ---------- */
-
+/* Visual block */
 .what-inside__visual {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.what-inside__image {
+  display: block;
+  width: 88vw;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text column */
+.what-inside__content {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex: 0 0 40%;
-  max-width: 440px;
+  gap: 3rem;
 }
 
 .what-inside__title {
-  margin: 0 0 24px;
+  margin: 0;
   font-size: 22px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #1a152f;
 }
 
-/* Cream / petal visual */
-.what-inside__cream {
-  position: relative;
-  width: 100%;
-  max-width: 340px;       /* desktop size */
-  aspect-ratio: 1 / 1;
-}
-
-.what-inside__cream-ring {
-  position: absolute;
-  inset: 10%;
-  border-radius: 999px;
-  border: 1px dashed rgba(26, 21, 47, 0.14);
-}
-
-.what-inside__cream-img {
-  position: absolute;
-  inset: 18%;
-  width: 64%;
-  height: auto;
-  margin: auto;
-  object-fit: contain;
-}
-
-/* ---------- Right column (text list) ---------- */
-
-.what-inside__content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .what-inside__list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -109,8 +79,54 @@
   color: #555555;
 }
 
-/* Desktop typography tweaks */
+/* ------- Tablet / small desktop ------- */
+@media screen and (min-width: 768px) {
+  .what-inside {
+    padding: 72px 0;
+  }
+
+  .what-inside__image {
+    width: 60vw;
+    max-width: 520px; /* bigger on tablet */
+  }
+
+  .what-inside__item h3 {
+    font-size: 2rem;
+  }
+
+  .what-inside__item p {
+    font-size: 1.4rem;
+  }
+}
+
+/* ------- Desktop: side-by-side, big tall image ------- */
 @media screen and (min-width: 1024px) {
+  .what-inside__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+    column-gap: 5rem;
+    align-items: stretch; /* visual column matches text column height */
+  }
+
+  .what-inside__visual {
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+
+  .what-inside__image {
+    width: 100%;
+    max-width: 620px;          /* make it large */
+    height: 100%;
+    max-height: 640px;         /* tall – runs almost full column */
+    object-fit: contain;       /* keep petal shape clean */
+    align-self: stretch;
+  }
+
+  .what-inside__content {
+    justify-content: center;
+    gap: 4rem;
+  }
+
   .what-inside__title {
     font-size: 24px;
   }
@@ -124,53 +140,19 @@
   }
 }
 
-/* ---------- Mobile adjustments (match reference card) ---------- */
-
-@media screen and (max-width: 767px) {
-  .what-inside {
-    padding: 48px 0;
-  }
-
-  .what-inside__visual {
-    max-width: 100%;
-  }
-
-  .what-inside__title {
-    font-size: 20px;
-  }
-
-  .what-inside__cream {
-    max-width: 280px;   /* bigger on mobile */
-    margin: 24px 0 8px;
-  }
-
-  .what-inside__cream-img {
-    inset: 16%;
-    width: 68%;
-  }
-
-  .what-inside__item h3 {
-    font-size: 1.7rem;
-  }
-
-  .what-inside__item p {
-    font-size: 1.2rem;
-  }
-}
-
-/* ---------- Large screens ---------- */
-
+/* ------- Very large screens ------- */
 @media screen and (min-width: 1360px) {
-  .what-inside__visual {
-    max-width: 480px;
+  .what-inside__layout {
+    column-gap: 6rem;
   }
 
-  .what-inside__cream {
-    max-width: 360px;
+  .what-inside__image {
+    max-width: 680px;
+    max-height: 680px;
   }
 }
 
-/* Screen-reader-only helper text */
+/* Screen-reader text */
 .what-inside__sr {
   position: absolute;
   left: -9999px;
