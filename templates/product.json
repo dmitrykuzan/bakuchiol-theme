@@ -63,7 +63,7 @@
           "settings": {
             "heading": "KEY INGREDIENTS",
             "icon": "none",
-            "content": "<p><strong>Bakuchiol (1.0%)</strong>— plant-based retinol alternative that smooths fine lines, boosts firmness, and improves overall radiance without irritation.<br/><strong>Niacinamide (5.0%)</strong>— brightens uneven tone, minimizes the look of pores, and strengthens the skin barrier.<br/><strong>Melatonin (Liposomal, 0.3%)</strong>— nighttime skin repair booster that supports antioxidant protection and recovery.</p>",
+            "content": "<p>Bakuchiol (1.0%)— plant-based retinol alternative that smooths fine lines, boosts firmness, and improves overall radiance without irritation.<br/>Niacinamide (5.0%)— brightens uneven tone, minimizes the look of pores, and strengthens the skin barrier.<br/>Melatonin (Liposomal, 0.3%)— nighttime skin repair booster that supports antioxidant protection and recovery.</p>",
             "page": ""
           }
         },
@@ -113,11 +113,6 @@
       "name": "Result Slider",
       "settings": {}
     },
-    "quantity_section_G437gg": {
-      "type": "quantity-section",
-      "name": "Quantity Section",
-      "settings": {}
-    },
     "bakuchiol-compare_234f": {
       "type": "bakuchiol-compare",
       "settings": {}
@@ -125,6 +120,11 @@
     "what_inside_BqJnn3": {
       "type": "what-inside",
       "name": "What Inside ?",
+      "settings": {}
+    },
+    "quantity_section_G437gg": {
+      "type": "quantity-section",
+      "name": "Quantity Section",
       "settings": {}
     },
     "faq_with_text_EmnjBk": {
@@ -243,10 +243,8 @@
     "product-banner_vsdg34",
     "result_slider_NP3wa6",
     "bakuchiol-compare_234f",
-   
-
     "what_inside_BqJnn3",
-     "quantity_section_G437gg",
+    "quantity_section_G437gg",
     "faq_with_text_EmnjBk",
     "custom_review_LGr7nf",
     "bakuchiol_footer_UCc3h8",
