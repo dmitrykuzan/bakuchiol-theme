@@ -4222,4 +4222,159 @@ details-disclosure > details {
 }
 
 
+/* ================================================
+   VOLUFILINE THEME OVERRIDES (SAFE + TARGETED)
+   ================================================ */
 
+/* Core tokens */
+:root {
+  --volu-primary:       #5a3b8c;  /* deep purple */
+  --volu-primary-soft:  #8d6fd1;  /* mid purple */
+  --volu-accent-soft:   #cbbfe2;  /* lilac */
+  --volu-text-main:     #111111;  /* neutral dark */
+  --volu-text-muted:    #555555;
+  --volu-light:         #ffffff;
+}
+
+/* ------------------------------
+   1) RESET GLOBAL TEXT (NO MORE PURPLE TEXT EVERYWHERE)
+--------------------------------*/
+body,
+h1, h2, h3, h4, h5, h6,
+p, span {
+  color: var(--volu-text-main) !important;
+}
+
+/* Let normal links be subtle, not screaming */
+a {
+  color: var(--volu-primary-soft) !important;
+}
+
+a:hover {
+  color: var(--volu-primary) !important;
+}
+
+/* ------------------------------
+   2) PRIMARY CTA BUTTONS
+   (Add to cart, main CTAs)
+--------------------------------*/
+.product-form__submit,
+.button-custom.button-custom__black,
+.button.button--primary,
+.baku-gradient-button,
+.shopify-payment-button__button--unbranded {
+  background: linear-gradient(90deg, var(--volu-primary), var(--volu-primary-soft)) !important;
+  color: var(--volu-light) !important;
+  border-color: transparent !important;
+}
+
+/* Hover – slightly brighter */
+.product-form__submit:hover,
+.button-custom.button-custom__black:hover,
+.button.button--primary:hover,
+.baku-gradient-button:hover,
+.shopify-payment-button__button--unbranded:hover {
+  background: linear-gradient(90deg, var(--volu-primary-soft), var(--volu-accent-soft)) !important;
+  color: var(--volu-light) !important;
+}
+
+/* Make sure text inside gradient button is white */
+.baku-gradient-button__text {
+  color: var(--volu-light) !important;
+}
+
+/* ------------------------------
+   3) SECONDARY / LIGHT BUTTONS
+--------------------------------*/
+.button-custom__white,
+.button.button--secondary {
+  background-color: var(--volu-light) !important;
+  color: var(--volu-primary) !important;
+  border-color: var(--volu-primary-soft) !important;
+}
+
+.button-custom__white:hover,
+.button.button--secondary:hover {
+  background-color: var(--volu-accent-soft) !important;
+  color: var(--volu-text-main) !important;
+}
+
+/* Outline style */
+.button-custom__border {
+  background-color: transparent !important;
+  border-color: var(--volu-primary) !important;
+  color: var(--volu-primary) !important;
+}
+
+.button-custom__border:hover {
+  background-color: var(--volu-primary) !important;
+  color: var(--volu-light) !important;
+}
+
+/* ------------------------------
+   4) ANNOUNCEMENT / UTILITY BARS
+--------------------------------*/
+.utility-bar {
+  background-color: var(--volu-accent-soft) !important;
+  color: var(--volu-light) !important;
+}
+
+.announcement-bar__message,
+.announcement-bar__message span {
+  color: var(--volu-light) !important;
+}
+
+/* If you’re using the purple gradient announcement: keep text readable */
+.purple-announcement__bar {
+  color: var(--volu-light) !important;
+}
+
+.purple-announcement__text {
+  color: #1d1440 !important; /* stays dark for contrast on lighter gradient segments */
+}
+
+/* ------------------------------
+   5) HEADER & CART
+--------------------------------*/
+.header__menu-item {
+  color: var(--volu-text-main) !important;
+}
+
+.header__menu-item:hover {
+  color: var(--volu-primary) !important;
+}
+
+.header__link-cta {
+  background-color: var(--volu-primary) !important;
+  color: var(--volu-light) !important;
+}
+
+.header__link-cta:hover {
+  background-color: var(--volu-light) !important;
+  color: var(--volu-primary) !important;
+  border: 1px solid var(--volu-primary) !important;
+}
+
+/* Cart bubble */
+.cart-count-bubble {
+  background-color: var(--volu-primary) !important;
+  color: var(--volu-light) !important;
+}
+
+/* ------------------------------
+   6) SLIDER ARROWS / SMALL UI
+--------------------------------*/
+.bakuchiol-slider__btn {
+  background-color: var(--volu-primary) !important;
+  border-color: transparent !important;
+}
+
+.bakuchiol-slider__btn:hover {
+  background-color: var(--volu-primary-soft) !important;
+  border-color: var(--volu-primary-soft) !important;
+}
+
+/* Subtext like vx-price-subtext stays soft & neutral */
+.vx-price-subtext {
+  color: var(--volu-text-muted) !important;
+}
