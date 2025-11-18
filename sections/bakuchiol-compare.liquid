@@ -89,10 +89,8 @@
     </div>
   </div>
 </section>
-
 <style>
-
-  :root {
+:root {
   --baku-deep: #1a152f;
   --baku-deep-soft: #474060;
   --baku-lavender: #cbbfe2;
@@ -103,7 +101,6 @@
 }
 
 /* SECTION WRAPPER – subtle full-width gradient “wash” */
-
 .baku-compare {
   padding-top: 56px;
   margin: 48px 0;
@@ -116,7 +113,6 @@
 }
 
 /* Inner panel for a luxe backsplash card */
-
 .baku-compare__panel {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(222, 216, 239, 0.9);
@@ -126,7 +122,6 @@
 }
 
 /* Core layout */
-
 .baku-compare__inner {
   display: flex;
   gap: 4rem;
@@ -134,7 +129,6 @@
 }
 
 /* LEFT COLUMN (TEXT ONLY) */
-
 .baku-compare__left {
   flex: 0.9;
   padding-right: 12px;
@@ -166,7 +160,6 @@
 }
 
 /* RIGHT COLUMN – TABLE */
-
 .baku-compare__right {
   flex: 1.3;
   display: flex;
@@ -175,7 +168,6 @@
 }
 
 /* Table header */
-
 .baku-compare__table-head {
   display: grid;
   grid-template-columns: 1.3fr 1.1fr 1.1fr;
@@ -194,7 +186,6 @@
 }
 
 /* Rows */
-
 .baku-compare__rows {
   list-style: none;
   margin: 0;
@@ -222,7 +213,6 @@
 }
 
 /* Badges */
-
 .baku-compare__badge {
   display: inline-flex;
   align-items: center;
@@ -241,7 +231,6 @@
 }
 
 /* Bakuchiol column */
-
 .baku-compare__cell--baku {
   color: var(--baku-deep);
 }
@@ -251,7 +240,6 @@
 }
 
 /* Retinol column */
-
 .baku-compare__cell--retinol {
   color: #8a7a9c;
 }
@@ -260,7 +248,9 @@
   border-color: #c6b9de;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+   ========================= */
 
 @media (max-width: 1024px) {
   .baku-compare {
@@ -282,6 +272,7 @@
   }
 }
 
+/* Mid-size phones: two-column grid but with feature spanning both */
 @media (max-width: 720px) {
   .baku-compare__heading {
     font-size: 24px;
@@ -311,6 +302,37 @@
 
   .baku-compare__cell {
     font-size: 12px;
+  }
+
+  .baku-compare__badge {
+    padding-right: 0;
+  }
+}
+
+/* Extra small phones: fully stacked rows so text never wraps awkwardly */
+@media (max-width: 480px) {
+  /* Header collapses to a single column of labels */
+  .baku-compare__table-head {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  .baku-compare__table-head .baku-compare__col--label {
+    display: none;
+  }
+
+  /* Each row: feature, then Age Delay cell, then Retinol cell stacked */
+  .baku-compare__row {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+  }
+
+  .baku-compare__feature {
+    font-size: 13px;
+  }
+
+  .baku-compare__cell {
+    font-size: 13px;
   }
 
   .baku-compare__badge {
