@@ -63,7 +63,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
     <!-- RIGHT: PRODUCT IMAGE -->
     <div class="baku-hero__image">
       <img
-        src="{{ 'bakuchiol-bottle.png' | asset_url }}"
+        src="{{ 'bakuchiol-bottle3.png' | asset_url }}"
         alt="Bakuchiol Age-Delay Serum Bottle"
         loading="eager"
       >
@@ -333,6 +333,16 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   .baku-hero__image img {
     max-height: 410px !important;   /* was ~340px after tightening */
     margin-bottom: -35px !important; /* prevents excess white space */
+  }
+}
+
+@media (max-width: 720px) {
+  .baku-hero__image {
+    margin-top: -40px !important;   /* lift image upward */
+  }
+
+  .baku-hero__image img {
+    max-height: 410px !important;   /* your increased size */
   }
 }
 </style>
