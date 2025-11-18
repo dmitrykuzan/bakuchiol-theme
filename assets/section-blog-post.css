@@ -23,8 +23,7 @@
    ---------------------------- */
 
 .article-template__hero-container {
-  max-width: 900px;
-  max-height: 200px;
+  max-width: 1120px;
   margin: 0 auto 4rem;
   overflow: hidden;
 }
