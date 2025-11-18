@@ -3546,9 +3546,9 @@ details-disclosure > details {
 }
 
 .gradient {
-  background: rgb(var(--color-background));
-  background: var(--gradient-background);
-  background-attachment: fixed;
+   background:
+    linear-gradient(120deg, #faf7ff 0%, #ffffff 40%, #f6f1ff 100%);
+  padding: 64px 0;
 }
 
 @media screen and (forced-colors: active) {
