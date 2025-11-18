@@ -1,74 +1,15 @@
-{% if product and product.handle == 'bakuchiol-age-delay-serum' %}
-  {% assign sticky_variant = product.selected_or_first_available_variant %}
-
-  {% if sticky_variant.available %}
-    {% assign compare_price = sticky_variant.compare_at_price %}
-    {% assign current_price = sticky_variant.price %}
-
-    {% if compare_price > current_price %}
-      {% assign savings = compare_price | minus: current_price %}
-      {% assign savings_pct = savings | times: 100 | divided_by: compare_price | floor %}
-    {% endif %}
-
-    <div id="bakuchiol-sticky-atc" class="sticky-atc" aria-hidden="true">
-      <div class="page-width sticky-atc__outer">
-        <div class="sticky-atc__inner">
-          <div class="sticky-atc__left">
-            <div class="sticky-atc__thumb">
-              {{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: product.title }}
-            </div>
-
-            <div class="sticky-atc__info">
-              <!-- Rating row -->
-              <div class="sticky-atc__rating">
-                <span class="sticky-atc__stars">★★★★★</span>
-                <span class="sticky-atc__rating-text">
-                  Excellent <strong>4.8</strong> | 1,482+ reviews
-                </span>
-              </div>
-
-              <p class="sticky-atc__title">
-                {{ product.title }}
-              </p>
-
-              <div class="sticky-atc__meta">
-                <span class="sticky-atc__price">
-                  {{ current_price | money }}
-                </span>
-
-                {% if compare_price > current_price %}
-                  <span class="sticky-atc__price--compare">
-                    {{ compare_price | money }}
-                  </span>
-
-                  {% if savings_pct > 0 %}
-                    <span class="sticky-atc__badge">
-                      SAVE {{ savings_pct }}%
-                    </span>
-                  {% endif %}
-                {% endif %}
-              </div>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            class="sticky-atc__button js-sticky-atc-add baku-gradient"
-          >
-            Add to cart
-          </button>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-{% endif %}
-
 <style>
 /* ================================
-   LUXURY PURPLE GRADIENT BUTTON
-   (base styling from main ATC)
-   ================================ */
+   MAIN LUXURY GRADIENT BUTTON
+   (used on product form, etc.)
+================================ */
 
+.baku-gradient-button {
+  --baku-start: #1d1440;
+  --baku-mid:   #5a3b8c;
+  --baku-end:   #8d6fd1;
+
+  background: linear-gradient(90deg, var(--baku-start), var(--baku-mid), var(--baku-end));
   background-size: cover;
   background-repeat: no-repeat;
   background-clip: padding-box;
@@ -95,10 +36,6 @@
   transition: transform 0.15s ease, opacity 0.2s ease;
 }
 
-/* No animation */
-@keyframes bakuGradientShift {}
-
-/* No shine */
 .baku-gradient-button::after {
   content: none !important;
 }
@@ -106,6 +43,11 @@
 .baku-gradient-button:hover {
   opacity: 0.95;
   transform: translateY(-2px);
+}
+
+.baku-gradient-button:active {
+  opacity: 0.85;
+  transform: translateY(0);
 }
 
 .baku-gradient-button:disabled {
@@ -120,9 +62,9 @@
 
 /* ================================
    STICKY ATC BAR
-   ================================ */
+================================ */
 
-/* ===== Sticky ATC – visibility & container ===== */
+/* Visibility container */
 
 .sticky-atc {
   position: fixed;
@@ -148,19 +90,23 @@
 .sticky-atc__inner {
   pointer-events: auto;
   display: flex;
+  flex-direction: row;      /* force horizontal, even on mobile */
   align-items: center;
   justify-content: space-between;
   gap: 2.25rem;
   padding: 1rem 0;
+  flex-wrap: nowrap;
 }
 
-/* ===== Left side (image + info) ===== */
+/* Left side (image + info) */
 
 .sticky-atc__left {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 1.25rem;
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .sticky-atc__thumb {
@@ -171,6 +117,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .sticky-atc__thumb img {
@@ -178,7 +125,7 @@
   height: auto;
 }
 
-/* ===== Text content ===== */
+/* Text content */
 
 .sticky-atc__info {
   display: flex;
@@ -196,14 +143,14 @@
 }
 
 .sticky-atc__stars {
-  color: #cbbfe2;
+  color: #b79cff;
   font-size: 1.45rem;
   letter-spacing: 0.12em;
 }
 
 .sticky-atc__rating-text {
   color: #252347;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 .sticky-atc__rating-text strong {
@@ -214,7 +161,7 @@
 
 .sticky-atc__title {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
@@ -230,12 +177,12 @@
 }
 
 .sticky-atc__price {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 .sticky-atc__price--compare {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   opacity: 0.6;
   text-decoration: line-through;
 }
@@ -243,18 +190,18 @@
 .sticky-atc__badge {
   background-color: #5b4836;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0.2rem 0.5rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* ===== Sticky Add to Cart Button (gradient version) ===== */
+/* Sticky ATC button (gradient, right side) */
 
 .sticky-atc__button {
-  --baku-start: #5a3b8c;
-  --baku-mid:   #8d6fd1;
-  --baku-end:   #cbbfe2;
+  --baku-start: #1d1440;
+  --baku-mid:   #5a3b8c;
+  --baku-end:   #8d6fd1;
 
   background: linear-gradient(90deg, var(--baku-start), var(--baku-mid), var(--baku-end));
   background-size: cover;
@@ -267,18 +214,19 @@
 
   color: #ffffff !important;
   font-weight: 800;
-  font-size: 1.85rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.16em;
   text-align: center;
   cursor: pointer;
 
-  padding: 1.6rem 4.4rem;
-  margin-right: 1.25rem;
+  padding: 1.4rem 3.8rem;
+  margin-right: 0.5rem;
 
   white-space: nowrap;
   box-shadow: none;
 
+  flex-shrink: 0;          /* keep button width on mobile */
   transition: transform 0.15s ease, opacity 0.2s ease;
 }
 
@@ -297,11 +245,11 @@
   cursor: not-allowed;
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive tweaks ===== */
 
 @media (max-width: 900px) {
   .sticky-atc__outer {
-    padding: 0.85rem 1rem;
+    padding: 0.75rem 0.9rem;
   }
 
   .sticky-atc__thumb {
@@ -310,27 +258,39 @@
   }
 
   .sticky-atc__title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .sticky-atc__stars {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .sticky-atc__rating-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .sticky-atc__price {
+    font-size: 1.15rem;
   }
 
   .sticky-atc__button {
-    padding: 1.2rem 3rem;
-    font-size: 1.4rem;
-    margin-right: 0.5rem;
+    padding: 1.1rem 2.4rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.14em;
   }
 }
 
 @media (max-width: 600px) {
+  .sticky-atc__inner {
+    gap: 1.25rem;
+  }
+
   .sticky-atc__title {
-    max-width: 13rem;
+    max-width: 11rem;
+  }
+
+  .sticky-atc__rating-text {
+    display: none; /* keeps bar cleaner on very small screens */
   }
 }
 </style>
@@ -351,8 +311,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function toggleBar() {
     var rect = mainAtc.getBoundingClientRect();
     var outOfView = rect.bottom < 0 || rect.top > window.innerHeight;
+    var scrolledEnough = window.scrollY > 200;  // wait until user scrolls a bit
 
-    if (outOfView) {
+    if (outOfView && scrolledEnough) {
       bar.classList.add('sticky-atc--visible');
       bar.setAttribute('aria-hidden', 'false');
     } else {
@@ -366,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleBar();
 
   button.addEventListener('click', function () {
-    mainAtc.click();
+    if (mainAtc) mainAtc.click();
   });
 });
 </script>
