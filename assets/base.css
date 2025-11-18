@@ -4223,7 +4223,7 @@ details-disclosure > details {
 
 
 /* ================================================
-   VOLUFILINE THEME OVERRIDES (SAFE + TARGETED)
+   VOLUFILINE THEME OVERRIDES (CLEAN + TARGETED)
    ================================================ */
 
 /* Core tokens */
@@ -4237,20 +4237,7 @@ details-disclosure > details {
 }
 
 /* ------------------------------
-   1) RESET GLOBAL TEXT (NO MORE PURPLE TEXT EVERYWHERE)
---------------------------------*/
-
-/* Let normal links be subtle, not screaming */
-a {
-  color: var(--volu-primary-soft) !important;
-}
-
-a:hover {
-  color: var(--volu-primary) !important;
-}
-
-/* ------------------------------
-   2) PRIMARY CTA BUTTONS
+   1) PRIMARY CTA BUTTONS
    (Add to cart, main CTAs)
 --------------------------------*/
 .product-form__submit,
@@ -4263,7 +4250,7 @@ a:hover {
   border-color: transparent !important;
 }
 
-/* Hover – slightly brighter */
+/* Hover – slightly brighter + subtle lift */
 .product-form__submit:hover,
 .button-custom.button-custom__black:hover,
 .button.button--primary:hover,
@@ -4271,6 +4258,18 @@ a:hover {
 .shopify-payment-button__button--unbranded:hover {
   background: linear-gradient(90deg, var(--volu-primary-soft), var(--volu-accent-soft)) !important;
   color: var(--volu-light) !important;
+  transform: translateY(-1px);
+}
+
+/* Disabled */
+.product-form__submit:disabled,
+.button-custom.button-custom__black:disabled,
+.button.button--primary:disabled,
+.baku-gradient-button:disabled,
+.shopify-payment-button__button--unbranded:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Make sure text inside gradient button is white */
@@ -4279,7 +4278,7 @@ a:hover {
 }
 
 /* ------------------------------
-   3) SECONDARY / LIGHT BUTTONS
+   2) SECONDARY / LIGHT BUTTONS
 --------------------------------*/
 .button-custom__white,
 .button.button--secondary {
@@ -4307,7 +4306,7 @@ a:hover {
 }
 
 /* ------------------------------
-   4) ANNOUNCEMENT / UTILITY BARS
+   3) ANNOUNCEMENT / UTILITY BARS
 --------------------------------*/
 .utility-bar {
   background-color: var(--volu-accent-soft) !important;
@@ -4319,41 +4318,67 @@ a:hover {
   color: var(--volu-light) !important;
 }
 
-/* If you’re using the purple gradient announcement: keep text readable */
+/* If you’re using the purple gradient announcement bar */
 .purple-announcement__bar {
   color: var(--volu-light) !important;
 }
 
-.purple-announcement__text {
-  color: #1d1440 !important; /* stays dark for contrast on lighter gradient segments */
-}
-
 /* ------------------------------
-   5) HEADER & CART
+   4) HEADER & NAV
 --------------------------------*/
+
+/* Keep menu items black, no purple text */
 .header__menu-item {
-  color: var(--volu-text-main) !important;
+  color: #000000 !important;
 }
 
 .header__menu-item:hover {
-  color: var(--volu-primary) !important;
+  color: #000000 !important;
 }
 
+/* RESTORE "Shop Now" header CTA:
+   white background, black text */
 .header__link-cta {
-  background-color: var(--volu-primary) !important;
-  color: var(--volu-light) !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
 }
 
 .header__link-cta:hover {
-  background-color: var(--volu-light) !important;
-  color: var(--volu-primary) !important;
-  border: 1px solid var(--volu-primary) !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
-/* Cart bubble */
+/* Cart bubble stays purple */
 .cart-count-bubble {
   background-color: var(--volu-primary) !important;
   color: var(--volu-light) !important;
+}
+
+/* ------------------------------
+   5) GLOBAL LINKS
+   (default: black text)
+--------------------------------*/
+a,
+.link,
+.inline-richtext a,
+.rte a {
+  color: #000000 !important;
+}
+
+/* But keep links white in bars so they don’t vanish */
+.utility-bar a,
+.announcement-bar a {
+  color: #ffffff !important;
+}
+
+/* Slightly stronger underline on hover */
+a:hover,
+.link:hover,
+.inline-richtext a:hover,
+.rte a:hover {
+  color: #000000 !important;
+  text-decoration-thickness: 0.15rem;
 }
 
 /* ------------------------------
@@ -4369,7 +4394,7 @@ a:hover {
   border-color: var(--volu-primary-soft) !important;
 }
 
-/* Subtext like vx-price-subtext stays soft & neutral */
+/* Soft neutral subtext */
 .vx-price-subtext {
   color: var(--volu-text-muted) !important;
 }
