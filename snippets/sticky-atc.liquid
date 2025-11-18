@@ -64,8 +64,72 @@
 {% endif %}
 
 <style>
+/* ================================
+   LUXURY PURPLE GRADIENT BUTTON
+   (base styling from main ATC)
+   ================================ */
 
-  /* ===== Sticky ATC – visibility & container ===== */
+/* This is your main gradient button */
+.baku-gradient-button {
+  --baku-start: #5a3b8c;
+  --baku-mid:   #8d6fd1;
+  --baku-end:   #cbbfe2;
+
+  background: linear-gradient(90deg, var(--baku-start), var(--baku-mid), var(--baku-end));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+
+  width: 100%;
+  padding: 18px 22px;
+
+  border: none !important;
+  outline: none !important;
+
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+/* No animation */
+@keyframes bakuGradientShift {}
+
+/* No shine */
+.baku-gradient-button::after {
+  content: none !important;
+}
+
+.baku-gradient-button:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+.baku-gradient-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.baku-gradient-button__text {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================================
+   STICKY ATC BAR
+   ================================ */
+
+/* ===== Sticky ATC – visibility & container ===== */
 
 .sticky-atc {
   position: fixed;
@@ -83,7 +147,7 @@
 }
 
 .sticky-atc__outer {
-  padding: 1rem 1.5rem; /* more side padding */
+  padding: 1rem 1.5rem;
   background: linear-gradient(to top, #f3f1ee, #ffffff);
   border-top: 1px solid #e2ddd7;
 }
@@ -107,7 +171,7 @@
 }
 
 .sticky-atc__thumb {
-  width: 82px;        /* bigger image */
+  width: 82px;
   height: 82px;
   background: #f5f2ee;
   display: flex;
@@ -140,13 +204,13 @@
 
 .sticky-atc__stars {
   color: #cbbfe2;
-  font-size: 1.45rem;          /* bigger stars */
+  font-size: 1.45rem;
   letter-spacing: 0.12em;
 }
 
 .sticky-atc__rating-text {
   color: #252347;
-  font-size: 1.15rem;          /* larger rating text */
+  font-size: 1.15rem;
 }
 
 .sticky-atc__rating-text strong {
@@ -157,7 +221,7 @@
 
 .sticky-atc__title {
   margin: 0;
-  font-size: 1.45rem;          /* bigger product name */
+  font-size: 1.45rem;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
@@ -173,7 +237,7 @@
 }
 
 .sticky-atc__price {
-  font-size: 1.35rem;          /* bigger price */
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
@@ -192,34 +256,52 @@
   text-transform: uppercase;
 }
 
-/* ===== Add to Cart Button ===== */
+/* ===== Sticky Add to Cart Button (gradient version) ===== */
 
 .sticky-atc__button {
-  background-color: #cbbfe2 !important;
-  color: #ffffff !important;
-  border: none;
+  --baku-start: #5a3b8c;
+  --baku-mid:   #8d6fd1;
+  --baku-end:   #cbbfe2;
+
+  background: linear-gradient(90deg, var(--baku-start), var(--baku-mid), var(--baku-end));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+
+  border: none !important;
+  outline: none !important;
   border-radius: 0;
 
-  padding: 1.6rem 4.4rem;    /* huge premium button */
-  margin-right: 1.25rem;     /* pushed off right nicely */
-
-  font-size: 1.85rem;        /* bigger ATC text */
+  color: #ffffff !important;
   font-weight: 800;
+  font-size: 1.85rem;
   text-transform: uppercase;
   letter-spacing: 0.17em;
+  text-align: center;
+  cursor: pointer;
+
+  padding: 1.6rem 4.4rem;
+  margin-right: 1.25rem;
 
   white-space: nowrap;
-  cursor: pointer;
   box-shadow: none;
-  transition: opacity 0.2s ease;
+
+  transition: transform 0.15s ease, opacity 0.2s ease;
 }
 
 .sticky-atc__button:hover {
-  opacity: 0.85;
+  opacity: 0.95;
+  transform: translateY(-2px);
 }
 
 .sticky-atc__button:active {
-  opacity: 0.75;
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
+.sticky-atc__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ===== Responsive ===== */
@@ -258,7 +340,6 @@
     max-width: 13rem;
   }
 }
-
 </style>
 
 <script>
