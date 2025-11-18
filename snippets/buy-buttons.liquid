@@ -70,18 +70,26 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          <button
-            id="ProductSubmitButton-{{ section_id }}"
-            type="submit"
-            name="add"
-            class="product-form__submit  {% if show_dynamic_checkout %}button--secondary{% else %}button--primary-bakuchiol button-custom button-custom__black{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
-              disabled
-            {% endif %}
-          >
+         <button
+  id="ProductSubmitButton-{{ section_id }}"
+  type="submit"
+  name="add"
+  class="product-form__submit baku-gradient-button"
+  {% if product.selected_or_first_available_variant.available == false
+    or quantity_rule_soldout
+    or product.selected_or_first_available_variant == null
+  %}
+    disabled
+  {% endif %}
+>
+  <span class="baku-gradient-button__text">ADD TO CART</span>
+
+  <div class="loading__spinner hidden">
+    <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66">
+      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+    </svg>
+  </div>
+</button>
             {% comment %}
               <span>
                 {%- if product.selected_or_first_available_variant == null -%}
