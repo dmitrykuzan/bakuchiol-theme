@@ -1,5 +1,6 @@
 /* ================================
-   FIXED — COMPACT LUXURY GRADIENT
+   LUXURY PURPLE GRADIENT BUTTON
+   (Full width, no overflow)
    ================================ */
 
 .baku-gradient-button {
@@ -7,17 +8,19 @@
   --baku-mid:   #8d6fd1;
   --baku-end:   #cbbfe2;
 
-  /* FIXED: gradient stays inside button */
+  /* Gradient stays *exactly* inside the button */
   background: linear-gradient(90deg, var(--baku-start), var(--baku-mid), var(--baku-end));
-  background-size: 150% 100%;   /* reduced from 250% */
-  animation: bakuGradientShift 6s ease infinite;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+
+  width: 100%;                     /* full width like original */
+  padding: 18px 22px;
+  border-radius: 8px;
 
   border: none !important;
   outline: none !important;
-  width: 100%;
-  padding: 18px 22px;
 
-  border-radius: 8px;
   color: #ffffff !important;
   font-weight: 700;
   font-size: 18px;
@@ -34,46 +37,24 @@
   transition: transform 0.15s ease, opacity 0.2s ease;
 }
 
-/* FIXED: tighter gradient movement */
-@keyframes bakuGradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+/* Remove animation completely — this prevented the overflow */
+@keyframes bakuGradientShift {}
 
-/* Shine effect */
+/* Remove shine so nothing "moves" beyond bounds */
 .baku-gradient-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 120%;   /* FIXED: no overflow */
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-  transform: skewX(-20deg);
-  transition: left 0.6s ease;
+  content: none !important;
 }
 
-.baku-gradient-button:hover::after {
-  left: 120%;
-}
-
-/* Hover effect */
+/* Subtle luxury hover only */
 .baku-gradient-button:hover {
+  opacity: 0.95;
   transform: translateY(-2px);
-  opacity: 0.96;
 }
 
 /* Disabled state */
 .baku-gradient-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  animation: none;
 }
 
 /* Text */
