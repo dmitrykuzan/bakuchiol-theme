@@ -2,71 +2,39 @@
 BAKUCHIOL HERO – CLINICALLY STUDIED
 {% endcomment %}
 
-<section class="baku-hero">
-  <div class="page-width baku-hero__inner">
-    <!-- LEFT: TEXT CONTENT -->
-    <div class="baku-hero__content">
-      <!-- Rating line -->
-      <div class="baku-hero__rating">
-        <span class="baku-hero__stars">★★★★★</span>
-        <span class="baku-hero__rating-text">
-          <strong>4.8/5</strong> based on <strong>1,482+</strong> reviews
-        </span>
-      </div>
-
-      <!-- Headline -->
-      <h1 class="baku-hero__headline">
-        Clinically Studied
-        <span>Bakuchiol Age-Delay Serum</span>
-      </h1>
-
-      <!-- Subcopy -->
-      <p class="baku-hero__subcopy">
-        A science-backed bakuchiol serum that visibly softens fine lines, boosts
-        radiance, and supports a calm, balanced complexion without the irritation
-        of traditional retinol.
-      </p>
-
-      <!-- Benefit bullets -->
-      <ul class="baku-hero__benefits">
-        <li>
-          <span class="baku-hero__icon"></span>
-          Softens fine lines + wrinkles
-        </li>
-        <li>
-          <span class="baku-hero__icon"></span>
-          Boosts luminosity + even tone
-        </li>
-        <li>
-          <span class="baku-hero__icon"></span>
-          Gentle enough for nightly use
-        </li>
-      </ul>
-
-      <!-- CTA + guarantee -->
-      <div class="baku-hero__cta-row">
-        <button
-          type="button"
-          class="button-custom baku-gradient baku-hero__cta"
-          onclick="document.querySelector('form[action^=\"/cart/add\"] .product-form__submit')?.scrollIntoView({behavior:'smooth'})"
-        >
-          TRY IT RISK-FREE TODAY
-        </button>
-
-        <div class="baku-hero__guarantee">
-          <span class="baku-hero__guarantee-icon">✓</span>
-          <span>90-Day Money-Back Guarantee</span>
-        </div>
-      </div>
+<section class="baku-section baku-section--product">
+  <div class="page-width baku-section__inner">
+    <div class="baku-section__media">
+      <img
+        src="{{ 'bakuchiol-bottle.png' | asset_url }}"
+        alt="Bakuchiol Age Delay Serum"
+        loading="lazy"
+      >
     </div>
 
-    <!-- RIGHT: PRODUCT IMAGE -->
-    <div class="baku-hero__image">
-      <img
-        src="{{ 'bakuchiol-bottle3.png' | asset_url }}"
-        alt="Bakuchiol Age-Delay Serum Bottle"
-        loading="eager"
+    <div class="baku-section__content">
+      <p class="baku-kicker">FOR ALL SKIN TYPES</p>
+
+      <h2 class="baku-heading-xl">
+        BAKUCHIOL<br>
+        AGE DELAY SERUM
+      </h2>
+
+      <p class="baku-price-line">$48.00</p>
+
+      <p class="baku-body">
+        A 1.0% pure bakuchiol serum that softens fine lines, smooths texture,
+        and brightens dull tone—without the dryness of traditional retinoids.
+        The lightweight, cushiony formula layers effortlessly under moisturizer
+        or cream for gentle, bakuchiol skin-style results.
+      </p>
+
+      <button
+        type="button"
+        class="button-custom baku-gradient baku-section__button"
       >
+        BUY BAKUCHIOL SERUM
+      </button>
     </div>
   </div>
 </section>
