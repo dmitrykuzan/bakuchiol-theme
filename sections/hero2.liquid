@@ -293,4 +293,38 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
     max-height: 400px;
   }
 }
+
+/* ============================
+   REMOVE EXCESS SPACE UNDER HERO
+   ============================ */
+
+/* Desktop – tightened bottom padding + image height */
+.baku-hero {
+  padding-bottom: 20px !important; /* was 48px */
+}
+
+.baku-hero__image img {
+  max-height: 600px !important; /* was 720px */
+  margin-bottom: -40px !important; /* pulls the bottle DOWN so you see more product, less empty space */
+}
+
+/* MOBILE — tighten even more */
+@media (max-width: 720px) {
+  .baku-hero {
+    padding-bottom: 10px !important; /* very tight */
+  }
+
+  .baku-hero__image img {
+    max-height: 340px !important; /* was 400px */
+    margin-bottom: -30px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .baku-hero__image img {
+    max-height: 380px !important; 
+    margin-bottom: -25px !important;
+  }
+}
 </style>
