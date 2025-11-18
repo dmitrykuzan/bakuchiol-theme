@@ -4220,3 +4220,159 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+/* ================================================
+   VOLUFILINE — GLOBAL COLOR OVERRIDES (IMPORTANT)
+   ================================================ */
+
+:root {
+  --volu-purple: #5a3b8c;
+  --volu-mid:    #8d6fd1;
+  --volu-lilac:  #cbbfe2;
+  --volu-text-dark: #000;
+  --volu-text-light: #fff;
+}
+
+/* ------------------------------
+   HEADERS / TEXT / BODY
+--------------------------------*/
+body,
+h1, h2, h3, h4, h5,
+p, span, a {
+  color: var(--volu-text-dark) !important;
+}
+
+a {
+  color: var(--volu-purple) !important;
+}
+
+a:hover {
+  color: var(--volu-mid) !important;
+}
+
+/* ------------------------------
+   BUTTONS — PRIMARY
+--------------------------------*/
+button,
+.button,
+.button-custom,
+.shopify-payment-button__button,
+.baku-gradient-button {
+  background-color: var(--volu-purple) !important;
+  color: var(--volu-text-light) !important;
+  border-color: var(--volu-purple) !important;
+}
+
+/* Hover */
+button:hover,
+.button:hover,
+.button-custom:hover,
+.shopify-payment-button__button:hover,
+.baku-gradient-button:hover {
+  background-color: var(--volu-mid) !important;
+  border-color: var(--volu-mid) !important;
+}
+
+/* ------------------------------
+   BUTTONS — OUTLINE / BORDER
+--------------------------------*/
+.button-custom__border {
+  border-color: var(--volu-purple) !important;
+  color: var(--volu-purple) !important;
+}
+
+.button-custom__border:hover {
+  background-color: var(--volu-purple) !important;
+  color: var(--volu-text-light) !important;
+}
+
+/* ------------------------------
+   ANNOUNCEMENT BARS / UTILITY
+--------------------------------*/
+.utility-bar,
+.announcement-bar,
+.announcement-bar__message {
+  background-color: var(--volu-lilac) !important;
+  color: var(--volu-text-light) !important;
+}
+
+.announcement-bar__message span {
+  color: var(--volu-text-light) !important;
+}
+
+/* ------------------------------
+   CART ICON / MENU ICONS
+--------------------------------*/
+.header__icon,
+.header__icon svg path,
+.header__icon .icon path {
+  fill: var(--volu-text-dark) !important;
+  stroke: var(--volu-text-dark) !important;
+}
+
+/* Cart bubble */
+.cart-count-bubble {
+  background-color: var(--volu-purple) !important;
+  color: var(--volu-text-light) !important;
+}
+
+/* ------------------------------
+   LINKS / UNDERLINED LINKS
+--------------------------------*/
+.link,
+.underlined-link,
+.inline-richtext a {
+  color: var(--volu-purple) !important;
+}
+
+.link:hover,
+.underlined-link:hover,
+.inline-richtext a:hover {
+  color: var(--volu-mid) !important;
+}
+
+/* ------------------------------
+   BORDERS / DIVIDERS
+--------------------------------*/
+hr,
+.divider,
+.border,
+.content-container {
+  border-color: var(--volu-lilac) !important;
+}
+
+/* ------------------------------
+   SWIPER BUTTONS (SLIDER ARROWS)
+--------------------------------*/
+.bakuchiol-slider__btn {
+  background-color: var(--volu-purple) !important;
+}
+
+.bakuchiol-slider__btn:hover {
+  background-color: var(--volu-mid) !important;
+  border-color: var(--volu-mid) !important;
+}
+
+/* ------------------------------
+   INPUTS / FIELDS
+--------------------------------*/
+.field__input,
+.select__select,
+textarea {
+  border-color: var(--volu-lilac) !important;
+  color: var(--volu-text-dark) !important;
+}
+
+.field__label {
+  color: var(--volu-purple) !important;
+}
+
+/* ------------------------------
+   BADGES / TAGS
+--------------------------------*/
+.badge {
+  background-color: var(--volu-purple) !important;
+  color: var(--volu-text-light) !important;
+  border-color: var(--volu-mid) !important;
+}
