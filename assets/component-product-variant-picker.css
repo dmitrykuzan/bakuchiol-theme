@@ -58,9 +58,9 @@ variant-selects {
 
 /* Custom styles for Pill display type */
 .product-form__input--pill input[type='radio'] + label {
-border: 1px solid #1d1440;
+border: 1px solid #1a152f;
   background-color: white !important;
-  color: #1d1440 !important;
+  color: #1a152f !important;
   display: inline-block;
   margin: 0.7rem 0.5rem 0.2rem 0;
   padding: 1rem 2rem;

@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #1d1440;
+  color: #1a152f;
   background-color: #fff;
   text-decoration: none;
   min-height: 4rem;
@@ -97,7 +97,7 @@
 
 .hero__product-link:hover {
   color: #fff;
-  background-color: #1d1440;
+  background-color: #1a152f;
 }
 
 

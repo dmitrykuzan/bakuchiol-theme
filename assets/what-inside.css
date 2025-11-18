@@ -45,13 +45,13 @@
     flex-direction: column;
     gap: 1.5rem;
     padding-bottom: 1.5rem;
-    border-bottom: 0.1rem solid #1d1440;
+    border-bottom: 0.1rem solid #1a152f;
 
     h3 {
         margin: initial;
         font-weight: 500;
         line-height: 133%;
-        color: #1d1440;
+        color: #1a152f;
         font-size: 2rem;
     }
 

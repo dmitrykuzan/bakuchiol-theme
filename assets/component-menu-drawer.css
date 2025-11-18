@@ -118,7 +118,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__close-button:focus,
 .menu-drawer__menu-item:hover,
 .menu-drawer__close-button:hover {
-  color: #1d1440;
+  color: #1a152f;
   background-color: rgba(0, 0, 0, 0.04); /* soft gray hover */
 }
 
@@ -348,7 +348,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .premium-menu-drawer__link--grandchild:hover,
 .premium-menu-drawer__link--grandchild:focus-visible {
   background-color: rgba(0, 0, 0, 0.04);
-  color: #1d1440;
+  color: #1a152f;
 }
 
 /* Chevron positioning */
@@ -417,7 +417,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 /* FORCE ALL MENU TEXT INSIDE THE DRAWER TO BE BLACK */
 .premium-menu-drawer,
 .premium-menu-drawer * {
-  color: #1d1440 !important;
+  color: #1a152f !important;
 }
 
 /* Also force submenu links */
@@ -426,7 +426,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .premium-menu-drawer__link,
 .premium-menu-drawer__link--child,
 .premium-menu-drawer__link--grandchild {
-  color: #1d1440 !important;
+  color: #1a152f !important;
 }
 
 /* Hover states */
@@ -435,12 +435,12 @@ details[open].menu-opening > .menu-drawer__submenu {
 .premium-menu-drawer__link--child:hover,
 .premium-menu-drawer__link--grandchild:hover {
   background-color: rgba(0,0,0,0.05) !important;
-  color: #1d1440 !important;
+  color: #1a152f !important;
 }
 
 /* Chevron coloring */
 .premium-menu-drawer .premium-menu-drawer__chevron svg,
 .premium-menu-drawer__back-icon svg {
-  stroke: #1d1440 !important;
-  fill: #1d1440 !important;
-  color: #1d1440 !important;
+  stroke: #1a152f !important;
+  fill: #1a152f !important;
+  color: #1a152f !important;

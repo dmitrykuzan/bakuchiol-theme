@@ -195,7 +195,7 @@ product-info {
 .upgrade-price {
   font-size: 1.8rem;  /* bigger */
   font-weight: 500;
-  color: #1d1440;
+  color: #1a152f;
 }
 
 .upgrade-compare {
@@ -678,7 +678,7 @@ a.product__text {
 }
 
 .product__info-container {
-  border: 0.1rem solid #1d1440;
+  border: 0.1rem solid #1a152f;
   padding-top: 3rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -2013,7 +2013,7 @@ a.product__text {
   p {
     margin: initial;
     font-size: 2.2rem;
-    color: #1d1440;
+    color: #1a152f;
     line-height: 110%;
   }
 }
@@ -2064,7 +2064,7 @@ a.product__text {
 .custom__lowstock-value {
   flex-shrink: 0;
   font-size: 1.4rem;
-  color: #1d1440;
+  color: #1a152f;
 }
 
 @media screen and (min-width: 992px) {

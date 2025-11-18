@@ -155,11 +155,11 @@
 }
 
 .before-after-slider__btn:hover {
-  border: 0.1rem solid #1d1440;
+  border: 0.1rem solid #1a152f;
   background-color: #fff;
 
   svg {
-    stroke: #1d1440;
+    stroke: #1a152f;
   }
 }
 
