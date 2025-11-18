@@ -1,24 +1,138 @@
-.contact img {
-  max-width: 100%;
+/* ============================
+   CONTACT PAGE – BAKUCHIOL STYLE
+   ============================ */
+
+.contact {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 6rem 2rem 8rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+  color: #1a152f;
 }
 
+/* Heading + intro text */
+.contact h1,
+.contact h2 {
+  margin: 0 0 1.2rem;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact p {
+  margin: 0 0 1.6rem;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #444444;
+}
+
+/* Contact image (if present) */
+.contact img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------------------
+   FORM LAYOUT
+   --------------------------- */
+
+.contact form {
+  margin-top: 2.4rem;
+}
+
+/* 2-column layout for name / email fields on tablet+ */
+@media screen and (min-width: 750px) {
+  .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2.2rem;
+  }
+}
+
+/* Each field wrapper */
+.contact .field {
+  margin-bottom: 1.8rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 2.4rem;
+  }
+}
+
+/* ---------------------------
+   INPUTS & LABELS
+   --------------------------- */
+
+.contact .field__input,
+.contact textarea {
+  width: 100%;
+  padding: 1.1rem 0 0.9rem;
+  border: 0;
+  border-bottom: 1px solid #ded8ef;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #1a152f;
+  transition: border-color 150ms ease, background-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.contact textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Placeholder + label look cleaner without heavy gray */
+.contact .field__input::placeholder,
+.contact textarea::placeholder {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+/* Labels */
+.contact .field__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(26, 21, 47, 0.75);
+}
+
+/* Focus state – luxe but subtle */
+.contact .field__input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-bottom-color: #1a152f;
+  background-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(26, 21, 47, 0.08);
+}
+
+/* ---------------------------
+   FORM MESSAGE / SUCCESS
+   --------------------------- */
+
 .contact .form__message {
+  display: flex;
   align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #444444;
 }
 
 .contact .icon-success {
   margin-top: 0.2rem;
 }
 
-.contact .field {
-  margin-bottom: 1.5rem;
-}
-
-@media screen and (min-width: 750px) {
-  .contact .field {
-    margin-bottom: 2rem;
-  }
-}
+/* ---------------------------
+   SUBMIT BUTTON
+   --------------------------- */
 
 .contact__button {
   margin-top: 3rem;
@@ -30,10 +144,50 @@
   }
 }
 
-@media screen and (min-width: 750px) {
-  .contact__fields {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
+.contact__button .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.3rem 3.8rem;
+  border-radius: 0;
+  border: none;
+  background-color: #1a152f;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 150ms ease, transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.contact__button .button:hover {
+  background-color: #2b2146;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 40px rgba(26, 21, 47, 0.18);
+}
+
+/* ---------------------------
+   MOBILE TWEAKS
+   --------------------------- */
+
+@media screen and (max-width: 600px) {
+  .contact {
+    padding: 4.8rem 1.6rem 6.4rem;
+  }
+
+  .contact h1,
+  .contact h2 {
+    font-size: 2.4rem;
+  }
+
+  .contact p {
+    font-size: 1.4rem;
+  }
+
+  .contact .field__input,
+  .contact textarea {
+    font-size: 1.4rem;
   }
 }
