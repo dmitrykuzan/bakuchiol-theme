@@ -4225,7 +4225,6 @@ details-disclosure > details {
 /* ================================================
    VOLUFILINE THEME OVERRIDES (CLEAN + TARGETED)
    ================================================ */
-
 /* Core tokens */
 :root {
   --volu-primary:       #5a3b8c;  /* deep purple */
@@ -4235,14 +4234,16 @@ details-disclosure > details {
   --volu-text-muted:    #555555;
   --volu-light:         #ffffff;
 }
+
 /* ----------------------------------------------------
    PRIMARY CTA BUTTONS (NO BORDERS, NO SHADOW LINES)
 -----------------------------------------------------*/
 .product-form__submit,
+.button-custom,
 .button-custom.button-custom__black,
 .button.button--primary,
 .baku-gradient-button,
-.shopify-payment-button__button--unbranded,  {
+.shopify-payment-button__button--unbranded {
   background-image: linear-gradient(
     90deg,
     var(--volu-primary),
@@ -4264,6 +4265,7 @@ details-disclosure > details {
 
 /* Remove Dawn's annoying ::after pseudo-element shadow */
 .product-form__submit::after,
+.button-custom::after,
 .button-custom.button-custom__black::after,
 .button.button--primary::after,
 .baku-gradient-button::after,
@@ -4273,6 +4275,7 @@ details-disclosure > details {
 
 /* Hover */
 .product-form__submit:hover,
+.button-custom:hover,
 .button-custom.button-custom__black:hover,
 .button.button--primary:hover,
 .baku-gradient-button:hover,
@@ -4283,6 +4286,7 @@ details-disclosure > details {
 
 /* Active */
 .product-form__submit:active,
+.button-custom:active,
 .button-custom.button-custom__black:active,
 .button.button--primary:active,
 .baku-gradient-button:active,
@@ -4293,6 +4297,7 @@ details-disclosure > details {
 
 /* Disabled */
 .product-form__submit:disabled,
+.button-custom:disabled,
 .button-custom.button-custom__black:disabled,
 .button.button--primary:disabled,
 .baku-gradient-button:disabled,
@@ -4388,12 +4393,3 @@ details-disclosure > details {
 .bakuchiol-rating-stars svg linearGradient stop:last-child {
   stop-color: #e8d9ff !important; /* pale lilac */
 }
-
-/* 3. Optional soft glow — premium brand aesthetic */
-/*
-.review-slider__slide-stars svg path,
-.custom-stars svg path,
-.bakuchiol-rating-stars svg path {
-  filter: drop-shadow(0 0 4px rgba(183, 156, 255, 0.45));
-}
-*/
