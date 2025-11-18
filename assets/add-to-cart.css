@@ -4,12 +4,6 @@
    ================================ */
 
 .baku-gradient-button {
-  --baku-start: #5a3b8c;
-  --baku-mid:   #8d6fd1;
-  --baku-end:   #cbbfe2;
-
-  /* Gradient stays *exactly* inside the button */
-  background: linear-gradient(90deg, var(--baku-start), var(--baku-mid), var(--baku-end));
   background-size: cover;
   background-repeat: no-repeat;
   background-clip: padding-box;
