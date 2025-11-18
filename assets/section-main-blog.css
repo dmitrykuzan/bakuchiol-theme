@@ -1,6 +1,5 @@
 /* =========================================================
-   BLOG INDEX GRID ( /blogs/news )
-   Clean, luxe Bakuchiol layout
+   BLOG INDEX GRID – BAKUCHIOL
    ========================================================= */
 
 /* Grid wrapper */
@@ -14,7 +13,6 @@
   row-gap: var(--grid-mobile-vertical-spacing);
 }
 
-/* Single column on mobile */
 .blog-articles .card-wrapper {
   width: 100%;
 }
@@ -29,15 +27,9 @@
 }
 
 /* =========================================================
-   ARTICLE CARD – IMAGE
+   ARTICLE CARD – CONTAINER
    ========================================================= */
 
-/* Kill Shopify’s tall ratio padding for blog cards */
-.blog-articles .card__inner.ratio::before {
-  content: none !important;
-}
-
-/* Keep card background clean, not big gradients */
 .blog-articles .card__inner {
   background: #ffffff;
   border-radius: 0;
@@ -46,22 +38,35 @@
   transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
-/* Slight lift on hover for luxe feel */
 .blog-articles .card__inner:hover {
   transform: translateY(-4px);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
 }
 
-/* Make sure image wrapper doesn’t grow forever */
+/* =========================================================
+   ARTICLE CARD – IMAGE
+   ========================================================= */
+
+/* Don’t remove .ratio::before — it controls layout.
+   Instead, give the media wrapper a fixed height. */
+
 .blog-articles .article-card__image-wrapper {
+  height: 220px;          /* main card image height */
+  max-height: 220px;
   overflow: hidden;
 }
 
-/* Cap image height & crop nicely */
+/* Slightly taller on desktop for a more cinematic crop */
+@media screen and (min-width: 990px) {
+  .blog-articles .article-card__image-wrapper {
+    height: 260px;
+    max-height: 260px;
+  }
+}
+
+/* Make the media + image fill that height */
 .blog-articles .article-card__image {
-  width: 100%;
-  height: 220px;
-  max-height: 220px;
+  height: 100%;
 }
 
 .blog-articles .article-card__image img {
@@ -72,16 +77,8 @@
   object-position: center center;
 }
 
-/* Taller, more cinematic crop on desktop */
-@media screen and (min-width: 990px) {
-  .blog-articles .article-card__image {
-    height: 260px;
-    max-height: 260px;
-  }
-}
-
 /* =========================================================
-   ARTICLE CARD – TYPOGRAPHY / CONTENT
+   ARTICLE CARD – TEXT
    ========================================================= */
 
 .blog-articles .card__content {
@@ -123,7 +120,7 @@
   margin: 0;
 }
 
-/* Slight tightening on small screens */
+/* Mobile tweaks */
 @media screen and (max-width: 600px) {
   .blog-articles {
     padding: 0 1.4rem;
@@ -135,22 +132,5 @@
 
   .blog-articles .article-card__excerpt {
     font-size: 1.3rem;
-  }
-}
-
-/* =========================================================
-   OPTIONAL: COLLAGE MODE SAFETY (if theme uses it)
-   – Keep same image height; just let items span 2 cols
-   ========================================================= */
-
-@media screen and (min-width: 750px) {
-  .blog-articles--collage > *:nth-child(3n + 1),
-  .blog-articles--collage > *:nth-child(3n + 2):last-child {
-    grid-column: span 2;
-  }
-
-  .blog-articles--collage > *:nth-child(3n + 1) .card__inner,
-  .blog-articles--collage > *:nth-child(3n + 2):last-child .card__inner {
-    text-align: left;
   }
 }
