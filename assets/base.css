@@ -489,7 +489,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   .header__icon--cart {
     .svg-wrapper {
       svg path {
-        fill: #fff !important;
+        fill: #1d1440 !important;
       }
     }
   }
