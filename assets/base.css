@@ -4366,27 +4366,28 @@ details-disclosure > details {
 /* ============================================
    UNIVERSAL VOLUFILINE STAR COLOR OVERRIDE
    ============================================ */
-
+/* 1. Universal STAR fill — Chanel-inspired velvet lavender */
 .review-slider__slide-stars svg path,
 .review-slider__slide-star svg path,
 .custom-stars svg path,
 .bakuchiol-rating-stars svg path,
 [fill="#FFC107"],
 [fill="#fec108"] {
-  fill: #b3a5e6 !important;/* Satin premium lilac */
+  fill: #b39fdc !important; /* Velvet luxury lavender */
 }
 
-/* 2. Half-star gradients (avgStarGradient or any similar gradient) */
+/* 2. Premium half-star gradient — deep satin amethyst → pearl lavender */
 .review-slider__slide-stars svg linearGradient stop,
 .review-slider__slide-star svg linearGradient stop,
 .custom-stars svg linearGradient stop,
 .bakuchiol-rating-stars svg linearGradient stop {
-  stop-color: #b79cff !important;
+  stop-color: #a88cfb !important; /* Chanel amethyst */
 }
 
+/* Right / fade side of gradient */
 .review-slider__slide-stars svg linearGradient stop:last-child,
 .review-slider__slide-star svg linearGradient stop:last-child,
 .custom-stars svg linearGradient stop:last-child,
 .bakuchiol-rating-stars svg linearGradient stop:last-child {
-  stop-color: #e8d9ff !important; /* pale lilac */
+  stop-color: #d8cef3 !important; /* Pearl lavender */
 }
