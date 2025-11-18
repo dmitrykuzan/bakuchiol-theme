@@ -1,7 +1,5 @@
 {% comment %}
 BAKUCHIOL HERO – CLINICALLY STUDIED
-Paste inside your product template or as a section.
-Assumes `product` is the Bakuchiol serum.
 {% endcomment %}
 
 <section class="baku-hero">
@@ -63,8 +61,8 @@ Assumes `product` is the Bakuchiol serum.
 
     <!-- RIGHT: PRODUCT IMAGE (NO BORDER BOX) -->
     <div class="baku-hero__image">
-      <img 
-        src="{{ 'bakuchiol-bottle.png' | asset_url }}" 
+      <img
+        src="{{ 'bakuchiol-bottle.png' | asset_url }}"
         alt="Bakuchiol Age-Delay Serum Bottle"
         loading="eager"
       >
@@ -91,23 +89,20 @@ Assumes `product` is the Bakuchiol serum.
 ------------------------------*/
 .baku-hero {
   background: radial-gradient(circle at top left, #f3ecff 0%, #ffffff 55%, #f3ecff 100%);
-  padding: 64px 0 72px;          /* slightly shorter overall */
-  overflow: hidden;              /* trims any extra bottom bleed */
+  padding: 64px 0 72px; /* slightly shorter overall on desktop */
 }
 
 .baku-hero__inner {
   display: flex;
-  align-items: flex-start;       /* lift content + bottle toward the header */
+  align-items: center;
   justify-content: space-between;
-  gap: 3.5rem;
+  gap: 4rem;
 }
 
 /* LEFT COLUMN */
 .baku-hero__content {
   flex: 1.1;
   max-width: 560px;
-  padding-left: 3rem;            /* push text in from the left */
-  margin-top: -10px;             /* move content a touch closer to header */
 }
 
 /* Rating line */
@@ -115,14 +110,14 @@ Assumes `product` is the Bakuchiol serum.
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-size: 15px;
 }
 
 .baku-hero__stars {
   letter-spacing: 0.16em;
   font-size: 17px;
-  color: #c5b2ff; /* soft lilac stars */
+  color: #c5b2ff;
 }
 
 .baku-hero__rating-text {
@@ -145,13 +140,13 @@ Assumes `product` is the Bakuchiol serum.
 
 .baku-hero__headline span {
   display: block;
-  color: #7c73a2; /* softer lavender for second line */
+  color: #7c73a2;
   font-weight: 700;
 }
 
 /* Subcopy */
 .baku-hero__subcopy {
-  margin: 0 0 24px;
+  margin: 0 0 22px;
   font-size: 16px;
   line-height: 1.6;
   color: var(--volu-text-muted);
@@ -161,7 +156,7 @@ Assumes `product` is the Bakuchiol serum.
 .baku-hero__benefits {
   list-style: none;
   padding: 0;
-  margin: 0 0 28px;
+  margin: 0 0 26px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -232,9 +227,9 @@ Assumes `product` is the Bakuchiol serum.
 /* RIGHT COLUMN – PRODUCT IMAGE (NO BOX) */
 .baku-hero__image {
   flex: 0 0 auto;
-  min-height: 540px;            /* reduced height so less empty bottom */
+  min-height: 560px;          /* slightly shorter than before */
   display: flex;
-  align-items: flex-start;      /* lift bottle upward */
+  align-items: flex-end;      /* pull bottle up a bit */
   justify-content: center;
 
   background: none !important;
@@ -242,11 +237,11 @@ Assumes `product` is the Bakuchiol serum.
   border-radius: 0 !important;
   box-shadow: none !important;
   padding: 0 !important;
-  margin: -10px 2.5rem 0 0;     /* nudge bottle up and in */
+  margin: 0 !important;
 }
 
 .baku-hero__image img {
-  max-height: 640px;           /* slightly shorter bottle */
+  max-height: 640px;          /* shrink a touch */
   width: auto;
   height: auto;
   display: block;
@@ -257,38 +252,52 @@ Assumes `product` is the Bakuchiol serum.
 ------------------------------*/
 @media (max-width: 1024px) {
   .baku-hero {
-    padding: 52px 0 64px;
+    padding: 40px 0 52px;     /* less vertical padding on tablet/mobile */
   }
 
   .baku-hero__inner {
-    flex-direction: column-reverse;
-    gap: 32px;
+    flex-direction: column;   /* stack vertically */
+    gap: 24px;
+  }
+
+  /* Put bottle FIRST on mobile (like reference) */
+  .baku-hero__image {
+    order: -1;
+    min-height: 380px;
+    align-items: flex-end;
+    margin-bottom: 8px;
+  }
+
+  .baku-hero__image img {
+    max-height: 430px;
   }
 
   .baku-hero__content {
     max-width: 100%;
-    padding-left: 0;           /* reset left padding on tablet/mobile */
-    margin-top: 0;
-  }
-
-  .baku-hero__image {
-    min-height: 420px;
-    margin: 0 auto 0;
-    align-items: center;
-  }
-
-  .baku-hero__image img {
-    max-height: 460px;
   }
 }
 
 @media (max-width: 720px) {
+  .baku-hero {
+    padding: 32px 0 44px;
+  }
+
   .baku-hero__headline {
     font-size: 30px;
   }
 
+  .baku-hero__rating {
+    justify-content: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .baku-hero__subcopy {
+    margin-bottom: 18px;
+  }
+
   .baku-hero__benefits {
     gap: 8px;
+    margin-bottom: 22px;
   }
 
   .baku-hero__cta-row {
@@ -302,7 +311,7 @@ Assumes `product` is the Bakuchiol serum.
   }
 
   .baku-hero__image {
-    min-height: 360px;
+    min-height: 340px;
   }
 }
 </style>
