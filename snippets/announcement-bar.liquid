@@ -1,13 +1,17 @@
 <section class="purple-announcement">
+  <!-- TOP GRADIENT BAR WITH COUNTDOWN -->
   <div class="purple-announcement__bar">
-
     <!-- Heading -->
     <div class="purple-announcement__text">
       <strong>EARLY BLACK FRIDAY SALE</strong>
     </div>
 
     <!-- Countdown -->
-    <div class="purple-announcement__countdown" data-timer>
+    <div
+      class="purple-announcement__countdown"
+      data-timer
+      data-start-utc="2025-11-14T13:00:00Z"  <!-- 7:00 AM Central ≈ 13:00 UTC -->
+    >
       <div class="purple-announcement__item">
         <span class="time hours">03</span>
         <span class="label">HRS</span>
@@ -27,7 +31,13 @@
         <span class="label">SEC</span>
       </div>
     </div>
+  </div>
 
+  <!-- SECOND BAR: FREE SHIPPING -->
+  <div class="purple-announcement__bar purple-announcement__bar--secondary">
+    <div class="purple-announcement__text purple-announcement__text--secondary">
+      FREE SHIPPING ON ALL ORDERS
+    </div>
   </div>
 </section>
 
@@ -40,7 +50,7 @@
   width: 100%;
   padding: 0.9rem 1.75rem;
 
-  /* New gradient: deep purple -> bakuchiol lavender */
+  /* Gradient: deep purple -> bakuchiol lavender */
   background: linear-gradient(
     90deg,
     #5a3b8c,
@@ -56,6 +66,21 @@
   gap: 1.75rem;
 }
 
+/* SECOND BAR (NO ANIMATION, CONTRAST COLOR) */
+.purple-announcement__bar--secondary {
+  background: #1d1440;
+  animation: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.7rem 1.75rem;
+}
+
+.purple-announcement__text--secondary {
+  color: #ffffff;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* Gradient animation */
 @keyframes purpleShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
@@ -120,9 +145,18 @@
     padding: 0.9rem 1rem;
   }
 
+  .purple-announcement__bar--secondary {
+    padding: 0.65rem 1rem;
+  }
+
   .purple-announcement__text {
     font-size: 1.05rem;
     text-align: center;
+    white-space: normal;
+  }
+
+  .purple-announcement__text--secondary {
+    font-size: 0.95rem;
   }
 
   .time {
@@ -133,7 +167,7 @@
 
 <script>
 /* ============================================
-   4-HOUR REPEATING COUNTDOWN TIMER
+   4-HOUR REPEATING COUNTDOWN TIMER (UTC-BASED)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -145,20 +179,28 @@ document.addEventListener('DOMContentLoaded', function () {
   var secondsEl = countdown.querySelector('.seconds');
 
   var FOUR_HOURS_MS = 4 * 60 * 60 * 1000;
-  var endTime = Date.now() + FOUR_HOURS_MS;
 
-  function resetEndTime() {
-    endTime = Date.now() + FOUR_HOURS_MS;
+  // Fixed UTC start time (from data attribute)
+  var startAttr = countdown.getAttribute('data-start-utc');
+  var startMs = Date.parse(startAttr);
+
+  // Fallback: if invalid, start now (still UTC-based epoch)
+  if (isNaN(startMs)) {
+    startMs = Date.now();
   }
 
   function updateTimer() {
-    var now = Date.now();
-    var distance = endTime - now;
+    var now = Date.now(); // milliseconds since epoch (UTC-based)
+    var elapsed = now - startMs;
+    if (elapsed < 0) elapsed = 0;
 
-    if (distance <= 0) {
-      resetEndTime();
-      distance = endTime - now;
-    }
+    // How many full 4-hour cycles have passed
+    var cyclesCompleted = Math.floor(elapsed / FOUR_HOURS_MS);
+
+    // End of the current cycle
+    var currentCycleEnd = startMs + (cyclesCompleted + 1) * FOUR_HOURS_MS;
+    var distance = currentCycleEnd - now;
+    if (distance < 0) distance = 0;
 
     var totalSeconds = Math.floor(distance / 1000);
     var hours   = Math.floor(totalSeconds / 3600);
