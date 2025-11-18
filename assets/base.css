@@ -477,19 +477,19 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 
   .icon-close path {
-  fill: #ffffff !important; /* black */
+  fill: #ffffff !important; 
   
 }
 
   .icon-hamburger path {
-  fill: #ffffff !important; /* black */
+  fill: #ffffff !important; 
   
 }
 
   .header__icon--cart {
     .svg-wrapper {
       svg path {
-        fill: #000 !important;
+        fill: #fff !important;
       }
     }
   }
