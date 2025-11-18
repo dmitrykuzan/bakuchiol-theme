@@ -4361,35 +4361,38 @@ details-disclosure > details {
 }
 
 /* ============================================
-   LUXURY PURPLE STARS FOR TESTIMONIALS
+   UNIVERSAL STAR COLOR OVERRIDE
+   (For both .custom-stars and .bakuchiol-rating-stars)
    ============================================ */
 
-/* 1. Override ALL solid stars */
-.bakuchiol-rating-stars svg path {
-  fill: #b79cff !important; /* soft luxury lilac */
+/* 1. Override all solid stars */
+.custom-stars svg path,
+.bakuchiol-rating-stars svg path,
+.custom-stars .bakuchiol-rating-star svg path {
+  fill: #b79cff !important; /* soft lilac — luxury aesthetic */
 }
 
-/* 2. Optional: deeper branded purple instead */
-/* 
-.bakuchiol-rating-stars svg path {
-  fill: #8d6fd1 !important; 
-}
-*/
-
-/* 3. Override any existing linearGradient inside the SVG */
-.bakuchiol-rating-stars svg defs linearGradient stop[offset="75%"] {
-  stop-color: #b79cff !important;
-}
-
-.bakuchiol-rating-stars svg defs linearGradient stop[offset="75%"] + stop {
-  stop-color: #e8d9ff !important; /* lighter lilac for unfilled part */
-}
-
-/* If Shopify clones gradients, ensure all avgStarGradient variants update */
+/* 2. Half-star gradients (avgStarGradient or any cloned gradient IDs) */
+.custom-stars svg linearGradient stop,
 .bakuchiol-rating-stars svg linearGradient stop {
   stop-color: #b79cff !important;
 }
 
+.custom-stars svg linearGradient stop:last-child,
 .bakuchiol-rating-stars svg linearGradient stop:last-child {
-  stop-color: #e8d9ff !important;
+  stop-color: #e8d9ff !important; /* pale lilac for the unfilled side */
 }
+
+/* 3. Fix any inline "fill" attributes Shopify injects */
+.custom-stars [fill="#fec108"],
+.bakuchiol-rating-stars [fill="#fec108"] {
+  fill: #b79cff !important;
+}
+
+/* 4. Optional — soft glow (looks premium) */
+/*
+.custom-stars svg path,
+.bakuchiol-rating-stars svg path {
+  filter: drop-shadow(0 0 4px rgba(183, 156, 255, 0.45));
+}
+*/
