@@ -87,7 +87,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 ------------------------------*/
 .baku-hero {
   background: radial-gradient(circle at top left, #f3ecff 0%, #ffffff 55%, #f3ecff 100%);
-  padding: 52px 0 48px; /* less space top & bottom on desktop */
+  padding: 48px 0 32px; /* slightly tighter on bottom */
 }
 
 .baku-hero__inner {
@@ -108,7 +108,7 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 14px; /* slightly tighter */
+  margin-bottom: 14px;
   font-size: 15px;
 }
 
@@ -226,15 +226,16 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 .baku-hero__image {
   flex: 0 0 auto;
   display: flex;
-  align-items: flex-start;  /* bottle sits higher */
+  align-items: flex-start; /* bottle sits a bit higher */
   justify-content: center;
 }
 
 .baku-hero__image img {
-  max-height: 720px;   /* bigger bottle desktop */
+  max-height: 640px;  /* slightly smaller than 720 */
   width: auto;
   height: auto;
   display: block;
+  margin-top: -40px;  /* gentle lift toward the headline/CTA */
 }
 
 /* -----------------------------
@@ -242,15 +243,14 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 ------------------------------*/
 @media (max-width: 1024px) {
   .baku-hero {
-    padding: 40px 0 40px; /* less vertical space tablet/mobile */
+    padding: 40px 0 28px;
   }
 
   .baku-hero__inner {
-    flex-direction: column; /* stack */
+    flex-direction: column;
     gap: 28px;
   }
 
-  /* content first, image second on mobile */
   .baku-hero__content {
     order: 1;
     max-width: 100%;
@@ -262,13 +262,14 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   }
 
   .baku-hero__image img {
-    max-height: 440px;  /* smaller so less bottom blank space */
+    max-height: 430px;
+    margin-top: -20px;
   }
 }
 
 @media (max-width: 720px) {
   .baku-hero {
-    padding: 32px 0 32px; /* trim even more on small screens */
+    padding: 30px 0 20px;
   }
 
   .baku-hero__headline {
@@ -290,56 +291,9 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
   }
 
   .baku-hero__image img {
-    max-height: 400px;
-  }
-}
-
-/* ============================
-   REMOVE EXCESS SPACE UNDER HERO
-   ============================ */
-
-/* Desktop – tightened bottom padding + image height */
-.baku-hero {
-  padding-bottom: 20px !important; /* was 48px */
-}
-
-.baku-hero__image img {
-  max-height: 600px !important; /* was 720px */
-  margin-top: -90px !important;   /* lift image upward */
-
-}
-
-/* MOBILE — tighten even more */
-@media (max-width: 720px) {
-  .baku-hero {
-    padding-bottom: 10px !important; /* very tight */
-  }
-
-  .baku-hero__image img {
-    max-height: 340px !important; /* was 400px */
-    margin-bottom: -30px !important;
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .baku-hero__image img {
-    max-height: 380px !important; 
-    margin-bottom: -25px !important;
-  }
-}
-
-/* MOBILE — increase bottle size by ~20% */
-@media (max-width: 720px) {
-  .baku-hero__image img {
-    max-height: 410px !important;   /* was ~340px after tightening */
-    margin-bottom: -35px !important; /* prevents excess white space */
-  }
-}
-
-@media (max-width: 720px) {
-  .baku-hero__image img {
-    max-height: 410px !important;   /* your increased size */
+    max-height: 420px;   /* ~20% bigger than the tighter 340px version */
+    margin-top: -10px;
+    margin-bottom: -10px;
   }
 }
 </style>
