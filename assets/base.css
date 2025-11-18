@@ -4367,14 +4367,13 @@ details-disclosure > details {
    UNIVERSAL VOLUFILINE STAR COLOR OVERRIDE
    ============================================ */
 
-/* 1. Override ALL solid star fills across all blocks */
 .review-slider__slide-stars svg path,
 .review-slider__slide-star svg path,
 .custom-stars svg path,
 .bakuchiol-rating-stars svg path,
 [fill="#FFC107"],
 [fill="#fec108"] {
-  fill:  #c9b8ff; !important; /* Luxury lilac */
+  fill: #a88cfb !important;/* Satin premium lilac */
 }
 
 /* 2. Half-star gradients (avgStarGradient or any similar gradient) */
