@@ -3,12 +3,13 @@
     <div class="baku-marquee__track">
 
       <div class="baku-marquee__inner">
-     
-
         <span class="baku-marquee__item">Gentle Retinol Alternative</span>
         <span class="baku-marquee__dot"></span>
 
         <span class="baku-marquee__item">Peptide-Infused Formula</span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">Supports Firm, Smooth Skin</span>
         <span class="baku-marquee__dot"></span>
 
         <span class="baku-marquee__item">Free USA Shipping</span>
@@ -16,11 +17,13 @@
       </div>
 
       <div class="baku-marquee__inner" aria-hidden="true">
-       
         <span class="baku-marquee__item">Gentle Retinol Alternative</span>
         <span class="baku-marquee__dot"></span>
 
         <span class="baku-marquee__item">Peptide-Infused Formula</span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">Supports Firm, Smooth Skin</span>
         <span class="baku-marquee__dot"></span>
 
         <span class="baku-marquee__item">Free USA Shipping</span>
@@ -30,10 +33,11 @@
     </div>
   </div>
 </section>
+
 <style>
 /* LUXE MARQUEE BAR */
 .baku-marquee {
-  background-color: #1a152f;          /* deep eggplant */
+  background-color: #1a152f;
   color: #ffffff;
   border-top: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -42,7 +46,7 @@
 }
 
 .baku-marquee .page-width {
-  padding: 10px 0;                    /* slim bar */
+  padding: 12px 0;
 }
 
 /* track wrapper */
@@ -57,60 +61,55 @@
 .baku-marquee__inner {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
-  padding-right: 40px;
-  animation: baku-marquee-scroll 26s linear infinite;
+  gap: 40px;              /* increased spacing */
+  padding-right: 80px;    /* increased push for airy spacing */
+  animation: baku-marquee-scroll 30s linear infinite;
 }
 
-/* pause on hover (nice luxe touch) */
 .baku-marquee__track:hover .baku-marquee__inner {
   animation-play-state: paused;
 }
 
-/* items */
+/* marquee text */
 .baku-marquee__item {
   font-size: 12px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;  /* more premium spacing */
   text-transform: uppercase;
   font-weight: 600;
   opacity: 0.92;
 }
 
-/* small glowing separator dot */
+/* glowing separator dot */
 .baku-marquee__dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #f9f4ff 0%, #b7a4ff 75%);
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.06);
+  box-shadow: 0 0 0 5px rgba(255,255,255,0.05);
   flex-shrink: 0;
 }
 
 /* animation */
 @keyframes baku-marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
-/* MOBILE TWEAKS */
+/* MOBILE */
 @media (max-width: 640px) {
   .baku-marquee .page-width {
-    padding: 8px 0;
+    padding: 9px 0;
   }
 
   .baku-marquee__inner {
-    gap: 14px;
-    padding-right: 28px;
-    animation-duration: 22s;  /* a bit faster on small screens */
+    gap: 28px;
+    padding-right: 50px;
+    animation-duration: 24s;
   }
 
   .baku-marquee__item {
     font-size: 11px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.15em;
   }
 
   .baku-marquee__dot {
