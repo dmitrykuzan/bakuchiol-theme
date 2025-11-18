@@ -280,46 +280,39 @@
       endif
     -%}
 
-    {%- if section.settings.logo_position != 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
-      {%- endif -%}
-      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-        {%- if settings.logo != blank -%}
-          <div class="header__heading-logo-wrapper">
-            {%- assign logo_alt = 'Bakuchiol Skin – Age Delay Serum' -%}
-            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-            {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
-            {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-            {{
-              settings.logo
-              | image_url: width: 600
-              | image_tag:
-                class: 'header__heading-logo',
-                widths: widths,
-                height: logo_height,
-                width: settings.logo_width,
-                alt: logo_alt,
-                sizes: sizes,
-                preload: true
-            }}
-          </div>
+  {%- if section.settings.logo_position != 'middle-center' -%}
+  {%- if request.page_type == 'index' -%}
+    <h1 class="header__heading">
+  {%- endif -%}
 
-          <div class="header__heading-logo-wrapper-dark">
-            <img src="{{ 'bakuchiolBlackSVG.svg' | asset_url }}" alt="Bakuchiol Skin Logo" width="200">
-          </div>
+  <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+    {%- comment -%}
+      Primary logo: custom Bakuchiol SVG
+      Theme logo is only used for accessibility / fallback text.
+    {%- endcomment -%}
 
-          <span style="position:absolute !important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
-            Bakuchiol
-          </span>
-        {%- else -%}
-          <span class="h2">Bakuchiol – Age Delay Serum</span>
-        {%- endif -%}
-      </a>
-      {%- if request.page_type == 'index' -%}
-        </h1>
-      {%- endif -%}
+    <div class="header__heading-logo-wrapper-dark">
+      <img
+        src="{{ 'bakuchiolBlackSVG.svg' | asset_url }}"
+        alt="Bakuchiol Skin – Age Delay Serum"
+        class="header__brand-mark"
+        width="200"
+        height="auto"
+      >
+    </div>
+
+    {%- if settings.logo != blank -%}
+      {%- assign logo_alt = 'Bakuchiol Skin – Age Delay Serum' -%}
+      <span class="visually-hidden">{{ logo_alt }}</span>
+    {%- else -%}
+      <span class="visually-hidden">Bakuchiol – Age Delay Serum</span>
     {%- endif -%}
+  </a>
+
+  {%- if request.page_type == 'index' -%}
+    </h1>
+  {%- endif -%}
+{%- endif -%}
 
     {%- liquid
       if section.settings.menu != blank
