@@ -72,274 +72,254 @@ BAKUCHIOL HERO – CLINICALLY STUDIED
 </section>
 
 <style>
-:root {
-  --volu-primary:       #1a152f;
-  --volu-primary-soft:  #726a96;
-  --volu-accent-soft:   #cbbfe2;
-  --volu-bg-soft:       #f8f5ff;
-  --volu-text-main:     #111111;
-  --volu-text-muted:    #555555;
-  --volu-light:         #ffffff;
-}
+/* =========================================
+   GLOBAL TYPE HELPERS (reuse everywhere)
+========================================= */
 
-/* -----------------------------
-   HERO LAYOUT
-------------------------------*/
-.baku-hero {
-  background: radial-gradient(circle at top left, #f3ecff 0%, #ffffff 55%, #f3ecff 100%);
-  padding: 52px 0 48px; /* less space top & bottom on desktop */
-}
-
-.baku-hero__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3.5rem;
-}
-
-/* LEFT COLUMN */
-.baku-hero__content {
-  flex: 1.1;
-  max-width: 560px;
-}
-
-/* Rating line */
-.baku-hero__rating {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 14px; /* slightly tighter */
-  font-size: 15px;
-}
-
-.baku-hero__stars {
-  letter-spacing: 0.16em;
-  font-size: 17px;
-  color: #c5b2ff;
-}
-
-.baku-hero__rating-text {
-  color: var(--volu-text-muted);
-}
-
-.baku-hero__rating-text strong {
-  color: var(--volu-primary);
-  font-weight: 700;
-}
-
-/* Headline */
-.baku-hero__headline {
-  font-size: 40px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+.baku-kicker {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--volu-primary-soft);
   margin: 0 0 12px;
-  color: var(--volu-primary);
 }
 
-.baku-hero__headline span {
+.baku-heading-xl {
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--volu-primary);
+  margin: 0 0 16px;
+}
+
+.baku-heading-display {
+  font-size: 52px;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--volu-primary);
+  margin: 0;
+}
+
+.baku-heading-display span {
   display: block;
-  color: #7c73a2;
+  color: var(--volu-primary-soft);
+}
+
+.baku-price-line {
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--volu-primary);
+  margin: 0 0 18px;
+}
+
+.baku-body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #3a3844;
+  max-width: 520px;
+  margin: 0 0 28px;
+}
+
+.baku-body-large {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #3a3844;
+  max-width: 520px;
+  margin: 0 0 28px;
+}
+
+/* Tight, squared buttons specifically in these sections */
+.baku-section__button {
+  border-radius: 0 !important;
+  padding: 15px 56px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   font-weight: 700;
 }
 
-/* Subcopy */
-.baku-hero__subcopy {
-  margin: 0 0 22px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--volu-text-muted);
+/* =========================================
+   BASE SECTION WRAPPER
+========================================= */
+
+.baku-section {
+  padding: 72px 0;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(26, 21, 47, 0.06);
 }
 
-/* Benefit bullets */
-.baku-hero__benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 9px;
-}
-
-.baku-hero__benefits li {
+.baku-section__inner {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 15px;
-  color: var(--volu-text-main);
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 64px;
 }
 
-.baku-hero__icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #f3ecff 0%, #a38bff 80%);
-  display: inline-flex;
+/* =========================================
+   PRODUCT DETAIL SPLIT SECTION
+========================================= */
+
+.baku-section--product {
+  background: #f8f7fc;
+}
+
+.baku-section--product .baku-section__inner {
   align-items: center;
+}
+
+/* big bottle left */
+.baku-section__media {
+  flex: 0 0 50%;
+  display: flex;
   justify-content: center;
-  position: relative;
+  align-items: center;
 }
 
-.baku-hero__icon::after {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  border: 2px solid #f9f7ff;
-  box-shadow: 0 0 0 1px rgba(26, 21, 47, 0.06);
+.baku-section__media img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* CTA row */
-.baku-hero__cta-row {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
+/* copy right */
+.baku-section__content {
+  flex: 0 0 50%;
+}
+
+/* =========================================
+   “LET’S BUILD…” STATEMENT SPLIT SECTION
+========================================= */
+
+.baku-section--statement {
+  background: #f3f2f7;
+}
+
+.baku-section__inner--split {
   align-items: flex-start;
 }
 
-.baku-hero__cta {
-  padding: 16px 40px;
-  font-size: 15px;
+.baku-section__statement {
+  flex: 0 0 55%;
 }
 
-/* Guarantee */
-.baku-hero__guarantee {
+.baku-section__copy {
+  flex: 0 0 45%;
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 13px;
-  color: var(--volu-text-muted);
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.baku-hero__guarantee-icon {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(26, 21, 47, 0.18);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  color: var(--volu-primary);
+.baku-section__button--right {
+  margin-top: 8px;
 }
 
-/* RIGHT COLUMN – PRODUCT IMAGE */
-.baku-hero__image {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: flex-start;  /* bottle sits higher */
-  justify-content: center;
+/* =========================================
+   DESKTOP / LARGE SCREENS
+========================================= */
+
+@media (min-width: 1200px) {
+  .baku-section--product {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .baku-section--statement {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
 }
 
-.baku-hero__image img {
-  max-height: 720px;   /* bigger bottle desktop */
-  width: auto;
-  height: auto;
-  display: block;
-}
+/* =========================================
+   TABLET
+========================================= */
 
-/* -----------------------------
-   RESPONSIVE
-------------------------------*/
 @media (max-width: 1024px) {
-  .baku-hero {
-    padding: 40px 0 40px; /* less vertical space tablet/mobile */
+  .baku-section {
+    padding: 56px 0;
   }
 
-  .baku-hero__inner {
-    flex-direction: column; /* stack */
-    gap: 28px;
+  .baku-section__inner {
+    flex-direction: column;
+    gap: 40px;
   }
 
-  /* content first, image second on mobile */
-  .baku-hero__content {
-    order: 1;
-    max-width: 100%;
+  .baku-section__media,
+  .baku-section__content,
+  .baku-section__statement,
+  .baku-section__copy {
+    flex: 1 1 100%;
   }
 
-  .baku-hero__image {
-    order: 2;
-    align-items: center;
+  .baku-section__media img {
+    max-width: 440px;
   }
 
-  .baku-hero__image img {
-    max-height: 440px;  /* smaller so less bottom blank space */
+  .baku-heading-xl {
+    font-size: 34px;
+  }
+
+  .baku-heading-display {
+    font-size: 40px;
+  }
+
+  .baku-section__button {
+    padding-inline: 40px;
   }
 }
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 720px) {
-  .baku-hero {
-    padding: 32px 0 32px; /* trim even more on small screens */
+  .baku-section {
+    padding: 44px 0;
   }
 
-  .baku-hero__headline {
-    font-size: 30px;
+  .baku-section__inner {
+    gap: 32px;
   }
 
-  .baku-hero__benefits {
-    gap: 8px;
+  .baku-section--product .baku-section__inner {
+    flex-direction: column-reverse; /* text first, image second */
   }
 
-  .baku-hero__cta-row {
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .baku-hero__cta {
-    width: 100%;
+  .baku-section__media {
     justify-content: center;
   }
 
-  .baku-hero__image img {
-    max-height: 400px;
-  }
-}
-
-/* ============================
-   REMOVE EXCESS SPACE UNDER HERO
-   ============================ */
-
-/* Desktop – tightened bottom padding + image height */
-.baku-hero {
-  padding-bottom: 20px !important; /* was 48px */
-}
-
-.baku-hero__image img {
-  max-height: 600px !important; /* was 720px */
-  margin-top: -90px !important;   /* lift image upward */
-
-}
-
-/* MOBILE — tighten even more */
-@media (max-width: 720px) {
-  .baku-hero {
-    padding-bottom: 10px !important; /* very tight */
+  .baku-section__media img {
+    max-width: 360px;
   }
 
-  .baku-hero__image img {
-    max-height: 340px !important; /* was 400px */
-    margin-bottom: -30px !important;
+  .baku-heading-xl {
+    font-size: 28px;
   }
-}
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .baku-hero__image img {
-    max-height: 380px !important; 
-    margin-bottom: -25px !important;
+  .baku-heading-display {
+    font-size: 32px;
   }
-}
 
-/* MOBILE — increase bottle size by ~20% */
-@media (max-width: 720px) {
-  .baku-hero__image img {
-    max-height: 410px !important;   /* was ~340px after tightening */
-    margin-bottom: -35px !important; /* prevents excess white space */
+  .baku-body,
+  .baku-body-large {
+    font-size: 14px;
   }
-}
 
-@media (max-width: 720px) {
-  .baku-hero__image img {
-    max-height: 410px !important;   /* your increased size */
+  .baku-section__button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding-block: 14px;
   }
 }
 </style>
