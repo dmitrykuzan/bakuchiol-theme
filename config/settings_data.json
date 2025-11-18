@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/logo-white.svg",
+    "logo": "shopify://shop_images/bakuchiolBlackSVG_9b4d97b6-080b-4021-b804-4af06903f1e6.svg",
     "logo_width": 290,
     "favicon": "shopify://shop_images/image-removebg-preview.png",
     "type_header_font": "inter_n4",
@@ -148,11 +148,11 @@
         "settings": {
           "background": "#f2f2f2",
           "background_gradient": "",
-          "text": "#1d1440",
-          "button": "#1d1440",
+          "text": "#1a152f",
+          "button": "#1a152f",
           "button_label": "#ffffff",
-          "secondary_button_label": "#1d1440",
-          "shadow": "#1d1440"
+          "secondary_button_label": "#1a152f",
+          "shadow": "#1a152f"
         }
       },
       "scheme-2": {
@@ -172,7 +172,7 @@
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#1d1440",
+          "button_label": "#1a152f",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
@@ -233,7 +233,7 @@
             "background_gradient": "",
             "text": "#FFFFFF",
             "button": "#FFFFFF",
-            "button_label": "#1d1440",
+            "button_label": "#1a152f",
             "secondary_button_label": "#FFFFFF",
             "shadow": "#121212"
           }
