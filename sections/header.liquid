@@ -286,27 +286,19 @@
   {%- endif -%}
 
   <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-    {%- comment -%}
-      Primary logo: custom Bakuchiol SVG
-      Theme logo is only used for accessibility / fallback text.
-    {%- endcomment -%}
-
-    <div class="header__heading-logo-wrapper-dark">
+    <div class="bk-header-logo">
       <img
         src="{{ 'bakuchiolBlackSVG.svg' | asset_url }}"
         alt="Bakuchiol Skin – Age Delay Serum"
-        class="header__brand-mark"
+        class="bk-header-logo__img"
         width="200"
-        height="auto"
+        height="40"
       >
     </div>
 
-    {%- if settings.logo != blank -%}
-      {%- assign logo_alt = 'Bakuchiol Skin – Age Delay Serum' -%}
-      <span class="visually-hidden">{{ logo_alt }}</span>
-    {%- else -%}
-      <span class="visually-hidden">Bakuchiol – Age Delay Serum</span>
-    {%- endif -%}
+    <span class="visually-hidden">
+      Bakuchiol Skin – Age Delay Serum
+    </span>
   </a>
 
   {%- if request.page_type == 'index' -%}
