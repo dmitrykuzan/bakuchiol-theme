@@ -60,7 +60,7 @@ variant-selects {
 .product-form__input--pill input[type='radio'] + label {
 border: 1px solid #1d1440;
   background-color: white !important;
-  color: black !important;
+  color: #1d1440 !important;
   display: inline-block;
   margin: 0.7rem 0.5rem 0.2rem 0;
   padding: 1rem 2rem;
