@@ -52,3 +52,171 @@
     </div>
   {% endif %}
 {% endif %}
+
+<style>
+    /* Sticky ATC bar – Bakuchiol */
+
+.sticky-atc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.25s ease-out;
+  background: linear-gradient(to top, #f3f1ee, #ffffff);
+  border-top: 1px solid #e2ddd7;
+}
+
+.sticky-atc--visible {
+  transform: translateY(0);
+}
+
+.sticky-atc__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.sticky-atc__left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.sticky-atc__thumb {
+  flex-shrink: 0;
+  width: 52px;
+}
+
+.sticky-atc__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sticky-atc__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.sticky-atc__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-atc__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sticky-atc__price {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.sticky-atc__price--compare {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.sticky-atc__badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background-color: #5b4836;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+
+/* Button style similar to screenshot */
+.sticky-atc__button {
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.8rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.06em;
+  background-color: #5b4836;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+  white-space: nowrap;
+}
+
+.sticky-atc__button:hover {
+  filter: brightness(1.05);
+}
+
+/* Mobile tweaks */
+@media (max-width: 749px) {
+  .sticky-atc__inner {
+    gap: 0.75rem;
+  }
+
+  .sticky-atc__title {
+    font-size: 0.9rem;
+  }
+
+  .sticky-atc__button {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var bar = document.getElementById('bakuchiol-sticky-atc');
+  if (!bar) return;
+
+  // Try to find the main product add-to-cart button on the page
+  var mainAtc =
+    document.querySelector('form[action^="/cart/add"] .product-form__submit') ||
+    document.querySelector('.product-form__submit');
+
+  if (!mainAtc) return;
+
+  var button = bar.querySelector('.js-sticky-atc-add');
+
+  // Show bar only when main ATC is out of viewport
+  function toggleBar() {
+    var rect = mainAtc.getBoundingClientRect();
+    var outOfView = rect.bottom < 0 || rect.top > window.innerHeight;
+
+    if (outOfView) {
+      bar.classList.add('sticky-atc--visible');
+      bar.setAttribute('aria-hidden', 'false');
+    } else {
+      bar.classList.remove('sticky-atc--visible');
+      bar.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBar);
+  window.addEventListener('resize', toggleBar);
+  toggleBar();
+
+  // When sticky button clicked, just trigger the main ATC button
+  button.addEventListener('click', function () {
+    mainAtc.click();
+  });
+});
+</script>
