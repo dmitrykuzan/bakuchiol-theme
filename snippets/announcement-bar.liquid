@@ -1,55 +1,54 @@
 <section class="purple-announcement">
   <div class="purple-announcement__bar">
+
+    <!-- Heading -->
     <div class="purple-announcement__text">
-      <strong>{{ section.settings.heading }}</strong>
+      <strong>EARLY BLACK FRIDAY SALE</strong>
     </div>
 
+    <!-- Countdown -->
     <div class="purple-announcement__countdown" data-timer>
       <div class="purple-announcement__item">
         <span class="time hours">03</span>
         <span class="label">HRS</span>
       </div>
+
       <span class="separator">:</span>
 
       <div class="purple-announcement__item">
-        <span class="time minutes">54</span>
+        <span class="time minutes">49</span>
         <span class="label">MIN</span>
       </div>
+
       <span class="separator">:</span>
 
       <div class="purple-announcement__item">
-        <span class="time seconds">28</span>
+        <span class="time seconds">52</span>
         <span class="label">SEC</span>
       </div>
     </div>
+
   </div>
 </section>
 
 <style>
-/* ================================
-   Darker Purple Black Friday Banner
-   ================================ */
-
-.purple-announcement {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+/* =====================================
+   DARK PURPLE GRADIENT ANNOUNCEMENT
+   ===================================== */
 
 .purple-announcement__bar {
   width: 100%;
-  padding: 0.8rem 1.75rem;
+  padding: 0.9rem 1.75rem;
 
-  /* Richer purple gradient, very little white */
   background: linear-gradient(
     90deg,
-    #3b2a57,
-    #5b3f86,
-    #8a6cc0,
-    #cbbfe2
+    #d97aa9,
+    #c462a1,
+    #b1509c,
+    #9b3e94
   );
-  background-size: 250% 250%;
-  animation: purpleGradient 14s ease infinite;
+  background-size: 300% 300%;
+  animation: purpleShift 12s ease infinite;
 
   display: flex;
   align-items: center;
@@ -57,16 +56,16 @@
   gap: 1.75rem;
 }
 
-@keyframes purpleGradient {
+@keyframes purpleShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* TEXT (BLACK FRIDAY LABEL) */
+/* TEXT */
 .purple-announcement__text {
-  color: #fdfdff;
-  font-size: 1.2rem;         /* bigger */
+  color: #1d1440;              /* Deep night purple (strong contrast) */
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   white-space: nowrap;
@@ -82,8 +81,8 @@
 
 .purple-announcement__item {
   background-color: #ffffff;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 5px 12px;
+  border-radius: 6px;
   text-align: center;
 
   display: flex;
@@ -91,24 +90,26 @@
   align-items: center;
 }
 
+/* COUNTDOWN NUMBERS */
 .time {
-  font-size: 1.1rem;         /* bigger */
+  font-size: 1.2rem;
   font-weight: 800;
-  color: #262254;
+  color: #0d0628;            /* High contrast for readability */
   line-height: 1;
 }
 
 .label {
-  font-size: 0.65rem;        /* a bit bigger */
+  font-size: 0.65rem;
   margin-top: 2px;
-  color: #262254;
-  letter-spacing: 0.08em;
+  color: #1d1440;            /* Matches headline contrast */
+  letter-spacing: 0.07em;
 }
 
+/* SEPARATOR */
 .separator {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #1d1440;
 }
 
 /* MOBILE */
@@ -116,25 +117,25 @@
   .purple-announcement__bar {
     flex-direction: column;
     gap: 0.35rem;
-    padding: 0.75rem 1rem;
+    padding: 0.9rem 1rem;
   }
 
   .purple-announcement__text {
-    font-size: 1rem;
+    font-size: 1.05rem;
     text-align: center;
   }
 
   .time {
-    font-size: 0.95rem;
-  }
-
-  .label {
-    font-size: 0.55rem;
+    font-size: 1rem;
   }
 }
 </style>
 
 <script>
+/* ============================================
+   4-HOUR REPEATING COUNTDOWN TIMER
+   ============================================ */
+
 document.addEventListener('DOMContentLoaded', function () {
   var countdown = document.querySelector('.purple-announcement__countdown');
   if (!countdown) return;
@@ -154,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var now = Date.now();
     var distance = endTime - now;
 
-    // When it hits 0 or below, start a new 4-hour window
     if (distance <= 0) {
       resetEndTime();
       distance = endTime - now;
