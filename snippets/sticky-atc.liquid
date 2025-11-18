@@ -14,7 +14,7 @@
       <div class="sticky-atc__inner page-width">
         <div class="sticky-atc__left">
           <div class="sticky-atc__thumb">
-            {{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}
+            {{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: product.title }}
           </div>
 
           <div class="sticky-atc__info">
@@ -44,7 +44,7 @@
 
         <button
           type="button"
-          class="sticky-atc js-sticky-atc-add"
+          class="sticky-atc__button js-sticky-atc-add"
         >
           Add to cart
         </button>
@@ -64,10 +64,9 @@
   z-index: 999;
   transform: translateY(100%);
   transition: transform 0.25s ease-out;
-  background-color: black;
+  background: linear-gradient(to top, #f3f1ee, #ffffff);
   border-top: 1px solid #e2ddd7;
 }
-
 
 .sticky-atc--visible {
   transform: translateY(0);
