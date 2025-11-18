@@ -14,7 +14,7 @@
         </p>
       </div>
 
-      <div class="baku-compare__image" aria-hidden="true">
+      <div class="baku-compare__plant" aria-hidden="true">
         <img
           src="{{ 'bakuchiol-flower.png' | asset_url }}"
           alt=""
@@ -97,7 +97,7 @@
 </section>
 
 <style>
-/* ---------- Palette (aligned to your Bakuchiol styles) ---------- */
+/* ---------- Palette (aligned to your Bakuchiol product) ---------- */
 :root {
   --baku-deep: #1a152f;
   --baku-deep-soft: #474060;
@@ -108,7 +108,7 @@
   --baku-light: #ffffff;
 }
 
-/* ---------- Layout ---------- */
+/* ---------- Section wrapper ---------- */
 
 .baku-compare {
   border-top: 1px solid var(--baku-line);
@@ -124,20 +124,21 @@
   align-items: stretch;
 }
 
-/* LEFT PANEL */
+/* ---------- LEFT: COPY + PLANT ---------- */
 
 .baku-compare__left {
   flex: 1.05;
   position: relative;
-  padding: 32px 24px 0 0;
+  padding: 32px 32px 40px;
   min-height: 320px;
-  background: linear-gradient(180deg, rgba(243,236,255,0.7) 0%, #ffffff 55%, #f7f3ff 100%);
+  background: linear-gradient(180deg, #f7f2ff 0%, #ffffff 75%);
+  overflow: hidden;
 }
 
 .baku-compare__copy {
   position: relative;
   z-index: 2;
-  max-width: 420px;
+  max-width: 380px;
 }
 
 .baku-compare__eyebrow {
@@ -150,50 +151,51 @@
 
 .baku-compare__heading {
   margin: 0 0 16px;
-  font-size: 32px;
-  line-height: 1.15;
+  font-size: 30px;
+  line-height: 1.2;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--baku-deep);
 }
 
 .baku-compare__intro {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 15px;
   line-height: 1.7;
   color: var(--baku-muted);
 }
 
-/* Flower image integrated into panel */
+/* Plant image positioned to the right so it doesn’t cover text */
 
-.baku-compare__image {
+.baku-compare__plant {
   position: absolute;
-  bottom: -10px;
-  left: 0;
+  bottom: -12px;
+  right: -40px;
   z-index: 1;
   pointer-events: none;
+  opacity: 0.96;
 }
 
-.baku-compare__image img {
-  max-width: 260px;
-  height: auto;
+.baku-compare__plant img {
+  max-height: 320px;
+  width: auto;
   display: block;
 }
 
-/* RIGHT SIDE – TABLE */
+/* ---------- RIGHT: TABLE ---------- */
 
 .baku-compare__right {
-  flex: 1.25;
+  flex: 1.3;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* headers */
+/* Table header */
 
 .baku-compare__table-head {
   display: grid;
-  grid-template-columns: 1.2fr 1.1fr 1.1fr;
+  grid-template-columns: 1.3fr 1.1fr 1.1fr;
   align-items: end;
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -208,7 +210,7 @@
   text-align: left;
 }
 
-/* rows */
+/* Rows */
 
 .baku-compare__rows {
   list-style: none;
@@ -218,7 +220,7 @@
 
 .baku-compare__row {
   display: grid;
-  grid-template-columns: 1.2fr 1.1fr 1.1fr;
+  grid-template-columns: 1.3fr 1.1fr 1.1fr;
   padding: 14px 0;
   border-bottom: 1px solid rgba(222, 216, 239, 0.8);
   column-gap: 1.75rem;
@@ -236,7 +238,7 @@
   line-height: 1.5;
 }
 
-/* badges */
+/* Badges */
 
 .baku-compare__badge {
   display: inline-flex;
@@ -256,6 +258,7 @@
 }
 
 /* Bakuchiol column */
+
 .baku-compare__cell--baku {
   color: var(--baku-deep);
 }
@@ -265,6 +268,7 @@
 }
 
 /* Retinol column */
+
 .baku-compare__cell--retinol {
   color: #8a7a9c;
 }
@@ -286,16 +290,15 @@
   }
 
   .baku-compare__left {
-    padding: 28px 20px 120px 0;
-    min-height: 0;
-  }
-
-  .baku-compare__image {
-    bottom: -12px;
+    max-width: 640px;
   }
 }
 
 @media (max-width: 720px) {
+  .baku-compare__left {
+    padding: 24px 20px 32px;
+  }
+
   .baku-compare__heading {
     font-size: 24px;
   }
@@ -304,25 +307,15 @@
     font-size: 14px;
   }
 
-  /* On mobile, move image under copy and center it */
-  .baku-compare__left {
-    padding: 24px 0 0 0;
-    background: linear-gradient(180deg, #faf7ff 0%, #ffffff 100%);
-  }
-
-  .baku-compare__copy {
-    padding: 0 16px;
-  }
-
-  .baku-compare__image {
+  /* Plant centered under copy on mobile */
+  .baku-compare__plant {
     position: static;
-    margin: 12px auto 0;
+    margin-top: 16px;
     text-align: center;
-    pointer-events: none;
   }
 
-  .baku-compare__image img {
-    max-width: 220px;
+  .baku-compare__plant img {
+    max-height: 260px;
     margin: 0 auto;
   }
 
