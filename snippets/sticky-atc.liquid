@@ -64,27 +64,10 @@
 {% endif %}
 
 <style>
-/* ===== Sticky ATC – layout & container (square, no rounding) ===== */
-
-/* ===== Sticky ATC – layout & container ===== */
-
-.sticky-atc {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 999;
-  transform: translateY(100%);
-  transition: transform 0.25s ease-out;
-  pointer-events: none;
-}
-
-.sticky-atc--visible {
-  transform: translateY(0);
-}
+/* ===== Sticky ATC – layout & spacing ===== */
 
 .sticky-atc__outer {
-  padding: 0.6rem 0;
+  padding: 0.9rem 1.25rem; /* more side padding */
   background: linear-gradient(to top, #f3f1ee, #ffffff);
   border-top: 1px solid #e2ddd7;
 }
@@ -95,25 +78,25 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1.1rem 0;
+  padding: 1rem 0;
 }
 
-/* ===== Bigger left side (image + text) ===== */
+/* ===== Left side ===== */
 
 .sticky-atc__left {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.2rem; /* more spacing */
 }
 
-/* BIGGER IMAGE */
 .sticky-atc__thumb {
-  width: 85px;
-  height: 85px;
+  flex-shrink: 0;
+  width: 78px;        /* bigger */
+  height: 78px;
   background: #f5f2ee;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .sticky-atc__thumb img {
@@ -121,117 +104,123 @@
   height: auto;
 }
 
-/* ===== Bigger info ===== */
+/* ===== Text + Ratings ===== */
 
-.sticky-atc__info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-/* RATING ROW – bigger */
 .sticky-atc__rating {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  font-size: 1.1rem;
+  font-size: 1.1rem;         /* bigger */
 }
 
 .sticky-atc__stars {
-  font-size: 1.35rem;
-  letter-spacing: 0.1em;
   color: #cbbfe2;
+  font-size: 1.35rem;        /* bigger stars */
+  letter-spacing: 0.12em;
 }
 
 .sticky-atc__rating-text {
   color: #252347;
-  font-size: 1rem;
+  font-size: 1.05rem;        /* increased */
 }
 
 .sticky-atc__title {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 1.35rem;        /* bigger title */
   font-weight: 700;
   line-height: 1.3;
+  max-width: 18rem;          /* avoid wrapping */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Price row bigger */
 .sticky-atc__meta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 
 .sticky-atc__price {
-  font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.25rem;        /* bigger price */
+  font-weight: 700;
 }
 
 .sticky-atc__price--compare {
   font-size: 1.15rem;
-  text-decoration: line-through;
-  opacity: 0.55;
 }
+
+/* ===== Discount badge ===== */
 
 .sticky-atc__badge {
   font-size: 0.95rem;
-  padding: 0.15rem 0.6rem;
-  background-color: #5b4836;
-  color: white;
+  font-weight: 700;
+  padding: 0.22rem 0.55rem;
+  letter-spacing: 0.1em;
+  background: #5b4836;
+  color: #fff;
 }
 
-/* ===== ADD TO CART – MUCH BIGGER ===== */
+/* ===== Add to Cart Button – MUCH BIGGER ===== */
 
 .sticky-atc__button {
-  flex-shrink: 0;
-
   background-color: #cbbfe2 !important;
-  color: #ffffff !important;
-
-  /* MUCH BIGGER BUTTON */
-  padding: 1.4rem 3.8rem;     /* HEIGHT + WIDTH INCREASE */
-  font-size: 1.35rem;         /* BIGGER TEXT */
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-
+  color: #fff !important;
   border: none;
   border-radius: 0;
-  cursor: pointer;
 
+  padding: 1.4rem 3.8rem;    /* HUGE button */
+  margin-right: 0.75rem;     /* spaced off right */
+
+  font-size: 1.55rem;        /* larger text */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  cursor: pointer;
   box-shadow: none;
-  transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .sticky-atc__button:hover {
   opacity: 0.85;
 }
 
-/* ===== Mobile Adjustments ===== */
+.sticky-atc__button:active {
+  opacity: 0.75;
+}
+
+/* ===== Responsive ===== */
 
 @media (max-width: 900px) {
+
+  .sticky-atc__outer {
+    padding: 0.75rem 1rem;
+  }
+
   .sticky-atc__thumb {
-    width: 75px;
-    height: 75px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .sticky-atc__title {
+    font-size: 1.15rem;
+  }
+
+  .sticky-atc__rating {
+    font-size: 1rem;
   }
 
   .sticky-atc__button {
     padding: 1rem 2.2rem;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
   }
 }
 
 @media (max-width: 600px) {
   .sticky-atc__title {
-    font-size: 1.1rem;
-    max-width: 10rem;
-  }
-
-  .sticky-atc__button {
-    padding: 0.9rem 2rem;
+    max-width: 12rem;
   }
 }
 </style>
