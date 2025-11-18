@@ -3154,6 +3154,189 @@
       </div>
     </div>
 
+
+    {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+  {% assign sticky_variant = product.selected_or_first_available_variant %}
+
+  {% if sticky_variant.available %}
+    {% assign compare_price = sticky_variant.compare_at_price %}
+    {% assign current_price = sticky_variant.price %}
+
+    {% if compare_price > current_price %}
+      {% assign savings = compare_price | minus: current_price %}
+      {% assign savings_pct = savings | times: 100 | divided_by: compare_price | floor %}
+    {% endif %}
+
+    <div id="bakuchiol-sticky-atc" class="sticky-atc" aria-hidden="true">
+      <div class="sticky-atc__inner page-width">
+        <div class="sticky-atc__left">
+          <div class="sticky-atc__thumb">
+            {{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: product.title }}
+          </div>
+
+          <div class="sticky-atc__info">
+            <p class="sticky-atc__title">
+              {{ product.title }}
+            </p>
+
+            <div class="sticky-atc__meta">
+              <span class="sticky-atc__price">
+                {{ current_price | money }}
+              </span>
+
+              {% if compare_price > current_price %}
+                <span class="sticky-atc__price--compare">
+                  {{ compare_price | money }}
+                </span>
+
+                {% if savings_pct > 0 %}
+                  <span class="sticky-atc__badge">
+                    SAVE {{ savings_pct }}%
+                  </span>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="sticky-atc__button js-sticky-atc-add"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+
+/* Sticky ATC bar – Bakuchiol */
+
+.sticky-atc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.25s ease-out;
+  background: linear-gradient(to top, #f3f1ee, #ffffff);
+  border-top: 1px solid #e2ddd7;
+}
+
+.sticky-atc--visible {
+  transform: translateY(0);
+}
+
+.sticky-atc__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.sticky-atc__left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.sticky-atc__thumb {
+  flex-shrink: 0;
+  width: 52px;
+}
+
+.sticky-atc__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sticky-atc__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.sticky-atc__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-atc__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sticky-atc__price {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.sticky-atc__price--compare {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.sticky-atc__badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background-color: #5b4836;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+
+/* Button style similar to screenshot */
+.sticky-atc__button {
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.8rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.06em;
+  background-color: #5b4836;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+  white-space: nowrap;
+}
+
+.sticky-atc__button:hover {
+  filter: brightness(1.05);
+}
+
+/* Mobile tweaks */
+@media (max-width: 749px) {
+  .sticky-atc__inner {
+    gap: 0.75rem;
+  }
+
+  .sticky-atc__title {
+    font-size: 0.9rem;
+  }
+
+  .sticky-atc__button {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
