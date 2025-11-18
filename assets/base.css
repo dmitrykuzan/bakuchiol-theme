@@ -4224,7 +4224,8 @@ details-disclosure > details {
    ================================================ */
 /* Core tokens */
 :root {
-  --volu-primary:       #5a3b8c;  /* deep purple */
+
+  --volu-primary:       #1d1440;  /* deep purple */
   --volu-primary-soft:  #8d6fd1;  /* mid purple */
   --volu-accent-soft:   #cbbfe2;  /* lilac */
   --volu-text-main:     #111111;  /* neutral dark */
