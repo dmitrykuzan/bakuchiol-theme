@@ -1,93 +1,133 @@
-/* SECTION SHELL */
+/* ---------- Layout shell ---------- */
+
 .what-inside {
-  padding: 72px 0;
-  border-top: 1px solid #ded8ef;
-  border-bottom: 1px solid #ded8ef;
-  background: linear-gradient(120deg, #faf7ff 0%, #ffffff 45%, #f6f1ff 100%);
+  padding: 64px 0;
+  background: #fff;
 }
 
-/* LAYOUT */
-.what-inside__wrapper {
+.what-inside__layout {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 
+/* Desktop: card left, text right */
 @media screen and (min-width: 1024px) {
-  .what-inside__wrapper {
+  .what-inside__layout {
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     gap: 5rem;
   }
 }
 
-/* IMAGE COLUMN */
-.what-inside__image {
-  flex: 1;
-  max-width: 60rem;
-  margin: 0 auto;
-  text-align: center;
-}
+/* ---------- Card / visual ---------- */
 
-.what-inside__image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* CONTENT COLUMN */
-.what-inside__content {
-  flex: 1;
+.what-inside__card {
+  background: #f8f5ff;
+  border: 1px solid rgba(26, 21, 47, 0.08);
+  padding: 32px 28px 40px;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  align-items: center;
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .what-inside__title {
-  margin: 0;
+  width: 100%;
+  margin: 0 0 24px;
+  font-size: 22px;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1a152f;
 }
 
-/* LIST */
-.what-inside__list {
+/* Cream visual */
+.what-inside__cream {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  margin: 12px auto 0;
+}
+
+.what-inside__cream-ring {
+  position: absolute;
+  inset: 10%;
+  border-radius: 999px;
+  border: 1px dashed rgba(26, 21, 47, 0.12);
+}
+
+.what-inside__cream-img {
+  position: absolute;
+  inset: 22%;
+  width: 56%;
+  height: auto;
+  margin: auto;
+  object-fit: contain;
+}
+
+/* Give card a bit more presence on desktop */
+@media screen and (min-width: 1024px) {
+  .what-inside__card {
+    max-width: 360px;
+    padding: 36px 30px 44px;
+  }
+
+  .what-inside__title {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Text column ---------- */
+
+.what-inside__content {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  justify-content: center;
+}
+
+.what-inside__list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 
 .what-inside__item {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 0.1rem solid #1a152f;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #1a152f;
 }
 
-/* HEADINGS & BODY */
+.what-inside__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .what-inside__item h3 {
-  margin: 0;
+  margin: 0 0 0.75rem;
   font-weight: 500;
   line-height: 1.33;
   color: #1a152f;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .what-inside__item p {
   margin: 0;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.3;
   text-transform: uppercase;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
+  font-size: 1.3rem;
   color: #555555;
 }
 
-/* RESPONSIVE TYPOGRAPHY / SPACING */
-@media screen and (min-width: 768px) {
+/* Desktop typography tweaks */
+@media screen and (min-width: 1024px) {
   .what-inside__item h3 {
     font-size: 2.4rem;
   }
@@ -95,31 +135,52 @@
   .what-inside__item p {
     font-size: 1.5rem;
   }
+
+  .what-inside__content {
+    gap: 4.5rem;
+  }
 }
 
-@media screen and (min-width: 1024px) {
-  .what-inside__content {
-    gap: 5rem;
-    justify-content: space-between;
+/* ---------- Larger screens ---------- */
+
+@media screen and (min-width: 1360px) {
+  .what-inside__card {
+    max-width: 380px;
+  }
+
+  .what-inside__cream {
+    max-width: 300px;
+  }
+}
+
+/* ---------- Mobile adjustments ---------- */
+
+@media screen and (max-width: 767px) {
+  .what-inside {
+    padding: 48px 0;
+  }
+
+  .what-inside__card {
+    max-width: 100%;
+  }
+
+  .what-inside__title {
+    text-align: left;
+    font-size: 20px;
   }
 
   .what-inside__item h3 {
-    font-size: 3.2rem;
+    font-size: 1.7rem;
   }
 
   .what-inside__item p {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
 
-@media screen and (min-width: 1360px) {
-  .what-inside__image {
-    max-width: 62rem;
-  }
-}
+/* ---------- Screen-reader-only SEO block ---------- */
 
-/* VISUALLY HIDDEN SEO COPY */
-.what-inside__sr-only {
+.what-inside__sr {
   position: absolute;
   left: -9999px;
   top: auto;
