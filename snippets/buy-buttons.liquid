@@ -10,7 +10,8 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-  {{ 'add-to-cart.css' | asset_url | stylesheet_tag }}
+{{ 'add-to-cart.css' | asset_url | stylesheet_tag }}
+
 <div class="buy-btns__wrapper" {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -71,51 +72,31 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-         <button
-  id="ProductSubmitButton-{{ section_id }}"
-  type="submit"
-  name="add"
-  class="product-form__submit baku-gradient-button"
-  {% if product.selected_or_first_available_variant.available == false
-    or quantity_rule_soldout
-    or product.selected_or_first_available_variant == null
-  %}
-    disabled
-  {% endif %}
->
-  <span class="baku-gradient-button__text">ADD TO CART</span>
 
-  <div class="loading__spinner hidden">
-    <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66">
-      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-    </svg>
-  </div>
-</button>
-
-            {% comment %}
-              <span>
-                {%- if product.selected_or_first_available_variant == null -%}
-                  {{ 'products.product.unavailable' | t }}
-                {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                  {{ 'products.product.sold_out' | t }}
-                {%- else -%}
-                  {{ 'products.product.add_to_cart' | t }}
-                {%- endif -%}
-              </span>
-            {% endcomment %}
-            <span>
-              {% assign variant = product.selected_or_first_available_variant %}
-
-              Add to Cart
-
-              {% if variant.compare_at_price > variant.price %}
-                <span class="product-price-compare">
-                  {{ variant.compare_at_price | money }}
-                </span>
-              {% endif %}
+          <!-- Purple gradient button -->
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit baku-gradient-button"
+            {% if product.selected_or_first_available_variant.available == false
+              or quantity_rule_soldout
+              or product.selected_or_first_available_variant == null
+            %}
+              disabled
+            {% endif %}
+          >
+            <span class="baku-gradient-button__text">
+              ADD TO CART
             </span>
-            {%- render 'loading-spinner' -%}
+
+            <div class="loading__spinner hidden">
+              <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66">
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
           </button>
+
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
