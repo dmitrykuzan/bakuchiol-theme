@@ -104,6 +104,10 @@
         "padding_bottom": 12
       }
     },
+    "product-banner_vsdg34": {
+      "type": "product-banner",
+      "settings": {}
+    },
     "result_slider_NP3wa6": {
       "type": "result-slider",
       "name": "Result Slider",
@@ -232,6 +236,7 @@
   },
   "order": [
     "main",
+    "product-banner_vsdg34",
     "result_slider_NP3wa6",
     "quantity_section_G437gg",
     "what_inside_BqJnn3",
