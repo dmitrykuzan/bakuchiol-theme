@@ -471,11 +471,6 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
       }
     }
   }
-
-  .header__icon--menu {
-    background-color: #1a152f;
-  }
-
   .icon-close path {
   fill: #ffffff !important; 
   
