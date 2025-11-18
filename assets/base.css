@@ -4236,19 +4236,7 @@ details-disclosure > details {
   --volu-light:         #ffffff;
 }
 
-/* ------------------------------
-   2) PRIMARY CTA BUTTONS
-   (Add to cart, main CTAs)
---------------------------------*/
-.product-form__submit,
-.button-custom.button-custom__black,
-.button.button--primary,
-.baku-gradient-button,
-.shopify-payment-button__button--unbranded {
-  background: linear-gradient(90deg, var(--volu-primary), var(--volu-primary-soft)) !important;
-  color: var(--volu-light) !important;
-  border-color: transparent !important;
-}
+
 
 /* Hover – slightly brighter */
 .product-form__submit:hover,
