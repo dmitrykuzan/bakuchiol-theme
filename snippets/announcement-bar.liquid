@@ -1,0 +1,132 @@
+<section class="purple-announcement">
+  <div class="purple-announcement__bar">
+    <div class="purple-announcement__text">
+      <strong>{{ section.settings.heading }}</strong>
+    </div>
+
+    <div class="purple-announcement__countdown" data-timer>
+      <div class="purple-announcement__item">
+        <span class="time hours">03</span>
+        <span class="label">HRS</span>
+      </div>
+      <span class="separator">:</span>
+
+      <div class="purple-announcement__item">
+        <span class="time minutes">54</span>
+        <span class="label">MIN</span>
+      </div>
+      <span class="separator">:</span>
+
+      <div class="purple-announcement__item">
+        <span class="time seconds">28</span>
+        <span class="label">SEC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ================================
+   Elegant Light Purple Announcement Bar
+   ================================ */
+
+.purple-announcement {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.purple-announcement__bar {
+  width: 100%;
+  padding: 0.65rem 1rem;
+
+  background: linear-gradient(
+    -45deg,
+    #ffffff,
+    #ebe3f8,
+    #cbbfe2,
+    #ebe3f8
+  );
+  background-size: 400% 400%;
+  animation: purpleGradient 12s ease infinite;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.35rem;
+}
+
+@keyframes purpleGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* TEXT */
+.purple-announcement__text {
+  color: #262254;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* COUNTDOWN */
+.purple-announcement__countdown {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.purple-announcement__item {
+  background-color: #ffffff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #262254;
+  line-height: 1;
+}
+
+.label {
+  font-size: 0.55rem;
+  margin-top: 2px;
+  color: #262254;
+  letter-spacing: 0.06em;
+}
+
+.separator {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #262254;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .purple-announcement__bar {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  .purple-announcement__text {
+    font-size: 0.9rem;
+  }
+
+  .time {
+    font-size: 0.8rem;
+  }
+
+  .label {
+    font-size: 0.5rem;
+  }
+}
+</style>
