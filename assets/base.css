@@ -4237,24 +4237,6 @@ details-disclosure > details {
 }
 
 /* ------------------------------
-   1) RESET GLOBAL TEXT (NO MORE PURPLE TEXT EVERYWHERE)
---------------------------------*/
-body,
-h1, h2, h3, h4, h5, h6,
-p, span {
-  color: var(--volu-text-main) !important;
-}
-
-/* Let normal links be subtle, not screaming */
-a {
-  color: var(--volu-primary-soft) !important;
-}
-
-a:hover {
-  color: var(--volu-primary) !important;
-}
-
-/* ------------------------------
    2) PRIMARY CTA BUTTONS
    (Add to cart, main CTAs)
 --------------------------------*/
