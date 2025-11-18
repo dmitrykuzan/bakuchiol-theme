@@ -1,52 +1,60 @@
 {{ 'what-inside.css' | asset_url | stylesheet_tag }}
-<section class="what-inside page-width">
-  <div class="what-inside__wrapper section-top">
+
+<section class="what-inside">
+  <div class="what-inside__wrapper page-width section-top">
 			
     <div class="what-inside__image">
       <img
-        src="{{ 'what-inside.png' | asset_url }}"
-        width="700"
-        height="600" 
-        alt="Bakuchiol serum formula breakdown showing natural anti-aging ingredients and plant-based retinol alternative benefits"
+        src="{{ 'bakuchiol-flower.png' | asset_url }}"
+        width="640"
+        height="640"
+        alt="Bakuchiol flower, the plant-derived retinol alternative"
         loading="lazy"
       >
     </div>
 
     <div class="what-inside__content">
-      <h2 class="what-inside__title section-title-bakuchiol">WHAT'S INSIDE?</h2>
+      <h2 class="what-inside__title section-title-bakuchiol">
+        WHAT'S INSIDE?
+      </h2>
 
       <ul class="what-inside__list">
         <li class="what-inside__item">
           <h3>BAKUCHIOL</h3>
-          <p>PLANT-DERIVED RETINOL ALTERNATIVE THAT VISIBLY SOFTENS FINE LINES WITHOUT DRYNESS OR FLAKING</p>
+          <p>
+            PLANT-DERIVED RETINOL ALTERNATIVE THAT VISIBLY SOFTENS FINE LINES
+            WITHOUT DRYNESS OR FLAKING
+          </p>
         </li>
 
         <li class="what-inside__item">
           <h3>PEPTIDE COMPLEX</h3>
-          <p>TARGETED PEPTIDES THAT HELP SUPPORT FIRMNESS AND SMOOTH THE APPEARANCE OF WRINKLES OVER TIME</p>
+          <p>
+            TARGETED PEPTIDES THAT HELP SUPPORT FIRMNESS AND SMOOTH THE
+            APPEARANCE OF WRINKLES OVER TIME
+          </p>
         </li>
 
         <li class="what-inside__item">
           <h3>HYDRATING LIPID BLEND</h3>
-          <p>SKIN-MIMICKING OILS THAT REINFORCE THE MOISTURE BARRIER AND KEEP SKIN LOOKING PLUMP AND SUPPLE</p>
+          <p>
+            SKIN-MIMICKING OILS THAT REINFORCE THE MOISTURE BARRIER AND KEEP
+            SKIN LOOKING PLUMP AND SUPPLE
+          </p>
         </li>
       </ul>
     </div>
 
   </div>
 
-  <div style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
-    The Bakuchiol serum in this formula is designed as a gentle plant-based retinol alternative for anyone
-    seeking visible anti-aging results without irritation. This lightweight serum helps soften the look of
-    fine lines, uneven texture, and dryness while supporting a smoother, more radiant complexion. The
-    peptide complex works alongside Bakuchiol to maintain firmness, while the hydrating lipid blend
-    strengthens the moisture barrier for long-lasting plumpness. This combination makes the Bakuchiol
-    serum a highly effective, non-irritating option for those wanting a natural retinol-like benefit with
-    improved skin comfort and daily usability.
+  <!-- SEO helper copy, visually hidden -->
+  <div class="what-inside__sr-only">
+    The Bakuchiol Age Delay Serum combines a gentle plant-derived retinol
+    alternative with a peptide complex and hydrating lipids to soften fine
+    lines, support firmness, and maintain a healthy moisture barrier for
+    smoother, more radiant skin.
   </div>
-
 </section>
-
 
 {% schema %}
 {
