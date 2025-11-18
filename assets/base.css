@@ -4361,36 +4361,37 @@ details-disclosure > details {
 }
 
 /* ============================================
-   UNIVERSAL STAR COLOR OVERRIDE
-   (For both .custom-stars and .bakuchiol-rating-stars)
+   UNIVERSAL VOLUFILINE STAR COLOR OVERRIDE
    ============================================ */
 
-/* 1. Override all solid stars */
+/* 1. Override ALL solid star fills across all blocks */
+.review-slider__slide-stars svg path,
+.review-slider__slide-star svg path,
 .custom-stars svg path,
 .bakuchiol-rating-stars svg path,
-.custom-stars .bakuchiol-rating-star svg path {
-  fill: #b79cff !important; /* soft lilac — luxury aesthetic */
+[fill="#FFC107"],
+[fill="#fec108"] {
+  fill: #b79cff !important; /* Luxury lilac */
 }
 
-/* 2. Half-star gradients (avgStarGradient or any cloned gradient IDs) */
+/* 2. Half-star gradients (avgStarGradient or any similar gradient) */
+.review-slider__slide-stars svg linearGradient stop,
+.review-slider__slide-star svg linearGradient stop,
 .custom-stars svg linearGradient stop,
 .bakuchiol-rating-stars svg linearGradient stop {
   stop-color: #b79cff !important;
 }
 
+.review-slider__slide-stars svg linearGradient stop:last-child,
+.review-slider__slide-star svg linearGradient stop:last-child,
 .custom-stars svg linearGradient stop:last-child,
 .bakuchiol-rating-stars svg linearGradient stop:last-child {
-  stop-color: #e8d9ff !important; /* pale lilac for the unfilled side */
+  stop-color: #e8d9ff !important; /* pale lilac */
 }
 
-/* 3. Fix any inline "fill" attributes Shopify injects */
-.custom-stars [fill="#fec108"],
-.bakuchiol-rating-stars [fill="#fec108"] {
-  fill: #b79cff !important;
-}
-
-/* 4. Optional — soft glow (looks premium) */
+/* 3. Optional soft glow — premium brand aesthetic */
 /*
+.review-slider__slide-stars svg path,
 .custom-stars svg path,
 .bakuchiol-rating-stars svg path {
   filter: drop-shadow(0 0 4px rgba(183, 156, 255, 0.45));
