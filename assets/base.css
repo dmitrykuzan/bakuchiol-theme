@@ -4255,7 +4255,6 @@ details-disclosure > details {
   background-repeat: no-repeat !important;
 
   color: var(--volu-light) !important;
-  border-color: transparent !important;
 }
 
 /* Remove inner Dawn border/box-shadow that causes vertical lines */
@@ -4312,7 +4311,6 @@ details-disclosure > details {
 .button.button--secondary {
   background-color: var(--volu-light) !important;
   color: var(--volu-primary) !important;
-  border-color: var(--volu-primary-soft) !important;
 }
 
 .button-custom__white:hover,
@@ -4324,7 +4322,6 @@ details-disclosure > details {
 /* Outline style */
 .button-custom__border {
   background-color: transparent !important;
-  border-color: var(--volu-primary) !important;
   color: var(--volu-primary) !important;
 }
 
