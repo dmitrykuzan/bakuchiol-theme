@@ -72,12 +72,18 @@
   animation: none;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   padding: 0.7rem 1.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .purple-announcement__text--secondary {
   color: #ffffff !important;
   font-size: 1.05rem;
   text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /* Gradient animation */
@@ -89,7 +95,7 @@
 
 /* TEXT */
 .purple-announcement__text {
-  color: #1d1440;              /* Deep night purple */
+  color: #1d1440;
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -137,30 +143,47 @@
   color: #1d1440;
 }
 
-/* MOBILE */
+/* ==========================================================
+   MOBILE (KEEP EVERYTHING HORIZONTAL – NO STACKING)
+   ========================================================== */
 @media (max-width: 600px) {
   .purple-announcement__bar {
-    flex-direction: column;
-    gap: 0.35rem;
+    flex-direction: row !important;   /* ⬅ forces horizontal layout */
+    gap: 0.75rem;
     padding: 0.9rem 1rem;
+  }
+
+  .purple-announcement__text {
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+
+  /* tighten up timer boxes */
+  .purple-announcement__item {
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .time {
+    font-size: 1rem;
+  }
+
+  .label {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .separator {
+    font-size: 1.2rem;
   }
 
   .purple-announcement__bar--secondary {
     padding: 0.65rem 1rem;
   }
 
-  .purple-announcement__text {
-    font-size: 1.05rem;
-    text-align: center;
-    white-space: normal;
-  }
-
   .purple-announcement__text--secondary {
     font-size: 0.95rem;
-  }
-
-  .time {
-    font-size: 1rem;
+    white-space: nowrap;
   }
 }
 </style>
