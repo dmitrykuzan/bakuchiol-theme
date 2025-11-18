@@ -4264,15 +4264,22 @@ details-disclosure > details {
   content: none !important; /* ← hard kill the source of the vertical lines */
 }
 
-/* Hover */
+/* Hover — subtle satin glow */
 .product-form__submit:hover,
 .button-custom:hover,
 .button-custom.button-custom__black:hover,
 .button.button--primary:hover,
-.baku-gradient-button:hover,
+.baku-gradient:hover,
 .shopify-payment-button__button--unbranded:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
+  background-image: linear-gradient(
+    90deg,
+    #251d45 0%,
+    #2d2454 35%,
+    #251d45 100%
+  ) !important;
+
+  transform: translateY(-2px);
+  filter: none !important; /* remove brightness washout */
 }
 
 /* Active */
