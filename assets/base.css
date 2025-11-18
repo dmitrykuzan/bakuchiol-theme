@@ -4374,7 +4374,7 @@ details-disclosure > details {
 .bakuchiol-rating-stars svg path,
 [fill="#FFC107"],
 [fill="#fec108"] {
-  fill: #726a96 !important; /* Luxury lilac */
+  fill:  #c9b8ff; !important; /* Luxury lilac */
 }
 
 /* 2. Half-star gradients (avgStarGradient or any similar gradient) */
