@@ -2430,7 +2430,119 @@ Rated <strong>4.8</strong>
       font-size: 1.1rem;
     }
   }
-</style>  
+</style> 
+
+<!-- KEY FEATURES – reuse hero bubbles -->
+<section class="baku-key-features">
+  <h3 class="baku-key-features__title">Key benefits</h3>
+
+  <ul class="baku-key-features__list">
+    <li class="baku-key-features__item">
+      <span class="baku-hero__icon"></span>
+      <div>
+        <p class="baku-key-features__label">1.0% Bakuchiol + peptides</p>
+        <p class="baku-key-features__text">
+          Delivers gentle, retinol-like smoothing and firming.
+        </p>
+      </div>
+    </li>
+
+    <li class="baku-key-features__item">
+      <span class="baku-hero__icon"></span>
+      <div>
+        <p class="baku-key-features__label">For all skin types</p>
+        <p class="baku-key-features__text">
+          Balanced for sensitive, dry, combination, or oily skin.
+        </p>
+      </div>
+    </li>
+
+    <li class="baku-key-features__item">
+      <span class="baku-hero__icon"></span>
+      <div>
+        <p class="baku-key-features__label">Fragrance-free & cruelty-free</p>
+        <p class="baku-key-features__text">
+          Minimal, skin-first formula designed for daily use.
+        </p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<style>
+/* KEY FEATURES BLOCK */
+.baku-key-features {
+  margin-top: 32px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: #f7f5ff;
+}
+
+.baku-key-features__title {
+  margin: 0 0 14px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--volu-primary);
+}
+
+/* list layout */
+.baku-key-features__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 22px;
+}
+
+.baku-key-features__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.baku-key-features__label {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--volu-text-main);
+}
+
+.baku-key-features__text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--volu-text-muted);
+}
+
+/* RESPONSIVE – collapse columns on smaller screens */
+@media (max-width: 1024px) {
+  .baku-key-features__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .baku-key-features {
+    margin-top: 24px;
+    padding: 16px 16px;
+  }
+
+  .baku-key-features__list {
+    grid-template-columns: 1fr; /* single column on mobile */
+    gap: 12px;
+  }
+
+  .baku-key-features__label {
+    font-size: 14px;
+  }
+
+  .baku-key-features__text {
+    font-size: 13px;
+  }
+}
+</style>
 
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
