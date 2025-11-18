@@ -1,148 +1,176 @@
-/* ============ WHAT'S INSIDE CARD ============ */
+/* ---------- Section shell ---------- */
 
 .what-inside {
   padding: 64px 0;
-  background: #ffffff;
+  background: #ffffff; /* no extra purple panel */
 }
 
-.what-inside__card {
-  background: #f8f5ff;
-  border: 1px solid rgba(26, 21, 47, 0.08);
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 32px 32px 40px;
+.what-inside__layout {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  gap: 3.5rem;
 }
 
-/* Title */
+/* Force desktop split layout: image left, text right */
+@media screen and (min-width: 1024px) {
+  .what-inside__layout {
+    flex-direction: row !important;
+    align-items: flex-start;
+    gap: 5rem;
+  }
+}
+
+/* ---------- Left column (title + visual) ---------- */
+
+.what-inside__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 0 40%;
+  max-width: 440px;
+}
+
 .what-inside__title {
-  margin: 0 0 28px;
-  font-size: 24px;
+  margin: 0 0 24px;
+  font-size: 22px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #1a152f;
 }
 
-/* Center cream visual */
+/* Cream / petal visual */
 .what-inside__cream {
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 340px;       /* desktop size */
   aspect-ratio: 1 / 1;
-  margin: 0 auto 32px;
 }
 
 .what-inside__cream-ring {
   position: absolute;
-  inset: 7%;
+  inset: 10%;
   border-radius: 999px;
-  border: 1px dashed rgba(26, 21, 47, 0.16);
+  border: 1px dashed rgba(26, 21, 47, 0.14);
 }
 
 .what-inside__cream-img {
   position: absolute;
-  inset: 22%;
-  width: 56%;
+  inset: 18%;
+  width: 64%;
   height: auto;
   margin: auto;
   object-fit: contain;
 }
 
-/* Ingredient list inside card */
+/* ---------- Right column (text list) ---------- */
+
+.what-inside__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .what-inside__list {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 
 .what-inside__item {
-  padding: 18px 0;
-  border-top: 1px solid #1a152f;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #1a152f;
 }
 
-.what-inside__item:first-child {
-  border-top: none;
-  padding-top: 0;
+.what-inside__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-.what-inside__item-title {
-  margin: 0 0 10px;
+.what-inside__item h3 {
+  margin: 0 0 0.75rem;
   font-weight: 500;
   line-height: 1.33;
   color: #1a152f;
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.what-inside__item-text {
+.what-inside__item p {
   margin: 0;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.3;
   text-transform: uppercase;
   font-size: 1.3rem;
   color: #555555;
 }
 
-/* Desktop tweaks */
+/* Desktop typography tweaks */
 @media screen and (min-width: 1024px) {
-  .what-inside {
-    padding: 80px 0;
-  }
-
-  .what-inside__card {
-    max-width: 680px;
-    padding: 40px 40px 48px;
-  }
-
   .what-inside__title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
-  .what-inside__cream {
-    max-width: 380px;
-    margin-bottom: 36px;
+  .what-inside__item h3 {
+    font-size: 2.4rem;
   }
 
-  .what-inside__item-title {
-    font-size: 2.2rem;
-  }
-
-  .what-inside__item-text {
-    font-size: 1.4rem;
+  .what-inside__item p {
+    font-size: 1.5rem;
   }
 }
 
-/* Mobile sizing */
+/* ---------- Mobile adjustments (match reference card) ---------- */
+
 @media screen and (max-width: 767px) {
   .what-inside {
     padding: 48px 0;
   }
 
-  .what-inside__card {
-    padding: 28px 22px 32px;
+  .what-inside__visual {
+    max-width: 100%;
   }
 
   .what-inside__title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .what-inside__cream {
-    max-width: 280px;
+    max-width: 280px;   /* bigger on mobile */
+    margin: 24px 0 8px;
   }
 
-  .what-inside__item-title {
-    font-size: 1.8rem;
+  .what-inside__cream-img {
+    inset: 16%;
+    width: 68%;
   }
 
-  .what-inside__item-text {
+  .what-inside__item h3 {
+    font-size: 1.7rem;
+  }
+
+  .what-inside__item p {
     font-size: 1.2rem;
   }
 }
 
-/* Screen-reader text */
+/* ---------- Large screens ---------- */
+
+@media screen and (min-width: 1360px) {
+  .what-inside__visual {
+    max-width: 480px;
+  }
+
+  .what-inside__cream {
+    max-width: 360px;
+  }
+}
+
+/* Screen-reader-only helper text */
 .what-inside__sr {
   position: absolute;
   left: -9999px;
