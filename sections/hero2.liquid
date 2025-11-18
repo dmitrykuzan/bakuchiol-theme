@@ -1,12 +1,18 @@
+{% comment %}
+BAKUCHIOL HERO – CLINICALLY STUDIED
+Paste inside your product template or as a section.
+Assumes `product` is the Bakuchiol serum.
+{% endcomment %}
+
 <section class="baku-hero">
-  <div class="baku-hero__inner page-width">
-    <!-- LEFT: COPY -->
+  <div class="page-width baku-hero__inner">
+    <!-- LEFT: TEXT CONTENT -->
     <div class="baku-hero__content">
-      <!-- Rating row -->
+      <!-- Rating line -->
       <div class="baku-hero__rating">
-        <span class="baku-hero__rating-stars">★★★★★</span>
+        <span class="baku-hero__stars">★★★★★</span>
         <span class="baku-hero__rating-text">
-          <strong>4.8/5</strong> based on <span>1,482+ reviews</span>
+          <strong>4.8/5</strong> based on <strong>1,482+</strong> reviews
         </span>
       </div>
 
@@ -18,68 +24,70 @@
 
       <!-- Subcopy -->
       <p class="baku-hero__subcopy">
-        A science-backed bakuchiol serum that visibly softens fine lines, 
-        boosts radiance, and supports a calm, balanced complexion without 
-        the irritation of traditional retinol.
+        A science-backed bakuchiol serum that visibly softens fine lines, boosts radiance, 
+        and supports a calm, balanced complexion without the irritation of traditional retinol.
       </p>
 
       <!-- Benefit bullets -->
       <ul class="baku-hero__benefits">
-        <li class="baku-hero__benefit">
-          <span class="baku-hero__benefit-icon">●</span>
-          <span>Softens fine lines + wrinkles</span>
+        <li>
+          <span class="baku-hero__icon"></span>
+          Softens fine lines + wrinkles
         </li>
-        <li class="baku-hero__benefit">
-          <span class="baku-hero__benefit-icon">●</span>
-          <span>Boosts luminosity + even tone</span>
+        <li>
+          <span class="baku-hero__icon"></span>
+          Boosts luminosity + even tone
         </li>
-        <li class="baku-hero__benefit">
-          <span class="baku-hero__benefit-icon">●</span>
-          <span>Gentle enough for nightly use</span>
+        <li>
+          <span class="baku-hero__icon"></span>
+          Gentle enough for nightly use
         </li>
       </ul>
 
-      <!-- CTA row -->
+      <!-- CTA + guarantee -->
       <div class="baku-hero__cta-row">
-        <a href="#add-to-cart" class="baku-hero__cta-button">
+        <button
+          type="button"
+          class="button-custom baku-gradient baku-hero__cta"
+          onclick="document.querySelector('form[action^=\"/cart/add\"] .product-form__submit')?.scrollIntoView({behavior:'smooth'})"
+        >
           TRY IT RISK-FREE TODAY
-        </a>
+        </button>
+
         <div class="baku-hero__guarantee">
           <span class="baku-hero__guarantee-icon">✓</span>
-          90-Day Money-Back Guarantee
+          <span>90-Day Money-Back Guarantee</span>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: BOTTLE -->
-    <div class="baku-hero__media">
-      <div class="baku-hero__bottle-wrap">
-        <img
-          src="{{ 'bakuchiol-bottle.png' | asset_url }}"
-          alt="Bakuchiol Age Delay Serum bottle"
-          class="baku-hero__bottle"
-          loading="lazy"
-        >
-        <div class="baku-hero__shadow"></div>
-      </div>
+    <!-- RIGHT: PRODUCT IMAGE (NO BORDER BOX) -->
+    <div class="baku-hero__image">
+      {{ product.featured_image | image_url: width: 1400 | image_tag: alt: product.title, loading: 'eager' }}
     </div>
   </div>
 </section>
 
 <style>
+/* -----------------------------
+   COLOR TOKENS (matches site)
+------------------------------*/
 :root {
-  --baku-deep:      #1a152f;
-  --baku-mid:       #726a96;
-  --baku-accent:    #cbbfe2;
-  --baku-rose:      #f4c6f0;
-  --baku-cream:     #fff8ff;
-  --baku-star:      #c5b59a; /* Chanel-y champagne gold */
+  --volu-primary:       #1a152f;
+  --volu-primary-soft:  #726a96;
+  --volu-accent-soft:   #cbbfe2;
+  --volu-bg-soft:       #f8f5ff;
+  --volu-text-main:     #111111;
+  --volu-text-muted:    #555555;
+  --volu-light:         #ffffff;
 }
 
-/* SECTION WRAPPER */
+/* -----------------------------
+   HERO LAYOUT
+------------------------------*/
 .baku-hero {
-  background: radial-gradient(circle at top left, #f0e7ff 0, #fff 45%, #f5f1ff 100%);
-  padding: 4.5rem 0 4rem;
+  background: radial-gradient(circle at top left, #f3ecff 0%, #ffffff 55%, #f3ecff 100%);
+  padding: 80px 0 96px;
 }
 
 .baku-hero__inner {
@@ -91,219 +99,201 @@
 
 /* LEFT COLUMN */
 .baku-hero__content {
+  flex: 1.1;
   max-width: 560px;
 }
 
-/* Rating row */
+/* Rating line */
 .baku-hero__rating {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
+  gap: 0.6rem;
+  margin-bottom: 18px;
+  font-size: 15px;
 }
 
-.baku-hero__rating-stars {
-  font-size: 1.35rem;
-  letter-spacing: 0.18em;
-  color: var(--baku-star);
+.baku-hero__stars {
+  letter-spacing: 0.16em;
+  font-size: 17px;
+  color: #c5b2ff; /* soft lilac stars */
 }
 
 .baku-hero__rating-text {
-  font-size: 0.98rem;
-  color: var(--baku-deep);
+  color: var(--volu-text-muted);
 }
 
 .baku-hero__rating-text strong {
-  font-weight: 800;
-}
-
-.baku-hero__rating-text span {
-  opacity: 0.85;
+  color: var(--volu-primary);
+  font-weight: 700;
 }
 
 /* Headline */
 .baku-hero__headline {
-  font-size: 2.8rem;
-  line-height: 1.08;
+  font-size: 40px;
+  line-height: 1.1;
   letter-spacing: 0.02em;
-  color: var(--baku-deep);
-  margin: 0 0 1.25rem;
+  margin: 0 0 14px;
+  color: var(--volu-primary);
 }
 
 .baku-hero__headline span {
   display: block;
-  margin-top: 0.25rem;
-  color: var(--baku-mid);
+  color: #7c73a2; /* softer lavender for second line */
+  font-weight: 700;
 }
 
 /* Subcopy */
 .baku-hero__subcopy {
-  font-size: 1.05rem;
+  margin: 0 0 24px;
+  font-size: 16px;
   line-height: 1.6;
-  color: #4b4b4b;
-  max-width: 520px;
-  margin-bottom: 1.75rem;
+  color: var(--volu-text-muted);
 }
 
-/* Benefits list */
+/* Benefit bullets */
 .baku-hero__benefits {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem;
+  margin: 0 0 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.baku-hero__benefits li {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem 2rem;
-}
-
-.baku-hero__benefit {
-  display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.98rem;
-  color: var(--baku-deep);
+  gap: 0.6rem;
+  font-size: 15px;
+  color: var(--volu-text-main);
 }
 
-.baku-hero__benefit-icon {
-  width: 18px;
-  height: 18px;
+.baku-hero__icon {
+  width: 22px;
+  height: 22px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--baku-mid), var(--baku-accent));
+  background: radial-gradient(circle at 30% 30%, #f3ecff 0%, #a38bff 80%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  color: #fff;
+  position: relative;
+}
+
+.baku-hero__icon::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 2px solid #f9f7ff;
+  box-shadow: 0 0 0 1px rgba(26, 21, 47, 0.06);
 }
 
 /* CTA row */
 .baku-hero__cta-row {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.75rem;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }
 
-/* CTA BUTTON */
-.baku-hero__cta-button {
-  background-image: linear-gradient(
-    90deg,
-    var(--baku-deep) 0%,
-    #221a3d 35%,
-    var(--baku-deep) 100%
-  );
-  color: #ffffff;
-  padding: 1.05rem 2.75rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 14px 35px rgba(12, 3, 42, 0.25);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
-}
-
-.baku-hero__cta-button:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.03);
-  box-shadow: 0 18px 40px rgba(12, 3, 42, 0.3);
-}
-
-.baku-hero__cta-button:active {
-  transform: translateY(0);
-  box-shadow: 0 8px 20px rgba(12, 3, 42, 0.25);
+.baku-hero__cta {
+  padding: 16px 40px;
+  font-size: 15px;
 }
 
 /* Guarantee text */
 .baku-hero__guarantee {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.9rem;
-  color: var(--baku-deep);
+  font-size: 13px;
+  color: var(--volu-text-muted);
 }
 
 .baku-hero__guarantee-icon {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background-color: #efe8ff;
+  border: 1px solid rgba(26, 21, 47, 0.18);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 11px;
+  color: var(--volu-primary);
 }
 
-/* RIGHT COLUMN – PRODUCT */
-.baku-hero__media {
-  flex: 0 0 340px;
+/* RIGHT COLUMN – PRODUCT IMAGE (NO BOX) */
+.baku-hero__image {
+  flex: 0 0 auto;
+  min-height: 640px;           /* makes hero tall like reference */
   display: flex;
+  align-items: center;
   justify-content: center;
+
+  /* kill any background / border / shadow */
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.baku-hero__bottle-wrap {
-  position: relative;
-  padding: 2rem 1.5rem 2.5rem;
-  background: radial-gradient(circle at top, #ffffff 0, #f5f1ff 55%, #e5ddff 100%);
-  border-radius: 26px;
-}
-
-.baku-hero__bottle {
-  display: block;
-  max-width: 240px;
+.baku-hero__image img {
+  max-height: 700px;          /* adjust size of bottle */
+  width: auto;
   height: auto;
+  display: block;
 }
 
-.baku-hero__shadow {
-  position: absolute;
-  left: 50%;
-  bottom: 1.4rem;
-  width: 70%;
-  height: 26px;
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35), transparent 70%);
-  opacity: 0.35;
-  filter: blur(4px);
-}
-
-/* RESPONSIVE */
+/* -----------------------------
+   RESPONSIVE
+------------------------------*/
 @media (max-width: 1024px) {
-  .baku-hero__inner {
-    gap: 3rem;
-  }
-}
-
-@media (max-width: 840px) {
   .baku-hero {
-    padding: 3.2rem 0 3.4rem;
+    padding: 56px 0 72px;
   }
 
   .baku-hero__inner {
     flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .baku-hero__image {
+    min-height: 420px;
+  }
+
+  .baku-hero__image img {
+    max-height: 460px;
+  }
+
+  .baku-hero__content {
+    max-width: 100%;
     text-align: left;
-  }
-
-  .baku-hero__media {
-    flex: none;
-  }
-
-  .baku-hero__headline {
-    font-size: 2.2rem;
   }
 }
 
-@media (max-width: 540px) {
-  .baku-hero__cta-row {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 720px) {
+  .baku-hero__headline {
+    font-size: 30px;
   }
 
-  .baku-hero__cta-button {
+  .baku-hero__benefits {
+    gap: 8px;
+  }
+
+  .baku-hero__cta-row {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .baku-hero__cta {
     width: 100%;
     justify-content: center;
+  }
+
+  .baku-hero__image {
+    min-height: 360px;
   }
 }
 </style>
