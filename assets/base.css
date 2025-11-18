@@ -216,8 +216,8 @@ html {
 }
 
 .button-custom__black {
-  color: white;
-  background-color: #cbbfe2 !important;
+  color: #fff;
+  background-color: #000;
   transition: background-color 0.3s linear, color 0.3s linear, border 0.3s linear;
 }
 
