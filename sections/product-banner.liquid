@@ -1,0 +1,142 @@
+<section class="baku-marquee">
+  <div class="page-width">
+    <div class="baku-marquee__track">
+
+      <!-- row duplicated for seamless loop -->
+      <div class="baku-marquee__inner">
+        <span class="baku-marquee__item">
+          1.0% Bakuchiol + Peptides Retinol Alternative
+        </span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">
+          Powered by Bakuchiol – nature’s gentle retinol option
+        </span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">
+          Dermatologist-loved, fragrance-free formula
+        </span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">
+          Free USA shipping on every Bakuchiol order
+        </span>
+        <span class="baku-marquee__dot"></span>
+      </div>
+
+      <!-- duplicate for infinite scroll -->
+      <div class="baku-marquee__inner" aria-hidden="true">
+        <span class="baku-marquee__item">
+          1.0% Bakuchiol + Peptides Retinol Alternative
+        </span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">
+          Powered by Bakuchiol – nature’s gentle retinol option
+        </span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">
+          Dermatologist-loved, fragrance-free formula
+        </span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">
+          Free USA shipping on every Bakuchiol order
+        </span>
+        <span class="baku-marquee__dot"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+/* LUXE MARQUEE BAR */
+.baku-marquee {
+  background-color: #1a152f;          /* deep eggplant */
+  color: #ffffff;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.baku-marquee .page-width {
+  padding: 10px 0;                    /* slim bar */
+}
+
+/* track wrapper */
+.baku-marquee__track {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+/* scrolling rows */
+.baku-marquee__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding-right: 40px;
+  animation: baku-marquee-scroll 26s linear infinite;
+}
+
+/* pause on hover (nice luxe touch) */
+.baku-marquee__track:hover .baku-marquee__inner {
+  animation-play-state: paused;
+}
+
+/* items */
+.baku-marquee__item {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+/* small glowing separator dot */
+.baku-marquee__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #f9f4ff 0%, #b7a4ff 75%);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+
+/* animation */
+@keyframes baku-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 640px) {
+  .baku-marquee .page-width {
+    padding: 8px 0;
+  }
+
+  .baku-marquee__inner {
+    gap: 14px;
+    padding-right: 28px;
+    animation-duration: 22s;  /* a bit faster on small screens */
+  }
+
+  .baku-marquee__item {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .baku-marquee__dot {
+    width: 5px;
+    height: 5px;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
+  }
+}
