@@ -10,19 +10,8 @@
 {
   "sections": {
     "hero_PkEHtA": {
-      "type": "hero",
-      "blocks": {
-        "product_wW3gTh": {
-          "type": "product",
-          "settings": {
-            "product": "bakuchiol-age-delay-serum"
-          }
-        }
-      },
-      "block_order": [
-        "product_wW3gTh"
-      ],
-      "name": "Hero",
+      "type": "hero2",
+
       "settings": {}
     },
     "bakuchiol_price_QR3p7A": {
