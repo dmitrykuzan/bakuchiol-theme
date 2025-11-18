@@ -4236,71 +4236,33 @@ details-disclosure > details {
   --volu-light:         #ffffff;
 }
 
-/* Base CTA styling */
+/* ------------------------------
+   2) PRIMARY CTA BUTTONS
+   (Add to cart, main CTAs)
+--------------------------------*/
 .product-form__submit,
 .button-custom.button-custom__black,
 .button.button--primary,
 .baku-gradient-button,
 .shopify-payment-button__button--unbranded {
-  position: relative;
-  width: 100%;
-  padding: 17px 24px;
-
-  background: linear-gradient(
-    135deg,
-    var(--volu-primary) 0%,
-    var(--volu-primary-mid) 55%,
-    var(--volu-primary-soft) 100%
-  );
-  background-size: 200% 200%;
+  background: linear-gradient(90deg, var(--volu-primary), var(--volu-primary-soft)) !important;
   color: var(--volu-light) !important;
-
-  border: none !important;
-  border-radius: 10px;
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-
-  cursor: pointer;
-  transition:
-    background-position 0.6s ease,
-    transform 0.2s ease,
-    box-shadow 0.25s ease;
+  border-color: transparent !important;
 }
 
-/* Hover = elegant shimmer + slight lift */
+/* Hover – slightly brighter */
 .product-form__submit:hover,
 .button-custom.button-custom__black:hover,
 .button.button--primary:hover,
 .baku-gradient-button:hover,
 .shopify-payment-button__button--unbranded:hover {
-  background-position: 100% 0%;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(90, 59, 140, 0.25);
+  background: linear-gradient(90deg, var(--volu-primary-soft), var(--volu-accent-soft)) !important;
+  color: var(--volu-light) !important;
 }
 
-/* Pressed = soft tap */
-.product-form__submit:active,
-.button-custom.button-custom__black:active,
-.button.button--primary:active,
-.baku-gradient-button:active,
-.shopify-payment-button__button--unbranded:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(90, 59, 140, 0.2);
-}
-
-/* Disabled */
-.product-form__submit:disabled,
-.button-custom.button-custom__black:disabled,
-.button.button--primary:disabled,
-.baku-gradient-button:disabled,
-.shopify-payment-button__button--unbranded:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-  background: #b8b8b8 !important;
+/* Make sure text inside gradient button is white */
+.baku-gradient-button__text {
+  color: var(--volu-light) !important;
 }
 
 /* ------------------------------
