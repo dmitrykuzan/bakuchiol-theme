@@ -166,7 +166,7 @@ html {
   font-size: 3.2rem;
   text-transform: uppercase;
   line-height: 122%;
-  color: #000;
+  color: #1d1440;
   margin: initial;
 }
 
@@ -210,38 +210,38 @@ html {
 }
 
 .button-custom__white {
-  color: #000;
+  color: #1d1440;
   background-color: #fff;
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 
 .button-custom__black {
   color: #fff;
-  background-color: #000;
+  background-color: #1d1440;
   transition: background-color 0.3s linear, color 0.3s linear, border 0.3s linear;
 }
 
 .button-custom__border {
-  color: #000;
+  color: #1d1440;
   background-color: transparent;
-  border: 0.2rem solid #000;
+  border: 0.2rem solid #1d1440;
   transition: background-color 0.3s linear, color 0.3s linear, border 0.3s linear;
 }
 
 .button-custom__white:hover {
-  background-color: #000;
+  background-color: #1d1440;
   color: #fff;
 }
 
 .button-custom__black:hover {
   background-color: #fff;
-  border: 0.2rem solid #000;
-  color: #000;
+  border: 0.2rem solid #1d1440;
+  color: #1d1440;
 }
 
 .button-custom__border:hover {
-  background-color: #000;
-  border: 0.2rem solid #000;
+  background-color: #1d1440;
+  border: 0.2rem solid #1d1440;
   color: #fff;
 }
 
@@ -265,7 +265,7 @@ html {
     flex-shrink: 0;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: #000;
+    background-color: #1d1440;
 
     &::before {
       content: '';
@@ -299,7 +299,7 @@ html {
 .bakuchiol-slider__btn {
   width: 5rem;
   height: 5rem;
-  background-color: #000;
+  background-color: #1d1440;
   border: initial;
   cursor: pointer;
   transition: background-color 0.3s linear, border 0.3s linear;
@@ -323,10 +323,10 @@ html {
 
 .bakuchiol-slider__btn:hover {
   background-color: #fff;
-  border: 0.1rem solid #000;
+  border: 0.1rem solid #1d1440;
 
   svg path {
-    fill: #000;
+    fill: #1d1440;
   }
 }
 
@@ -426,10 +426,10 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .icon-hamburger {
-  fill: #000 !important;   /* override inline fill */
+  fill: #1d1440 !important;   /* override inline fill */
 }
 .icon-hamburger path {
-  fill: #000 !important;   /* forcibly overrides fill="#ffffff" */
+  fill: #1d1440 !important;   /* forcibly overrides fill="#ffffff" */
 }
 
 .icon-close {
@@ -442,8 +442,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 .drawer__close .svg-wrapper svg,
 .drawer__close .svg-wrapper svg path {
-  fill: #000 !important;
-  stroke: #000 !important;
+  fill: #1d1440 !important;
+  stroke: #1d1440 !important;
 }
 
 .p1 {
@@ -467,7 +467,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   .header__inline-menu {
     .list-menu {
       .header__menu-item {
-        color: #000;
+        color: #1d1440;
       }
     }
   }
@@ -495,14 +495,14 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 
   .header__link-cta {
-    background-color: #000;
+    background-color: #1d1440;
     color: #fff;
   }
 
   .header__link-cta:hover {
     background-color: #fff;
-    border: 0.1rem solid #000;
-    color: #000;
+    border: 0.1rem solid #1d1440;
+    color: #1d1440;
   }
 }
 
@@ -3010,12 +3010,12 @@ input[type='checkbox'] {
     justify-content: center;
     min-height: 4.4rem;
     background-color: #fff;
-    color: #000;
+    color: #1d1440;
     font-size: 1.8rem;
     transition: background-color 0.3s linear, color 0.3s linear;
 
     &:hover {
-      background-color: #000;
+      background-color: #1d1440;
       color: #fff;
     }
   }
@@ -3446,7 +3446,7 @@ details[open] > .header__menu-item .icon-caret {
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   /* color: rgb(var(--color-foreground)); */
-  color: #000;
+  color: #1d1440;
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }

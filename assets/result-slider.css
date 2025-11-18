@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.1rem solid #000;
+    border: 0.1rem solid #1d1440;
     flex-shrink: 0;
     transition: opacity 0.3s linear;
     cursor: pointer;
@@ -103,7 +103,7 @@
     margin: initial;
     font-size: 1.8rem;
     font-weight: 500;
-    color: #000;
+    color: #1d1440;
   }
 }
 
@@ -192,7 +192,7 @@
   p {
     margin: initial;
     font-size: 1.8rem;
-    color: #000;
+    color: #1d1440;
     font-weight: 500;
   }
 }
@@ -237,7 +237,7 @@
 .result-slider__slide-percent {
   font-size: 1.8rem;
   font-weight: 900;
-  color: #000;
+  color: #1d1440;
 }
 
 @media screen and (min-width: 1680px) {
@@ -252,7 +252,7 @@
   padding-bottom: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border: 0.1rem solid #000;
+  border: 0.1rem solid #1d1440;
   width: 100%;
   max-width: 42rem;
 
@@ -260,7 +260,7 @@
     margin: initial;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000;
+    color: #1d1440;
   }
 }
 
@@ -292,7 +292,7 @@
   font-size: 1.6rem;
   line-height: 133%;
   font-weight: 500;
-  color: #000;
+  color: #1d1440;
 }
 
 @media screen and (min-width: 1680px) {
@@ -327,7 +327,7 @@
   p {
     margin: initial;
     font-size: 1.4rem;
-    color: #000;
+    color: #1d1440;
     line-height: 133%;
   }
 }
@@ -344,7 +344,7 @@
   p {
     margin: initial;
     line-height: 133%;
-    color: #000;
+    color: #1d1440;
 
     span {
       font-weight: 600;
@@ -390,14 +390,14 @@
     width: 1rem;
     height: 1rem;
     border-radius: initial;
-    border: 0.1rem solid #000;
+    border: 0.1rem solid #1d1440;
     background-color: initial;
     opacity: initial;
     transition: background-color 0.3s linear;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #000;
+    background-color: #1d1440;
   }
 }
 .result-slider__pagination .swiper-pagination-bullet {
