@@ -2432,6 +2432,141 @@ Rated <strong>4.8</strong>
   }
 </style> 
 
+<section class="baku-feature-bubbles">
+  <ul class="baku-feature-bubbles__list">
+    
+    <li>
+      <span class="baku-hero__icon baku-feature-bubbles__icon"></span>
+      <div>
+        <p class="baku-feature-bubbles__title">Smooths fine lines</p>
+        <p class="baku-feature-bubbles__text">
+          Retinol-like smoothing without dryness or irritation.
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <span class="baku-hero__icon baku-feature-bubbles__icon"></span>
+      <div>
+        <p class="baku-feature-bubbles__title">Brightens uneven tone</p>
+        <p class="baku-feature-bubbles__text">
+          Helps reduce dullness for a clearer, more radiant complexion.
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <span class="baku-hero__icon baku-feature-bubbles__icon"></span>
+      <div>
+        <p class="baku-feature-bubbles__title">Firms + boosts elasticity</p>
+        <p class="baku-feature-bubbles__text">
+          Supports collagen for visibly plumper, healthier-looking skin.
+        </p>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<style>
+/* Container spacing */
+.baku-feature-bubbles {
+  margin: 24px 0 32px;
+}
+
+/* Grid layout */
+.baku-feature-bubbles__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px 26px;
+  align-items: start;
+}
+
+/* Item layout */
+.baku-feature-bubbles__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+/* Benefit bullets */
+.baku-hero__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.baku-hero__benefits li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 15px;
+  color: var(--volu-text-main);
+}
+
+.baku-hero__icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #f3ecff 0%, #a38bff 80%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.baku-hero__icon::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 2px solid #f9f7ff;
+  box-shadow: 0 0 0 1px rgba(26, 21, 47, 0.06);
+}
+
+/* Keep existing hero icon, just tweak in this block */
+.baku-feature-bubbles__icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Title */
+.baku-feature-bubbles__title {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--volu-primary);
+}
+
+/* Text */
+.baku-feature-bubbles__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--volu-text-muted);
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .baku-feature-bubbles__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .baku-feature-bubbles__list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+</style>
+
 
 
 
