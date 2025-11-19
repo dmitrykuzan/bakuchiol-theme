@@ -9,20 +9,8 @@
  */
 {
   "sections": {
-    "hero_PkEHtA": {
-      "type": "hero",
-      "blocks": {
-        "product_wW3gTh": {
-          "type": "product",
-          "settings": {
-            "product": "bakuchiol-age-delay-serum"
-          }
-        }
-      },
-      "block_order": [
-        "product_wW3gTh"
-      ],
-      "name": "Hero",
+    "hero_PkEHtAA": {
+      "type": "hero2",
       "settings": {}
     },
     "bakuchiol_price_QR3p7A": {
@@ -64,7 +52,7 @@
     }
   },
   "order": [
-    "hero_PkEHtA",
+    "hero_PkEHtAA",
     "bakuchiol_price_QR3p7A",
     "review_slider_kpJKHq",
     "bakuchiol_footer_gnWLCR"
