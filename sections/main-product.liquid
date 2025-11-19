@@ -2483,10 +2483,10 @@ Rated <strong>4.8</strong>
   gap: 8px; /* tighter */
 }
 
-/* Smaller icons only for this block */
+/* Smaller icons (30% smaller than the 24px version) */
 .baku-feature-bubbles .baku-hero__icon {
-  width: 24px;      /* was 30px */
-  height: 24px;     /* was 30px */
+  width: 17px;       
+  height: 17px;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #f3ecff 0%, #a38bff 80%);
   display: inline-flex;
@@ -2497,10 +2497,10 @@ Rated <strong>4.8</strong>
 
 .baku-feature-bubbles .baku-hero__icon::after {
   content: "";
-  width: 10px;      /* smaller inner dot */
-  height: 10px;
+  width: 7px;        /* was 10px, now -30% */
+  height: 7px;
   border-radius: 999px;
-  border: 2px solid #f9f7ff;
+  border: 1.5px solid #f9f7ff;  /* scaled down */
   box-shadow: 0 0 0 1px rgba(26, 21, 47, 0.06);
 }
 
