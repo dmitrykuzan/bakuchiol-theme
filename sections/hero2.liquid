@@ -51,10 +51,12 @@
 ============================ */
 
 .baku-hero {
-  background: radial-gradient(140% 200% at 0% 0%,
-      #f6f1ff 0%,
-      #ffffff 45%,
-      #ffffff 100%);
+  background: linear-gradient(
+    135deg,
+    #f5f1ff 0%,
+    #ffffff 40%,
+    #f6f2ff 100%
+  );
   color: #151323;
 }
 
@@ -64,7 +66,7 @@
   align-items: center;
   min-height: clamp(520px, 80vh, 760px);
   padding-block: 4rem;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 
 /* ============================
@@ -72,61 +74,66 @@
 ============================ */
 
 .baku-hero__copy {
-  max-width: 520px;
+  max-width: 540px;
 }
 
 .baku-hero__eyebrow {
   margin: 0 0 1.2rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(21, 19, 35, 0.6);
 }
 
 .baku-hero__title {
-  margin: 0 0 1.6rem;
-  font-size: clamp(2.4rem, 2.8vw + 1.6rem, 3.4rem);
+  margin: 0 0 1.8rem;
+  font-size: clamp(2.4rem, 2.7vw + 1.7rem, 3.3rem);
   line-height: 1.1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .baku-hero__subtitle {
   margin: 0 0 2.4rem;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(21, 19, 35, 0.76);
-  max-width: 460px;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: rgba(21, 19, 35, 0.8);
+  max-width: 480px;
 }
+
+/* SHARP CTA BUTTON – no rounded edges */
 
 .baku-hero__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.1rem 3.5rem;
-  border-radius: 999px;
+  padding: 1rem 3.4rem;
+  border-radius: 0;               /* <— sharp corners */
   font-size: 0.9rem;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   text-decoration: none;
   background-color: #151323;
   color: #ffffff;
-  border: 0;
+  border: 1px solid #151323;
   cursor: pointer;
-  transition: transform 140ms ease, box-shadow 140ms ease,
-    background-color 140ms ease;
+  transition: background-color 140ms ease, color 140ms ease,
+    transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
 }
 
 .baku-hero__button:hover {
+  background-color: #ffffff;
+  color: #151323;
+  border-color: #151323;
   transform: translateY(-1px);
-  background-color: #211d40;
-  box-shadow: 0 16px 40px rgba(17, 12, 43, 0.22);
+  box-shadow: 0 10px 28px rgba(13, 9, 34, 0.16);
 }
 
 .baku-hero__social-proof {
-  margin: 1.6rem 0 0;
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
+  margin: 1.8rem 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(21, 19, 35, 0.62);
 }
@@ -152,10 +159,10 @@
   transform: translateX(6%);
 }
 
-/* Gives that Sungboon “bleed to the edge” feel on huge screens */
+/* Slightly more right-weighting on very large screens */
 @media (min-width: 1400px) {
   .baku-hero__inner {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
   }
 }
 
@@ -166,9 +173,9 @@
 @media (max-width: 989px) {
   .baku-hero__inner {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.6rem;
     min-height: auto;
-    padding-block: 3.5rem;
+    padding-block: 3.4rem;
   }
 
   .baku-hero__copy {
@@ -197,11 +204,7 @@
   }
 
   .baku-hero__inner {
-    padding-block: 2.8rem 3.2rem;
-  }
-
-  .baku-hero__copy {
-    text-align: left;
+    padding-block: 2.6rem 3rem;
   }
 
   .baku-hero__subtitle {
