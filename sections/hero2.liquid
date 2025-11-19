@@ -1,303 +1,224 @@
-{% comment %}
-BAKUCHIOL HERO – CLINICALLY STUDIED
-{% endcomment %}
-
-<section class="baku-hero">
-  <div class="page-width baku-hero__inner">
-    <!-- LEFT: TEXT CONTENT -->
-    <div class="baku-hero__content">
-      <!-- Rating line -->
-      <div class="baku-hero__rating">
-        <span class="baku-hero__stars">★★★★★</span>
-        <span class="baku-hero__rating-text">
-          <strong>4.8/5</strong> based on <strong>482+</strong> reviews
-        </span>
-      </div>
-
-      <!-- Headline -->
-      <h1 class="baku-hero__headline">
-        Clinically Studied
-        <span>Bakuchiol Age-Delay Serum</span>
-      </h1>
-
-      <!-- Subcopy -->
-      <p class="baku-hero__subcopy">
-        A science-backed bakuchiol serum that visibly softens fine lines, boosts
-        radiance, and supports a calm, balanced complexion without the irritation
-        of traditional retinol.
+<section class="bk-hero">
+  <div class="bk-hero__inner page-width">
+    <!-- LEFT: COPY -->
+    <div class="bk-hero__copy">
+      <p class="bk-hero__eyebrow">
+        1.0% BAKUCHIOL + PEPTIDES
       </p>
 
-      <!-- Benefit bullets -->
-      <ul class="baku-hero__benefits">
-        <li>
-          <span class="baku-hero__icon"></span>
-          Softens fine lines + wrinkles
-        </li>
-        <li>
-          <span class="baku-hero__icon"></span>
-          Boosts luminosity + even tone
-        </li>
-        <li>
-          <span class="baku-hero__icon"></span>
-          Gentle enough for nightly use
-        </li>
-      </ul>
+      <h1 class="bk-hero__headline">
+        Glass-skin results.<br>
+        Retinol power.<br>
+        Zero irritation.
+      </h1>
 
-      <div class="baku-hero__cta-row">
-      <a
-  href="/products/bakuchiol-age-delay-serum"
-  class="button-custom baku-gradient baku-hero__cta"
->
-  TRY AGE-DELAY SERUM
-</a>
+      <p class="bk-hero__subcopy">
+        Bakuchiol Age Delay Serum visibly softens fine lines, boosts radiance,
+        and keeps even sensitive skin calm and comfortable.
+      </p>
 
-        <div class="baku-hero__guarantee">
-          <span class="baku-hero__guarantee-icon">✦</span>
-          <span>Powered by Pure 1% Bakuchiol</span>
-        </div>
+      <div class="bk-hero__actions">
+        <a href="/products/bakuchiol-age-delay-serum" class="bk-hero__btn">
+          Shop now
+        </a>
+
+        <p class="bk-hero__note">
+          ★★★★★ Loved by sensitive skin &amp; first-time retinol users.
+        </p>
       </div>
     </div>
 
-    <!-- RIGHT: PRODUCT IMAGE -->
-    <div class="baku-hero__image">
-      <img
-        src="{{ 'bakuchiol-bottle3.png' | asset_url }}"
-        alt="Bakuchiol Age-Delay Serum Bottle"
-        loading="eager"
-      >
+    <!-- RIGHT: MODEL IMAGE -->
+    <div class="bk-hero__media">
+      <picture>
+        <!-- Mobile crop -->
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ 'bakuchiol-hero-model-mobile.jpg' | asset_url }}"
+        >
+        <!-- Desktop hero -->
+        <img
+          src="{{ 'bakuchiol-hero-model-desktop.jpg' | asset_url }}"
+          alt="Woman holding Bakuchiol Age Delay Serum against a clean white background"
+          class="bk-hero__img"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </picture>
     </div>
   </div>
 </section>
 
 <style>
+  /* ===========================
+   BAKUCHIOL HERO
+   =========================== */
+
 :root {
-  --volu-primary:       #1a152f;
-  --volu-primary-soft:  #726a96;
-  --volu-accent-soft:   #cbbfe2;
-  --volu-bg-soft:       #f8f5ff;
-  --volu-text-main:     #111111;
-  --volu-text-muted:    #555555;
-  --volu-light:         #ffffff;
+  --bk-ink: #1a152f;
+  --bk-ink-soft: #48445f;
+  --bk-bg-soft: #faf7ff;
+  --bk-btn: #1a152f;
 }
 
-/* -----------------------------
-   HERO LAYOUT
-------------------------------*/
-.baku-hero {
-  background: radial-gradient(circle at top left, #f3ecff 0%, #ffffff 55%, #f3ecff 100%);
-  padding: 48px 0 32px; /* slightly tighter on bottom */
-}
-
-.baku-hero__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3.5rem;
-}
-
-/* LEFT COLUMN */
-.baku-hero__content {
-  flex: 1.1;
-  max-width: 560px;
-}
-
-/* Rating line */
-.baku-hero__rating {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 14px;
-  font-size: 15px;
-}
-
-.baku-hero__stars {
-  letter-spacing: 0.16em;
-  font-size: 17px;
-  color: #c5b2ff;
-}
-
-.baku-hero__rating-text {
-  color: var(--volu-text-muted);
-}
-
-.baku-hero__rating-text strong {
-  color: var(--volu-primary);
-  font-weight: 700;
-}
-
-/* Headline */
-.baku-hero__headline {
-  font-size: 40px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  margin: 0 0 12px;
-  color: var(--volu-primary);
-}
-
-.baku-hero__headline span {
-  display: block;
-  color: #7c73a2;
-  font-weight: 700;
-}
-
-/* Subcopy */
-.baku-hero__subcopy {
-  margin: 0 0 22px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--volu-text-muted);
-}
-
-/* Benefit bullets */
-.baku-hero__benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 9px;
-}
-
-.baku-hero__benefits li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 15px;
-  color: var(--volu-text-main);
-}
-
-.baku-hero__icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #f3ecff 0%, #a38bff 80%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* SECTION BACKGROUND */
+.bk-hero {
   position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #f4edff 0, #ffffff 45%, #f8f3ff 100%);
 }
 
-.baku-hero__icon::after {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  border: 2px solid #f9f7ff;
-  box-shadow: 0 0 0 1px rgba(26, 21, 47, 0.06);
+/* INNER LAYOUT */
+.bk-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 4rem;
+  padding: 7rem 1.5rem 6rem;
 }
 
-/* CTA row */
-.baku-hero__cta-row {
+/* COPY COLUMN */
+.bk-hero__copy {
+  max-width: 520px;
+  color: var(--bk-ink);
+}
+
+.bk-hero__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bk-ink-soft);
+}
+
+.bk-hero__headline {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.4rem, 3.3vw + 1rem, 3.6rem);
+  line-height: 1.06;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.bk-hero__subcopy {
+  margin: 0 0 2.2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--bk-ink-soft);
+  max-width: 460px;
+}
+
+/* CTA */
+.bk-hero__actions {
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  align-items: flex-start;
+  gap: 0.8rem;
 }
 
-.baku-hero__cta {
-  padding: 16px 40px;
-  font-size: 15px;
-}
-
-/* Guarantee */
-.baku-hero__guarantee {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 13px;
-  color: var(--volu-text-muted);
-}
-
-.baku-hero__guarantee-icon {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(26, 21, 47, 0.18);
+.bk-hero__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  color: var(--volu-primary);
+  padding: 1rem 3.1rem;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: var(--bk-btn);
+  color: #ffffff;
+  box-shadow: 0 16px 40px rgba(26, 21, 47, 0.18);
+  transition: transform 150ms ease, box-shadow 150ms ease,
+    background-color 150ms ease;
 }
 
-/* RIGHT COLUMN – PRODUCT IMAGE */
-.baku-hero__image {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: flex-start; /* bottle sits a bit higher */
-  justify-content: center;
+.bk-hero__btn:hover {
+  background-color: #221b44;
+  transform: translateY(-1px);
+  box-shadow: 0 22px 60px rgba(26, 21, 47, 0.26);
 }
 
-.baku-hero__image img {
-  max-height: 640px;  /* slightly smaller than 720 */
-  width: auto;
-  height: auto;
+.bk-hero__note {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bk-ink-soft);
+}
+
+/* IMAGE COLUMN */
+.bk-hero__media {
+  position: relative;
+  justify-self: flex-end;
+  max-width: 540px;
+}
+
+.bk-hero__img {
   display: block;
-  margin-top: -40px;  /* gentle lift toward the headline/CTA */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-/* -----------------------------
+/* Optional soft vignette behind image */
+.bk-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 12% -8% -18%;
+  border-radius: 40% 40% 45% 45%;
+  background: radial-gradient(circle at 20% 0, #ffffff 0, #ede6ff 50%, #e0d5ff 100%);
+  z-index: -1;
+}
+
+/* ===========================
    RESPONSIVE
-------------------------------*/
+   =========================== */
+
 @media (max-width: 1024px) {
-  .baku-hero {
-    padding: 40px 0 28px;
+  .bk-hero__inner {
+    grid-template-columns: 1fr;
+    padding: 4.5rem 1.5rem 4.5rem;
+    row-gap: 3rem;
   }
 
-  .baku-hero__inner {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .baku-hero__content {
-    order: 1;
+  .bk-hero__copy {
     max-width: 100%;
   }
 
-  .baku-hero__image {
-    order: 2;
-    align-items: center;
+  .bk-hero__media {
+    justify-self: center;
+    max-width: 420px;
   }
 
-  .baku-hero__image img {
-    max-height: 430px;
-    margin-top: -20px;
+  .bk-hero__media::after {
+    inset: 8% -4% -10%;
   }
 }
 
-@media (max-width: 720px) {
-  .baku-hero {
-    padding: 30px 0 20px;
+@media (max-width: 749px) {
+  .bk-hero__inner {
+    padding: 4rem 1.25rem 3.5rem;
   }
 
-  .baku-hero__headline {
-    font-size: 30px;
+  .bk-hero__eyebrow {
+    font-size: 0.7rem;
   }
 
-  .baku-hero__benefits {
-    gap: 8px;
+  .bk-hero__headline {
+    font-size: 2.2rem;
   }
 
-  .baku-hero__cta-row {
-    width: 100%;
-    align-items: stretch;
+  .bk-hero__subcopy {
+    font-size: 0.95rem;
   }
 
-  .baku-hero__cta {
-    width: 100%;
-    justify-content: center;
+  .bk-hero__actions {
+    align-items: flex-start;
   }
 
-  .baku-hero__image img {
-    max-height: 420px;   /* ~20% bigger than the tighter 340px version */
-    margin-top: -10px;
-    margin-top: -20px !important;    /* fine-tune bottle position */
+  .bk-hero__media {
+    max-width: 100%;
   }
-
-  .baku-hero__image {
-    margin-top: -80px !important;    /* pulls entire image container up */
-  }
-
-
 }
 </style>
