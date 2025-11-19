@@ -1,64 +1,23 @@
-:root {
-  --baku-deep: #1a152f;
-  --baku-muted: #555555;
-  --baku-line: #ded8ef;
-}
-
-/* OUTER SECTION – soft site gradient */
-
-.bakuchiol-price {
-  padding: 64px 0 80px;
-  background: linear-gradient(
-    135deg,
-    #faf7ff 0%,
-    #ffffff 52%,
-    #f4efff 100%
-  );
-}
-
-/* Max width + side padding */
-
-.bakuchiol-price__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2.4rem;
-}
-
-/* Glassy panel card */
-
-.bakuchiol-price__panel {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(222, 216, 239, 0.9);
-  box-shadow: 0 24px 70px rgba(26, 21, 47, 0.10);
-  padding: 32px 28px 36px;
-}
-
-/* Core layout */
-
 .bakuchiol-price__wrapper {
   display: flex;
   flex-direction: column-reverse;
   gap: 3rem;
 }
 
-/* IMAGE */
-
 .bakuchiol-price__image {
   display: flex;
   flex-shrink: 0;
-  width: 100%;
-  justify-content: center;
-}
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  
+  margin-right: auto;
 
-.bakuchiol-price__image img {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  object-fit: cover;
-  filter: drop-shadow(0 18px 40px rgba(26, 21, 47, 0.28));
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
-
-/* CONTENT STACK */
 
 .bakuchiol-price__content {
   display: flex;
@@ -66,75 +25,70 @@
   gap: 2rem;
 }
 
+
 .bakuchiol-price__content-top {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.5rem;
 }
-
-/* Eyebrow */
 
 .bakuchiol-price__content-title {
-  margin: 0;
+  margin: initial;
   padding-bottom: 1rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.18em;
-  line-height: 1.3;
+  font-size: 1.4rem;
+  line-height: 133%;
   text-transform: uppercase;
-  color: rgba(26, 21, 47, 0.7);
-  border-bottom: 0.1rem solid #6d6d6d;
+  border-bottom: 0.1rem solid #6D6D6D;
 }
-
-/* Main headings */
 
 .bakuchiol-price__content-titles {
   display: flex;
   flex-direction: column;
-}
 
-.bakuchiol-price__content-titles h2,
-.bakuchiol-price__content-titles h3 {
-  margin: 0;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--baku-deep);
-}
+  h2, h3 {
+    margin: initial;
+  }
 
-.bakuchiol-price__content-titles h2 {
-  font-size: 3.4rem;
-  line-height: 1;
-}
+  h2 {
+    text-transform: uppercase;
+    font-size: 3.8rem;
+    line-height: 100%;
+    font-weight: 600;
+  }
 
-.bakuchiol-price__content-titles h3 {
-  font-size: 2rem;
-  line-height: 1.3;
+  h3 {
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    line-height: 133%;
+    font-weight: 600;
+  }
 }
-
-/* PRICE ROW */
 
 .bakuchiol-price__content-price {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
-}
 
-.bakuchiol-price__content-price .product-price,
-.bakuchiol-price__content-price .product-compare-price {
-  font-size: 2.1rem;
-  font-weight: 600;
-}
+  .product-price {
+    color: #1a152f;
+  }
 
-.bakuchiol-price__content-price .product-price {
-  color: var(--baku-deep);
-}
+  .product-compare-price {
+    color: #858585;
+    text-decoration: line-through;
+  }
 
-.bakuchiol-price__content-price .product-compare-price {
-  color: #858585;
-  text-decoration: line-through;
-}
+  .bakuchiol-price__label {
+    background-color: #1a152f;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+  }
 
-/* BODY COPY + CTA */
+  .product-price, .product-compare-price {
+    font-size: 2rem; 
+  }
+}
 
 .bakuchiol-price__content-bottom {
   display: flex;
@@ -142,140 +96,163 @@
   gap: 2rem;
 }
 
-.bakuchiol-price__content-description p {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.7;
-  text-transform: none;
-  color: var(--baku-muted);
+.bakuchiol-price__content-description {
+  p {
+    margin: initial;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    line-height: 166%;
+  }
 }
 
-/* Buttons */
 
-.bakuchiol-price-link {
-  max-width: 100%;
-}
-
-/* Label beneath card */
-
-.bakuchiol-price__section-label {
+.bakuchiol-price__section-lable {
   display: flex;
-  align-items: flex-start;
-  margin-top: 3.6rem;
+  margin-top: 5rem;
   gap: 2rem;
-  max-width: 32rem;
-}
+  max-width: 28rem;
 
-.bakuchiol-price__section-label span {
-  position: relative;
-  margin-top: 0.4rem;
-  display: flex;
-  flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--baku-deep);
-}
+  span {
+    position: relative;
+    margin-top: 0.4rem;
+    display: flex;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #1a152f;
 
-.bakuchiol-price__section-label span::before {
-  content: "";
-  position: absolute;
-  top: -0.5rem;
-  left: -0.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #ffffff;
-  z-index: -1;
-}
-
-.bakuchiol-price__section-label p {
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  line-height: 1.4;
-  letter-spacing: 0.12em;
-  color: var(--baku-deep);
-}
-
-/* DESKTOP LAYOUT */
-
-@media screen and (min-width: 1024px) {
-  .bakuchiol-price__panel {
-    padding: 40px 40px 44px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -0.5rem;
+      z-index: -1;
+      left: -0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fff;
+    }
   }
 
+  p {
+    margin: initial;
+    text-transform: uppercase;
+    line-height: 133%;
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .bakuchiol-price__image {
+    max-width: 40rem;
+    width: initial;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media screen and (min-width: 1023px) {
   .bakuchiol-price__wrapper {
     flex-direction: row;
-    align-items: center;
-    gap: 5rem;
-  }
-
-  .bakuchiol-price__image {
-    justify-content: flex-end;
-  }
-
-  .bakuchiol-price__image img {
-    max-width: 520px;
-  }
-
-  .bakuchiol-price__content {
-    max-width: 460px;
   }
 
   .bakuchiol-price__content-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 122%;
   }
 
-  .bakuchiol-price__content-titles h2 {
-    font-size: 5rem;
+  .bakuchiol-price__image {
+    max-width: 50rem;
   }
 
-  .bakuchiol-price__content-titles h3 {
-    font-size: 2.6rem;
+  .bakuchiol-price-link {
+    max-width: 41rem;
   }
 
-  .bakuchiol-price__content-price .product-price,
-  .bakuchiol-price__content-price .product-compare-price {
-    font-size: 3rem;
+  .bakuchiol-price__content-titles {
+    h2 {
+      font-size: 5.4rem;
+    }
+    h3 {
+      font-size: 3.1rem;
+    }
   }
 
-  .bakuchiol-price__content-description p {
-    font-size: 1.7rem;
-  }
-}
-
-/* XL screens – keep it sharp, not gigantic */
-
-@media screen and (min-width: 1440px) {
-  .bakuchiol-price__image img {
-    max-width: 600px;
+  .bakuchiol-price__content-price {
+    gap: 2rem;
+    .product-price, .product-compare-price {
+      font-size: 3.2rem; 
+    }
   }
 
-  .bakuchiol-price__content-titles h2 {
-    font-size: 5.6rem;
-  }
+  .bakuchiol-price__section-lable  {
+    max-width: 32rem;
 
-  .bakuchiol-price__content-titles h3 {
-    font-size: 3rem;
-  }
-}
-
-/* Mobile + tablet tweaks */
-
-@media screen and (min-width: 575px) and (max-width: 1023px) {
-  .bakuchiol-price__image img {
-    max-width: 440px;
+    p {
+       font-size: 2rem;
+    }
   }
 }
 
-/* Hide mobile CTA on desktop */
+@media screen and (min-width: 1280px)  {
+  .bakuchiol-price__image {
+    max-width: 60rem;
+  }
 
-@media (min-width: 768px) {
-  .mobile-button {
-    display: none !important;
+  .bakuchiol-price__wrapper {
+    gap: 5rem;
+  }
+
+  .bakuchiol-price__content-title {
+    font-size: 2rem;
+  }
+
+  .bakuchiol-price__content-description {
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  .bakuchiol-price__content-titles {
+    h2 {
+      font-size: 6rem;
+    }
+    h3 {
+      font-size: 3rem;
+    }
   }
 }
 
-/* Mobile: hide long description, show mobile CTA */
+@media screen and (min-width: 1440px)  {
+  .bakuchiol-price__image {
+    max-width: 70rem;
+  }
+
+  }
+}
+
+@media screen and (min-width: 1680px)  {
+  .bakuchiol-price__image {
+    max-width: 90rem;
+  }
+
+  .bakuchiol-price__content-titles {
+    h2 {
+      font-size: 10rem;
+    }
+    h3 {
+      font-size: 6rem;
+    }
+  }
+}
+
+
+
+  @media (min-width: 767px) {
+     .mobile-button {
+     display: none !important;
+  }
+  }
+
 
 @media (max-width: 767px) {
   .bakuchiol-price__content-description {
@@ -286,11 +263,6 @@
     display: none !important;
   }
 
-  .bakuchiol-price__panel {
-    padding: 28px 22px 32px;
-  }
 
-  .bakuchiol-price__section-label p {
-    font-size: 1.2rem;
-  }
+ 
 }
