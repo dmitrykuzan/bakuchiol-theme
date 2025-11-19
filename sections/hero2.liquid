@@ -92,177 +92,29 @@
   --hero-bg: linear-gradient(135deg, #f5f1ff 0%, #ffffff 40%, #f6f2ff 100%);
 }
 
+/* Remove default section spacing just for this hero section */
+#shopify-section-template--25169361371449__hero_PkEHtAA {
+  margin-bottom: 0 !important;
+}
+
 /* ===========================================
    HERO WRAPPER
 =========================================== */
 
 .baku-hero {
   color: var(--ink);
-  margin: 0;                /* remove ANY section margins */
-  padding-bottom: 0 !important; 
+  margin: 0;
+  padding-bottom: 0 !important;
 }
 
 .baku-hero__inner {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  align-items: center;
+  align-items: center; /* center text vertically */
   min-height: clamp(600px, 85vh, 820px);
   gap: 4.2rem;
   margin: 0;
-  padding-bottom: 0 !important; 
-}
-
-/* ===========================================
-   LEFT COLUMN CONTENT
-=========================================== */
-.baku-hero__copy {
-  max-width: 600px;
-}
-
-.baku-hero__eyebrow {
-  margin: 0 0 1.6rem;
-  font-size: 1rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-.baku-hero__title {
-  margin: 0 0 2.4rem;
-  font-size: clamp(3.2rem, 3.8vw + 1.8rem, 5rem);
-  line-height: 1.04;
-  letter-spacing: 0.065em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.baku-hero__subtitle {
-  margin: 0 0 3rem;
-  font-size: 1.35rem;
-  line-height: 1.75;
-  color: var(--ink-soft);
-  max-width: 540px;
-}
-
-/* CTA BUTTON */
-.baku-hero__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.4rem 4.2rem;
-  border-radius: 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  background-color: var(--ink);
-  color: #fff;
-  border: 1px solid var(--ink);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 140ms ease;
-}
-
-.baku-hero__button:hover {
-  background-color: #fff;
-  color: var(--ink);
-  border-color: var(--ink);
-  transform: translateY(-2px);
-  box-shadow: 0 18px 34px rgba(13, 9, 34, 0.18);
-}
-
-.baku-hero__social-proof {
-  margin: 2.2rem 0 0;
-  font-size: 1rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-/* ===========================================
-   RIGHT IMAGE — FIXED TO ELIMINATE GAP
-=========================================== */
-
-.baku-hero__visual {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.baku-hero__img {
-  height: min(85vh, 760px);
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-
-  display: block;
-  margin: 0 !important;
-  padding: 0 !important;
-
-  /* ↓↓↓ ensures the image touches the bottom (no whitespace) */
-  vertical-align: bottom;
-}
-
-/* kill default theme spacing below images */
-.baku-hero img {
-  display: block;
-  margin-bottom: 0 !important;
-}
-
-/* ===========================================
-   DESKTOP LARGE SCREENS
-=========================================== */
-@media (min-width: 1600px) {
-  .baku-hero__inner {
-    grid-template-columns: 1.4fr 1fr;
-  }
-  .baku-hero__title {
-    font-size: 5.4rem;
-  }
-  .baku-hero__subtitle {
-    font-size: 1.5rem;
-  }
-}
-
-/* ===========================================
-   TABLET + MOBILE
-=========================================== */
-@media (max-width: 989px) {
-  .baku-hero__inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: left;
-    padding-bottom: 0 !important;
-  }
-
-  .baku-hero__title {
-    font-size: 3rem;
-  }
-
-  .baku-hero__subtitle {
-    font-size: 1.2rem;
-  }
-
-  .baku-hero__img {
-    width: min(430px, 90vw);
-    height: auto;
-    transform: none;
-    margin: 0 auto 0 0 !important; /* no gap */
-  }
-}
-
-@media (max-width: 640px) {
-  .baku-hero__button {
-    width: 100%;
-  }
-}
-/* ===========================================
-   ACCENT PURPLE
-=========================================== */
-.accent {
-  color: var(--lavender-accent);
+  padding-bottom: 0 !important;
 }
 
 /* ===========================================
@@ -273,7 +125,6 @@
   max-width: 600px;
 }
 
-/* Eyebrow text */
 .baku-hero__eyebrow {
   margin: 0 0 1.6rem;
   font-size: 1rem;
@@ -283,7 +134,6 @@
   font-weight: 400;
 }
 
-/* MAIN TITLE */
 .baku-hero__title {
   margin: 0 0 2.4rem;
   font-size: clamp(3.2rem, 3.8vw + 1.8rem, 5rem);
@@ -293,7 +143,6 @@
   font-weight: 500;
 }
 
-/* SUBTITLE */
 .baku-hero__subtitle {
   margin: 0 0 3rem;
   font-size: 1.35rem;
@@ -303,10 +152,12 @@
   font-weight: 400;
 }
 
-/* ===========================================
-   CTA BUTTON — SHARP
-=========================================== */
+/* Accent word */
+.accent {
+  color: var(--lavender-accent);
+}
 
+/* CTA BUTTON — SHARP */
 .baku-hero__button {
   display: inline-flex;
   align-items: center;
@@ -333,10 +184,7 @@
   box-shadow: 0 18px 34px rgba(13, 9, 34, 0.18);
 }
 
-/* ===========================================
-   SOCIAL PROOF
-=========================================== */
-
+/* Social proof */
 .baku-hero__social-proof {
   margin: 2.2rem 0 0;
   font-size: 1rem;
@@ -346,13 +194,16 @@
 }
 
 /* ===========================================
-   RIGHT IMAGE
+   RIGHT IMAGE – MAKE IT KISS THE MARQUEE
 =========================================== */
 
 .baku-hero__visual {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  align-self: end;    /* pushes this grid cell to the bottom of the hero */
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .baku-hero__img {
@@ -361,9 +212,20 @@
   max-width: 100%;
   object-fit: contain;
   transform: translateX(3%);
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Huge screens */
+/* Kill any theme spacing under images */
+.baku-hero img {
+  display: block;
+  margin-bottom: 0 !important;
+}
+
+/* ===========================================
+   LARGE DESKTOP
+=========================================== */
 @media (min-width: 1600px) {
   .baku-hero__inner {
     grid-template-columns: 1.4fr 1fr;
@@ -387,7 +249,7 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: left;
-    min-height: auto;          /* prevents extra vertical space on small screens */
+    min-height: auto;
     padding-block: 3rem 2.4rem;
   }
 
@@ -425,7 +287,7 @@
   border-bottom: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
   font-family: inherit;
-  margin: 0;           /* no gap above/below */
+  margin: 0;   /* no gap above/below */
   padding: 0;
 }
 
@@ -479,7 +341,7 @@
   100% { transform: translateX(-100%); }
 }
 
-/* MOBILE */
+/* MOBILE TWEAKS */
 @media (max-width: 640px) {
   .baku-marquee .page-width {
     padding: 9px 0;
