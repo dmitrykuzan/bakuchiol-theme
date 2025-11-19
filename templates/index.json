@@ -13,6 +13,10 @@
       "type": "hero2",
       "settings": {}
     },
+    "product-banner_vsdg34": {
+      "type": "product-banner",
+      "settings": {}
+    },
     "bakuchiol_price_QR3p7A": {
       "type": "bakuchiol-price",
       "blocks": {
@@ -53,6 +57,7 @@
   },
   "order": [
     "hero_PkEHtAA",
+    "product-banner_vsdg34",
     "bakuchiol_price_QR3p7A",
     "review_slider_kpJKHq",
     "bakuchiol_footer_gnWLCR"
