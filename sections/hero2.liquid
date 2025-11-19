@@ -97,70 +97,54 @@
 =========================================== */
 
 .baku-hero {
-  background: var(--hero-bg);
   color: var(--ink);
-  margin: 0;
-  padding: 0; /* no extra white below */
+  margin: 0;                /* remove ANY section margins */
+  padding-bottom: 0 !important; 
 }
 
 .baku-hero__inner {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   align-items: center;
-  min-height: clamp(560px, 80vh, 820px);
+  min-height: clamp(600px, 85vh, 820px);
   gap: 4.2rem;
-  padding-block: 4rem 3rem; /* bottom padding kept tight so it kisses marquee */
-}
-
-/* ===========================================
-   ACCENT PURPLE
-=========================================== */
-.accent {
-  color: var(--lavender-accent);
+  margin: 0;
+  padding-bottom: 0 !important; 
 }
 
 /* ===========================================
    LEFT COLUMN CONTENT
 =========================================== */
-
 .baku-hero__copy {
   max-width: 600px;
 }
 
-/* Eyebrow text */
 .baku-hero__eyebrow {
   margin: 0 0 1.6rem;
   font-size: 1rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  font-weight: 400;
 }
 
-/* MAIN TITLE */
 .baku-hero__title {
   margin: 0 0 2.4rem;
   font-size: clamp(3.2rem, 3.8vw + 1.8rem, 5rem);
   line-height: 1.04;
   letter-spacing: 0.065em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* SUBTITLE */
 .baku-hero__subtitle {
   margin: 0 0 3rem;
   font-size: 1.35rem;
   line-height: 1.75;
   color: var(--ink-soft);
   max-width: 540px;
-  font-weight: 400;
 }
 
-/* ===========================================
-   CTA BUTTON — SHARP
-=========================================== */
-
+/* CTA BUTTON */
 .baku-hero__button {
   display: inline-flex;
   align-items: center;
@@ -168,11 +152,11 @@
   padding: 1.4rem 4.2rem;
   border-radius: 0;
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   background-color: var(--ink);
-  color: #ffffff;
+  color: #fff;
   border: 1px solid var(--ink);
   cursor: pointer;
   text-decoration: none;
@@ -180,16 +164,12 @@
 }
 
 .baku-hero__button:hover {
-  background-color: #ffffff;
+  background-color: #fff;
   color: var(--ink);
   border-color: var(--ink);
   transform: translateY(-2px);
   box-shadow: 0 18px 34px rgba(13, 9, 34, 0.18);
 }
-
-/* ===========================================
-   SOCIAL PROOF
-=========================================== */
 
 .baku-hero__social-proof {
   margin: 2.2rem 0 0;
@@ -200,13 +180,15 @@
 }
 
 /* ===========================================
-   RIGHT IMAGE
+   RIGHT IMAGE — FIXED TO ELIMINATE GAP
 =========================================== */
 
 .baku-hero__visual {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .baku-hero__img {
@@ -214,19 +196,31 @@
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  transform: translateX(3%);
+
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  /* ↓↓↓ ensures the image touches the bottom (no whitespace) */
+  vertical-align: bottom;
 }
 
-/* Huge screens */
+/* kill default theme spacing below images */
+.baku-hero img {
+  display: block;
+  margin-bottom: 0 !important;
+}
+
+/* ===========================================
+   DESKTOP LARGE SCREENS
+=========================================== */
 @media (min-width: 1600px) {
   .baku-hero__inner {
     grid-template-columns: 1.4fr 1fr;
   }
-
   .baku-hero__title {
     font-size: 5.4rem;
   }
-
   .baku-hero__subtitle {
     font-size: 1.5rem;
   }
@@ -235,14 +229,12 @@
 /* ===========================================
    TABLET + MOBILE
 =========================================== */
-
 @media (max-width: 989px) {
   .baku-hero__inner {
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: left;
-    min-height: auto;          /* prevents extra vertical space on small screens */
-    padding-block: 3rem 2.4rem;
+    padding-bottom: 0 !important;
   }
 
   .baku-hero__title {
@@ -251,109 +243,19 @@
 
   .baku-hero__subtitle {
     font-size: 1.2rem;
-    max-width: 100%;
   }
 
   .baku-hero__img {
     width: min(430px, 90vw);
     height: auto;
     transform: none;
-    margin-inline: auto;
+    margin: 0 auto 0 0 !important; /* no gap */
   }
 }
 
 @media (max-width: 640px) {
   .baku-hero__button {
     width: 100%;
-  }
-}
-
-/* ===========================================
-   LUXE MARQUEE BAR (directly under hero)
-=========================================== */
-
-.baku-marquee {
-  background-color: #1a152f;
-  color: #ffffff;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  overflow: hidden;
-  font-family: inherit;
-  margin: 0;           /* no gap above/below */
-  padding: 0;
-}
-
-.baku-marquee .page-width {
-  padding: 12px 0;
-}
-
-/* track wrapper */
-.baku-marquee__track {
-  display: flex;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-}
-
-/* scrolling rows */
-.baku-marquee__inner {
-  display: inline-flex;
-  align-items: center;
-  gap: 40px;
-  padding-right: 80px;
-  animation: baku-marquee-scroll 30s linear infinite;
-}
-
-.baku-marquee__track:hover .baku-marquee__inner {
-  animation-play-state: paused;
-}
-
-/* marquee text */
-.baku-marquee__item {
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  opacity: 0.92;
-}
-
-/* glowing separator dot */
-.baku-marquee__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #f9f4ff 0%, #b7a4ff 75%);
-  box-shadow: 0 0 0 5px rgba(255,255,255,0.05);
-  flex-shrink: 0;
-}
-
-/* animation */
-@keyframes baku-marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-/* MOBILE */
-@media (max-width: 640px) {
-  .baku-marquee .page-width {
-    padding: 9px 0;
-  }
-
-  .baku-marquee__inner {
-    gap: 28px;
-    padding-right: 50px;
-    animation-duration: 24s;
-  }
-
-  .baku-marquee__item {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-  }
-
-  .baku-marquee__dot {
-    width: 5px;
-    height: 5px;
-    box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
   }
 }
 </style>
