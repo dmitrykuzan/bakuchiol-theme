@@ -82,7 +82,6 @@
 </section>
 
 <style>
-<style>
 /* ===========================================
    GLOBAL COLOR VARIABLES
 =========================================== */
@@ -99,8 +98,8 @@
 
 .baku-hero {
   color: var(--ink);
-  margin: 0;                 /* no section spacing from theme */
-  padding: 0;                /* let inner handle vertical padding */
+  margin: 0;               /* no theme margins */
+  padding: 0;
   background: var(--hero-bg);
 }
 
@@ -110,8 +109,10 @@
   align-items: center;
   gap: 4.2rem;
   margin: 0;
-  padding: 4rem 0 0;         /* top breathing room, NO bottom padding */
-  min-height: auto;          /* important: no forced height on desktop */
+
+  /* top breathing room, NO bottom padding (keeps it flush to marquee) */
+  padding: 4rem 0 0;
+  min-height: auto;
 }
 
 /* ===========================================
@@ -154,7 +155,7 @@
   color: var(--lavender-accent);
 }
 
-/* CTA BUTTON — SHARP */
+/* CTA BUTTON — SHARP, SAME WEIGHT AS BEFORE */
 
 .baku-hero__button {
   display: inline-flex;
@@ -210,10 +211,10 @@
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  transform: translateX(3%);
+  transform: translateX(3%);   /* same slight nudge you liked */
   margin: 0;
   padding: 0;
-  vertical-align: bottom;      /* removes inline-image extra line-height */
+  vertical-align: bottom;      /* remove baseline gap */
 }
 
 /* Kill any theme defaults on images inside hero */
@@ -251,7 +252,10 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: left;
-    padding: 3rem 0 2.4rem;    /* still no bottom gap */
+
+    /* IMPORTANT: top padding only, NO bottom so it still kisses marquee */
+    padding: 3rem 0 0;
+    min-height: auto;
   }
 
   .baku-hero__title {
@@ -269,7 +273,9 @@
     transform: none;
     margin-inline: auto;
   }
+}
 
+@media (max-width: 640px) {
   .baku-hero__button {
     width: 100%;
   }
@@ -286,7 +292,7 @@
   border-bottom: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
   font-family: inherit;
-  margin: 0;                 /* sits flush to hero & next section */
+  margin: 0;          /* flush with hero & next section */
   padding: 0;
 }
 
@@ -363,5 +369,4 @@
     box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
   }
 }
-</style>
 </style>
