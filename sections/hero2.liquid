@@ -1,6 +1,7 @@
 <section class="baku-hero">
   <div class="baku-hero__inner page-width">
-    <!-- LEFT: COPY -->
+    
+    <!-- LEFT: TEXT -->
     <div class="baku-hero__copy">
       <p class="baku-hero__eyebrow">
         1.0% BAKUCHIOL + PEPTIDES
@@ -9,7 +10,7 @@
       <h1 class="baku-hero__title">
         Glass-skin results.<br>
         Retinol power.<br>
-        Zero irritation.
+        <span class="accent">Zero irritation.</span>
       </h1>
 
       <p class="baku-hero__subtitle">
@@ -18,7 +19,7 @@
       </p>
 
       <a href="/products/bakuchiol-age-delay-serum"
-         class="baku-hero__button button button--primary">
+         class="baku-hero__button">
         SHOP NOW
       </a>
 
@@ -27,15 +28,10 @@
       </p>
     </div>
 
-    <!-- RIGHT: IMAGE -->
+    <!-- RIGHT: HERO IMAGE -->
     <div class="baku-hero__visual">
       <picture>
-        <!-- Mobile source -->
-        <source
-          srcset="{{ 'bakuchiol-hero-model.png' | asset_url }}"
-          media="(max-width: 749px)">
-
-        <!-- Desktop default -->
+        <source srcset="{{ 'bakuchiol-hero-model.png' | asset_url }}" media="(max-width: 749px)">
         <img
           src="{{ 'bakuchiol-hero-model.png' | asset_url }}"
           alt="Woman holding Bakuchiol Age Delay Serum bottle"
@@ -43,21 +39,28 @@
           class="baku-hero__img">
       </picture>
     </div>
+
   </div>
 </section>
+
 <style>
-/* ============================
+  /* ===========================================
+   GLOBAL COLOR VARIABLES
+=========================================== */
+:root {
+  --ink: #151323;
+  --ink-soft: rgba(21, 19, 35, 0.7);
+  --lavender-accent: #b19cd6;    /* <<< your purple */
+  --hero-bg: linear-gradient(135deg, #f5f1ff 0%, #ffffff 40%, #f6f2ff 100%);
+}
+
+/* ===========================================
    HERO WRAPPER
-============================ */
+=========================================== */
 
 .baku-hero {
-  background: linear-gradient(
-    135deg,
-    #f5f1ff 0%,
-    #ffffff 40%,
-    #f6f2ff 100%
-  );
-  color: #151323;
+  background: var(--hero-bg);
+  color: var(--ink);
 }
 
 .baku-hero__inner {
@@ -69,9 +72,17 @@
   gap: 3.5rem;
 }
 
-/* ============================
-   LEFT COLUMN – COPY
-============================ */
+/* ===========================================
+   ACCENT PURPLE TEXT
+=========================================== */
+
+.accent {
+  color: var(--lavender-accent);
+}
+
+/* ===========================================
+   LEFT COLUMN CONTENT
+=========================================== */
 
 .baku-hero__copy {
   max-width: 540px;
@@ -82,7 +93,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(21, 19, 35, 0.6);
+  color: var(--ink-soft);
 }
 
 .baku-hero__title {
@@ -95,59 +106,62 @@
 
 .baku-hero__subtitle {
   margin: 0 0 2.4rem;
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.8;
-  color: rgba(21, 19, 35, 0.8);
+  color: var(--ink-soft);
   max-width: 480px;
 }
 
-/* SHARP CTA BUTTON – no rounded edges */
+/* ===========================================
+   CTA BUTTON (SHARP EDGES)
+=========================================== */
 
 .baku-hero__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 3.4rem;
-  border-radius: 0;               /* <— sharp corners */
+  border-radius: 0; /* SHARP */
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  text-decoration: none;
-  background-color: #151323;
+  background-color: var(--ink);
   color: #ffffff;
-  border: 1px solid #151323;
+  border: 1px solid var(--ink);
   cursor: pointer;
-  transition: background-color 140ms ease, color 140ms ease,
-    transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+  text-decoration: none;
+  transition: all 140ms ease;
 }
 
 .baku-hero__button:hover {
   background-color: #ffffff;
-  color: #151323;
-  border-color: #151323;
+  color: var(--ink);
+  border-color: var(--ink);
   transform: translateY(-1px);
   box-shadow: 0 10px 28px rgba(13, 9, 34, 0.16);
 }
+
+/* ===========================================
+   SOCIAL PROOF
+=========================================== */
 
 .baku-hero__social-proof {
   margin: 1.8rem 0 0;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(21, 19, 35, 0.62);
+  color: var(--ink-soft);
 }
 
-/* ============================
-   RIGHT COLUMN – VISUAL
-============================ */
+/* ===========================================
+   RIGHT IMAGE
+=========================================== */
 
 .baku-hero__visual {
-  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 100%;
 }
 
 .baku-hero__img {
@@ -155,46 +169,30 @@
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  display: block;
   transform: translateX(6%);
 }
 
-/* Slightly more right-weighting on very large screens */
 @media (min-width: 1400px) {
   .baku-hero__inner {
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
   }
 }
 
-/* ============================
-   RESPONSIVE – TABLET & MOBILE
-============================ */
+/* ===========================================
+   RESPONSIVE BEHAVIOR
+=========================================== */
 
 @media (max-width: 989px) {
   .baku-hero__inner {
     grid-template-columns: 1fr;
     gap: 2.6rem;
-    min-height: auto;
     padding-block: 3.4rem;
   }
 
-  .baku-hero__copy {
-    max-width: 100%;
-  }
-
-  .baku-hero__title {
-    font-size: clamp(2.1rem, 5vw, 2.7rem);
-  }
-
-  .baku-hero__visual {
-    justify-content: center;
-    align-items: flex-end;
-  }
-
   .baku-hero__img {
-    height: auto;
     width: min(420px, 80vw);
-    transform: translateX(0);
+    height: auto;
+    transform: none;
   }
 }
 
@@ -203,21 +201,8 @@
     background: #ffffff;
   }
 
-  .baku-hero__inner {
-    padding-block: 2.6rem 3rem;
-  }
-
-  .baku-hero__subtitle {
-    max-width: 100%;
-  }
-
   .baku-hero__button {
     width: 100%;
-    justify-content: center;
-  }
-
-  .baku-hero__social-proof {
-    text-align: left;
   }
 }
 </style>
