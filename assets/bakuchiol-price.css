@@ -1,7 +1,6 @@
 .bakuchiol-price__wrapper {
   display: flex;
   flex-direction: column-reverse;
-  gap: 3rem;
 }
 
 .bakuchiol-price__image {
