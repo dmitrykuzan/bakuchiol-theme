@@ -205,4 +205,47 @@
     width: 100%;
   }
 }
+
+/* ===========================================
+   DESKTOP – MAKE TEXT LARGER + MORE DOMINANT
+=========================================== */
+@media (min-width: 990px) {
+
+  /* Make left side take more width */
+  .baku-hero__inner {
+    grid-template-columns: 1.25fr 1fr !important;
+    gap: 4rem !important;
+  }
+
+  /* Larger title */
+  .baku-hero__title {
+    font-size: clamp(3rem, 3.4vw + 1.2rem, 4rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  /* Larger subtitle */
+  .baku-hero__subtitle {
+    font-size: 1.15rem !important;
+    line-height: 1.75 !important;
+    max-width: 500px !important;
+  }
+
+  /* Button slightly bigger */
+  .baku-hero__button {
+    padding: 1.2rem 3.8rem !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  /* Social proof a bit larger too */
+  .baku-hero__social-proof {
+    font-size: 0.9rem !important;
+  }
+
+  /* Adjust image scale so text feels stronger */
+  .baku-hero__img {
+    height: min(80vh, 670px) !important;
+    transform: translateX(2%) !important;
+  }
+}
 </style>
