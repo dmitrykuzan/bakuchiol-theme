@@ -4256,6 +4256,20 @@ details-disclosure > details {
   transition: transform 0.15s ease, filter 0.2s ease;
 }
 
+/* Add left padding to newsletter label & floating label */
+.footer__newsletter label,
+.footer__newsletter .field__label,
+.footer__newsletter .field__input ~ label {
+  padding-left: 12px !important;
+}
+
+/* Add left padding inside the email input field */
+.footer__newsletter input[type="email"],
+.footer__newsletter .field__input {
+  padding-left: 12px !important;
+  box-sizing: border-box;
+}
+
 /* Remove Dawn's annoying ::after pseudo-element shadow */
 .product-form__submit::after,
 .button-custom::after,
