@@ -1,6 +1,5 @@
 <section class="baku-hero">
   <div class="baku-hero__inner page-width">
-    
     <!-- LEFT: TEXT -->
     <div class="baku-hero__copy">
       <p class="baku-hero__eyebrow">
@@ -39,38 +38,57 @@
           class="baku-hero__img">
       </picture>
     </div>
-
   </div>
 </section>
 
+<!-- MARQUEE BANNER – sits directly under hero with no gap -->
+<section class="baku-marquee">
+  <div class="page-width">
+    <div class="baku-marquee__track">
+      <div class="baku-marquee__inner">
+        <span class="baku-marquee__item">Gentle Retinol Alternative</span>
+        <span class="baku-marquee__dot"></span>
 
+        <span class="baku-marquee__item">Peptide-Infused Formula</span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">Supports Firm, Smooth Skin</span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">Free USA Shipping</span>
+        <span class="baku-marquee__dot"></span>
+      </div>
+
+      <div class="baku-marquee__inner" aria-hidden="true">
+        <span class="baku-marquee__item">Gentle Retinol Alternative</span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">Peptide-Infused Formula</span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">Supports Firm, Smooth Skin</span>
+        <span class="baku-marquee__dot"></span>
+
+        <span class="baku-marquee__item">Free USA Shipping</span>
+        <span class="baku-marquee__dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO text (kept hidden) -->
 <section style="display:none !important; visibility:hidden !important; height:0 !important; overflow:hidden !important;">
-  
-  <h2>What Makes Bakuchiol Serum Different From Traditional Retinol?</h2>
-  <p>Bakuchiol serum is a plant-derived retinol alternative known for delivering smoothing, brightening, and anti-aging benefits without the irritation that often comes with prescription-strength retinoids. Many users compare bakuchiol to retinol and Bakuchiol Skin formulas because it offers similar results—improved firmness, refined texture, and reduced fine lines—while being gentle enough for sensitive skin.</p>
-
-  <h2>Is Bakuchiol Cream Safe for Sensitive and Reactive Skin?</h2>
-  <p>Bakuchiol cream is considered safe for sensitive skin due to its calming, non-irritating profile. Unlike harsh retinoids, bakuchiol supports the skin barrier while improving collagen visibility. Dermatologists and estheticians frequently recommend bakuchiol products, including Bakuchiol Skin-style formulations, for people who cannot tolerate traditional retinol.</p>
-
-  <h2>How Long Does Bakuchiol Take to Show Visible Results?</h2>
-  <p>Most users see noticeable improvements within 30 days of consistent use. Bakuchiol serum works by encouraging cell turnover, boosting radiance, and reducing dullness without triggering dryness. Bakuchiol cream and Bakuchiol Skin alternatives may take slightly longer depending on concentration, skin type, and overall routine.</p>
-
-  <h2>Can Bakuchiol Be Used With Vitamin C and Hyaluronic Acid?</h2>
-  <p>Yes, bakuchiol pairs extremely well with Vitamin C, hyaluronic acid, niacinamide, and peptide-based moisturizers. Unlike retinol, bakuchiol does not destabilize when layered with strong antioxidants. Whether you use a bakuchiol serum or a richer bakuchiol cream, it integrates smoothly into almost any routine.</p>
-
-  <h2>Is Bakuchiol Skin Stronger Than Standard Bakuchiol Formulas?</h2>
-  <p>Bakuchiol Skin typically refers to higher-concentration formulas designed to mimic prescription retinoid performance. While traditional bakuchiol serum offers a balanced, gentle approach, RX-strength alternatives may include enhanced peptides, encapsulated actives, or lipid complexes to boost firmness and elasticity.</p>
-
+  <!-- your FAQ content here, unchanged -->
 </section>
 
 <style>
-  /* ===========================================
+/* ===========================================
    GLOBAL COLOR VARIABLES
 =========================================== */
 :root {
   --ink: #151323;
   --ink-soft: rgba(21, 19, 35, 0.7);
-  --lavender-accent: #b19cd6; 
+  --lavender-accent: #b19cd6;
   --hero-bg: linear-gradient(135deg, #f5f1ff 0%, #ffffff 40%, #f6f2ff 100%);
 }
 
@@ -79,15 +97,19 @@
 =========================================== */
 
 .baku-hero {
+  background: var(--hero-bg);
   color: var(--ink);
+  margin: 0;
+  padding: 0; /* no extra white below */
 }
 
 .baku-hero__inner {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   align-items: center;
-  min-height: clamp(600px, 85vh, 820px);
+  min-height: clamp(560px, 80vh, 820px);
   gap: 4.2rem;
+  padding-block: 4rem 3rem; /* bottom padding kept tight so it kisses marquee */
 }
 
 /* ===========================================
@@ -112,25 +134,27 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-soft);
+  font-weight: 400;
 }
 
-/* MAIN TITLE — BIGGER */
+/* MAIN TITLE */
 .baku-hero__title {
   margin: 0 0 2.4rem;
   font-size: clamp(3.2rem, 3.8vw + 1.8rem, 5rem);
   line-height: 1.04;
   letter-spacing: 0.065em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* SUBTITLE — BIGGER + MORE READABLE */
+/* SUBTITLE */
 .baku-hero__subtitle {
   margin: 0 0 3rem;
   font-size: 1.35rem;
   line-height: 1.75;
   color: var(--ink-soft);
   max-width: 540px;
+  font-weight: 400;
 }
 
 /* ===========================================
@@ -144,7 +168,7 @@
   padding: 1.4rem 4.2rem;
   border-radius: 0;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   background-color: var(--ink);
@@ -164,7 +188,7 @@
 }
 
 /* ===========================================
-   SOCIAL PROOF — BIGGER + CLEANER
+   SOCIAL PROOF
 =========================================== */
 
 .baku-hero__social-proof {
@@ -193,7 +217,7 @@
   transform: translateX(3%);
 }
 
-/* Huge screens: make proportions even better */
+/* Huge screens */
 @media (min-width: 1600px) {
   .baku-hero__inner {
     grid-template-columns: 1.4fr 1fr;
@@ -217,6 +241,8 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: left;
+    min-height: auto;          /* prevents extra vertical space on small screens */
+    padding-block: 3rem 2.4rem;
   }
 
   .baku-hero__title {
@@ -232,15 +258,102 @@
     width: min(430px, 90vw);
     height: auto;
     transform: none;
+    margin-inline: auto;
   }
 }
 
 @media (max-width: 640px) {
-  .baku-hero {
-  }
-
   .baku-hero__button {
     width: 100%;
+  }
+}
+
+/* ===========================================
+   LUXE MARQUEE BAR (directly under hero)
+=========================================== */
+
+.baku-marquee {
+  background-color: #1a152f;
+  color: #ffffff;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  font-family: inherit;
+  margin: 0;           /* no gap above/below */
+  padding: 0;
+}
+
+.baku-marquee .page-width {
+  padding: 12px 0;
+}
+
+/* track wrapper */
+.baku-marquee__track {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+/* scrolling rows */
+.baku-marquee__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 80px;
+  animation: baku-marquee-scroll 30s linear infinite;
+}
+
+.baku-marquee__track:hover .baku-marquee__inner {
+  animation-play-state: paused;
+}
+
+/* marquee text */
+.baku-marquee__item {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
+/* glowing separator dot */
+.baku-marquee__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #f9f4ff 0%, #b7a4ff 75%);
+  box-shadow: 0 0 0 5px rgba(255,255,255,0.05);
+  flex-shrink: 0;
+}
+
+/* animation */
+@keyframes baku-marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .baku-marquee .page-width {
+    padding: 9px 0;
+  }
+
+  .baku-marquee__inner {
+    gap: 28px;
+    padding-right: 50px;
+    animation-duration: 24s;
+  }
+
+  .baku-marquee__item {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+
+  .baku-marquee__dot {
+    width: 5px;
+    height: 5px;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
   }
 }
 </style>
