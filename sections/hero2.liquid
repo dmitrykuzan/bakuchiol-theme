@@ -1,224 +1,220 @@
-<section class="bk-hero">
-  <div class="bk-hero__inner page-width">
+<section class="baku-hero">
+  <div class="baku-hero__inner page-width">
     <!-- LEFT: COPY -->
-    <div class="bk-hero__copy">
-      <p class="bk-hero__eyebrow">
+    <div class="baku-hero__copy">
+      <p class="baku-hero__eyebrow">
         1.0% BAKUCHIOL + PEPTIDES
       </p>
 
-      <h1 class="bk-hero__headline">
+      <h1 class="baku-hero__title">
         Glass-skin results.<br>
         Retinol power.<br>
         Zero irritation.
       </h1>
 
-      <p class="bk-hero__subcopy">
+      <p class="baku-hero__subtitle">
         Bakuchiol Age Delay Serum visibly softens fine lines, boosts radiance,
         and keeps even sensitive skin calm and comfortable.
       </p>
 
-      <div class="bk-hero__actions">
-        <a href="/products/bakuchiol-age-delay-serum" class="bk-hero__btn">
-          Shop now
-        </a>
+      <a href="/products/bakuchiol-age-delay-serum"
+         class="baku-hero__button button button--primary">
+        SHOP NOW
+      </a>
 
-        <p class="bk-hero__note">
-          ★★★★★ Loved by sensitive skin &amp; first-time retinol users.
-        </p>
-      </div>
+      <p class="baku-hero__social-proof">
+        ★★★★★ Loved by sensitive skin &amp; first-time retinol users.
+      </p>
     </div>
 
-    <!-- RIGHT: MODEL IMAGE -->
-    <div class="bk-hero__media">
+    <!-- RIGHT: IMAGE -->
+    <div class="baku-hero__visual">
       <picture>
-        <!-- Mobile crop -->
+        <!-- Mobile source -->
         <source
-          media="(max-width: 749px)"
-          srcset="{{ 'bakuchiol-hero-model.png' | asset_url }}"
-        >
-        <!-- Desktop hero -->
+          srcset="{{ 'baku-hero-model-mobile.jpg' | asset_url }}"
+          media="(max-width: 749px)">
+
+        <!-- Desktop default -->
         <img
-          src="{{ 'bakuchiol-hero-model.png' | asset_url }}"
-          alt="Woman holding Bakuchiol Age Delay Serum against a clean white background"
-          class="bk-hero__img"
-          loading="eager"
-          fetchpriority="high"
-        >
+          src="{{ 'baku-hero-model-desktop.jpg' | asset_url }}"
+          alt="Woman holding Bakuchiol Age Delay Serum bottle"
+          loading="lazy"
+          class="baku-hero__img">
       </picture>
     </div>
   </div>
 </section>
-
 <style>
-  /* ===========================
-   BAKUCHIOL HERO
-   =========================== */
+/* ============================
+   HERO WRAPPER
+============================ */
 
-:root {
-  --bk-ink: #1a152f;
-  --bk-ink-soft: #48445f;
-  --bk-bg-soft: #faf7ff;
-  --bk-btn: #1a152f;
+.baku-hero {
+  background: radial-gradient(140% 200% at 0% 0%,
+      #f6f1ff 0%,
+      #ffffff 45%,
+      #ffffff 100%);
+  color: #151323;
 }
 
-/* SECTION BACKGROUND */
-.bk-hero {
-  position: relative;
-  overflow: hidden;
-  background: radial-gradient(circle at top left, #f4edff 0, #ffffff 45%, #f8f3ff 100%);
-}
-
-/* INNER LAYOUT */
-.bk-hero__inner {
+.baku-hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 4rem;
-  padding: 7rem 1.5rem 6rem;
+  min-height: clamp(520px, 80vh, 760px);
+  padding-block: 4rem;
+  gap: 3rem;
 }
 
-/* COPY COLUMN */
-.bk-hero__copy {
+/* ============================
+   LEFT COLUMN – COPY
+============================ */
+
+.baku-hero__copy {
   max-width: 520px;
-  color: var(--bk-ink);
 }
 
-.bk-hero__eyebrow {
-  margin: 0 0 1rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+.baku-hero__eyebrow {
+  margin: 0 0 1.2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--bk-ink-soft);
+  color: rgba(21, 19, 35, 0.6);
 }
 
-.bk-hero__headline {
-  margin: 0 0 1.5rem;
-  font-size: clamp(2.4rem, 3.3vw + 1rem, 3.6rem);
-  line-height: 1.06;
-  letter-spacing: 0.02em;
-  font-weight: 600;
+.baku-hero__title {
+  margin: 0 0 1.6rem;
+  font-size: clamp(2.4rem, 2.8vw + 1.6rem, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.bk-hero__subcopy {
-  margin: 0 0 2.2rem;
+.baku-hero__subtitle {
+  margin: 0 0 2.4rem;
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--bk-ink-soft);
+  color: rgba(21, 19, 35, 0.76);
   max-width: 460px;
 }
 
-/* CTA */
-.bk-hero__actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.bk-hero__btn {
+.baku-hero__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 3.1rem;
+  padding: 1.1rem 3.5rem;
   border-radius: 999px;
-  border: none;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
   font-size: 0.9rem;
-  font-weight: 600;
-  background-color: var(--bk-btn);
-  color: #ffffff;
-  box-shadow: 0 16px 40px rgba(26, 21, 47, 0.18);
-  transition: transform 150ms ease, box-shadow 150ms ease,
-    background-color 150ms ease;
-}
-
-.bk-hero__btn:hover {
-  background-color: #221b44;
-  transform: translateY(-1px);
-  box-shadow: 0 22px 60px rgba(26, 21, 47, 0.26);
-}
-
-.bk-hero__note {
-  margin: 0;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--bk-ink-soft);
+  text-decoration: none;
+  background-color: #151323;
+  color: #ffffff;
+  border: 0;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease,
+    background-color 140ms ease;
 }
 
-/* IMAGE COLUMN */
-.bk-hero__media {
+.baku-hero__button:hover {
+  transform: translateY(-1px);
+  background-color: #211d40;
+  box-shadow: 0 16px 40px rgba(17, 12, 43, 0.22);
+}
+
+.baku-hero__social-proof {
+  margin: 1.6rem 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(21, 19, 35, 0.62);
+}
+
+/* ============================
+   RIGHT COLUMN – VISUAL
+============================ */
+
+.baku-hero__visual {
   position: relative;
-  justify-self: flex-end;
-  max-width: 540px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
 }
 
-.bk-hero__img {
+.baku-hero__img {
+  height: min(88vh, 720px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  transform: translateX(6%);
 }
 
-/* Optional soft vignette behind image */
-.bk-hero__media::after {
-  content: "";
-  position: absolute;
-  inset: 12% -8% -18%;
-  border-radius: 40% 40% 45% 45%;
-  background: radial-gradient(circle at 20% 0, #ffffff 0, #ede6ff 50%, #e0d5ff 100%);
-  z-index: -1;
+/* Gives that Sungboon “bleed to the edge” feel on huge screens */
+@media (min-width: 1400px) {
+  .baku-hero__inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  }
 }
 
-/* ===========================
-   RESPONSIVE
-   =========================== */
+/* ============================
+   RESPONSIVE – TABLET & MOBILE
+============================ */
 
-@media (max-width: 1024px) {
-  .bk-hero__inner {
+@media (max-width: 989px) {
+  .baku-hero__inner {
     grid-template-columns: 1fr;
-    padding: 4.5rem 1.5rem 4.5rem;
-    row-gap: 3rem;
+    gap: 2.5rem;
+    min-height: auto;
+    padding-block: 3.5rem;
   }
 
-  .bk-hero__copy {
+  .baku-hero__copy {
     max-width: 100%;
   }
 
-  .bk-hero__media {
-    justify-self: center;
-    max-width: 420px;
+  .baku-hero__title {
+    font-size: clamp(2.1rem, 5vw, 2.7rem);
   }
 
-  .bk-hero__media::after {
-    inset: 8% -4% -10%;
+  .baku-hero__visual {
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .baku-hero__img {
+    height: auto;
+    width: min(420px, 80vw);
+    transform: translateX(0);
   }
 }
 
-@media (max-width: 749px) {
-  .bk-hero__inner {
-    padding: 4rem 1.25rem 3.5rem;
+@media (max-width: 640px) {
+  .baku-hero {
+    background: #ffffff;
   }
 
-  .bk-hero__eyebrow {
-    font-size: 0.7rem;
+  .baku-hero__inner {
+    padding-block: 2.8rem 3.2rem;
   }
 
-  .bk-hero__headline {
-    font-size: 2.2rem;
+  .baku-hero__copy {
+    text-align: left;
   }
 
-  .bk-hero__subcopy {
-    font-size: 0.95rem;
-  }
-
-  .bk-hero__actions {
-    align-items: flex-start;
-  }
-
-  .bk-hero__media {
+  .baku-hero__subtitle {
     max-width: 100%;
+  }
+
+  .baku-hero__button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .baku-hero__social-proof {
+    text-align: left;
   }
 }
 </style>
