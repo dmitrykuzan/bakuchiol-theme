@@ -50,7 +50,7 @@
 :root {
   --ink: #151323;
   --ink-soft: rgba(21, 19, 35, 0.7);
-  --lavender-accent: #b19cd6;    /* <<< your purple */
+  --lavender-accent: #b19cd6; 
   --hero-bg: linear-gradient(135deg, #f5f1ff 0%, #ffffff 40%, #f6f2ff 100%);
 }
 
@@ -65,17 +65,16 @@
 
 .baku-hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   align-items: center;
-  min-height: clamp(520px, 80vh, 760px);
-  padding-block: 4rem;
-  gap: 3.5rem;
+  min-height: clamp(600px, 85vh, 820px);
+  padding-block: 5rem;
+  gap: 4.2rem;
 }
 
 /* ===========================================
-   ACCENT PURPLE TEXT
+   ACCENT PURPLE
 =========================================== */
-
 .accent {
   color: var(--lavender-accent);
 }
@@ -85,46 +84,50 @@
 =========================================== */
 
 .baku-hero__copy {
+  max-width: 600px;
+}
+
+/* Eyebrow text */
+.baku-hero__eyebrow {
+  margin: 0 0 1.6rem;
+  font-size: 1rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* MAIN TITLE — BIGGER */
+.baku-hero__title {
+  margin: 0 0 2.4rem;
+  font-size: clamp(3.2rem, 3.8vw + 1.8rem, 5rem);
+  line-height: 1.04;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* SUBTITLE — BIGGER + MORE READABLE */
+.baku-hero__subtitle {
+  margin: 0 0 3rem;
+  font-size: 1.35rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
   max-width: 540px;
 }
 
-.baku-hero__eyebrow {
-  margin: 0 0 1.2rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-.baku-hero__title {
-  margin: 0 0 1.8rem;
-  font-size: clamp(2.4rem, 2.7vw + 1.7rem, 3.3rem);
-  line-height: 1.1;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.baku-hero__subtitle {
-  margin: 0 0 2.4rem;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--ink-soft);
-  max-width: 480px;
-}
-
 /* ===========================================
-   CTA BUTTON (SHARP EDGES)
+   CTA BUTTON — SHARP
 =========================================== */
 
 .baku-hero__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 3.4rem;
-  border-radius: 0; /* SHARP */
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  padding: 1.4rem 4.2rem;
+  border-radius: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   background-color: var(--ink);
   color: #ffffff;
@@ -138,17 +141,17 @@
   background-color: #ffffff;
   color: var(--ink);
   border-color: var(--ink);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(13, 9, 34, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(13, 9, 34, 0.18);
 }
 
 /* ===========================================
-   SOCIAL PROOF
+   SOCIAL PROOF — BIGGER + CLEANER
 =========================================== */
 
 .baku-hero__social-proof {
-  margin: 1.8rem 0 0;
-  font-size: 0.78rem;
+  margin: 2.2rem 0 0;
+  font-size: 1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -165,32 +168,51 @@
 }
 
 .baku-hero__img {
-  height: min(88vh, 720px);
+  height: min(85vh, 760px);
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  transform: translateX(6%);
+  transform: translateX(3%);
 }
 
-@media (min-width: 1400px) {
+/* Huge screens: make proportions even better */
+@media (min-width: 1600px) {
   .baku-hero__inner {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .baku-hero__title {
+    font-size: 5.4rem;
+  }
+
+  .baku-hero__subtitle {
+    font-size: 1.5rem;
   }
 }
 
 /* ===========================================
-   RESPONSIVE BEHAVIOR
+   TABLET + MOBILE
 =========================================== */
 
 @media (max-width: 989px) {
   .baku-hero__inner {
     grid-template-columns: 1fr;
-    gap: 2.6rem;
-    padding-block: 3.4rem;
+    gap: 3rem;
+    padding-block: 3.5rem;
+    text-align: left;
+  }
+
+  .baku-hero__title {
+    font-size: 3rem;
+  }
+
+  .baku-hero__subtitle {
+    font-size: 1.2rem;
+    max-width: 100%;
   }
 
   .baku-hero__img {
-    width: min(420px, 80vw);
+    width: min(430px, 90vw);
     height: auto;
     transform: none;
   }
@@ -203,49 +225,6 @@
 
   .baku-hero__button {
     width: 100%;
-  }
-}
-
-/* ===========================================
-   DESKTOP – MAKE TEXT LARGER + MORE DOMINANT
-=========================================== */
-@media (min-width: 990px) {
-
-  /* Make left side take more width */
-  .baku-hero__inner {
-    grid-template-columns: 1.25fr 1fr !important;
-    gap: 4rem !important;
-  }
-
-  /* Larger title */
-  .baku-hero__title {
-    font-size: clamp(3rem, 3.4vw + 1.2rem, 4rem) !important;
-    line-height: 1.08 !important;
-  }
-
-  /* Larger subtitle */
-  .baku-hero__subtitle {
-    font-size: 1.15rem !important;
-    line-height: 1.75 !important;
-    max-width: 500px !important;
-  }
-
-  /* Button slightly bigger */
-  .baku-hero__button {
-    padding: 1.2rem 3.8rem !important;
-    font-size: 1rem !important;
-    letter-spacing: 0.2em !important;
-  }
-
-  /* Social proof a bit larger too */
-  .baku-hero__social-proof {
-    font-size: 0.9rem !important;
-  }
-
-  /* Adjust image scale so text feels stronger */
-  .baku-hero__img {
-    height: min(80vh, 670px) !important;
-    transform: translateX(2%) !important;
   }
 }
 </style>
