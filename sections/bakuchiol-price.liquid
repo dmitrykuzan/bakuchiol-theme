@@ -1,75 +1,102 @@
 {{ 'bakuchiol-price.css' | asset_url | stylesheet_tag }}
 
-<section class="bakuchiol-price page-width">
-  <div class="bakuchiol-price__wrapper section-top">
-    <div class="bakuchiol-price__image">
-      <img alt="Bakuchiol serum offering high-performance results at an affordable price compared to luxury skincare" src="{{ 'bakuchiol-price.png' | asset_url }}" width="925" height="925" loading="lazy"> 
-    </div>
+{% comment %}
+  Grab the first configured product once so we can reuse it
+{% endcomment %}
+{% assign product = nil %}
+{% for block in section.blocks %}
+  {% if block.type == 'product' and block.settings.product != blank and product == nil %}
+    {% assign product = all_products[block.settings.product] %}
+  {% endif %}
+{% endfor %}
 
-    <div class="bakuchiol-price__content">
-      <div class="bakuchiol-price__content-top"> 
-        <p class="bakuchiol-price__content-title">FOR ALL SKIN TYPES</p>
+<section class="bakuchiol-price">
+  <div class="bakuchiol-price__inner page-width">
+    <div class="bakuchiol-price__panel">
 
-        <div class="bakuchiol-price__content-titles">
-          <h2 >BAKUCHIOL</h2>
-          <h3 >AGE DELAY SERUM</h3>
+      <div class="bakuchiol-price__wrapper section-top">
+        <!-- IMAGE -->
+        <div class="bakuchiol-price__image">
+          <img
+            alt="Bakuchiol Age Delay Serum bottle with pricing comparison to clinical treatments"
+            src="{{ 'bakuchiol-price.png' | asset_url }}"
+            width="925"
+            height="925"
+            loading="lazy"
+          >
         </div>
 
-        <div class="bakuchiol-price__content-price">
-          {% for block in section.blocks %}
-            {% if block.settings.product != blank %}
-              {% assign product = all_products[block.settings.product] %}
+        <!-- COPY + PRICE -->
+        <div class="bakuchiol-price__content">
+          <div class="bakuchiol-price__content-top">
+            <p class="bakuchiol-price__content-title">
+              FOR ALL SKIN TYPES
+            </p>
 
-              <span class="product-price">
-                {{ product.price | money }}
-              </span>
+            <div class="bakuchiol-price__content-titles">
+              <h2>BAKUCHIOL</h2>
+              <h3>AGE DELAY SERUM</h3>
+            </div>
 
-              {% if product.compare_at_price_max > product.price %}
-                <span class="product-compare-price">
-                  {{ product.compare_at_price_max | money }}
+            {% if product %}
+              <div class="bakuchiol-price__content-price">
+                <span class="product-price">
+                  {{ product.price | money }}
                 </span>
-              {% endif %}
 
-            
+                {% if product.compare_at_price_max > product.price %}
+                  <span class="product-compare-price">
+                    {{ product.compare_at_price_max | money }}
+                  </span>
+                {% endif %}
+              </div>
             {% endif %}
-          {% endfor %}
+          </div>
+
+          <div class="bakuchiol-price__content-bottom">
+            <div class="bakuchiol-price__content-description">
+              <p>
+                A 1.0% pure bakuchiol serum that softens fine lines, smooths texture,
+                and brightens dull tone&nbsp;— without the dryness of traditional retinoids.
+                The lightweight, cushiony formula layers effortlessly under moisturizer or
+                bakuchiol cream for gentle, luminous results.
+              </p>
+            </div>
+
+            {% if product %}
+              <a
+                class="bakuchiol-price-link button-custom button-custom__black desktop-button"
+                href="{{ product.url }}"
+              >
+                Buy Bakuchiol Serum
+              </a>
+            {% endif %}
+          </div>
         </div>
       </div>
 
-      <div class="bakuchiol-price__content-bottom">
-        <div class="bakuchiol-price__content-description">
-          <p>
-            A 1.0% pure bakuchiol serum that softens fine lines, smooths texture, and brightens dull tone—without the dryness of traditional retinoids. The lightweight, cushiony formula layers effortlessly under moisturizer or bakuchiol cream for gentle, Bakuchiol Skin–style results.
-          </p>
-        </div>
+      {% if product %}
+        <!-- Mobile CTA (inside card) -->
+        <a
+          class="bakuchiol-price-link button-custom button-custom__black mobile-button"
+          href="{{ product.url }}"
+        >
+          Buy Bakuchiol Serum
+        </a>
+      {% endif %}
 
-        {% for block in section.blocks %}
-          {% if block.type == 'product' and block.settings.product %}
-            {% assign product = block.settings.product %}
-            <a class="bakuchiol-price-link button-custom button-custom__black desktop-button" href="{{ product.url }}">
-              buy bakuchiol serum
-            </a>
-          {% endif %}
-        {% endfor %}
+      <div class="bakuchiol-price__section-label">
+        <span></span>
+        <p>Your smooth, luminous skin starts here.</p>
       </div>
     </div>
-  </div>
-
-  {% comment %}
-    Mobile CTA – uses the last assigned `product` from the loop above
-  {% endcomment %}
-  <a class="bakuchiol-price-link button-custom button-custom__black mobile-button" href="{{ product.url }}">
-    buy bakuchiol serum
-  </a>
-  
-  <div class="bakuchiol__section-lable">
-    <span></span>
-    <p>Your smooth, luminous skin starts here.</p>
   </div>
 </section>
 
+{%- comment -%}
+  Hidden SEO FAQ content
+{%- endcomment -%}
 <section style="display:none !important; visibility:hidden !important; height:0 !important; overflow:hidden !important;">
-  
   <h2>How Often Should I Use Bakuchiol Serum in My Routine?</h2>
   <p>Most people can use bakuchiol serum once daily, either in the morning or evening, depending on how their skin responds. Because bakuchiol is gentler than traditional retinol, many sensitive-skin users find that they can apply bakuchiol every day without flaking or irritation. For those who enjoy a richer texture at night, bakuchiol serum can be layered under a nourishing bakuchiol cream or barrier-repair moisturizer.</p>
 
@@ -84,7 +111,6 @@
 
   <h2>Who Is a Good Candidate for Bakuchiol Skin–Level Results Without Irritation?</h2>
   <p>Anyone who wants visibly smoother, brighter, and more even-looking skin but struggles with traditional retinoids is an ideal candidate for bakuchiol serum or bakuchiol cream. Sensitive skin types, those prone to redness, and people with compromised barriers often prefer bakuchiol. With consistent use, a high-quality bakuchiol serum can deliver Bakuchiol Skin–style benefits—refined pores, softer lines, and improved tone—while respecting the skin’s natural balance.</p>
-
 </section>
 
 {% schema %}
