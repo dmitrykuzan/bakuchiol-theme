@@ -357,3 +357,38 @@
   }
 }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var bar = document.getElementById('bakuchiol-sticky-atc');
+  if (!bar) return;
+
+  var mainAtc =
+    document.querySelector('form[action^="/cart/add"] .product-form__submit') ||
+    document.querySelector('.product-form__submit');
+
+  if (!mainAtc) return;
+
+  function toggleBar() {
+    var rect = mainAtc.getBoundingClientRect();
+    var outOfView = rect.bottom < 0 || rect.top > window.innerHeight;
+    var scrolledEnough = window.scrollY > 200;
+
+    /* --- FOOTER CHECK --- */
+    var scrollBottom = window.innerHeight + window.scrollY;
+    var pageHeight = document.body.offsetHeight;
+    var nearFooter = scrollBottom >= pageHeight - 250; // hide 250px before bottom
+
+    if (outOfView && scrolledEnough && !nearFooter) {
+      bar.classList.add('sticky-atc--visible');
+      bar.setAttribute('aria-hidden', 'false');
+    } else {
+      bar.classList.remove('sticky-atc--visible');
+      bar.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBar);
+  window.addEventListener('resize', toggleBar);
+  toggleBar();
+});
+</script>
