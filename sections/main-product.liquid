@@ -3306,7 +3306,47 @@ Rated <strong>4.8</strong>
     "price": "{{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}",
     "availability": "{% if product.selected_or_first_available_variant.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "itemCondition": "http://schema.org/NewCondition",
-    "priceValidUntil": "{% if product.metafields.custom.price_valid_until %}{{ product.metafields.custom.price_valid_until | date: '%Y-%m-%d' }}{% else %}{{ 'now' | date: '%Y' | plus: 1 }}-12-31{% endif %}"
+    "priceValidUntil": "{% if product.metafields.custom.price_valid_until %}{{ product.metafields.custom.price_valid_until | date: '%Y-%m-%d' }}{% else %}{{ 'now' | date: '%Y' | plus: 1 }}-12-31{% endif %}",
+
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "url": "https://bakuchiol.com/policies/refund-policy"
+    },
+
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingOrigin": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2403 E 4th Ave",
+          "addressLocality": "Tampa",
+          "addressRegion": "FL",
+          "postalCode": "33605",
+          "addressCountry": "US"
+        }
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 5,
+          "unitCode": "DAY"
+        }
+      },
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0.00",
+        "currency": {{ shop.currency | json }}
+      }
+    }
   }
 }
 </script>
