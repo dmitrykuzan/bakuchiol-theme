@@ -3309,6 +3309,76 @@ Rated <strong>4.8</strong>
   }
 }
 </script>
+
+<script>
+(function() {
+  const productId = {{ shop.url | append: product.url | json }};
+  const reviewsUrl = {{ "reviews.json" | asset_url | json }};
+
+  fetch(reviewsUrl)
+    .then(function(res) { return res.json(); })
+    .then(function(reviews) {
+      if (!Array.isArray(reviews) || !reviews.length) return;
+
+      // Only keep reviews that have a numeric Stars value
+      var valid = reviews.filter(function(r) {
+        return typeof r.Stars === 'number' && !isNaN(r.Stars);
+      });
+      if (!valid.length) return;
+
+      // Average rating
+      var sum = valid.reduce(function(acc, r) { return acc + r.Stars; }, 0);
+      var avg = (sum / valid.length).toFixed(1);
+
+      // Latest review by date (falls back to first if parsing fails)
+      var latest = valid.slice().sort(function(a, b) {
+        var da = new Date(a.Date || '');
+        var db = new Date(b.Date || '');
+        return db - da;
+      })[0] || valid[0];
+
+      var ld = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "@id": productId,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": avg,
+          "reviewCount": valid.length,
+          "bestRating": 5,
+          "worstRating": 1
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewBody": latest.Description || "",
+            "name": latest.Title || "",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": latest.Stars || 5,
+              "bestRating": 5,
+              "worstRating": 1
+            },
+            "author": {
+              "@type": "Person",
+              "name": latest.Name || "Verified Customer"
+            },
+            {% comment %} Optional datePublished if you want it {% endcomment %}
+            "datePublished": latest.Date || undefined
+          }
+        ]
+      };
+
+      var s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.text = JSON.stringify(ld);
+      document.head.appendChild(s);
+    })
+    .catch(function(err) {
+      console.warn('reviews.json JSON-LD error:', err);
+    });
+})();
+</script>
 {%else %}
       <script type="application/ld+json">
       {{ product | structured_data }}
