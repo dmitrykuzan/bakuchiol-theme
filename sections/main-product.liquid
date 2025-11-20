@@ -3298,47 +3298,15 @@ Rated <strong>4.8</strong>
     "@type": "Brand",
     "name": {{ product.vendor | json }}
   },
-
   "offers": {
     "@type": "Offer",
     "url": {{ shop.url | append: product.url | json }},
     "priceCurrency": {{ shop.currency | json }},
     "price": "{{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}",
-    "availability": "https://schema.org/{% if product.selected_or_first_available_variant.available %}InStock{% else %}OutOfStock{% endif %}",
-    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "{% if product.selected_or_first_available_variant.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
+    "itemCondition": "http://schema.org/NewCondition",
     "priceValidUntil": "{% if product.metafields.custom.price_valid_until %}{{ product.metafields.custom.price_valid_until | date: '%Y-%m-%d' }}{% else %}{{ 'now' | date: '%Y' | plus: 1 }}-12-31{% endif %}"
   }
-
-  {%- comment -%}
-    OPTIONAL: Aggregate rating + latest review
-    Namespace: reviews
-      rating_value   (decimal)
-      rating_count   (integer)
-      latest_body    (text)
-      latest_author  (text)
-  {%- endcomment -%}
-  {%- if product.metafields.reviews.rating_value and product.metafields.reviews.rating_count -%}
-  ,
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "{{ product.metafields.reviews.rating_value }}",
-    "reviewCount": "{{ product.metafields.reviews.rating_count }}"
-  }
-  {%- endif -%}
-
-  {%- if product.metafields.reviews.latest_body and product.metafields.reviews.latest_author -%}
-  ,
-  "review": [
-    {
-      "@type": "Review",
-      "reviewBody": {{ product.metafields.reviews.latest_body | json }},
-      "author": {
-        "@type": "Person",
-        "name": {{ product.metafields.reviews.latest_author | json }}
-      }
-    }
-  ]
-  {%- endif -%}
 }
 </script>
         {%endif %}
