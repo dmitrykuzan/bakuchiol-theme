@@ -2622,7 +2622,7 @@ Rated <strong>4.8</strong>
                   {{- product.selected_or_first_available_variant.sku -}}
                 </p>
               {%- when 'custom_liquid' -%}
-                {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+                {% comment %} {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
                   <div class="product__upgrade">
                     <div class="product__upgrade-top">
                       <p></p>
@@ -2672,7 +2672,7 @@ Rated <strong>4.8</strong>
                       </div>
                     </div>
                   </div>
-                {% endif %}
+                {% endif %} {% endcomment %}
 
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
