@@ -3273,15 +3273,10 @@ Rated <strong>4.8</strong>
     {% comment %} <script type="application/ld+json">
       {{ product | structured_data }}
     </script> {% endcomment %}
-      {% assign special_handles = 'bakuchiol-age-delay-serum|age-delay-power-trio' | split: '|' %}
+{% assign special_handles = 'bakuchiol-age-delay-serum|age-delay-power-trio' | split: '|' %}
 
-      {% if product and special_handles contains product.handle %}
+{% if product and special_handles contains product.handle %}
 
-        {%- comment -%}
-  SEO / Google Merchant Center Product Schema
-  - Fixes: priceValidUntil warning
-  - Optionally adds aggregateRating + review if you connect metafields
-{%- endcomment -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
