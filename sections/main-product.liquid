@@ -3273,6 +3273,90 @@ Rated <strong>4.8</strong>
     {% comment %} <script type="application/ld+json">
       {{ product | structured_data }}
     </script> {% endcomment %}
+
+      {% if product and product.handle == 'bakuchiol-age-delay-serum' %}
+
+        {%- comment -%}
+  SEO / Google Merchant Center Product Schema
+  - Fixes: priceValidUntil warning
+  - Optionally adds aggregateRating + review if you connect metafields
+{%- endcomment -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "@id": {{ shop.url | append: product.url | json }},
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | strip_newlines | truncate: 320 | json }},
+  "image": [
+    {%- for media in product.media -%}
+      {{ media | img_url: '800x' | prepend: 'https:' | json }}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ],
+  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ product.vendor | json }}
+  },
+
+  "offers": {
+    "@type": "Offer",
+    "url": {{ shop.url | append: product.url | json }},
+    "priceCurrency": {{ shop.currency | json }},
+    "price": "{{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}",
+    "availability": "{% if product.selected_or_first_available_variant.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
+    "itemCondition": "http://schema.org/NewCondition",
+
+    {%- comment -%}
+      priceValidUntil:
+      Create a product metafield:
+        Namespace: custom
+        Key: price_valid_until
+        Type: date
+      Then set an end date in the admin.
+      If it's empty, we fall back to 6 months from now as a safe default.
+    {%- endcomment -%}
+    "priceValidUntil": "{% if product.metafields.custom.price_valid_until %}{{ product.metafields.custom.price_valid_until | date: '%Y-%m-%d' }}{% else %}{{ 'now' | date: '%Y' | plus: 1 }}-12-31{% endif %}"
+  }
+
+  {%- comment -%}
+    OPTIONAL: Aggregate rating + latest review
+    Only output if you actually have review data wired to metafields.
+    Example metafields (adjust to your app / setup):
+      Namespace: reviews
+      Key: rating_value      (number, e.g. 4.8)
+      Key: rating_count      (integer, e.g. 132)
+      Key: latest_body       (single-line or multi-line text)
+      Key: latest_author     (single-line text)
+  {%- endcomment -%}
+  {%- if product.metafields.reviews.rating_value and product.metafields.reviews.rating_count -%}
+  ,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ product.metafields.reviews.rating_value }}",
+    "reviewCount": "{{ product.metafields.reviews.rating_count }}"
+  }
+  {%- endif -%}
+
+  {%- if product.metafields.reviews.latest_body and product.metafields.reviews.latest_author -%}
+  ,
+  "review": [
+    {
+      "@type": "Review",
+      "reviewBody": {{ product.metafields.reviews.latest_body | json }},
+      "author": {
+        "@type": "Person",
+        "name": {{ product.metafields.reviews.latest_author | json }}
+      }
+    }
+  ]
+  {%- endif -%}
+}
+</script>
+        {%endif %}
+
+
   </div>
 </product-info>
 
