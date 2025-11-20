@@ -3281,7 +3281,6 @@ Rated <strong>4.8</strong>
   - Fixes: priceValidUntil warning
   - Optionally adds aggregateRating + review if you connect metafields
 {%- endcomment -%}
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -3305,30 +3304,18 @@ Rated <strong>4.8</strong>
     "url": {{ shop.url | append: product.url | json }},
     "priceCurrency": {{ shop.currency | json }},
     "price": "{{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}",
-    "availability": "{% if product.selected_or_first_available_variant.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
-    "itemCondition": "http://schema.org/NewCondition",
-
-    {%- comment -%}
-      priceValidUntil:
-      Create a product metafield:
-        Namespace: custom
-        Key: price_valid_until
-        Type: date
-      Then set an end date in the admin.
-      If it's empty, we fall back to 6 months from now as a safe default.
-    {%- endcomment -%}
+    "availability": "https://schema.org/{% if product.selected_or_first_available_variant.available %}InStock{% else %}OutOfStock{% endif %}",
+    "itemCondition": "https://schema.org/NewCondition",
     "priceValidUntil": "{% if product.metafields.custom.price_valid_until %}{{ product.metafields.custom.price_valid_until | date: '%Y-%m-%d' }}{% else %}{{ 'now' | date: '%Y' | plus: 1 }}-12-31{% endif %}"
   }
 
   {%- comment -%}
     OPTIONAL: Aggregate rating + latest review
-    Only output if you actually have review data wired to metafields.
-    Example metafields (adjust to your app / setup):
-      Namespace: reviews
-      Key: rating_value      (number, e.g. 4.8)
-      Key: rating_count      (integer, e.g. 132)
-      Key: latest_body       (single-line or multi-line text)
-      Key: latest_author     (single-line text)
+    Namespace: reviews
+      rating_value   (decimal)
+      rating_count   (integer)
+      latest_body    (text)
+      latest_author  (text)
   {%- endcomment -%}
   {%- if product.metafields.reviews.rating_value and product.metafields.reviews.rating_count -%}
   ,

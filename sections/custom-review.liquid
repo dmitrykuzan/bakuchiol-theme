@@ -456,33 +456,15 @@
   });
 })();
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": {{ product.title | json }},
-  "image": [
-    {{ product.featured_image | image_url: width: 800 | prepend: "https:" | json }}
-  ],
-  "sku": {{ product.selected_or_first_available_variant.sku | json }},
-  "brand": {
-    "@type": "Brand",
-    "name": {{ product.vendor | json }}
-  },
-  "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
-  "url": {{ shop.url | append: product.url | json }},
-  "offers": {
-    "@type": "Offer",
-    "url": {{ shop.url | append: product.url | json }},
-    "priceCurrency": {{ cart.currency.iso_code | json }},
-    "price": {{ product.selected_or_first_available_variant.price | money_without_currency | replace: ",", "" | json }},
-    "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}"
-  },
+  "@id": {{ shop.url | append: product.url | json }},
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "482",
+    "ratingValue": "{{ product.metafields.reviews.rating_value | default: '4.8' }}",
+    "reviewCount": "{{ product.metafields.reviews.rating_count | default: '482' }}",
     "bestRating": "5",
     "worstRating": "1"
   }
