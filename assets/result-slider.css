@@ -279,7 +279,7 @@
 .result-slider__slide-increase-text::before {
   content: "";
   position: absolute;
-  width: 25%;
+  width: 93%;
   height: 100%;
   left: 0;
   top: 0;
