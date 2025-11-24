@@ -276,6 +276,35 @@
       </div>
     </div>
 
+    <style>
+      .result-slider__slide-increase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid #d2d8e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* background fill based on --fill */
+.result-slider__slide-increase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--fill, 0%);
+  background: #eef5f8; /* light highlight color */
+  z-index: 0;
+}
+
+.result-slider__slide-percent,
+.result-slider__slide-increase-text {
+  position: relative;
+  z-index: 1;
+}
+    </style>
+
     <div class="result-slider__navigation-btns" aria-label="Bakuchiol Age Delay Serum results navigation">
       <div class="volufiline-swiper-button-prev" aria-label="Previous Bakuchiol Age Delay Serum result slide">
         <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
