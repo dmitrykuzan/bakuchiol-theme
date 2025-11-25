@@ -41,11 +41,11 @@
                     {{ compare_price | money }}
                   </span>
 
-                  {% if savings_pct > 0 %}
+                  {% comment %} {% if savings_pct > 0 %}
                     <span class="sticky-atc__badge">
                       SAVE {{ savings_pct }}%
                     </span>
-                  {% endif %}
+                  {% endif %} {% endcomment %}
                 {% endif %}
               </div>
             </div>
