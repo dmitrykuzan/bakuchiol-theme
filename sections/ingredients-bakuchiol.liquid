@@ -1,0 +1,248 @@
+<section class="ingredient-section">
+  <div class="ingredient-container">
+
+    <!-- TOP ROW: IMAGE + TITLE / SCORE -->
+    <div class="ingredient-header-grid">
+
+      <!-- LEFT: IMAGE -->
+      <div class="ingredient-visual">
+        {% if section.settings.image != blank %}
+          <img
+            src="{{ section.settings.image | image_url: width: 500 }}"
+            alt="Bakuchiol ingredient visual"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+
+      <!-- RIGHT: TITLE + SCORE -->
+      <div class="ingredient-header-content">
+        <h2 class="ingredient-title">{{ section.settings.title }}</h2>
+
+        <p class="ingredient-subtitle">
+          {{ section.settings.subtitle }}
+        </p>
+
+        <div class="score-wrapper">
+          <span class="score-label">Skin Compatibility Score</span>
+          <div class="score-bar">
+            <div class="score-fill"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr />
+
+    <!-- BOTTOM: FULL-WIDTH CONTENT -->
+    <div class="accordion">
+
+      <details open>
+        <summary>Summary</summary>
+        <p>{{ section.settings.summary }}</p>
+      </details>
+
+      <details>
+        <summary>Description</summary>
+        <p>{{ section.settings.description }}</p>
+      </details>
+
+      <details>
+        <summary>Ingredient Breakdown</summary>
+        <p><strong>1% Bakuchiol</strong> – A plant-derived retinol alternative that improves the appearance of fine lines and firmness without irritation or photosensitivity.</p>
+        <p><strong>Peptides</strong> – Support collagen signaling and improve elasticity.</p>
+        <p><strong>Niacinamide</strong> – Strengthens the skin barrier and improves tone.</p>
+        <p><strong>Vitamin C</strong> – Brightens the complexion and provides antioxidant protection.</p>
+      </details>
+      
+      <details>
+        <summary>Compatibility</summary>
+        <p>
+          Bakuchiol is widely recognized for its high level of skin compatibility.
+          Unlike traditional retinoids, it delivers visible smoothing and firming
+          benefits without triggering photosensitivity or barrier disruption.
+        </p>
+        <p>
+          This formula is designed to work in harmony with the skin’s natural renewal
+          cycle and can be comfortably incorporated into both morning and evening
+          routines. Its low irritation profile makes it suitable for most skin types,
+          including sensitive skin, when used as directed.
+        </p>
+        <p>
+          <strong>Skin Compatibility Index:</strong> Excellent
+        </p>
+      </details>
+
+
+      <details>
+        <summary>Usage</summary>
+        <p>{{ section.settings.usage }}</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* SECTION */
+.ingredient-section {
+  background: #ffffff;
+  padding: 90px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1a1a1a;
+}
+
+.ingredient-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* HEADER GRID */
+.ingredient-header-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* IMAGE */
+.ingredient-visual img {
+  width: 100%;
+}
+
+/* HEADER CONTENT */
+.ingredient-title {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ingredient-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 28px;
+}
+
+/* SCORE */
+.score-wrapper {
+  max-width: 420px;
+}
+
+.score-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.score-bar {
+  width: 100%;
+  height: 10px;
+  background: #ededed;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.score-fill {
+  width: 92%;
+  height: 100%;
+  background: linear-gradient(90deg, #f2b5b5, #f2e27a, #9adf9a);
+  border-radius: 999px;
+  display: flow !important;
+}
+
+/* DIVIDER */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 56px 0;
+}
+
+/* ACCORDION */
+.accordion details {
+  border-bottom: 1px solid #eee;
+  padding: 22px 0;
+}
+
+.accordion summary {
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion p {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #444;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .ingredient-header-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ingredient-title {
+    font-size: 32px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Ingredients Serum",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Ingredient Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Bakuchiol Serum"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "1% Bakuchiol · Peptides · Niacinamide · Vitamin C"
+    },
+    {
+      "type": "textarea",
+      "id": "summary",
+      "label": "Summary",
+      "default": "A clinically inspired serum formulated with 1% bakuchiol to visibly smooth, firm, and brighten skin without irritation."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "This lightweight dropper serum combines bakuchiol, peptides, niacinamide, and vitamin C to target visible signs of aging while supporting skin barrier health."
+    },
+    {
+      "type": "textarea",
+      "id": "usage",
+      "label": "Usage",
+      "default": "Apply 2–3 drops to clean, dry skin morning and evening. Gently press into skin and follow with moisturizer."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients – Bakuchiol Serum",
+      "category": "Ingredients"
+    }
+  ]
+}
+{% endschema %}
